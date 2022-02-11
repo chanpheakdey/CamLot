@@ -7,7 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <Content Include="Classes\qrcode.cs" />
   </ItemGroup>
-
+<ItemGroup>
+    
+	<PackageReference Include="System.Data.SqlClient" Version="4.6.0" />
+    
+	<PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+  </ItemGroup>
+<ItemGroup>
+  <Reference Include="QRCoder">
+    <HintPath>..\..\QRCode\QRCoder.dll</HintPath>
+  </Reference>
+</ItemGroup>
 </Project>

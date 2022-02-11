@@ -1,0 +1,132 @@
+﻿@page
+@model SignalR.Pages.bettingModel
+@{
+}
+
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+
+
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+
+
+
+<div>
+    <div class="div-print-popup" id="div_printpopup">
+        <div class="div-print-detail" id="div_printdetail">
+            
+
+        </div>
+    </div>
+    <div class="div-container">
+        <div class="calculator" style="display:none;" id="div_calculator">
+            <input type="hidden" id="hdGameID" value="0" />
+                <input type="hidden" id="hdinput_number" value="" />
+
+              <input type="hidden" id="hd_betamount" value="0" />
+                <input type="hidden" id="hd_numberofslot" value="0" />
+                <input type="hidden" id="hd_placeid" value="0" />
+            <div id="div_display">
+            <div class="div_print">
+                <input type="button" class="button-print" value ="Print" onclick="print()" />
+                
+            </div>
+           
+
+
+            <div id="div_numbers" class="text-input">
+ <div style="width: 100%;display: inline-block;"><span class="span-slot">ប្រភេទ:</span> </div><span class="span-slot">ចាក់លេខៈ</span> 
+            </div>
+             <input type="hidden" id="hdselectrange" value="" />
+            <div id="div_range" style="display:none;margin-bottom:20px;">
+
+                XX-YY
+            </div>
+            <div class="betting-amount-box">
+                <div class="span-slot">ទឹកប្រាក់ភ្នាល់</div>
+            <div id="div_betamount" class="div-bet-amount">
+                0R
+            </div>
+            <div class="div-bet-button">
+                <div class="bet-amount" onclick="betnow(0)">Clear</div>
+                <div class="bet-amount" onclick="betnow(100)">100R</div>                
+                <div class="bet-amount" onclick="betnow(200)">200R</div>
+                <div class="bet-amount" onclick="betnow(500)">500R</div>
+                <div class="bet-amount" onclick="betnow(1000)">1000R</div>
+                <div class="bet-amount" onclick="betnow(2000)">2000R</div>
+                <div class="bet-amount" onclick="betnow(5000)">5000R</div>
+            </div>
+            </div>
+            </div>
+
+            <div class="div-slot">
+                <input type="hidden" id="hdSlot" value='{"slotA":"inactive","slotB":"inactive","slotC":"inactive","slotD":"inactive","slotE":"inactive"}' />
+                <div id='spanA' class="Slot-letter" onclick="select_slot('A')">A</div>
+                <div id='spanB' class="Slot-letter" onclick="select_slot('B')">B</div>
+                <div id='spanC' class="Slot-letter" onclick="select_slot('C')">C</div>
+                <div id='spanD' class="Slot-letter" onclick="select_slot('D')">D</div>
+                <div id='spanE' class="Slot-letter" onclick="select_slot('E')">E</div>
+            </div>
+            
+            <div class="div-button-number">
+            <div>
+                <span id="num7" class="button-number" onclick="input_number(7)">7</span>
+                <span id="num8" class="button-number" onclick="input_number(8)">8</span>
+                <span id="num9" class="button-number" onclick="input_number(9)">9</span>
+                 <span id='span2X' class="button-number" onclick="multiply()">2X</span>
+            </div>
+            <div>
+                <span id="num4" class="button-number" onclick="input_number(4)">4</span>
+                <span id="num5" class="button-number" onclick="input_number(5)">5</span>
+                <span id="num6" class="button-number" onclick="input_number(6)">6</span>
+                 <span id='spanConnect' class="button-number" onclick="select_range()">R</span>
+            </div>
+            <div>
+                <span id="num1" class="button-number" onclick="input_number(1)">1</span>
+                <span id="num2" class="button-number" onclick="input_number(2)">2</span>
+                <span id="num3" class="button-number" onclick="input_number(3)">3</span>
+                <span id='spanConnect' class="button-number" onclick="select_auto()">A</span>
+            </div>
+            <div>
+                <span id="num0" class="button-number" onclick="input_number(0)">0</span>
+                <span id="btndelete" class="button-number" onclick="delete_number()" style="width:220px;">Delete</span>
+            </div>
+            </div>
+        </div>
+        <div class="login" id="div_login">
+             <div style="font-size:xx-large;">
+    <img src='images/CamLotto.png' style='width:150px;'>
+    <span class="logo-title" ><span style="color:black;">CAM</span><span style="color:#c67819"> LOTTO</span> <br></span>
+    </div>
+            <div class="div-user">
+            <div class="div-username">Username:</div> <input type="text" class="div-input-text" id="txt_username" />
+            </div>
+            <div class="div-user">
+            <div class="div-username">Password:</div> <input type="password" class="div-input-text" id="txt_password" />
+            </div>
+            <div class="div-button-login">
+                <input type="button" class="button-print" value="Login" onclick="login()" />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<link href="~/css/betting.css" rel="stylesheet" />
+
+
+<script src="~/js/betting.js"></script>
+
+
+<link href="~/css/mycss.css" rel="stylesheet" />
+
+<script>
+	//jQuery('#qrcode').qrcode("this plugin is great");
+        function createqr(){
+            		jQuery('#qrcode').qrcode({
+                            text: "http://jetienne.com"
+                        });
+
+        }
+		
+</script>

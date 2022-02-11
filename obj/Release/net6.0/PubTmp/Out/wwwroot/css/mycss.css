@@ -1,0 +1,72 @@
+﻿.round-number {
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    font-size: 20px;
+    border: solid 1px gray;
+    border-radius: 50%;
+  
+    float: left;
+    margin: 5px;
+}
+
+.round-number-green {
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    font-size: 20px;
+    background-color:green;
+    color:white;
+    border-radius: 50%;
+    float: left;
+    margin: 5px;
+}
+
+.number-list{
+    max-width:600px;
+    float:left;
+}
+
+.result-list {
+    max-width: 200px;
+    float: left;
+}
+
+.span-result {
+    padding: 0px;
+    float: left;
+    background-color: #a34545;
+    border-radius: 5px;
+    width: 50px;
+    text-align: center;
+    margin: 0px 5px;
+    min-height:80px;
+}
+.span-result-title {
+    padding: 0px 15px;
+    color: white;
+    font-size: 24px;
+    background-color: #cd5757;
+}
+.span-result-number {
+    padding: 0px 15px;
+    color: white;
+    font-size: 24px;
+   
+}
+.div-result{
+    min-height:90px;
+}
+.Timer {
+    padding: 5px;
+    float: left;
+    border-radius: 5px;
+    text-align: center;
+    margin: 0px 5px;
+    border: solid 1px green;
+    font-size: 24px;
+   width:100%;
+   margin:5px;
+}

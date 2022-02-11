@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\chanpheakdey.vong\\source\\repos\\SignalR\\SignalR.csproj": {}
+    "D:\\ACE\\SignalR\\SignalR\\SignalR.csproj": {}
   },
   "projects": {
-    "C:\\Users\\chanpheakdey.vong\\source\\repos\\SignalR\\SignalR.csproj": {
+    "D:\\ACE\\SignalR\\SignalR\\SignalR.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chanpheakdey.vong\\source\\repos\\SignalR\\SignalR.csproj",
+        "projectUniqueName": "D:\\ACE\\SignalR\\SignalR\\SignalR.csproj",
         "projectName": "SignalR",
-        "projectPath": "C:\\Users\\chanpheakdey.vong\\source\\repos\\SignalR\\SignalR.csproj",
-        "packagesPath": "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chanpheakdey.vong\\source\\repos\\SignalR\\obj\\",
+        "projectPath": "D:\\ACE\\SignalR\\SignalR\\SignalR.csproj",
+        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
+        "outputPath": "D:\\ACE\\SignalR\\SignalR\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\chanpheakdey.vong\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,9 +40,13 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Swashbuckle.AspNetCore": {
+            "System.Data.SqlClient": {
               "target": "Package",
-              "version": "[6.2.3, )"
+              "version": "[4.6.0, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[6.0.0, )"
             }
           },
           "imports": [

@@ -1,0 +1,14 @@
+D:\ACE\SignalR\SignalR\obj\Release\net6.0\PubTmp\Out\SignalR.exe
+D:\ACE\SignalR\SignalR\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
+D:\ACE\SignalR\SignalR\obj\Release\net6.0\PubTmp\Out\appsettings.json
+D:\ACE\SignalR\SignalR\obj\Release\net6.0\PubTmp\Out\libman.json
+D:\ACE\SignalR\SignalR\obj\Release\net6.0\PubTmp\Out\SignalR.dll
+D:\ACE\SignalR\SignalR\obj\Release\net6.0\PubTmp\Out\SignalR.deps.json
+D:\ACE\SignalR\SignalR\obj\Release\net6.0\PubTmp\Out\SignalR.runtimeconfig.json
+D:\ACE\SignalR\SignalR\obj\Release\net6.0\PubTmp\Out\SignalR.pdb
+D:\ACE\SignalR\SignalR\obj\Release\net6.0\PubTmp\Out\System.Data.SqlClient.dll
+D:\ACE\SignalR\SignalR\obj\Release\net6.0\PubTmp\Out\runtimes\win-arm64\native\sni.dll
+D:\ACE\SignalR\SignalR\obj\Release\net6.0\PubTmp\Out\runtimes\win-x64\native\sni.dll
+D:\ACE\SignalR\SignalR\obj\Release\net6.0\PubTmp\Out\runtimes\win-x86\native\sni.dll
+D:\ACE\SignalR\SignalR\obj\Release\net6.0\PubTmp\Out\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\ACE\SignalR\SignalR\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

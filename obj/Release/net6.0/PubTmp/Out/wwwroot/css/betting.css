@@ -1,0 +1,194 @@
+﻿body {
+}
+.div-container{
+    max-width:600px;
+    margin:auto;
+
+}
+.Callculator{
+    padding:10px;
+    background-color:gray;
+
+}
+.text-input {
+    padding: 10px;
+    background-color: var(--search-box-bg, white);
+    border: solid 1px gray;
+    border-radius: 15px;
+    color: var(--search-box-text);
+    font-family: inherit;
+    font-size: inherit;
+    min-height: 120px;
+    padding-inline-end: 15px;
+    padding-inline-start: 15px;
+    position: relative;
+    width: 100%;
+    margin: 10px 0px;
+}
+.Slot-letter {
+    display: inline-block;
+    float: left;
+    background-color: gray;
+    color: #Fff;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 50px;
+    transition: all .6s;
+    border-radius: 33px;
+    margin: 5px;
+    width: 55px;
+    height: 55px;
+    text-align: center;
+
+}
+
+.slot-active {
+    background-color: red !important;
+}
+
+.button-number {
+    display: inline-block;
+    background: gray;
+    color: #Fff;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    transition: all .6s;
+    border-radius: 10px;
+    margin: 5px;
+    width: 65px;
+    height: 65px;
+    text-align: center;
+}
+.div_print {
+    text-align: right;
+    position: relative;
+    z-index: 999;
+}
+.button-print {
+    padding: 10px;
+    border-radius: 15px;
+    background-color: white;
+    font-weight: bold;
+    border: solid 1px gray;
+    margin-right:10px;
+}
+.div-popup {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #808080f0;
+    z-index: 9999;
+    left: 0px;
+}
+.div-popup-container{
+    background-color:white;
+    margin:auto;
+    max-width:600px;
+    width:100%;
+    margin-top:25px;
+    min-height:100px;
+    display:none;
+}
+.add-range{
+    border:solid 1px gray;
+    border-radius:5px;
+    padding:2px;
+    background-color:gray;
+    color:white;
+    margin-left:10px;
+    cursor:pointer;
+}
+.bet-amount {
+    float:left;
+    display:inline-block;
+    border: solid 1px gray;
+    border-radius: 2px;
+    padding: 2px;
+    background-color: gray;
+    color: white;
+    margin: 5px 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    width:55px;
+}
+.div-bet-amount{
+    padding:5px;
+    margin:5px 5px;
+    font-weight:bold;
+}
+.div-bet-button{
+    margin:5px;
+    display:inline-block;
+}
+
+.div-print-popup{
+
+    position:absolute;
+    z-index:9999;
+    background-color:white;
+    width:100%;
+    height:100%;
+    display:none;
+    left:0px;
+    padding:10px;
+}
+
+.betting-amount-box{
+    padding:5px;
+    border-radius:15px;
+    border:solid 1px gray;
+}
+.span-slot {
+    float: left;
+    height: 30px;
+    padding: 10px 5px;
+    width:110px;
+}
+.div-user{
+    padding:5px;
+}
+.div-username {
+    padding: 5px;
+    width: 100%;
+    float: left;
+}
+.div-input-text {
+    padding: 15px;
+    width: 100%;
+    border-radius: 15px;
+}
+.div-button-login{
+    padding:15px;
+    text-align:center;
+}
+.login {
+    padding: 5px;
+    background-color: #e9ecef;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+.calculator {
+    padding: 15px;
+    background-color: #e9ecef;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+.div-slot {
+    height: 80px;
+    text-align: center;
+    width: 330px;
+    margin: auto;
+}
+.div-button-number {
+    text-align: left;
+    margin: auto;
+    width: 330px;
+}
+.div-print-detail {
+    padding: 15px;
+    background-color: rgb(233, 236, 239);
+    margin: auto;
+    border-radius: 20px;
+    max-width: 600px;
+}
