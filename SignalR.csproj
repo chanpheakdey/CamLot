@@ -17,7 +17,7 @@
   </ItemGroup>
 <ItemGroup>
   <Reference Include="QRCoder">
-    <HintPath>D:\ACE\QRCode\QRCode_Demo\QRCode_Demo\DLL\QRCoder.dll</HintPath>
+    <HintPath>bin\Debug\net6.0\QRCoder.dll</HintPath>
   </Reference>
 </ItemGroup>
 </Project>
