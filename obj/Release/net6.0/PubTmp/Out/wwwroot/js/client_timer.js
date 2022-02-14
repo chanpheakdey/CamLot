@@ -64,12 +64,13 @@ connection.on("ReceiveMessage", function (Eventmessage) {
 connection.start().then(function () {
 
     $("#div_printpopup").show();
-
+    console.log("hub connected");
     clear_result();
     loadnumbers();
 
+    
+    get_latestresult();
 
-    console.log("hub connected");
 
     var server = getUrlParameter("server");
     loadnumbers();
@@ -77,11 +78,33 @@ connection.start().then(function () {
    
 
 }).catch(function (err) {
-    return console.log(err.toString());
+    console.log(err);
 });
 
 var maxsecond = 305;//360seconds=6mn
 
+function get_latestresult() {
+    console.log("get latest result");
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "POST",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/LatestResult",
+        data: '',
+        success: function (data) {
+            console.log(data);
+            show_latest_result(data)
+            
+        },
+        error: function (result) {
+            console.log(result);
+            //return "";
+            //$('#loading').hide();
+        }
+    });
+}
 
 function show_result_html(datajson) {
     var data =JSON.parse( datajson);
@@ -106,9 +129,14 @@ function show_result_html(datajson) {
     html += '<div class="special-x"><span style="background: #f73">U</span><span style="background: #ea8d34">R1</span></div></div>'
     html += '</div>'
 
-    console.log(html);
+    //console.log(html);
+
+  
+
+  
+
     var prehtml = $("#div_result_list").html();
-    html = prehtml + html;
+    html = html + prehtml;
     $("#div_result_list").html(html);
 }
 function clientTimer(secondsout) {
@@ -191,10 +219,32 @@ function show_result(datajson) {
     var data = JSON.parse(datajson);
     show_result_html(datajson);
 
+    var divs = document.getElementById("div_result_list").getElementsByClassName("recent-item");
+
+
+    //$("#div_result_list .recent-item div:last").each(function () {
+
+    //});
+
+    var lastChild = divs[divs.length - 1];
+    $(lastChild).remove();
    
     //end_game(gameid);
 }
 
+
+function show_latest_result(data) {
+
+    var arrlength = data.length;
+    for (var i = 0; i < arrlength; i++) {
+        console.log(data[i]);
+        show_result_html(data[i]);
+
+    }
+    
+
+    //end_game(gameid);
+}
 
 
 //$(document).ready(    
