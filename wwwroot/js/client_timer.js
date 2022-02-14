@@ -67,7 +67,7 @@ connection.start().then(function () {
 
     clear_result();
     loadnumbers();
-
+    get_latestresult();
 
     console.log("hub connected");
 
@@ -82,6 +82,26 @@ connection.start().then(function () {
 
 var maxsecond = 305;//360seconds=6mn
 
+function get_latestresult() {
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "POST",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/LatestResult",
+        data: '',
+        success: function (data) {
+            show_latest_result(data)
+            console.log(data);
+        },
+        error: function (result) {
+            console.log(result);
+            //return "";
+            //$('#loading').hide();
+        }
+    });
+}
 
 function show_result_html(datajson) {
     var data =JSON.parse( datajson);
@@ -108,7 +128,7 @@ function show_result_html(datajson) {
 
     console.log(html);
     var prehtml = $("#div_result_list").html();
-    html = prehtml + html;
+    html = html + prehtml;
     $("#div_result_list").html(html);
 }
 function clientTimer(secondsout) {
@@ -195,6 +215,19 @@ function show_result(datajson) {
     //end_game(gameid);
 }
 
+
+function show_latest_result(data) {
+
+    var arrlength = data.length;
+    for (var i = 0; i < arrlength; i++) {
+        console.log(data[i]);
+        show_result_html(data[i]);
+
+    }
+    
+
+    //end_game(gameid);
+}
 
 
 //$(document).ready(    

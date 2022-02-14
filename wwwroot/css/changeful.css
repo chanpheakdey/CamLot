@@ -249,7 +249,7 @@ body {
     }
 
         .article-main .split-main .result-area {
-            max-width: 850px;
+            max-width: 810px;
         }
 
         .article-main .split-main .split-line {
@@ -262,7 +262,10 @@ body {
             margin-left: 15px;
             color: #666;
             font-size: 18px;
-            flex: 1
+            flex: 1;
+            height:100vh;
+            overflow-y:scroll;
+            
         }
 
             .article-main .split-main .recent-area .recent-title {

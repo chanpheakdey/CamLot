@@ -63,6 +63,12 @@ app.MapPost("api/QRCode", (qrcode clqrcode) =>
     return dalGlobal.getQRCode(clqrcode);
 
 });
+app.MapPost("api/LatestResult", () =>
+{
+    DalGlobal dalGlobal = new DalGlobal();
+    return dalGlobal.getLatestResult();
+
+});
 app.Run();
 
 

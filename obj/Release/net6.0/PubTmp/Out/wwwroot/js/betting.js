@@ -50,7 +50,30 @@ connection.start().then(function () {
     return console.log(err.toString());
 });
 
-
+function qrcode_img_base64(qrcode,html) {
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "POST",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/QRCode",
+        data: '{"QRCode":"' + qrcode + '"}',
+        success: function (data) {
+            
+            //return ("data:image/png;base64," + data);
+            PrintElem(html, "data:image/png;base64," + data)
+            //$("#divqrcode").html("data:image/png;base64," + data);
+            //$("#imgqrcode").prop("src", "data:image/png;base64," + data);
+            //$("#img_qr").prop("src", "data:image/png;base64," + data);
+        },
+        error: function (result) {
+            console.log(result);
+            //return "";
+            //$('#loading').hide();
+        }
+    });
+}
 
 function login() {
     var username = $("#txt_username").val();
@@ -80,6 +103,7 @@ function login() {
                         $("#hd_placeid").val(dataobj.placeID);
                         $("#div_calculator").show();
                         $("#div_login").hide();
+                        
                     }
                 }
              
@@ -149,7 +173,7 @@ function confirmprint() {
                     alert("ឆ្នោតចាប់លេងហើយ។")
                 } else {
                     var html = create_receipt(dataobj);
-                    PrintElem(html);
+                    qrcode_img_base64(bettingid,html);
                     cancelprint();
                     clear_betting();
                 }
@@ -173,6 +197,7 @@ function clear_betting() {
     $("#div_range").val("XX-YY");
     $("#hdinput_number").val("");
     $("#hd_betamount").val("0");
+    $("#div_betamount").html("0R");
     $("#hd_numberofslot").val("0");
     $("#hdSlot").val('{"slotA":"inactive","slotB":"inactive","slotC":"inactive","slotD":"inactive","slotE":"inactive"}');
     $("#spanA").removeClass("slot-active");
@@ -184,7 +209,7 @@ function clear_betting() {
 }
 
 
-function PrintElem(html) {
+function PrintElem(html,imgdata) {
 
     //alert("aa");
     var innerhtml = html;
@@ -242,8 +267,8 @@ function PrintElem(html) {
 
 
     var java = '';
-    //java += 'function printme(e){'
-    //java += 'document.getElementById("sp_print").style.display="none";window.print();window.close(); } ';
+    java += 'function print_receipt(){'
+    java += 'window.print();window.close();}';
 
     mywindow.document.write('<script>');
     mywindow.document.write(java);
@@ -258,8 +283,13 @@ function PrintElem(html) {
     //mywindow.document.write('<span id="sp_print" onclick="printme(this)" style="cursor:pointer;position:fixed;top:10px;right:10px;border-radius: 30px;background-color: #908d8d;color: white;padding: 5px;width: 60px;text-align: center;box-shadow: 1px 1px 1px rgb(0 0 0 / 32%), inset 1px 1px 1px rgb(255 255 255 / 44%);">Print</span>');
     mywindow.document.write(innerhtml);
     mywindow.document.write('</div>');
+    mywindow.document.write('<div  style="text-align:center;width:8cm;"><img onload="print_receipt()" src="' + imgdata + '" style="height:80px;" /></div>');
+    
     mywindow.document.write('</body></html>');
 
+ 
+ 
+    
     //mywindow.document.close(); // necessary for IE >= 10
     //mywindow.focus(); // necessary for IE >= 10*/
 
@@ -270,6 +300,8 @@ function PrintElem(html) {
 }
 
 function create_receipt(objBetting) {
+    var username = $("#txt_username").val();
+
     var html = "";
     html += '<div style="font-size:xx-large;">';
     html += "<img src='images/CamLotto.png' style='width:100px;'>";
@@ -277,8 +309,12 @@ function create_receipt(objBetting) {
     html += "</div>";
     html += "<div>ឆ្នោតទី:" + objBetting.gameID + "</div>";
     html += "<div>ម៉ោងចាក់ឆ្នោត:" + objBetting.createdDate + "</div>";
-    html += $("#div_printdetail").html();
+    
 
+    html += $("#div_printdetail").html();
+    html += "<div style='padding:5px;border-bottom: solid 1px gray;'></div>";
+
+    html += "<div>Printed by:" + username + "</div>";
     return html;
 }
 function cancelprint() {
@@ -644,6 +680,7 @@ function addrange(stringrange) {
         listnumber.push(i);
         string_number += i;
     }
+    listnumber = unique(listnumber);
     load_numberlist(listnumber);
     $("#hdinput_number").val(string_number);
     $("#spanConnect").removeClass("slot-active");

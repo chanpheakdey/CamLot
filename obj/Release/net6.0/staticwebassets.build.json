@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "0BJPUywlw4USt/OSFquPqyciSSQxChUDjXS+aepwnKo=",
+  "Hash": "HfI50Oeq7yFifZ4g+5iPXBrGfMyKbhndytO4Pn5E1Pw=",
   "Source": "SignalR",
   "BasePath": "_content/SignalR",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "SignalR\\wwwroot",
       "Source": "SignalR",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\obj\\Release\\net6.0\\scopedcss\\bundle\\SignalR.styles.css",
+      "Identity": "D:\\ACE\\CamLOT\\obj\\Release\\net6.0\\scopedcss\\bundle\\SignalR.styles.css",
       "SourceId": "SignalR",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\obj\\Release\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\obj\\Release\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "SignalR.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\ACE\\SignalR\\SignalR\\obj\\Release\\net6.0\\scopedcss\\bundle\\SignalR.styles.css"
+      "OriginalItemSpec": "D:\\ACE\\CamLOT\\obj\\Release\\net6.0\\scopedcss\\bundle\\SignalR.styles.css"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\SignalR.bundle.scp.css",
+      "Identity": "D:\\ACE\\CamLOT\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\SignalR.bundle.scp.css",
       "SourceId": "SignalR",
       "SourceType": "Computed",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "SignalR.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "D:\\ACE\\SignalR\\SignalR\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\SignalR.bundle.scp.css"
+      "OriginalItemSpec": "D:\\ACE\\CamLOT\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\SignalR.bundle.scp.css"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\css\\betting.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\css\\betting.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "css/betting.css",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\css\\betting.css"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\css\\changeful.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\css\\changeful.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "css/changeful.css",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\css\\changeful.css"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\css\\changeless.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\css\\changeless.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "css/changeless.css",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\css\\changeless.css"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\css\\mycss.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\css\\mycss.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "css/mycss.css",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\css\\mycss.css"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\css\\site.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\css\\site.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\favicon.ico",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\favicon.ico",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\images\\CamLotto.png",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\images\\CamLotto.png",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "images/CamLotto.png",
       "AssetKind": "All",
@@ -170,10 +170,27 @@
       "OriginalItemSpec": "wwwroot\\images\\CamLotto.png"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\js\\betting.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\images\\waiting.gif",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
+      "BasePath": "_content/SignalR",
+      "RelativePath": "images/waiting.gif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\waiting.gif"
+    },
+    {
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\betting.js",
+      "SourceId": "SignalR",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/betting.js",
       "AssetKind": "All",
@@ -187,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\js\\betting.js"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\js\\chat.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\chat.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/chat.js",
       "AssetKind": "All",
@@ -204,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\js\\chat.js"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\js\\client_timer.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\client_timer.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/client_timer.js",
       "AssetKind": "All",
@@ -221,10 +238,112 @@
       "OriginalItemSpec": "wwwroot\\js\\client_timer.js"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\js\\signalr\\dist\\browser\\signalr.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\jquery.qrcode.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
+      "BasePath": "_content/SignalR",
+      "RelativePath": "js/jquery.qrcode.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\jquery.qrcode.js"
+    },
+    {
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\jquery.qrcode.js.download",
+      "SourceId": "SignalR",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
+      "BasePath": "_content/SignalR",
+      "RelativePath": "js/jquery.qrcode.js.download",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\jquery.qrcode.js.download"
+    },
+    {
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\jquery-1.11.0.min.js",
+      "SourceId": "SignalR",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
+      "BasePath": "_content/SignalR",
+      "RelativePath": "js/jquery-1.11.0.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\jquery-1.11.0.min.js"
+    },
+    {
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\qrcode.js",
+      "SourceId": "SignalR",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
+      "BasePath": "_content/SignalR",
+      "RelativePath": "js/qrcode.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\qrcode.js"
+    },
+    {
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\qrcode.js.download",
+      "SourceId": "SignalR",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
+      "BasePath": "_content/SignalR",
+      "RelativePath": "js/qrcode.js.download",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\qrcode.js.download"
+    },
+    {
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\scripts.js",
+      "SourceId": "SignalR",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
+      "BasePath": "_content/SignalR",
+      "RelativePath": "js/scripts.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\scripts.js"
+    },
+    {
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\signalr\\dist\\browser\\signalr.js",
+      "SourceId": "SignalR",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/signalr/dist/browser/signalr.js",
       "AssetKind": "All",
@@ -238,10 +357,10 @@
       "OriginalItemSpec": "wwwroot\\js\\signalr\\dist\\browser\\signalr.js"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\js\\signalr\\dist\\browser\\signalr.min.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\signalr\\dist\\browser\\signalr.min.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/signalr/dist/browser/signalr.min.js",
       "AssetKind": "All",
@@ -255,10 +374,10 @@
       "OriginalItemSpec": "wwwroot\\js\\signalr\\dist\\browser\\signalr.min.js"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\js\\site.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\site.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -272,10 +391,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\js\\timer.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\timer.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/timer.js",
       "AssetKind": "All",
@@ -289,10 +408,10 @@
       "OriginalItemSpec": "wwwroot\\js\\timer.js"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -306,10 +425,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -323,10 +442,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -340,10 +459,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -357,10 +476,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -374,10 +493,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -391,10 +510,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -408,10 +527,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -425,10 +544,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -442,10 +561,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -459,10 +578,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -476,10 +595,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -493,10 +612,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -510,10 +629,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -527,10 +646,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -544,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -561,10 +680,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -578,10 +697,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -595,10 +714,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -612,10 +731,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -629,10 +748,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -646,10 +765,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -663,10 +782,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -680,10 +799,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -697,10 +816,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -714,10 +833,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -731,10 +850,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -748,10 +867,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -765,10 +884,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -782,10 +901,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -799,10 +918,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -816,10 +935,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -833,10 +952,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -850,10 +969,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -867,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -884,10 +1003,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -901,10 +1020,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -918,10 +1037,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -935,10 +1054,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -952,10 +1071,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -969,10 +1088,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -986,10 +1105,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -1003,10 +1122,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -1020,10 +1139,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -1037,10 +1156,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -1054,10 +1173,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -1071,10 +1190,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -1088,10 +1207,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -1105,10 +1224,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -1122,10 +1241,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -1139,10 +1258,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -1156,10 +1275,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -1173,10 +1292,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -1190,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -1207,10 +1326,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -1224,10 +1343,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -1241,10 +1360,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\ACE\\SignalR\\SignalR\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",

@@ -4,11 +4,12 @@ var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
 
 
 connection.on("ReceiveMessage", function (Eventmessage) {
-  
+    
     if (Eventmessage.subject == "start new game") {
+        $("#div_printpopup").hide();
         var objgame = JSON.parse(Eventmessage.message);
         var gameinfo = ""
-        gameinfo += '<span class="font-style-2">' + objgame.createddate.substr(8, 2) + '/' +objgame.createddate.substr(5, 2) + '/' + objgame.createddate.substr(0, 4) + '</span>';
+        gameinfo += '<span class="font-style-2">' + objgame.createddate.substr(8, 2) + '/' + objgame.createddate.substr(5, 2) + '/' + objgame.createddate.substr(0, 4) + '</span>';
         gameinfo += '<span class="font-style-2">#' + objgame.gameid + '&nbsp;' + objgame.createddate.substr(11, 8) + '</span>';
 
         $("#div_gameinfo").html(gameinfo);
@@ -21,8 +22,8 @@ connection.on("ReceiveMessage", function (Eventmessage) {
         countdown(objgame.timeremaining, objgame.gameid);
     }
     else if (Eventmessage.subject == "start result") {
-            var objresult = JSON.parse(Eventmessage.message);
-                var resultinfo = ""
+        var objresult = JSON.parse(Eventmessage.message);
+        var resultinfo = ""
         resultinfo += '<span class="font-style-2">' + objresult.ResultDate.substr(8, 2) + '/' + objresult.ResultDate.substr(5, 2) + '/' + objresult.ResultDate.substr(0, 4) + '</span>';
         resultinfo += '<span class="font-style-2">#' + objresult.GameID + '&nbsp;' + objresult.ResultDate.substr(11, 8) + '</span>';
 
@@ -50,6 +51,8 @@ connection.on("ReceiveMessage", function (Eventmessage) {
 
     } else if (Eventmessage.subject == "end game") {
 
+    } else {
+
     }
   
 
@@ -60,6 +63,10 @@ connection.on("ReceiveMessage", function (Eventmessage) {
 
 connection.start().then(function () {
 
+    $("#div_printpopup").show();
+
+    clear_result();
+    loadnumbers();
 
 
     console.log("hub connected");
@@ -123,7 +130,7 @@ function countdown(timeremaining,gameid) {
 
     var seconds = timeremaining - totalminute * 60;
 
-    if (seconds <= 0) {
+    if (seconds < 0) {
         $("#div_timer").html("Time up!");
 
     } else {

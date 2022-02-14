@@ -245,6 +245,55 @@ namespace GameAPI.App_Code
             }
         }
 
+        public List<string> getLatestResult()
+        {
+
+            try
+            {
+                List<string> list = new List<string>();
+                ClResult clResult = new ClResult();
+                DataSet ds = new DataSet();
+                using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
+                {
+
+
+                    using (SqlCommand command = new SqlCommand("Sp_LatestResult", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                       
+
+
+                        using (SqlDataAdapter da = new SqlDataAdapter(command))
+                        {
+                            da.Fill(ds);
+                        }
+
+                        for (int i = ds.Tables[0].Rows.Count-1; i >= 0; i--)
+                        {
+                            clResult.GameID = (int)ds.Tables[0].Rows[i]["GameID"];
+                            clResult.ResultDate = (String)ds.Tables[0].Rows[i]["CreatedDate"];
+                            clResult.Result1 = (int)ds.Tables[0].Rows[i]["R1"];
+                            clResult.Result2 = (int)ds.Tables[0].Rows[i]["R2"];
+                            clResult.Result3 = (int)ds.Tables[0].Rows[i]["R3"];
+                            clResult.Result4 = (int)ds.Tables[0].Rows[i]["R4"];
+                            clResult.Result5 = (int)ds.Tables[0].Rows[i]["R5"];
+                            string jsonString = JsonSerializer.Serialize(clResult);
+                            list.Add(jsonString);
+
+                        }
+
+                    }
+                }
+
+                return list;
+
+            }
+            catch (SqlException ex)
+            {
+                return null;
+            }
+        }
 
         public string EndGame(int gameid)
         {
