@@ -63,7 +63,7 @@ connection.on("ReceiveMessage", function (Eventmessage) {
 
 connection.start().then(function () {
 
-    $("#div_printpopup").show();
+    $("#div_printpopup").hide();
     console.log("hub connected");
     clear_result();
     loadnumbers();
@@ -96,7 +96,17 @@ function get_latestresult() {
         success: function (data) {
             console.log(data);
             show_latest_result(data)
-            
+
+            console.log(data[0]);
+            var objgame = JSON.parse(data[0]);
+            console.log("GameDate:")
+            console.log(objgame.GameDate)
+            var gameinfo = ""
+            gameinfo += '<span class="font-style-2">' + objgame.GameDate.substr(8, 2) + '/' + objgame.GameDate.substr(5, 2) + '/' + objgame.GameDate.substr(0, 4) + '</span>';
+            gameinfo += '<span class="font-style-2">#' + objgame.LastGameID + '&nbsp;' + objgame.GameDate.substr(11, 8) + '</span>';
+
+            $("#div_gameinfo").html(gameinfo);
+            $("#div_resultinfo").html("");
         },
         error: function (result) {
             console.log(result);

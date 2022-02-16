@@ -272,6 +272,8 @@ namespace GameAPI.App_Code
                         for (int i = ds.Tables[0].Rows.Count-1; i >= 0; i--)
                         {
                             clResult.GameID = (int)ds.Tables[0].Rows[i]["GameID"];
+                            clResult.LastGameID = (int)ds.Tables[0].Rows[i]["LastGameID"];
+                            clResult.GameDate = (String)ds.Tables[0].Rows[i]["GameDate"];
                             clResult.ResultDate = (String)ds.Tables[0].Rows[i]["CreatedDate"];
                             clResult.Result1 = (int)ds.Tables[0].Rows[i]["R1"];
                             clResult.Result2 = (int)ds.Tables[0].Rows[i]["R2"];

@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Pages\logo.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="Classes\qrcode.cs" />
   </ItemGroup>
 <ItemGroup>
@@ -19,5 +23,14 @@
   <Reference Include="QRCoder">
     <HintPath>bin\Debug\net6.0\QRCoder.dll</HintPath>
   </Reference>
+</ItemGroup>
+<ItemGroup>
+  <UpToDateCheckInput Remove="Pages\logo.cshtml" />
+</ItemGroup>
+<ItemGroup>
+  <_ContentIncludedByDefault Remove="Pages\logo.cshtml" />
+</ItemGroup>
+<ItemGroup>
+  <None Include="Pages\logo.cshtml" />
 </ItemGroup>
 </Project>

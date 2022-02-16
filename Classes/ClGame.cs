@@ -6,7 +6,7 @@
         public int timespent { get; set; }
         public int timeremaining { get; set; }
 
-        public string createddate { get; set; }
+        public string ?createddate { get; set; }
 
     }
 
@@ -14,7 +14,9 @@
     {
         public int ResultID { get; set; }
         public int GameID { get; set; }
-        public String ResultDate { get; set; }
+        public int LastGameID { get; set; }
+        public String ?GameDate { get; set; }
+        public String ?ResultDate { get; set; }
 
         public int Result1 { get; set; }
         public int Result2 { get; set; }
