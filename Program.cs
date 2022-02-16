@@ -25,6 +25,9 @@ builder.Services.AddCors(options =>
                       });
 });
 
+builder.Services.AddAntiforgery(o => o.HeaderName = "XSRF-TOKEN");
+builder.Services.AddControllersWithViews();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -67,6 +70,13 @@ app.MapPost("api/LatestResult", () =>
 {
     DalGlobal dalGlobal = new DalGlobal();
     return dalGlobal.getLatestResult();
+
+});
+
+app.MapPost("api/UploadImage", (IFormFile file) =>
+{
+    DalGlobal dalGlobal = new DalGlobal();
+    //return dalGlobal.UploadFile(file);
 
 });
 app.Run();

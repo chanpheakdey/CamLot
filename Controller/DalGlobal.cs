@@ -6,6 +6,8 @@ using System.Text.Json.Serialization;
 using System.Drawing;
 using QRCoder;
 using System.IO;
+using Microsoft.AspNetCore.Mvc;
+
 namespace GameAPI.App_Code
 {
     public sealed class DalGlobal
@@ -357,6 +359,25 @@ namespace GameAPI.App_Code
                 // PlaceHolder1.Controls.Add(imgBarCode);
             }
 
+        }
+
+
+
+        public IActionResult? UploadFile(IFormFile file)
+        {
+            List<string> errors = new List<string>(); // added this just to return something
+
+            if (file != null)
+            {
+                // do something
+                return null;
+            }
+            else
+            {
+                return null;
+            }
+
+            
         }
 
 

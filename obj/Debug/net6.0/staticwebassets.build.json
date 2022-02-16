@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mhraSzNvtNulUPTKDfTaK3gjL20p5C5XzraFdDrKiZQ=",
+  "Hash": "izJN6WWIxD421gRRMIQO9kQHH0TNobojsFfgNKk9smI=",
   "Source": "SignalR",
   "BasePath": "_content/SignalR",
   "Mode": "Default",
@@ -187,6 +187,23 @@
       "OriginalItemSpec": "wwwroot\\images\\waiting.gif"
     },
     {
+      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\ACECertificate.js",
+      "SourceId": "SignalR",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "BasePath": "_content/SignalR",
+      "RelativePath": "js/ACECertificate.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\ACECertificate.js"
+    },
+    {
       "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\betting.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
@@ -238,6 +255,40 @@
       "OriginalItemSpec": "wwwroot\\js\\client_timer.js"
     },
     {
+      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\dom-to-image.js",
+      "SourceId": "SignalR",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "BasePath": "_content/SignalR",
+      "RelativePath": "js/dom-to-image.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\dom-to-image.js"
+    },
+    {
+      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\jquery.min-2.1.3.js",
+      "SourceId": "SignalR",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "BasePath": "_content/SignalR",
+      "RelativePath": "js/jquery.min-2.1.3.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\jquery.min-2.1.3.js"
+    },
+    {
       "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\jquery.qrcode.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
@@ -287,6 +338,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\jquery-1.11.0.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\jspdf.min.js",
+      "SourceId": "SignalR",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "BasePath": "_content/SignalR",
+      "RelativePath": "js/jspdf.min.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\jspdf.min.js"
     },
     {
       "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\qrcode.js",
