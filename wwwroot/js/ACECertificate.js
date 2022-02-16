@@ -136,45 +136,50 @@ function svgString2Image(svgString, width, height, format, callback) {
 
 function saveasimage() {
     var node = document.getElementById('div_png_certificate');
-    //domtoimage.toBlob(node)
-    //    .then(function (blob) {
-    //        var objectURL = URL.createObjectURL(blob);
+    domtoimage.toBlob(node)
+        .then(function (blob) {
+            var objectURL = URL.createObjectURL(blob);
             
-    //        $("#imgfile").prop("src", objectURL);
-    //        console.log(blob);
-    //        //save_blob(blob)
-    //    });
+            var a = document.createElement("a"); //Create <a>
+            a.href = objectURL; //Image Base64 Goes here
+            a.download = "Image.png"; //File name Here
+            a.click(); //Downloaded file
 
-    domtoimage.toJpeg(node, { quality: 1.00 })
-        .then(function (dataUrl) {
-            //save_image(dataUrl, "abc.jpg");
-            //save_blob("13", dataUrl);
+
+            console.log(blob);
+            //save_blob(blob)
+        });
+
+    //domtoimage.toJpeg(node, { quality: 1.00 })
+    //    .then(function (dataUrl) {
+    //        //save_image(dataUrl, "abc.jpg");
+    //        //save_blob("13", dataUrl);
            
      
-            var base64ImageContent = dataUrl.replace(/^data:image\/(png|jpg|jpeg);base64,/, "");
-            $("#imgfile").prop("src", 'data:image/png;base64,' + base64ImageContent)
+    //        var base64ImageContent = dataUrl.replace(/^data:image\/(png|jpg|jpeg);base64,/, "");
+    //        $("#imgfile").prop("src", 'data:image/png;base64,' + base64ImageContent)
             
 
-                //var blob = createBlob(base64ImageContent);
-                var currentdate = new Date();
-                var datetime = currentdate.getDate() + ""
-                    + (currentdate.getMonth() + 1) + ""
-                    + currentdate.getFullYear() + ""
-                    + currentdate.getHours() + ""
-                    + currentdate.getMinutes() + ""
-                    + currentdate.getSeconds();
-                //save_blob(blob, ReferenceID + "_" + datetime + ".jpg")
+    //            //var blob = createBlob(base64ImageContent);
+    //            var currentdate = new Date();
+    //            var datetime = currentdate.getDate() + ""
+    //                + (currentdate.getMonth() + 1) + ""
+    //                + currentdate.getFullYear() + ""
+    //                + currentdate.getHours() + ""
+    //                + currentdate.getMinutes() + ""
+    //                + currentdate.getSeconds();
+    //            //save_blob(blob, ReferenceID + "_" + datetime + ".jpg")
            
 
 
-            //var link = document.createElement('a');
+    //        //var link = document.createElement('a');
 
-            //link.download = '0013.jpeg';
-            //link.href = dataUrl;
+    //        //link.download = '0013.jpeg';
+    //        //link.href = dataUrl;
 
-        }
+    //    }
 
-    );
+    //);
 
 }
 
