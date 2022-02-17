@@ -135,20 +135,44 @@ function svgString2Image(svgString, width, height, format, callback) {
 
 
 function saveasimage() {
-    var node = document.getElementById('div_png_certificate');
-    domtoimage.toBlob(node)
-        .then(function (blob) {
-            var objectURL = URL.createObjectURL(blob);
+    //var node = document.getElementById('div_png_certificate');
+    //domtoimage.toBlob(node)
+    //    .then(function (blob) {
+    //        var objectURL = URL.createObjectURL(blob);
             
-            var a = document.createElement("a"); //Create <a>
-            a.href = objectURL; //Image Base64 Goes here
-            a.download = "Image.png"; //File name Here
-            a.click(); //Downloaded file
+    //        var a = document.createElement("a"); //Create <a>
+    //        a.href = objectURL; //Image Base64 Goes here
+    //        a.download = "Image.png"; //File name Here
+    //        a.click(); //Downloaded file
 
 
-            console.log(blob);
-            //save_blob(blob)
-        });
+    //        console.log(blob);
+    //        //save_blob(blob)
+    //    });
+
+
+                    var currentdate = new Date();
+                var datetime = currentdate.getDate() + ""
+                    + (currentdate.getMonth() + 1) + ""
+                    + currentdate.getFullYear() + ""
+                    + currentdate.getHours() + ""
+                    + currentdate.getMinutes() + ""
+        + currentdate.getSeconds();
+
+    var filename = $("#txtfilename").val();
+    var icon_html = $("#txticon").val();
+    $("#div_icon").html(icon_html);
+
+    domtoimage.toPng(document.getElementById('div_png_certificate'))
+        .then((dataUrl) => {
+            var link = document.createElement('a')
+            link.download = filename + '_' + datetime + '.jpg'
+            link.href = dataUrl
+            link.click()
+            this.clearBasket()
+        })
+
+
 
     //domtoimage.toJpeg(node, { quality: 1.00 })
     //    .then(function (dataUrl) {
