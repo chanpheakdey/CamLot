@@ -79,6 +79,13 @@ app.MapPost("api/UploadImage", (IFormFile file) =>
     //return dalGlobal.UploadFile(file);
 
 });
+
+app.MapPost("api/getbettingresult", (ClBettingResult clbetting) =>
+{
+    DalGlobal dalGlobal = new DalGlobal();
+    return dalGlobal.GetBettingResult(clbetting);
+
+});
 app.Run();
 
 

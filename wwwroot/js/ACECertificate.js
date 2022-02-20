@@ -135,6 +135,9 @@ function svgString2Image(svgString, width, height, format, callback) {
 
 
 function saveasimage() {
+
+    
+
     //var node = document.getElementById('div_png_certificate');
     //domtoimage.toBlob(node)
     //    .then(function (blob) {
@@ -160,7 +163,9 @@ function saveasimage() {
         + currentdate.getSeconds();
 
     var filename = $("#txtfilename").val();
-    var icon_html = $("#txticon").val();
+    //var icon_html = $("#txticon").val();
+    var icon_html = geticonsashtml();
+    console.log(icon_html);
     $("#div_icon").html(icon_html);
 
     domtoimage.toPng(document.getElementById('div_png_certificate'))
@@ -204,6 +209,30 @@ function saveasimage() {
     //    }
 
     //);
+
+}
+
+
+function geticonsashtml() {
+    
+    var icon_html = $("#txticon").val();
+    console.log("start create div");
+
+    var htmldiv = $("<div>", { id: "divhtml", "class": "" });
+    $(htmldiv).html(icon_html);
+    console.log("create div");
+
+    var newhtml = "";
+    $(htmldiv).find(".wrap-icon").each(function () {
+        $(this).find(".icon").each(function () {
+            console.log($(this).html());
+            newhtml += $(this).html();
+        })
+        
+        
+    });
+    //console.log(newhtml);
+    return newhtml;
 
 }
 

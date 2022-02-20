@@ -1,0 +1,41 @@
+﻿@page
+@model ScanResultModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<white-spacequery.min-2.1.3.js"></script>
+
+
+<script src="js/scanresult.js"></script>
+<link href="~/css/betting.css" rel="stylesheet" />
+<link href="~/css/mycss.css" rel="stylesheet" />
+
+<style>
+    .receipt{
+        padding:5px;
+       background-color:white;
+    }
+    
+</style>
+<div class="div-container">  
+    <div class="login" id="div_login">
+             <div style="font-size:xx-large;display:none;">
+            <img src='images/CamLotto.png' style='width:150px;'>
+            <span class="logo-title" ><span style="color:black;">CAM</span><span style="color:#c67819"> LOTTO</span> <br></span>
+            </div>
+            <div class="div-user">
+            <div class="div-username">Receipt Code:</div> <input type="text" class="div-input-text" id="txt_code" />
+            </div>
+           
+            <div class="div-button-login">
+                <input type="button" class="button-print" value="Show Result" onclick="scanresult()" />
+            </div>
+
+            <div id="div_result" class="receipt">
+
+            </div>
+        </div>
+
+</div>

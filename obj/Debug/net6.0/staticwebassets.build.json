@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "izJN6WWIxD421gRRMIQO9kQHH0TNobojsFfgNKk9smI=",
+  "Hash": "umPblICe9J01eJNIqGARoHOv22HyRYgDZcW1xnujK1c=",
   "Source": "SignalR",
   "BasePath": "_content/SignalR",
   "Mode": "Default",
@@ -117,6 +117,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\mycss.css"
+    },
+    {
+      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\css\\server.css",
+      "SourceId": "SignalR",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "BasePath": "_content/SignalR",
+      "RelativePath": "css/server.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\server.css"
     },
     {
       "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\css\\site.css",
@@ -389,6 +406,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\qrcode.js.download"
+    },
+    {
+      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\scanresult.js",
+      "SourceId": "SignalR",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "BasePath": "_content/SignalR",
+      "RelativePath": "js/scanresult.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\scanresult.js"
     },
     {
       "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\scripts.js",
