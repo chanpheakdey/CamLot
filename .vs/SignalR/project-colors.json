@@ -5,7 +5,12 @@
       "ProjectGuid": "828a4c4b-6e2b-48ad-803d-a65bdbcf73f4",
       "DisplayName": "SignalR",
       "ColorIndex": 0
+    },
+    "919fd655-f067-4ba2-b932-d926e85dd6b4": {
+      "ProjectGuid": "919fd655-f067-4ba2-b932-d926e85dd6b4",
+      "DisplayName": "Script Documents",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }
