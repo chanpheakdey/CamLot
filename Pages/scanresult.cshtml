@@ -5,7 +5,7 @@
 }
 
 
-<white-spacequery.min-2.1.3.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 
 
 <script src="js/scanresult.js"></script>
@@ -16,6 +16,10 @@
     .receipt{
         padding:5px;
        background-color:white;
+    }
+    .tbl-result tr td{
+        width:40px;
+        text-align:center;
     }
     
 </style>
@@ -29,11 +33,9 @@
             <div class="div-username">Receipt Code:</div> <input type="text" class="div-input-text" id="txt_code" />
             </div>
            
-            <div class="div-button-login">
-                <input type="button" class="button-print" value="Show Result" onclick="scanresult()" />
-            </div>
+            
 
-            <div id="div_result" class="receipt">
+            <div id="div_result" class="receipt" style="display:none;">
 
             </div>
         </div>

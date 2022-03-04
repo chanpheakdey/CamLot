@@ -226,16 +226,16 @@ namespace GameAPI.App_Code
                         clBetting_result.WinAmountD = (double)ds.Tables[0].Rows[0]["WinAmountD"];
                         clBetting_result.WinAmountE = (double)ds.Tables[0].Rows[0]["WinAmountE"];
 
-                        clBettingResult.ResultSlotA = (int)ds.Tables[0].Rows[0]["SlotA"];
-                        clBettingResult.ResultSlotB = (int)ds.Tables[0].Rows[0]["SlotB"];
-                        clBettingResult.ResultSlotC = (int)ds.Tables[0].Rows[0]["SlotC"];
-                        clBettingResult.ResultSlotD = (int)ds.Tables[0].Rows[0]["SlotD"];
-                        clBettingResult.ResultSlotE = (int)ds.Tables[0].Rows[0]["SlotE"];
+                        clBetting_result.ResultSlotA = (int)ds.Tables[0].Rows[0]["SlotA"];
+                        clBetting_result.ResultSlotB = (int)ds.Tables[0].Rows[0]["SlotB"];
+                        clBetting_result.ResultSlotC = (int)ds.Tables[0].Rows[0]["SlotC"];
+                        clBetting_result.ResultSlotD = (int)ds.Tables[0].Rows[0]["SlotD"];
+                        clBetting_result.ResultSlotE = (int)ds.Tables[0].Rows[0]["SlotE"];
 
-                        clBettingResult.Win = (bool)ds.Tables[0].Rows[0]["Win"];
-                        clBettingResult.Withdrawal = (bool)ds.Tables[0].Rows[0]["Withdrawal"];
-                        clBettingResult.WithdrawalDate = (string)ds.Tables[0].Rows[0]["WithdrawalDate"];
-                        clBettingResult.WithdrawalBy = (string)ds.Tables[0].Rows[0]["WithdrawalBy"];
+                        clBetting_result.Win = (bool)ds.Tables[0].Rows[0]["Win"];
+                        clBetting_result.Withdrawal = (bool)ds.Tables[0].Rows[0]["Withdrawal"];
+                        clBetting_result.WithdrawalDate = (string)ds.Tables[0].Rows[0]["WithdrawalDate"];
+                        clBetting_result.WithdrawalBy = (string)ds.Tables[0].Rows[0]["WithdrawalBy"];
 
                         return clBetting_result;
 
@@ -246,6 +246,44 @@ namespace GameAPI.App_Code
             {
                 clBetting_result.BettingID = -1;
                 return clBetting_result;
+            }
+        }
+
+
+        public string Withdraw(ClBettingResult clBettingResult)
+        {
+
+            ClBettingResult clBetting_result = new ClBettingResult();
+            try
+            {
+                DataSet ds = new DataSet();
+                using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
+                {
+
+
+                    using (SqlCommand command = new SqlCommand("Sp_Withdraw", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        SqlParameter sqlParameter1 = command.Parameters.Add("@BettingID", SqlDbType.Int);
+                        sqlParameter1.Value = clBettingResult.BettingID;
+
+                        SqlParameter sqlParameter2 = command.Parameters.Add("@Username", SqlDbType.VarChar);
+                        sqlParameter2.Value = clBettingResult.CreatedBy;
+
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                        connection.Close();
+  
+
+                        return "success";
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                return "error";
             }
         }
 
@@ -450,6 +488,45 @@ namespace GameAPI.App_Code
             }
 
             
+        }
+
+
+
+        public string WithdrawUrl(ClUser cluser)
+        {
+
+            ClUser clUser_result = new ClUser();
+            try
+            {
+                DataSet ds = new DataSet();
+                using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
+                {
+
+
+                    using (SqlCommand command = new SqlCommand("Sp_WithdrawUrl", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+
+                        SqlParameter sqlParameter3 = command.Parameters.Add("@Username", SqlDbType.VarChar);
+                        sqlParameter3.Value = cluser.UserName;
+            
+
+
+                        using (SqlDataAdapter da = new SqlDataAdapter(command))
+                        {
+                            da.Fill(ds);
+
+                        }
+                        return (string)ds.Tables[0].Rows[0]["WithdrawUrl"];
+                        
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                return "";
+            }
         }
 
 

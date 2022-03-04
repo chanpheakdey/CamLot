@@ -75,6 +75,28 @@ function qrcode_img_base64(qrcode,html) {
     });
 }
 
+function getwithdrawurl(username) {
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "POST",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/WithdrawUrl",
+        data: '{"Username":"' + username + '"}',
+        success: function (data) {
+            var withdrawurl = data.d;
+            return withdrawurl;
+
+
+        },
+        error: function (result) {
+            console.log(result);
+            return "error";
+        }
+    });
+}
+
 function login() {
     var username = $("#txt_username").val();
     var password = $("#txt_password").val();
@@ -100,9 +122,15 @@ function login() {
                         alert("invalid username or password!");
                     } else {
                         console.log("PlaceID:" + dataobj.placeID);
-                        $("#hd_placeid").val(dataobj.placeID);
-                        $("#div_calculator").show();
-                        $("#div_login").hide();
+                        if ($("#chkbetting").is(":checked")) {
+                            // do something
+                            $("#hd_placeid").val(dataobj.placeID);
+                            $("#div_calculator").show();
+                            $("#div_login").hide();
+                        } else if ($("#chkwithdraw").is(":checked")) {
+                            window.location = "";
+                        }
+                       
                         
                     }
                 }
