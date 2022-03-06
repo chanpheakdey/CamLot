@@ -530,5 +530,41 @@ namespace GameAPI.App_Code
         }
 
 
+        public bool CheckToken(ClToken clToken)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
+                {
+
+
+                    using (SqlCommand command = new SqlCommand("Sp_CheckTokenID", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+
+                        SqlParameter sqlParameter3 = command.Parameters.Add("@TokenID", SqlDbType.VarChar);
+                        sqlParameter3.Value = clToken.TokenID;
+
+
+
+                        using (SqlDataAdapter da = new SqlDataAdapter(command))
+                        {
+                            da.Fill(ds);
+
+                        }
+                        return (bool)ds.Tables[0].Rows[0]["TokenExpired"];
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                return true;
+            }
+
+        }
+
     }
 }

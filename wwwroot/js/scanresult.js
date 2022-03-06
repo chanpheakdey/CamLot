@@ -3,6 +3,8 @@
         if (e.keyCode == 13)
             scanresult();
     });
+
+    checktoken();
 });
 
 function getUrlVars() {
@@ -15,6 +17,8 @@ function getUrlVars() {
     }
     return vars;
 }
+
+
 
 
 function scanresult() {
@@ -318,4 +322,33 @@ function PrintElem(html) {
     //mywindow.close();
 
     return true;
+}
+
+
+
+function checktoken() {
+    var token = getUrlVars()["token"];
+
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "POST",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/CheckToken",
+        data: '{"TokenID":"' + token + '"}',
+        success: function (data) {
+            
+            if (data == true) {
+                
+                window.location = "index";
+            } 
+        },
+        error: function (result) {
+            console.log(result);
+            //$('#loading').hide();
+        }
+    });
+
+
 }

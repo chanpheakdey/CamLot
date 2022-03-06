@@ -100,6 +100,13 @@ app.MapPost("api/WithdrawUrl", (ClUser clUser) =>
     return dalGlobal.WithdrawUrl(clUser);
 
 });
+
+app.MapPost("api/CheckToken", (ClToken clToken) =>
+{
+    DalGlobal dalGlobal = new DalGlobal();
+    return dalGlobal.CheckToken(clToken);
+
+});
 app.Run();
 
 
