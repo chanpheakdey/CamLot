@@ -76,6 +76,7 @@ function qrcode_img_base64(qrcode,html) {
 }
 
 function getwithdrawurl(username) {
+    var returnurl = "";
     $.ajax({
         //cache: false,
         async: false,
@@ -85,16 +86,18 @@ function getwithdrawurl(username) {
         url: "api/WithdrawUrl",
         data: '{"Username":"' + username + '"}',
         success: function (data) {
-            var withdrawurl = data.d;
-            return withdrawurl;
+           
+            returnurl = data;
+           
 
 
         },
         error: function (result) {
             console.log(result);
-            return "error";
+            
         }
     });
+    return returnurl;
 }
 
 function login() {
@@ -128,7 +131,9 @@ function login() {
                             $("#div_calculator").show();
                             $("#div_login").hide();
                         } else if ($("#chkwithdraw").is(":checked")) {
-                            window.location = "";
+                            var withdrawurl = getwithdrawurl(username);
+                            console.log("withdrawurl:" + withdrawurl);
+                            window.location = withdrawurl;
                         }
                        
                         
