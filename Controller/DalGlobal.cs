@@ -12,7 +12,87 @@ namespace GameAPI.App_Code
 {
     public sealed class DalGlobal
     {
+        public async Task<string> getToken(string Username)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                await using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
+                {
 
+
+                    using (SqlCommand command = new SqlCommand("Sp_GenerateToken", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        SqlParameter sqlParameter1 = command.Parameters.Add("@Username", SqlDbType.VarChar);
+                        sqlParameter1.Value = Username;
+
+                        using (SqlDataAdapter da = new SqlDataAdapter(command))
+                        {
+                            da.Fill(ds);
+
+                        }
+
+                        string token = (string)ds.Tables[0].Rows[0]["TokenID"];
+
+
+
+
+                        return token;
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                return ex.ToString();
+            }
+
+
+        }
+
+        public async Task<string> getReport(Object? StartDate, Object? EndDate)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                await using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
+                {
+
+
+                    using (SqlCommand command = new SqlCommand("Sp_Report1", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        SqlParameter sqlParameter1 = command.Parameters.Add("@StartDate", SqlDbType.Date);
+                        sqlParameter1.Value = StartDate.ToString();
+                        SqlParameter sqlParameter2 = command.Parameters.Add("@EndDate", SqlDbType.Date);
+                        sqlParameter2.Value = EndDate.ToString();
+
+                        using (SqlDataAdapter da = new SqlDataAdapter(command))
+                        {
+                            da.Fill(ds);
+
+                        }
+
+                        string report_html = (string)ds.Tables[0].Rows[0]["ReportHtml"];
+                        
+
+                       
+
+                        return report_html;
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                return ex.ToString();
+            }
+
+           
+        }
 
         public DataSet getDataFromTable(string TableName, string DisplayFields, string SortField, string Condition, string SortOrder)
         {
@@ -105,6 +185,10 @@ namespace GameAPI.App_Code
                         }
                         clUser_result.UserID = (int)ds.Tables[0].Rows[0]["UserID"];
                         clUser_result.PlaceID = (int)ds.Tables[0].Rows[0]["PlaceID"];
+                        clUser_result.Betting = (bool)ds.Tables[0].Rows[0]["Betting"];
+                        clUser_result.Withdrawal = (bool)ds.Tables[0].Rows[0]["Withdrawal"];
+                        clUser_result.Report = (bool)ds.Tables[0].Rows[0]["Report"];
+
                         return clUser_result;
 
                     }

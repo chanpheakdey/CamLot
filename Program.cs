@@ -107,6 +107,60 @@ app.MapPost("api/CheckToken", (ClToken clToken) =>
     return dalGlobal.CheckToken(clToken);
 
 });
+
+
+app.MapGet("api/getReport/{startdate}/{enddate}", async (http) =>
+{
+    object ?startdate;
+    if (!http.Request.RouteValues.TryGetValue("startdate", out startdate))
+    {
+        http.Response.StatusCode = 400;
+        return;
+    }
+    object? enddate;
+    if (!http.Request.RouteValues.TryGetValue("enddate", out enddate))
+    {
+        http.Response.StatusCode = 400;
+        return;
+    }
+
+    DalGlobal dalGlobal = new DalGlobal();
+
+
+    var todoItem = await dalGlobal.getReport(startdate, enddate);
+    if (todoItem == null)
+    {
+        http.Response.StatusCode = 404;
+        return;
+    }
+
+    await http.Response.WriteAsJsonAsync(todoItem);
+});
+
+app.MapGet("api/getToken/{username}", async (http) =>
+{
+    object? username;
+    if (!http.Request.RouteValues.TryGetValue("username", out username))
+    {
+        http.Response.StatusCode = 400;
+        return;
+    }
+   
+
+    DalGlobal dalGlobal = new DalGlobal();
+
+
+    var todoItem = await dalGlobal.getToken(username.ToString());
+    if (todoItem == null)
+    {
+        http.Response.StatusCode = 404;
+        return;
+    }
+
+    await http.Response.WriteAsJsonAsync(todoItem);
+});
+
+
 app.Run();
 
 

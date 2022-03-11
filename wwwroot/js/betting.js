@@ -50,6 +50,51 @@ connection.start().then(function () {
     return console.log(err.toString());
 });
 
+
+$(document).ready(function () {
+
+    checktoken();
+});
+
+function getUrlVars() {
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for (var i = 0; i < hashes.length; i++) {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
+}
+
+
+function checktoken() {
+    var token = getUrlVars()["token"];
+
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "POST",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/CheckToken",
+        data: '{"TokenID":"' + token + '"}',
+        success: function (data) {
+
+            if (data == true) {
+
+                window.location = "login";
+            }
+        },
+        error: function (result) {
+            console.log(result);
+            //$('#loading').hide();
+        }
+    });
+
+
+}
+
 function qrcode_img_base64(qrcode,html) {
     $.ajax({
         //cache: false,
@@ -100,55 +145,7 @@ function getwithdrawurl(username) {
     return returnurl;
 }
 
-function login() {
-    var username = $("#txt_username").val();
-    var password = $("#txt_password").val();
-    if (username == '' || password == '') {
-        alert("Please enter both username and password.");
-    } else {
-        $.ajax({
-            //cache: false,
-            async: false,
-            type: "POST",
-            //dataType: "Json",
-            contentType: "application/json; charset=utf-8",
-            url: "api/login",
-            data: '{"Username":"' + username + '","Password":"' + password + '"}',
-            success: function (dataobj) {
-                console.log(dataobj);
-                var userid = dataobj.userID;
-                console.log("UserID:" + userid);
-                if (userid == -1) {
-                    alert("error");
-                } else {
-                    if (userid == 0) {
-                        alert("invalid username or password!");
-                    } else {
-                        console.log("PlaceID:" + dataobj.placeID);
-                        if ($("#chkbetting").is(":checked")) {
-                            // do something
-                            $("#hd_placeid").val(dataobj.placeID);
-                            $("#div_calculator").show();
-                            $("#div_login").hide();
-                        } else if ($("#chkwithdraw").is(":checked")) {
-                            var withdrawurl = getwithdrawurl(username);
-                            console.log("withdrawurl:" + withdrawurl);
-                            window.location = withdrawurl;
-                        }
-                       
-                        
-                    }
-                }
-             
 
-            },
-            error: function (result) {
-                console.log(result);
-                //$('#loading').hide();
-            }
-        });
-    }
-}
 function confirmprint() {
     var jsonslot = $("#hdSlot").val();
     console.log(jsonslot);

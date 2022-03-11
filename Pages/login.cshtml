@@ -1,0 +1,66 @@
+﻿@page
+@model SignalR.Pages.loginModel
+@{
+     ViewData["Title"] = "Login";
+}
+
+
+
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+
+
+
+<div>
+    <input type="hidden" id="hd_placeid" value="0" />
+    <div class="div-print-popup" id="div_printpopup">
+        <div class="div-print-detail" id="div_printdetail">
+            
+
+        </div>
+    </div>
+    <div class="div-container">
+        <div class="calculator" style="display:none;text-align:center;" id="div_calculator">
+            <div style="text-align:left;"><a href="login"><i class="fas fa-home"></i>Home</a></div>
+            <span id="span_betting">
+                <input type="button" class="button-print" value="ភ្នាល់" onclick="viewform('betting')" />
+            </span>
+            <span id="span_withdrawal">
+                <input type="button" class="button-print" value="ដកលុយ" onclick="viewform('withdrawal')" />
+            </span>
+            <span id="span_report">
+                <input type="button" class="button-print" value="របាយការណ៌" onclick="viewform('report')" />
+            </span>
+        </div>
+
+        <div class="login" id="div_login">
+             <div style="font-size:xx-large;">
+    <img src='images/CamLotto.png' style='width:150px;'>
+    <span class="logo-title" ><span style="color:black;">CAM</span><span style="color:#c67819">Loto</span> <br></span>
+    </div>
+            <div class="div-user">
+            <div class="div-username">Username:</div> <input type="text" class="div-input-text" id="txt_username" />
+            </div>
+            <div class="div-user">
+            <div class="div-username">Password:</div> <input type="password" class="div-input-text" id="txt_password" />
+            </div>
+            
+            <div class="div-button-login">
+                <input type="button" class="button-print" value="Login" onclick="login()" />
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<link href="~/css/betting.css" rel="stylesheet" />
+
+
+<script src="~/js/login.js"></script>
+
+
+<link href="~/css/mycss.css" rel="stylesheet" />
+
+
+
+

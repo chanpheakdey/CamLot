@@ -11,5 +11,9 @@
         public string CreatedDate { get; set; }= string.Empty;
         public string CreatedBy { get; set; } = string.Empty;  
 
+        public bool Betting { get; set; }
+        public bool Withdrawal { get; set; }
+        public bool Report {get; set;}
+
     }
 }

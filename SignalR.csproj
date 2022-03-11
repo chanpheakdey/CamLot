@@ -33,4 +33,7 @@
 <ItemGroup>
   <None Include="Pages\logo.cshtml" />
 </ItemGroup>
+<ItemGroup>
+  <Folder Include="Models\" />
+</ItemGroup>
 </Project>
