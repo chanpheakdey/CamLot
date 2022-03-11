@@ -66,9 +66,9 @@ namespace GameAPI.App_Code
                         command.CommandType = CommandType.StoredProcedure;
 
                         SqlParameter sqlParameter1 = command.Parameters.Add("@StartDate", SqlDbType.Date);
-                        sqlParameter1.Value = StartDate.ToString();
+                        sqlParameter1.Value = StartDate.ToString().Substring(5, 2) + "-" + StartDate.ToString().Substring(3, 2) + "-" + StartDate.ToString().Substring(0,2);
                         SqlParameter sqlParameter2 = command.Parameters.Add("@EndDate", SqlDbType.Date);
-                        sqlParameter2.Value = EndDate.ToString();
+                        sqlParameter2.Value = EndDate.ToString().Substring(5, 2) + "-" + EndDate.ToString().Substring(3, 2) + "-" + EndDate.ToString().Substring(0, 2);
 
                         using (SqlDataAdapter da = new SqlDataAdapter(command))
                         {
@@ -188,6 +188,7 @@ namespace GameAPI.App_Code
                         clUser_result.Betting = (bool)ds.Tables[0].Rows[0]["Betting"];
                         clUser_result.Withdrawal = (bool)ds.Tables[0].Rows[0]["Withdrawal"];
                         clUser_result.Report = (bool)ds.Tables[0].Rows[0]["Report"];
+                        clUser_result.Display = (bool)ds.Tables[0].Rows[0]["Display"];
 
                         return clUser_result;
 

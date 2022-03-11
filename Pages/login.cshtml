@@ -8,6 +8,11 @@
 
 <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
 
+<style>
+    .option-margin{
+        margin:5px 10px;
+    }
+</style>
 
 
 <div>
@@ -22,13 +27,16 @@
         <div class="calculator" style="display:none;text-align:center;" id="div_calculator">
             <div style="text-align:left;"><a href="login"><i class="fas fa-home"></i>Home</a></div>
             <span id="span_betting">
-                <input type="button" class="button-print" value="ភ្នាល់" onclick="viewform('betting')" />
+                <input type="button" class="button-print option-margin" value="ភ្នាល់" onclick="viewform('betting')" />
             </span>
             <span id="span_withdrawal">
-                <input type="button" class="button-print" value="ដកលុយ" onclick="viewform('withdrawal')" />
+                <input type="button" class="button-print option-margin" value="ដកលុយ" onclick="viewform('withdrawal')" />
             </span>
             <span id="span_report">
-                <input type="button" class="button-print" value="របាយការណ៌" onclick="viewform('report')" />
+                <input type="button" class="button-print option-margin" value="របាយការណ៌" onclick="viewform('report')" />
+            </span>
+              <span id="span_display">
+                <input type="button" class="button-print option-margin" value="បង្ដាញលទ្ធផលឆ្នោត" onclick="viewform('display')" />
             </span>
         </div>
 

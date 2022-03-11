@@ -19,6 +19,8 @@ function viewform(formname) {
                 window.location = 'scanresult?username=' + username + '&token=' + data;
             } else if (formname == 'report') {
                 window.location = 'report?username=' + username + '&token=' + data;
+            } else if (formname == 'display') {
+                window.location = 'display?username=' + username + '&token=' + data;
             }
         },
         error: function (result) {

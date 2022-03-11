@@ -4,17 +4,47 @@
     ViewData["Title"] = "Report page";
 }
 
-
-<script src="js/jquery.min-2.1.3.js"></script>
+    <script src="js/jquery.min-3.1.1.js"></script>   
+@*<script src="js/jquery.min-2.1.3.js"></script>*@
 <script src="js/report.js?v=1"></script>
 <script src="https://kit.fontawesome.com/7603579037.js" crossorigin="anonymous"></script>
 <link href="~/css/report.css" rel="stylesheet" />
+
+ <link href='~/css/jquery-ui.css'   rel='stylesheet'>
+      
+   
+    <script src="js/jquery-ui.min.js"></script>
+
 <style>
     
 </style>
 <div>   
     <div style="text-align:left;"><a href="login"><i class="fas fa-home"></i>Home</a></div>
+    <div>
+        <table>
+            <tr>
+                <td>ចាប់ពីថ្អៃ:</td><td><input type="text" id="txtstartdate"></td><td>ដល់ថ្អៃ:</td><td><input type="text" id="txtenddate"></td>
+            </tr>
+        </table>
+        <div><input type="button" value="បង្ដាញ"  onclick="preview()"/></div>
+    </div>
     <div id="div_report">
 
     </div>
+
+    <script>
+        $(document).ready(function() {
+          
+            $(function() {
+                $("#txtstartdate").datepicker(
+                {
+                    dateFormat: 'dd/mm/yy'
+                });
+                 $("#txtenddate").datepicker(
+                 {
+                    dateFormat: 'dd/mm/yy'
+                 });
+            });
+        })
+    </script>
 </div>

@@ -14,6 +14,7 @@
         public bool Betting { get; set; }
         public bool Withdrawal { get; set; }
         public bool Report {get; set;}
+        public bool Display { get; set; }
 
     }
 }

@@ -1,10 +1,9 @@
-﻿$(document).ready(function () {
-
+﻿function preview() {
     var startdate;
-    startdate = '2022-02-05';
-    enddate = '2022-02-06';
-    loadreport(startdate,enddate);
-});
+    startdate = $("#txtstartdate").val();
+    enddate = $("#txtenddate").val();
+    loadreport(startdate, enddate);
+}
 
 function loadreport(startdate, enddate) {
 
