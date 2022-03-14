@@ -2,6 +2,7 @@ using SignalR.Hubs;
 using SignalR.MessageWorker;
 using SignalR.Classes;
 using GameAPI.App_Code;
+using Microsoft.AspNetCore.Mvc;
 
 var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
@@ -10,6 +11,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddHostedService<messageworker>();
 builder.Services.AddRazorPages();
+//builder.Services.AddMvc().AddRazorPagesOptions(options =>
+//{
+//    options.Conventions.AddPageRoute("/login", "");
+//});
+
 builder.Services.AddSignalR(hubOption =>
 {
     hubOption.EnableDetailedErrors = true;

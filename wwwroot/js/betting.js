@@ -323,8 +323,8 @@ function PrintElem(html,imgdata) {
     //mywindow.document.close(); // necessary for IE >= 10
     //mywindow.focus(); // necessary for IE >= 10*/
 
-    //mywindow.print();
-    //mywindow.close();
+    mywindow.print();
+    mywindow.close();
 
     return true;
 }
@@ -393,14 +393,19 @@ function print() {
 
 
 function betnow(amount) {
-    var currentamount = parseInt($("#hd_betamount").val());
-    if (amount == 0) {
-        $("#hd_betamount").val("0");
-        $("#div_betamount").html("0R");
+    if (amount > 2000) {
+        alert("Can not bet more then 2000Riel");
     } else {
-        currentamount += amount;
-        $("#hd_betamount").val(currentamount);
-        $("#div_betamount").html(currentamount + "R");
+        var currentamount = parseInt($("#hd_betamount").val());
+        if (amount == 0) {
+            $("#hd_betamount").val("0");
+            $("#div_betamount").html("0R");
+        } else {
+            currentamount += amount;
+            $("#hd_betamount").val(currentamount);
+            $("#div_betamount").html(currentamount + "R");
+        }
+
     }
 
 
