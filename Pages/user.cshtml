@@ -1,0 +1,46 @@
+﻿@page
+@model SignalR.Pages.userModel
+@{
+}
+
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/user.js"></script>
+<link href="~/css/user.css" rel="stylesheet" />
+
+<div>
+    <input type="hidden" value="" id="hdUsername" />
+    <div class="div-user">
+
+        <table class="tbldate">
+            <tr>
+                <td>Username</td><td>Password</td><td>ភ្នាល់</td><td>ដកលុយ</td><td>របាយការណ៌</td><td>បង្ដាញឆ្នោត</td>
+            </tr>
+            <tr>
+                <td style="text-align:left;">
+                    <input type="text" class="div-input-text" id="txt_username" />
+                </td>
+                <td style="text-align:left;"><input type="password" class="div-input-text" id="txt_password" /></td>
+                <td>
+                    <input type="checkbox" id="chkBetting" />
+                </td>
+                <td>
+                    <input type="checkbox" id="chkWithdrawal" />
+                </td>
+                <td>
+                    <input type="checkbox" id="chkReport" />
+                </td>
+                <td>
+                    <input type="checkbox" id="chkDisplay" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <input type="button" class="button-add" value="Add new user" onclick="addnewuser()" />
+    </div>
+    <div class="userlist-title">User list:</div>
+    <div id="userlist">
+
+    </div>
+</div>

@@ -15,6 +15,7 @@
         public bool Withdrawal { get; set; }
         public bool Report {get; set;}
         public bool Display { get; set; }
+        public bool Admin { get; set; }
 
     }
 }

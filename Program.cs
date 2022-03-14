@@ -66,6 +66,12 @@ app.MapPost("api/login", (ClUser clUser) =>
     return dalGlobal.Login(clUser);
 
 });
+app.MapPost("api/createuser", (ClUser clUser) =>
+{
+    DalGlobal dalGlobal = new DalGlobal();
+    return dalGlobal.CreateUser(clUser);
+
+});
 app.MapPost("api/QRCode", (qrcode clqrcode) =>
 {
     DalGlobal dalGlobal = new DalGlobal();
@@ -166,6 +172,28 @@ app.MapGet("api/getToken/{username}", async (http) =>
     await http.Response.WriteAsJsonAsync(todoItem);
 });
 
+app.MapGet("api/getuserlist/{username}", async (http) =>
+{
+    object? username;
+    if (!http.Request.RouteValues.TryGetValue("username", out username))
+    {
+        http.Response.StatusCode = 400;
+        return;
+    }
+
+
+    DalGlobal dalGlobal = new DalGlobal();
+
+
+    var todoItem = await dalGlobal.getUserlist(username.ToString());
+    if (todoItem == null)
+    {
+        http.Response.StatusCode = 404;
+        return;
+    }
+
+    await http.Response.WriteAsJsonAsync(todoItem);
+});
 
 app.Run();
 

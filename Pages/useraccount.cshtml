@@ -1,0 +1,42 @@
+﻿@page
+@model SignalR.Pages.useraccountModel
+@{
+     ViewData["Title"] = "User";
+}
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/user.js"></script>
+<link href="~/css/user.css" rel="stylesheet" />
+
+<div>
+    <input type="hidden" value="" id="hdUsername" />
+    <div>
+        <table>
+            <tr>
+                <td>Username</td><td>Password</td><td>ផ្នាល់</td><td>ដកលុយ</td>របាយការណ៌<td></td><td>បង្ដាញលទ្ធផលឆ្នោត</td>
+            </tr>
+            <tr>
+                <td>
+                     <div class="div-username">Username:</div> <input type="text" class="div-input-text" id="txt_username" />
+                </td>
+                <td><div class="div-username">Password:</div> <input type="password" class="div-input-text" id="txt_password" /></td>
+                <td>
+                    <input type="checkbox" id="chkBetting" />
+                </td>
+                <td>
+                    <input type="checkbox" id="chkBetting" />
+                </td>
+                <td>
+                    <input type="checkbox" id="chkBetting" />
+                </td>
+                <td>
+                    <input type="checkbox" id="chkBetting" />
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="userlist-title">User list:</div>
+    <div id="userlist">
+
+    </div>
+</div>
+

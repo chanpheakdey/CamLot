@@ -21,6 +21,8 @@ function viewform(formname) {
                 window.location = 'report?username=' + username + '&token=' + data;
             } else if (formname == 'display') {
                 window.location = 'display?username=' + username + '&token=' + data;
+            } else if (formname == 'user') {
+                window.location = 'user?username=' + username + '&token=' + data;
             }
         },
         error: function (result) {
@@ -67,6 +69,7 @@ function login() {
                         var Betting = dataobj.betting;
                         var Withdrawal = dataobj.withdrawal;
                         var Report = dataobj.report;
+                        var Admin = dataobj.admin;
 
                         if (Betting == false) {
                             $("#span_betting").hide();
@@ -76,6 +79,9 @@ function login() {
                         }
                         if (Report == false) {
                             $("#span_report").hide();
+                        }
+                        if (Admin == false) {
+                            $("#span_admin").hide();
                         }
 
 

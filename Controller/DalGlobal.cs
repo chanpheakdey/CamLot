@@ -12,6 +12,45 @@ namespace GameAPI.App_Code
 {
     public sealed class DalGlobal
     {
+        public async Task<string> getUserlist(string Username)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                await using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
+                {
+
+
+                    using (SqlCommand command = new SqlCommand("Sp_GetUserList", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        SqlParameter sqlParameter1 = command.Parameters.Add("@Username", SqlDbType.VarChar);
+                        sqlParameter1.Value = Username;
+
+                        using (SqlDataAdapter da = new SqlDataAdapter(command))
+                        {
+                            da.Fill(ds);
+
+                        }
+
+                        string userlist = (string)ds.Tables[0].Rows[0]["Userlist"];
+
+
+
+
+                        return userlist;
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                return ex.ToString();
+            }
+
+
+        }
         public async Task<string> getToken(string Username)
         {
             try
@@ -189,7 +228,52 @@ namespace GameAPI.App_Code
                         clUser_result.Withdrawal = (bool)ds.Tables[0].Rows[0]["Withdrawal"];
                         clUser_result.Report = (bool)ds.Tables[0].Rows[0]["Report"];
                         clUser_result.Display = (bool)ds.Tables[0].Rows[0]["Display"];
+                        clUser_result.Admin = (bool)ds.Tables[0].Rows[0]["Admin"];
+                        return clUser_result;
 
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                clUser_result.UserID = -1;
+                return clUser_result;
+            }
+        }
+        public ClUser CreateUser(ClUser cluser)
+        {
+
+            ClUser clUser_result = new ClUser();
+            try
+            {
+                DataSet ds = new DataSet();
+                using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
+                {
+
+
+                    using (SqlCommand command = new SqlCommand("Sp_CreateUser", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+
+                        SqlParameter sqlParameter3 = command.Parameters.Add("@Username", SqlDbType.VarChar);
+                        sqlParameter3.Value = cluser.UserName;
+                        SqlParameter sqlParameter4 = command.Parameters.Add("@Password", SqlDbType.VarChar);
+                        sqlParameter4.Value = cluser.Password;
+
+
+                        using (SqlDataAdapter da = new SqlDataAdapter(command))
+                        {
+                            da.Fill(ds);
+
+                        }
+                        clUser_result.UserID = (int)ds.Tables[0].Rows[0]["UserID"];
+                        clUser_result.PlaceID = (int)ds.Tables[0].Rows[0]["PlaceID"];
+                        clUser_result.Betting = (bool)ds.Tables[0].Rows[0]["Betting"];
+                        clUser_result.Withdrawal = (bool)ds.Tables[0].Rows[0]["Withdrawal"];
+                        clUser_result.Report = (bool)ds.Tables[0].Rows[0]["Report"];
+                        clUser_result.Display = (bool)ds.Tables[0].Rows[0]["Display"];
+                        clUser_result.Admin = (bool)ds.Tables[0].Rows[0]["Admin"];
                         return clUser_result;
 
                     }

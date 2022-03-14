@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Content Remove="Pages\logo.cshtml" />
+    <Content Remove="Pages\useraccount.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,6 +33,7 @@
 </ItemGroup>
 <ItemGroup>
   <None Include="Pages\logo.cshtml" />
+  <None Include="Pages\useraccount.cshtml" />
 </ItemGroup>
 <ItemGroup>
   <Folder Include="Models\" />

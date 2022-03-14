@@ -5,6 +5,8 @@
 
         public string? TokenID { get; set; }
         public bool Expired { get; set; }
+        public string? Username { get; set; } = null;
+
 
     }
 }
