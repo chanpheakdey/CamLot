@@ -92,31 +92,3 @@ function deleteuser(username) {
     } 
 
 }
-
-
-function unlockuser(username) {
-    var createdby = $("#hdUsername").val();
-    if (confirm('Are you sure to unlock this user?')) {
-        $.ajax({
-            //cache: false,
-            async: false,
-            type: "Post",
-            //dataType: "Json",
-            contentType: "application/json; charset=utf-8",
-            url: "api/UnlockUser",
-            data: '{"UserName":"' + username + '","CreatedBy":"' + createdby + '"}',
-            success: function (data) {
-
-                if (data == "Success") {
-                    var username = $("#hdUsername").val();
-                    getuserlist(username);
-                }
-            },
-            error: function (result) {
-                console.log(result);
-                //$('#loading').hide();
-            }
-        });
-    }
-
-}

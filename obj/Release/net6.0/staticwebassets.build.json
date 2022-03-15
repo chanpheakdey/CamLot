@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "ExPw+l1ioWS0ELNUOVsT9kBpYeMW7xqh/kzJY+QC6iM=",
+  "Hash": "VjlDnM3xkwEG0JiKHUIYUpdlwbmBFhrRtti5LzylNYU=",
   "Source": "SignalR",
   "BasePath": "_content/SignalR",
   "Mode": "Default",
@@ -185,6 +185,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\css\\user.css",
+      "SourceId": "SignalR",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "BasePath": "_content/SignalR",
+      "RelativePath": "css/user.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\user.css"
     },
     {
       "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\favicon.ico",
@@ -459,6 +476,23 @@
       "OriginalItemSpec": "wwwroot\\js\\login.js"
     },
     {
+      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\main.js",
+      "SourceId": "SignalR",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "BasePath": "_content/SignalR",
+      "RelativePath": "js/main.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\main.js"
+    },
+    {
       "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\qrcode.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
@@ -610,6 +644,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\timer.js"
+    },
+    {
+      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\user.js",
+      "SourceId": "SignalR",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "BasePath": "_content/SignalR",
+      "RelativePath": "js/user.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\user.js"
     },
     {
       "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",

@@ -240,7 +240,7 @@ namespace GameAPI.App_Code
                 return clUser_result;
             }
         }
-        public ClUser CreateUser(ClUser cluser)
+        public string CreateUser(ClUser cluser)
         {
 
             ClUser clUser_result = new ClUser();
@@ -260,21 +260,24 @@ namespace GameAPI.App_Code
                         sqlParameter3.Value = cluser.UserName;
                         SqlParameter sqlParameter4 = command.Parameters.Add("@Password", SqlDbType.VarChar);
                         sqlParameter4.Value = cluser.Password;
-
+                        SqlParameter sqlParameter5 = command.Parameters.Add("@Betting", SqlDbType.Bit);
+                        sqlParameter5.Value = cluser.Betting;
+                        SqlParameter sqlParameter6 = command.Parameters.Add("@Withdrawal", SqlDbType.Bit);
+                        sqlParameter6.Value = cluser.Betting;
+                        SqlParameter sqlParameter7 = command.Parameters.Add("@Report", SqlDbType.Bit);
+                        sqlParameter7.Value = cluser.Betting;
+                        SqlParameter sqlParameter8 = command.Parameters.Add("@Display", SqlDbType.Bit);
+                        sqlParameter8.Value = cluser.Betting;
+                        SqlParameter sqlParameter9 = command.Parameters.Add("@CreatedBy", SqlDbType.VarChar);
+                        sqlParameter9.Value = cluser.CreatedBy;
 
                         using (SqlDataAdapter da = new SqlDataAdapter(command))
                         {
                             da.Fill(ds);
 
                         }
-                        clUser_result.UserID = (int)ds.Tables[0].Rows[0]["UserID"];
-                        clUser_result.PlaceID = (int)ds.Tables[0].Rows[0]["PlaceID"];
-                        clUser_result.Betting = (bool)ds.Tables[0].Rows[0]["Betting"];
-                        clUser_result.Withdrawal = (bool)ds.Tables[0].Rows[0]["Withdrawal"];
-                        clUser_result.Report = (bool)ds.Tables[0].Rows[0]["Report"];
-                        clUser_result.Display = (bool)ds.Tables[0].Rows[0]["Display"];
-                        clUser_result.Admin = (bool)ds.Tables[0].Rows[0]["Admin"];
-                        return clUser_result;
+
+                        return (string)ds.Tables[0].Rows[0]["Status"]; ;
 
                     }
                 }
@@ -282,7 +285,85 @@ namespace GameAPI.App_Code
             catch (SqlException ex)
             {
                 clUser_result.UserID = -1;
-                return clUser_result;
+                return "error";
+            }
+        }
+
+        public string DeleteUser(ClUser cluser)
+        {
+
+            ClUser clUser_result = new ClUser();
+            try
+            {
+                DataSet ds = new DataSet();
+                using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
+                {
+
+
+                    using (SqlCommand command = new SqlCommand("Sp_DeleteUser", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+
+                        SqlParameter sqlParameter3 = command.Parameters.Add("@Username", SqlDbType.VarChar);
+                        sqlParameter3.Value = cluser.UserName;
+                        SqlParameter sqlParameter4 = command.Parameters.Add("@DeletedBy", SqlDbType.VarChar);
+                        sqlParameter4.Value = cluser.CreatedBy;
+
+                        using (SqlDataAdapter da = new SqlDataAdapter(command))
+                        {
+                            da.Fill(ds);
+
+                        }
+
+                        return (string)ds.Tables[0].Rows[0]["Status"]; ;
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                clUser_result.UserID = -1;
+                return "error";
+            }
+        }
+
+        public string UnlockUser(ClUser cluser)
+        {
+
+            ClUser clUser_result = new ClUser();
+            try
+            {
+                DataSet ds = new DataSet();
+                using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
+                {
+
+
+                    using (SqlCommand command = new SqlCommand("Sp_UnlockUser", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+
+                        SqlParameter sqlParameter3 = command.Parameters.Add("@Username", SqlDbType.VarChar);
+                        sqlParameter3.Value = cluser.UserName;
+                        SqlParameter sqlParameter4 = command.Parameters.Add("@CreatedBy", SqlDbType.VarChar);
+                        sqlParameter4.Value = cluser.CreatedBy;
+
+                        using (SqlDataAdapter da = new SqlDataAdapter(command))
+                        {
+                            da.Fill(ds);
+
+                        }
+
+                        return (string)ds.Tables[0].Rows[0]["Status"]; ;
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                clUser_result.UserID = -1;
+                return "error";
             }
         }
         public ClBetting Betting(ClBetting clBetting)
@@ -731,6 +812,45 @@ namespace GameAPI.App_Code
             catch (SqlException ex)
             {
                 return true;
+            }
+
+        }
+
+        public ClToken CheckTokenDetail(ClToken clToken)
+        {
+           ClToken clTokendetail = new ClToken();
+            try
+            {
+                DataSet ds = new DataSet();
+                using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
+                {
+
+
+                    using (SqlCommand command = new SqlCommand("Sp_CheckTokenID", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+
+                        SqlParameter sqlParameter3 = command.Parameters.Add("@TokenID", SqlDbType.VarChar);
+                        sqlParameter3.Value = clToken.TokenID;
+
+
+
+                        using (SqlDataAdapter da = new SqlDataAdapter(command))
+                        {
+                            da.Fill(ds);
+
+                        }
+                        clTokendetail.Expired = (bool)ds.Tables[0].Rows[0]["TokenExpired"];
+                        clTokendetail.Username = (string)ds.Tables[0].Rows[0]["Username"];
+                        return clTokendetail;
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                return null;
             }
 
         }

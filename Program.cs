@@ -72,6 +72,19 @@ app.MapPost("api/createuser", (ClUser clUser) =>
     return dalGlobal.CreateUser(clUser);
 
 });
+app.MapPost("api/deleteuser", (ClUser clUser) =>
+{
+    DalGlobal dalGlobal = new DalGlobal();
+    return dalGlobal.DeleteUser(clUser);
+
+});
+
+app.MapPost("api/unlockuser", (ClUser clUser) =>
+{
+    DalGlobal dalGlobal = new DalGlobal();
+    return dalGlobal.UnlockUser(clUser);
+
+});
 app.MapPost("api/QRCode", (qrcode clqrcode) =>
 {
     DalGlobal dalGlobal = new DalGlobal();
@@ -120,6 +133,12 @@ app.MapPost("api/CheckToken", (ClToken clToken) =>
 
 });
 
+app.MapPost("api/CheckTokenDetail", (ClToken clToken) =>
+{
+    DalGlobal dalGlobal = new DalGlobal();
+    return dalGlobal.CheckTokenDetail(clToken);
+
+});
 
 app.MapGet("api/getReport/{startdate}/{enddate}", async (http) =>
 {
@@ -171,6 +190,8 @@ app.MapGet("api/getToken/{username}", async (http) =>
 
     await http.Response.WriteAsJsonAsync(todoItem);
 });
+
+
 
 app.MapGet("api/getuserlist/{username}", async (http) =>
 {

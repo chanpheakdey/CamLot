@@ -11,7 +11,7 @@
 
         public static string DBServer = "SQL5108.site4now.net";
 
-        public static string EDBConnectionString = "Data Source=" + DBServer + ";Initial Catalog=" + DBDatabase + ";User Id=" + DBUser + ";Password=" + DBPassword;
+        public static string EDBConnectionString = "Server=tcp:servergame.database.windows.net,1433;Initial Catalog=gamedb;Persist Security Info=False;User ID=sqlserver;Password=Gamevb$92;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=120;";
 
     }
 }
