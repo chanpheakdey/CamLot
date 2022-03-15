@@ -52,8 +52,8 @@ connection.start().then(function () {
 
 
 $(document).ready(function () {
-
-    checktoken();
+    console.log("page load");
+    checktokendetail();
 });
 
 function getUrlVars() {
@@ -68,7 +68,9 @@ function getUrlVars() {
 }
 
 
-function checktoken() {
+
+
+function checktokendetail() {
     var token = getUrlVars()["token"];
 
     $.ajax({
@@ -77,13 +79,18 @@ function checktoken() {
         type: "POST",
         //dataType: "Json",
         contentType: "application/json; charset=utf-8",
-        url: "api/CheckToken",
+        url: "api/CheckTokenDetail",
         data: '{"TokenID":"' + token + '"}',
         success: function (data) {
 
-            if (data == true) {
+            if (data.expired == true) {
 
                 window.location = "login";
+            } else {
+                $("#hdUsername").val(data.username);
+                var username = $("#hdUsername").val();
+                console.log(username);
+                //getuserlist(username);
             }
         },
         error: function (result) {
@@ -182,7 +189,9 @@ function confirmprint() {
     var betamount = $("#hd_betamount").val()
     var gameid = $("#hdGameID").val();
     var placeid = $("#hd_placeid").val();
-    var username = $("#txt_username").val();
+    var username = $("#hdUsername").val();
+
+    console.log(username);
 
     $.ajax({
         //cache: false,
@@ -191,7 +200,7 @@ function confirmprint() {
         //dataType: "Json",
         contentType: "application/json; charset=utf-8",
         url: "api/betting",
-        data: '{"gameId": ' + gameid + ',"placeid":' + placeid + ',"slotNumber":"' + slotNumber + '","BetType":"N","BetNumber":"' + betNumbers + '","BetAmount":' + betamount + ',"UnitWinAmount":85,"CreatedBy":"' + username + '"}',
+        data: '{"gameId": ' + gameid + ',"placeid":' + placeid + ',"slotNumber":"' + slotNumber + '","BetType":"N","BetNumber":"' + betNumbers + '","BetAmount":' + betamount + ',"UnitWinAmount":90,"CreatedBy":"' + username + '"}',
         success: function (dataobj) {
             console.log(dataobj);
             var bettingid = dataobj.bettingID;

@@ -81,7 +81,7 @@ function login() {
                             $("#span_report").hide();
                         }
                         if (Admin == false) {
-                            $("#span_admin").hide();
+                            $("#span_user").hide();
                         }
 
 
