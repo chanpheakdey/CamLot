@@ -216,6 +216,26 @@ app.MapGet("api/getuserlist/{username}", async (http) =>
     await http.Response.WriteAsJsonAsync(todoItem);
 });
 
+
+app.MapGet("api/getauido/{filename}", async (http) =>
+{
+    object? filename;
+    if (!http.Request.RouteValues.TryGetValue("filename", out filename))
+    {
+        http.Response.StatusCode = 400;
+        return;
+    }
+
+    FileStream fs = System.IO.File.Open($"Audio/{filename}.mp3", FileMode.Open, FileAccess.Read, FileShare.Read);
+    //return File(fs, "audio/mp3");
+
+
+    DalGlobal dalGlobal = new DalGlobal();
+
+    await http.Response.WriteAsync(fs);
+});
+
+
 app.Run();
 
 

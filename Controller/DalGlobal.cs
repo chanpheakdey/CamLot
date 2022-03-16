@@ -653,27 +653,8 @@ namespace GameAPI.App_Code
         }
 
 
-        public void PlayASound()
-        {
-            FileStream fs = System.IO.File.Open($"audio/bell-notification.wav", FileMode.Open, FileAccess.Read, FileShare.Read);
-            //Contains the sound to play
-            using (IWaveSource soundSource = GetSoundSource(stream))
-            {
-                //SoundOut implementation which plays the sound
-                using (ISoundOut soundOut = GetSoundOut())
-                {
-                    //Tell the SoundOut which sound it has to play
-                    soundOut.Initialize(soundSource);
-                    //Play the sound
-                    soundOut.Play();
 
-                    Thread.Sleep(2000);
-
-                    //Stop the playback
-                    soundOut.Stop();
-                }
-            }
-        }
+     
 
         public List<string> getLatestResult()
         {
