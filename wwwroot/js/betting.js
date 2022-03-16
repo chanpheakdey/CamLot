@@ -114,7 +114,7 @@ function qrcode_img_base64(qrcode,html) {
         success: function (data) {
             
             //return ("data:image/png;base64," + data);
-            PrintElem(html, "data:image/png;base64," + data)
+            PrintElem(html, "data:image/png;base64," + data,qrcode)
             //$("#divqrcode").html("data:image/png;base64," + data);
             //$("#imgqrcode").prop("src", "data:image/png;base64," + data);
             //$("#img_qr").prop("src", "data:image/png;base64," + data);
@@ -248,7 +248,7 @@ function clear_betting() {
 }
 
 
-function PrintElem(html,imgdata) {
+function PrintElem(html,imgdata,qrcode) {
 
     //alert("aa");
     var innerhtml = html;
@@ -323,7 +323,8 @@ function PrintElem(html,imgdata) {
     mywindow.document.write(innerhtml);
     mywindow.document.write('</div>');
     mywindow.document.write('<div  style="text-align:center;width:8cm;"><img onload="print_receipt()" src="' + imgdata + '" style="height:80px;" /></div>');
-    
+    mywindow.document.write('<div  style="text-align:center;width:8cm;font-weight:bold;">' + qrcode + '</div>');
+
     mywindow.document.write('</body></html>');
 
  
@@ -339,7 +340,7 @@ function PrintElem(html,imgdata) {
 }
 
 function create_receipt(objBetting) {
-    var username = $("#txt_username").val();
+    var username = $("#hdUsername").val();
 
     var html = "";
     html += '<div style="font-size:xx-large;">';
@@ -408,7 +409,7 @@ function print() {
 
 
 function betnow(amount) {
-    if (amount > 2000) {
+    if (amount > 5000) {
         alert("Can not bet more then 2000Riel");
     } else {
         var currentamount = parseInt($("#hd_betamount").val());

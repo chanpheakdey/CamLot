@@ -63,8 +63,9 @@
     cursor:pointer;
 }
 .div_print {
+    right:5px;
     text-align: right;
-    position: relative;
+    position: absolute;
     z-index: 999;
 }
 .button-print {
@@ -118,6 +119,8 @@
     padding:5px;
     margin:5px 5px;
     font-weight:bold;
+    width:80px;
+    float:left;
 }
 .div-bet-button{
     margin:5px;
