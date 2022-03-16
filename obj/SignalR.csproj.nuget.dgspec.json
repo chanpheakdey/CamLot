@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ACE\\CamLOT\\SignalR.csproj": {}
+    "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\SignalR.csproj": {}
   },
   "projects": {
-    "D:\\ACE\\CamLOT\\SignalR.csproj": {
+    "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\SignalR.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ACE\\CamLOT\\SignalR.csproj",
+        "projectUniqueName": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\SignalR.csproj",
         "projectName": "SignalR",
-        "projectPath": "D:\\ACE\\CamLOT\\SignalR.csproj",
-        "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-        "outputPath": "D:\\ACE\\CamLOT\\obj\\",
+        "projectPath": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\SignalR.csproj",
+        "packagesPath": "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\chanpheakdey.vong\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +40,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AForge.Video": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
+            "AForge.Video.DirectShow": {
+              "target": "Package",
+              "version": "[2.2.5, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.6.0, )"
@@ -47,6 +55,10 @@
             "System.Drawing.Common": {
               "target": "Package",
               "version": "[6.0.0, )"
+            },
+            "ZXing.Net": {
+              "target": "Package",
+              "version": "[0.16.8, )"
             }
           },
           "imports": [

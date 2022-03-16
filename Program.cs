@@ -44,7 +44,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
@@ -60,10 +60,10 @@ app.MapPost("api/betting", (ClBetting clbetting) =>
     return dalGlobal.Betting(clbetting);
 
 });
-app.MapPost("api/login", (ClUser clUser) =>
+app.MapPost("api/userlogin", (ClUser clUser) =>
 {
     DalGlobal dalGlobal = new DalGlobal();
-    return dalGlobal.Login(clUser);
+    return dalGlobal.UserLogin(clUser);
 
 });
 app.MapPost("api/createuser", (ClUser clUser) =>

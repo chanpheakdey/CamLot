@@ -139,3 +139,7 @@ C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\SignalR.dl
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\ref\SignalR.dll
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\SignalR.pdb
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\SignalR.genruntimeconfig.cache
+C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\bin\Release\net6.0\AForge.dll
+C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\bin\Release\net6.0\AForge.Video.dll
+C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\bin\Release\net6.0\AForge.Video.DirectShow.dll
+C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\bin\Release\net6.0\zxing.dll

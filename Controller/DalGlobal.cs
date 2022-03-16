@@ -7,11 +7,55 @@ using System.Drawing;
 using QRCoder;
 using System.IO;
 using Microsoft.AspNetCore.Mvc;
-
+using AForge.Video;
+using AForge.Video.DirectShow;
+using ZXing;
+using ZXing.QrCode;
 namespace GameAPI.App_Code
 {
     public sealed class DalGlobal
+
     {
+        FilterInfoCollection FilterInfoCollection;
+        VideoCaptureDevice VideoCaptureDevice;
+
+        public string getQRCode()
+        {
+            FilterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            foreach(FilterInfo item in FilterInfoCollection)
+            {
+                string cameraname = item.Name;
+            }
+            VideoCaptureDevice = new VideoCaptureDevice(FilterInfoCollection[0].MonikerString);
+            VideoCaptureDevice.NewFrame += CaptureDevice_NewFrame;
+            VideoCaptureDevice.Start();
+
+            
+            return "";
+        }
+
+        public void CaptureDevice_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        {
+            BinaryBitmap binaryBitmap = (BinaryBitmap)eventArgs.Frame.Clone();
+        }
+
+        public string ReadQRImage(BinaryBitmap qrbitmap)
+        {
+
+            //IBarcodeReader reader = new BarcodeReader<QRCodeReader>();
+            QRCodeReader qrCodeReader = new QRCodeReader();
+            Result result = qrCodeReader.decode(qrbitmap);
+            //Result result = reader.Decode(bitmap);
+            if (result != null)
+            {
+                return result.ToString();
+            }
+            else
+            {
+                return "";
+            }
+            
+        }
         public async Task<string> getUserlist(string Username)
         {
             try
@@ -105,9 +149,9 @@ namespace GameAPI.App_Code
                         command.CommandType = CommandType.StoredProcedure;
 
                         SqlParameter sqlParameter1 = command.Parameters.Add("@StartDate", SqlDbType.Date);
-                        sqlParameter1.Value = StartDate.ToString().Substring(5, 2) + "-" + StartDate.ToString().Substring(3, 2) + "-" + StartDate.ToString().Substring(0,2);
+                        sqlParameter1.Value = StartDate.ToString().Substring(6, 4) + "-" + StartDate.ToString().Substring(3, 2) + "-" + StartDate.ToString().Substring(0,2);
                         SqlParameter sqlParameter2 = command.Parameters.Add("@EndDate", SqlDbType.Date);
-                        sqlParameter2.Value = EndDate.ToString().Substring(5, 2) + "-" + EndDate.ToString().Substring(3, 2) + "-" + EndDate.ToString().Substring(0, 2);
+                        sqlParameter2.Value = EndDate.ToString().Substring(6, 4) + "-" + EndDate.ToString().Substring(3, 2) + "-" + EndDate.ToString().Substring(0, 2);
 
                         using (SqlDataAdapter da = new SqlDataAdapter(command))
                         {
@@ -195,7 +239,7 @@ namespace GameAPI.App_Code
         }
 
 
-        public ClUser Login(ClUser cluser)
+        public ClUser UserLogin(ClUser cluser)
         {
 
             ClUser clUser_result = new ClUser();
@@ -222,7 +266,7 @@ namespace GameAPI.App_Code
                             da.Fill(ds);
 
                         }
-                        clUser_result.UserID = (int)ds.Tables[0].Rows[0]["UserID"];
+                        clUser_result.UserID = 5; //(int)ds.Tables[0].Rows[0]["UserID"];
                         clUser_result.PlaceID = (int)ds.Tables[0].Rows[0]["PlaceID"];
                         clUser_result.Betting = (bool)ds.Tables[0].Rows[0]["Betting"];
                         clUser_result.Withdrawal = (bool)ds.Tables[0].Rows[0]["Withdrawal"];
@@ -237,6 +281,7 @@ namespace GameAPI.App_Code
             catch (SqlException ex)
             {
                 clUser_result.UserID = -1;
+                clUser_result.UserName = ex.ToString();
                 return clUser_result;
             }
         }
@@ -850,7 +895,9 @@ namespace GameAPI.App_Code
             }
             catch (SqlException ex)
             {
-                return null;
+                clTokendetail.Expired = true;
+                clTokendetail.Expired.ToString();
+                return clTokendetail;
             }
 
         }

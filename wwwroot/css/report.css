@@ -15,3 +15,7 @@ th,td {
 .tbldate tr td {
     border: none;
 }
+
+.f-money{
+    text-align:right;
+}

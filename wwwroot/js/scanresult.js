@@ -4,7 +4,7 @@
             scanresult();
     });
 
-    checktoken();
+    checktokendetail();
 });
 
 function getUrlVars() {
@@ -19,6 +19,37 @@ function getUrlVars() {
 }
 
 
+function checktokendetail() {
+    var token = getUrlVars()["token"];
+
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "POST",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/CheckTokenDetail",
+        data: '{"TokenID":"' + token + '"}',
+        success: function (data) {
+            console.log(data);
+            if (data.expired == true) {
+
+                window.location = "login";
+            } else {
+                $("#hdUsername").val(data.username);
+                var username = $("#hdUsername").val();
+                console.log(username);
+                //getuserlist(username);
+            }
+        },
+        error: function (result) {
+            console.log(result);
+            //$('#loading').hide();
+        }
+    });
+
+
+}
 
 
 function scanresult() {
@@ -56,7 +87,7 @@ function scanresult() {
 
                 } else {
                     html += "<div>ឈ្នះ: R" + (dataobj.winAmountA + dataobj.winAmountB + dataobj.winAmountC + dataobj.winAmountD + dataobj.winAmountE) + "</div>";
-                    var username = getUrlVars()["username"];
+                    var username = $("#hdUsername").val();
                     console.log("username:" + username);
                     html += '<div style="text-align:center;"><input type="button" class="button-print" value="Withdraw" onclick="withdraw(' + code + ',' + "'" + username+ "'" + ')"></div>';
                 }
