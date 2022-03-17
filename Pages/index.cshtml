@@ -28,7 +28,16 @@
                 <input type="hidden" id="hd_placeid" value="0" />
             <div id="div_display">
             <div class="div_print">
-                <input type="button" class="button-print" value ="Print" onclick="print()" />
+                <table style="width:100%">
+                    <tr>
+                        <td>
+                            <div id="div_GameID">ឆ្នោតលេខ</div>
+                        </td>
+                        <td style="text-align:right;">
+                            <input type="button" class="button-print" value ="Print" onclick="print()" />
+                        </td>
+                    </tr>
+                </table>
                 
             </div>
            
@@ -42,30 +51,25 @@
 
                 XX-YY
             </div>
-            <div class="betting-amount-box">
-                <div class="span-slot">ទឹកប្រាក់ភ្នាល់</div>
-            <div id="div_betamount" class="div-bet-amount">
-                0R
-            </div>
-            <div style="float:right;"><div class="bet-amount" onclick="betnow(0)">Clear</div></div>
-            <div class="div-bet-button">
-                
+            <div class="betting-amount-box">               
+           
+            <div class="div-bet-button">                
                 <div class="bet-amount" onclick="betnow(100)">100R</div>                
-                <div class="bet-amount" onclick="betnow(200)">200R</div>
                 <div class="bet-amount" onclick="betnow(500)">500R</div>
                 <div class="bet-amount" onclick="betnow(1000)">1000R</div>
                 <div class="bet-amount" onclick="betnow(5000)">5000R</div>
+                <div class="bet-amount" onclick="betnow(0)">Clear</div>
             </div>
             </div>
             </div>
 
             <div class="div-slot">
                 <input type="hidden" id="hdSlot" value='{"slotA":"inactive","slotB":"inactive","slotC":"inactive","slotD":"inactive","slotE":"inactive"}' />
-                <div id='spanA' class="Slot-letter" onclick="select_slot('A')">A</div>
-                <div id='spanB' class="Slot-letter" onclick="select_slot('B')">B</div>
-                <div id='spanC' class="Slot-letter" onclick="select_slot('C')">C</div>
-                <div id='spanD' class="Slot-letter" onclick="select_slot('D')">D</div>
-                <div id='spanE' class="Slot-letter" onclick="select_slot('E')">E</div>
+                <div id='spanA' class="Slot-letter round-small-slot" onclick="select_slot('A')">A</div>
+                <div id='spanB' class="Slot-letter round-small-slot" onclick="select_slot('B')">B</div>
+                <div id='spanC' class="Slot-letter round-small-slot" onclick="select_slot('C')">C</div>
+                <div id='spanD' class="Slot-letter round-small-slot" onclick="select_slot('D')">D</div>
+                <div id='spanE' class="Slot-letter round-small-slot" onclick="select_slot('E')">E</div>
             </div>
             
             <div class="div-button-number">
@@ -100,13 +104,13 @@
 
 
 
-<link href="~/css/betting.css" rel="stylesheet" />
+<link href="~/css/betting.css?v=2" rel="stylesheet" />
 
 
-<script src="~/js/betting.js"></script>
+<script src="~/js/betting.js?v=12"></script>
 
 
-<link href="~/css/mycss.css" rel="stylesheet" />
+<link href="~/css/mycss.css?v=2" rel="stylesheet" />
 
 <script>
 	//jQuery('#qrcode').qrcode("this plugin is great");

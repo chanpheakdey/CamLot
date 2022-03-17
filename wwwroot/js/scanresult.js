@@ -335,7 +335,7 @@ function PrintElem(html) {
     mywindow.document.write('</style>');
 
     mywindow.document.write('</head><body>');
-    mywindow.document.write('<div style="width:8cm;">');
+    mywindow.document.write('<div style="width:5.8cm;">');
     //mywindow.document.write('<span id="sp_print" onclick="printme(this)" style="cursor:pointer;position:fixed;top:10px;right:10px;border-radius: 30px;background-color: #908d8d;color: white;padding: 5px;width: 60px;text-align: center;box-shadow: 1px 1px 1px rgb(0 0 0 / 32%), inset 1px 1px 1px rgb(255 255 255 / 44%);">Print</span>');
     mywindow.document.write(innerhtml);
     mywindow.document.write('</div>');

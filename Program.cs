@@ -232,7 +232,8 @@ app.MapGet("api/getauido/{filename}", async (http) =>
 
     DalGlobal dalGlobal = new DalGlobal();
 
-    await http.Response.WriteAsync(fs);
+    //await http.Response.WriteAsync(fs);
+    await http.Response.WriteAsJsonAsync(fs);
 });
 
 

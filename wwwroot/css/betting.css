@@ -11,19 +11,19 @@
 
 }
 .text-input {
-    padding: 10px;
+    padding: 5px;
     background-color: var(--search-box-bg, white);
     border: solid 1px gray;
     border-radius: 15px;
     color: var(--search-box-text);
     font-family: inherit;
     font-size: inherit;
-    min-height: 120px;
+    min-height: 100px;
     padding-inline-end: 15px;
     padding-inline-start: 15px;
     position: relative;
     width: 100%;
-    margin: 10px 0px;
+    margin: 5px 0px;
 }
 .Slot-letter {
     display: inline-block;
@@ -46,26 +46,29 @@
 .slot-active {
     background-color: red !important;
 }
+.round-small-slot {
+    height: 45px;
+    width: 45px;
+    font-size: 35px;
+    line-height: 45px;
+}
 
 .button-number {
     display: inline-block;
     background: gray;
     color: #Fff;
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 56px;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 40px;
     transition: all .6s;
     border-radius: 10px;
     margin: 5px;
     width: 65px;
-    height: 65px;
+    height: 45px;
     text-align: center;
-    cursor:pointer;
+    cursor: pointer;
 }
 .div_print {
-    right:5px;
-    text-align: right;
-    position: absolute;
     z-index: 999;
 }
 .button-print {
@@ -113,7 +116,7 @@
     margin: 5px 5px;
     cursor: pointer;
     border-radius: 5px;
-    width:55px;
+    width:auto;
 }
 .div-bet-amount{
     padding:5px;
@@ -140,7 +143,7 @@
 }
 
 .betting-amount-box{
-    padding:5px;
+    padding:0px;
     border-radius:15px;
     border:solid 1px gray;
 }
@@ -174,13 +177,13 @@
     border-radius: 20px;
 }
 .calculator {
-    padding: 15px;
+    padding: 10px;
     background-color: #e9ecef;
-    margin-top: 20px;
+    margin-top: 0px;
     border-radius: 20px;
 }
 .div-slot {
-    height: 80px;
+    height: 55px;
     text-align: center;
     width: 330px;
     margin: auto;

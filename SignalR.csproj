@@ -43,5 +43,6 @@
 </ItemGroup>
 <ItemGroup>
   <Folder Include="Models\" />
+  <Folder Include="wwwroot\NewFolder\" />
 </ItemGroup>
 </Project>

@@ -4,7 +4,7 @@
             scanresult();
     });
 
-    checktoken();
+    checktokendetail();
 });
 
 function getUrlVars() {
@@ -19,7 +19,35 @@ function getUrlVars() {
 }
 
 
-function scanqr() {
+function checktokendetail() {
+    var token = getUrlVars()["token"];
+
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "POST",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/CheckTokenDetail",
+        data: '{"TokenID":"' + token + '"}',
+        success: function (data) {
+            console.log(data);
+            if (data.expired == true) {
+
+                window.location = "login";
+            } else {
+                $("#hdUsername").val(data.username);
+                var username = $("#hdUsername").val();
+                console.log(username);
+                //getuserlist(username);
+            }
+        },
+        error: function (result) {
+            console.log(result);
+            //$('#loading').hide();
+        }
+    });
+
 
 }
 
@@ -59,7 +87,7 @@ function scanresult() {
 
                 } else {
                     html += "<div>ឈ្នះ: R" + (dataobj.winAmountA + dataobj.winAmountB + dataobj.winAmountC + dataobj.winAmountD + dataobj.winAmountE) + "</div>";
-                    var username = getUrlVars()["username"];
+                    var username = $("#hdUsername").val();
                     console.log("username:" + username);
                     html += '<div style="text-align:center;"><input type="button" class="button-print" value="Withdraw" onclick="withdraw(' + code + ',' + "'" + username+ "'" + ')"></div>';
                 }
@@ -307,7 +335,7 @@ function PrintElem(html) {
     mywindow.document.write('</style>');
 
     mywindow.document.write('</head><body>');
-    mywindow.document.write('<div style="width:8cm;">');
+    mywindow.document.write('<div style="width:5.8cm;">');
     //mywindow.document.write('<span id="sp_print" onclick="printme(this)" style="cursor:pointer;position:fixed;top:10px;right:10px;border-radius: 30px;background-color: #908d8d;color: white;padding: 5px;width: 60px;text-align: center;box-shadow: 1px 1px 1px rgb(0 0 0 / 32%), inset 1px 1px 1px rgb(255 255 255 / 44%);">Print</span>');
     mywindow.document.write(innerhtml);
     mywindow.document.write('</div>');

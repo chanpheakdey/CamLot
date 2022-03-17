@@ -9,6 +9,7 @@ connection.on("ReceiveMessage", function (Eventmessage) {
         var objgame = JSON.parse(Eventmessage.message);
         var gameid = objgame.gameid;
         $("#hdGameID").val(gameid);
+        $("#div_GameID").html("ឆ្នោតលេខ:" + gameid);
 
     }
     else if (Eventmessage.subject == "start result") {
@@ -114,7 +115,7 @@ function qrcode_img_base64(qrcode,html) {
         success: function (data) {
             
             //return ("data:image/png;base64," + data);
-            PrintElem(html, "data:image/png;base64," + data)
+            PrintElem(html, "data:image/png;base64," + data,qrcode)
             //$("#divqrcode").html("data:image/png;base64," + data);
             //$("#imgqrcode").prop("src", "data:image/png;base64," + data);
             //$("#img_qr").prop("src", "data:image/png;base64," + data);
@@ -210,6 +211,7 @@ function confirmprint() {
             } else {
                 if (bettingid == 0) {
                     alert("ឆ្នោតចាប់លេងហើយ។")
+                    cancelprint();
                 } else {
                     var html = create_receipt(dataobj);
                     qrcode_img_base64(bettingid,html);
@@ -232,11 +234,11 @@ function confirmprint() {
 
 function clear_betting() {
     listnumber = [];
-    $("#div_betamount").val("0R");
+    //$("#div_betamount").val("0R");
     $("#div_range").val("XX-YY");
     $("#hdinput_number").val("");
     $("#hd_betamount").val("0");
-    $("#div_betamount").html("0R");
+    
     $("#hd_numberofslot").val("0");
     $("#hdSlot").val('{"slotA":"inactive","slotB":"inactive","slotC":"inactive","slotD":"inactive","slotE":"inactive"}');
     $("#spanA").removeClass("slot-active");
@@ -248,7 +250,7 @@ function clear_betting() {
 }
 
 
-function PrintElem(html,imgdata) {
+function PrintElem(html,imgdata,qrcode) {
 
     //alert("aa");
     var innerhtml = html;
@@ -260,7 +262,10 @@ function PrintElem(html,imgdata) {
     mycss += '}';
 
     mycss += '@media print {';
-    mycss += 'body {-webkit-print-color-adjust: exact;color-adjust: exact;}';
+    mycss += '@page {';
+    mycss += 'margin: 0.1cm;';
+    mycss += '}';
+    mycss += 'body {-webkit-print-color-adjust: exact;color-adjust: exact;width:5cm;height:8cm;}';
     mycss += '.page-break { display: none; }';
     mycss += '.printhidden{';
     mycss += 'display:block !important;page-break-after: always;'
@@ -301,14 +306,15 @@ function PrintElem(html,imgdata) {
     mycss += '}';
 
 
-    var mywindow = window.open('', 'PRINT', 'height=1500,width=1000');
+    var mywindow = window.open('', 'PRINT', 'height=1000,width=500');
     mywindow.document.write('<html><head>');
 
 
     var java = '';
     java += 'function print_receipt(){'
-    java += 'window.print();window.close();}';
+    java += 'window.print();setTimeout(function(){window.close()}, 2000);}';
 
+    //mywindow.document.write('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.3.0/paper.css">');
     mywindow.document.write('<script>');
     mywindow.document.write(java);
     mywindow.document.write('<\/script>');
@@ -323,7 +329,8 @@ function PrintElem(html,imgdata) {
     mywindow.document.write(innerhtml);
     mywindow.document.write('</div>');
     mywindow.document.write('<div  style="text-align:center;width:8cm;"><img onload="print_receipt()" src="' + imgdata + '" style="height:80px;" /></div>');
-    
+    mywindow.document.write('<div  style="text-align:center;width:8cm;font-weight:bold;">' + qrcode + '</div>');
+
     mywindow.document.write('</body></html>');
 
  
@@ -332,14 +339,14 @@ function PrintElem(html,imgdata) {
     //mywindow.document.close(); // necessary for IE >= 10
     //mywindow.focus(); // necessary for IE >= 10*/
 
-    mywindow.print();
-    mywindow.close();
+    //mywindow.print();
+    //mywindow.close();
 
     return true;
 }
 
 function create_receipt(objBetting) {
-    var username = $("#txt_username").val();
+    var username = $("#hdUsername").val();
 
     var html = "";
     html += '<div style="font-size:xx-large;">';
@@ -360,9 +367,11 @@ function cancelprint() {
     $("#div_printpopup").hide();
 }
 function print() {
+
     var gameid = $("#hdGameID").val();
     if (gameid == "0") {
         alert("time up! bet later!")
+        cancelprint();
     } else {
         var betamount = parseInt($("#hd_betamount").val());
         if (betamount <= 0) {
@@ -408,20 +417,21 @@ function print() {
 
 
 function betnow(amount) {
-    if (amount > 2000) {
+    if (amount > 5000) {
         alert("Can not bet more then 2000Riel");
     } else {
         var currentamount = parseInt($("#hd_betamount").val());
         if (amount == 0) {
             $("#hd_betamount").val("0");
-            $("#div_betamount").html("0R");
+            //$("#div_betamount").html("0R");
         } else {
             currentamount += amount;
             $("#hd_betamount").val(currentamount);
-            $("#div_betamount").html(currentamount + "R");
+            //$("#div_betamount").html(currentamount + "R");
         }
 
     }
+    load_numberlist(listnumber);
 
 
 }
@@ -551,24 +561,25 @@ function html_slot() {
     var html = "";
     html += "<span class='span-slot'>ប្រភេទ:</span> ";
     var numberofslot = 0;
+    var slotcss = 'line-height: 20px;float:none;display:inline-block;padding: 2px;height: 25px;width: 25px;font-size: 16px;font-weight: bold;'
     if (slotA == 'active') {
-        html += "<div class='round-number' style='line-height:30px;'>A</div>";
+        html += "<div class='round-number' style='" + slotcss + "'>A</div>";
         numberofslot += 1;
     }
     if (slotB == 'active') {
-        html += "<div class='round-number' style='line-height:30px;'>B</div>";
+        html += "<div class='round-number' style='" + slotcss + "'>B</div>";
         numberofslot += 1;
     }
     if (slotC == 'active') {
-        html += "<div class='round-number' style='line-height:30px;'>C</div>";
+        html += "<div class='round-number' style='" + slotcss + "'>C</div>";
         numberofslot += 1;
     }
     if (slotD == 'active') {
-        html += "<div class='round-number' style='line-height:30px;'>D</div>";
+        html += "<div class='round-number' style='" + slotcss + "'>D</div>";
         numberofslot += 1;
     }
     if (slotE == 'active') {
-        html += "<div class='round-number' style='line-height:30px;'>E</div>";
+        html += "<div class='round-number' style='" + slotcss + "'>E</div>";
         numberofslot += 1;
     }
 
@@ -669,7 +680,9 @@ function unique(list) {
 }
 function load_numberlist(list) {
     var html = "";
-        html += html_slot();
+    var betamount = $("#hd_betamount").val();
+    html += '<div class="span-slot" style="width:auto;">ទឹកប្រាក់ភ្នាល់: ' + betamount + "R" + '</div>';
+    html += html_slot();
     html += load_numberlist_html(list);
 
     $("#div_numbers").html(html);
@@ -681,7 +694,7 @@ function load_numberlist_html(list) {
     for (var i = 0; i < list.length; i++) {
         var number = list[i];
 
-        html += "<div class='round-number' style='line-height:30px;float:none;display:inline-block;'>" + number + "</div>";
+        html += "<div class='round-number' style='line-height: 20px;float:none;display:inline-block;padding: 2px;height: 25px;width: 25px;font-size: 16px;font-weight: bold;'>" + number + "</div>";
     }
 
     return html;

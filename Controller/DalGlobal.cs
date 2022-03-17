@@ -71,13 +71,13 @@ namespace GameAPI.App_Code
 
                         SqlParameter sqlParameter1 = command.Parameters.Add("@Username", SqlDbType.VarChar);
                         sqlParameter1.Value = Username;
-
+                        connection.Open();
                         using (SqlDataAdapter da = new SqlDataAdapter(command))
                         {
                             da.Fill(ds);
 
                         }
-
+                        connection.Close();
                         string userlist = (string)ds.Tables[0].Rows[0]["Userlist"];
 
 
@@ -110,13 +110,13 @@ namespace GameAPI.App_Code
 
                         SqlParameter sqlParameter1 = command.Parameters.Add("@Username", SqlDbType.VarChar);
                         sqlParameter1.Value = Username;
-
+                        connection.Open();
                         using (SqlDataAdapter da = new SqlDataAdapter(command))
                         {
                             da.Fill(ds);
 
                         }
-
+                        connection.Close();
                         string token = (string)ds.Tables[0].Rows[0]["TokenID"];
 
 
@@ -152,13 +152,13 @@ namespace GameAPI.App_Code
                         sqlParameter1.Value = StartDate.ToString().Substring(6, 4) + "-" + StartDate.ToString().Substring(3, 2) + "-" + StartDate.ToString().Substring(0,2);
                         SqlParameter sqlParameter2 = command.Parameters.Add("@EndDate", SqlDbType.Date);
                         sqlParameter2.Value = EndDate.ToString().Substring(6, 4) + "-" + EndDate.ToString().Substring(3, 2) + "-" + EndDate.ToString().Substring(0, 2);
-
+                        connection.Open();
                         using (SqlDataAdapter da = new SqlDataAdapter(command))
                         {
                             da.Fill(ds);
 
                         }
-
+                        connection.Close();
                         string report_html = (string)ds.Tables[0].Rows[0]["ReportHtml"];
                         
 
@@ -214,12 +214,12 @@ namespace GameAPI.App_Code
                     using (SqlCommand command = new SqlCommand("Sp_CreateNewGame", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
-
+                        connection.Open();
                         using (SqlDataAdapter da = new SqlDataAdapter(command))
                         {
                              da.Fill(ds);
                         }
-
+                        connection.Close();
                         clGame.gameid = (int)ds.Tables[0].Rows[0]["GameID"];
                         clGame.timespent = (int)ds.Tables[0].Rows[0]["TimeSpent"];
                         clGame.timeremaining = (int)ds.Tables[0].Rows[0]["TimeRemaining"];
@@ -260,12 +260,13 @@ namespace GameAPI.App_Code
                         SqlParameter sqlParameter4 = command.Parameters.Add("@Password", SqlDbType.VarChar);
                         sqlParameter4.Value = cluser.Password;
 
-
+                        connection.Open();
                         using (SqlDataAdapter da = new SqlDataAdapter(command))
                         {
                             da.Fill(ds);
 
                         }
+                        connection.Close();
                         clUser_result.UserID = 5; //(int)ds.Tables[0].Rows[0]["UserID"];
                         clUser_result.PlaceID = (int)ds.Tables[0].Rows[0]["PlaceID"];
                         clUser_result.Betting = (bool)ds.Tables[0].Rows[0]["Betting"];
@@ -315,13 +316,13 @@ namespace GameAPI.App_Code
                         sqlParameter8.Value = cluser.Betting;
                         SqlParameter sqlParameter9 = command.Parameters.Add("@CreatedBy", SqlDbType.VarChar);
                         sqlParameter9.Value = cluser.CreatedBy;
-
+                        connection.Open();
                         using (SqlDataAdapter da = new SqlDataAdapter(command))
                         {
                             da.Fill(ds);
 
                         }
-
+                        connection.Close();
                         return (string)ds.Tables[0].Rows[0]["Status"]; ;
 
                     }
@@ -354,13 +355,13 @@ namespace GameAPI.App_Code
                         sqlParameter3.Value = cluser.UserName;
                         SqlParameter sqlParameter4 = command.Parameters.Add("@DeletedBy", SqlDbType.VarChar);
                         sqlParameter4.Value = cluser.CreatedBy;
-
+                        connection.Open();
                         using (SqlDataAdapter da = new SqlDataAdapter(command))
                         {
                             da.Fill(ds);
 
                         }
-
+                        connection.Close();
                         return (string)ds.Tables[0].Rows[0]["Status"]; ;
 
                     }
@@ -393,13 +394,13 @@ namespace GameAPI.App_Code
                         sqlParameter3.Value = cluser.UserName;
                         SqlParameter sqlParameter4 = command.Parameters.Add("@CreatedBy", SqlDbType.VarChar);
                         sqlParameter4.Value = cluser.CreatedBy;
-
+                        connection.Open();
                         using (SqlDataAdapter da = new SqlDataAdapter(command))
                         {
                             da.Fill(ds);
 
                         }
-
+                        connection.Close();
                         return (string)ds.Tables[0].Rows[0]["Status"]; ;
 
                     }
@@ -450,13 +451,13 @@ namespace GameAPI.App_Code
                         SqlParameter sqlParameter9 = command.Parameters.Add("@CreatedBy", SqlDbType.VarChar);
                         sqlParameter9.Value = clBetting.CreatedBy;
   
-
+                        connection.Open();
                         using (SqlDataAdapter da = new SqlDataAdapter(command))
                         {
                             da.Fill(ds);
                             
                         }
-
+                        connection.Close();
                         clBetting_result.BettingID = (int)ds.Tables[0].Rows[0]["BettingID"];
                         clBetting_result.CreatedDate = ((DateTime)ds.Tables[0].Rows[0]["CreatedDate"]).ToString("dd/MM/yyyy HH:mm:ss");
                         clBetting_result.GameID = clBetting.GameID;
@@ -493,13 +494,13 @@ namespace GameAPI.App_Code
                         SqlParameter sqlParameter1 = command.Parameters.Add("@BettingID", SqlDbType.Int);
                         sqlParameter1.Value = clBettingResult.BettingID;                    
 
-
+                        connection.Open();
                         using (SqlDataAdapter da = new SqlDataAdapter(command))
                         {
                             da.Fill(ds);
 
                         }
-
+                        connection.Close(); 
                         clBetting_result.BettingID = (int)ds.Tables[0].Rows[0]["BettingID"];
                         clBetting_result.BetNumber = (string)ds.Tables[0].Rows[0]["BetNumber"];
                         clBetting_result.SlotNumber = (string)ds.Tables[0].Rows[0]["SlotNumber"];
@@ -624,12 +625,12 @@ namespace GameAPI.App_Code
                         SqlParameter sqlParameter = command.Parameters.Add("@GameID", SqlDbType.Int);
                         sqlParameter.Value = gameid;
 
-
+                        connection.Open();
                         using (SqlDataAdapter da = new SqlDataAdapter(command))
                         {
                             da.Fill(ds);
                         }
-
+                        connection.Close();
                         clResult.GameID = gameid;
                         clResult.ResultDate= (String)ds.Tables[0].Rows[0]["CreatedDate"];
                         clResult.Result1 = (int)ds.Tables[0].Rows[0]["R1"];
@@ -673,13 +674,13 @@ namespace GameAPI.App_Code
                         command.CommandType = CommandType.StoredProcedure;
 
                        
-
+                        connection.Open();
 
                         using (SqlDataAdapter da = new SqlDataAdapter(command))
                         {
                             da.Fill(ds);
                         }
-
+                        connection.Close();
                         for (int i = ds.Tables[0].Rows.Count-1; i >= 0; i--)
                         {
                             clResult.GameID = (int)ds.Tables[0].Rows[i]["GameID"];
@@ -725,12 +726,12 @@ namespace GameAPI.App_Code
 
                         SqlParameter sqlParameter = command.Parameters.Add("@GameID", SqlDbType.Int);
                         sqlParameter.Value = gameid;
-
+                        connection.Open();
                         using (SqlDataAdapter da = new SqlDataAdapter(command))
                         {
                             da.Fill(ds);
                         }
-
+                        connection.Close();
                        return ds.Tables[0].Rows[0]["Success"].ToString();
 
 
@@ -811,12 +812,13 @@ namespace GameAPI.App_Code
                         sqlParameter3.Value = cluser.UserName;
             
 
-
+                        connection.Open();
                         using (SqlDataAdapter da = new SqlDataAdapter(command))
                         {
                             da.Fill(ds);
 
                         }
+                        connection.Close();
                         return (string)ds.Tables[0].Rows[0]["WithdrawUrl"];
                         
                     }
@@ -847,12 +849,13 @@ namespace GameAPI.App_Code
                         sqlParameter3.Value = clToken.TokenID;
 
 
-
+                        connection.Open();  
                         using (SqlDataAdapter da = new SqlDataAdapter(command))
                         {
                             da.Fill(ds);
 
                         }
+                        connection.Close();    
                         return (bool)ds.Tables[0].Rows[0]["TokenExpired"];
 
                     }
@@ -884,12 +887,13 @@ namespace GameAPI.App_Code
                         sqlParameter3.Value = clToken.TokenID;
 
 
-
+                        connection.Open();
                         using (SqlDataAdapter da = new SqlDataAdapter(command))
                         {
                             da.Fill(ds);
 
                         }
+                        connection.Close();
                         clTokendetail.Expired = (bool)ds.Tables[0].Rows[0]["TokenExpired"];
                         clTokendetail.Username = (string)ds.Tables[0].Rows[0]["Username"];
                         return clTokendetail;
