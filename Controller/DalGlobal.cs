@@ -32,6 +32,7 @@ namespace GameAPI.App_Code
                 FileStream fs = System.IO.File.Open($"wwwroot/Audio/{filename}.wav", FileMode.Open, FileAccess.Read, FileShare.Read);
                 FileStreamResult fsresult;
                 fsresult = new FileStreamResult(fs, "audio/wav");
+              
                 return fsresult;
             }
             catch (Exception e)

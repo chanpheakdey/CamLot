@@ -242,7 +242,8 @@ app.MapGet("api/getauido/{filename}", async (http) =>
 
     //await http.Response.WriteAsync(fs);
     DalGlobal dalGlobal = new DalGlobal();
-    await dalGlobal.GetAudio(filename.ToString());
+    //await dalGlobal.GetAudio(filename.ToString());
+    await http.Response.WriteAsJsonAsync(dalGlobal.GetAudio(filename.ToString()));
 });
 
 
