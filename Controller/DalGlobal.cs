@@ -7,10 +7,7 @@ using System.Drawing;
 using QRCoder;
 using System.IO;
 using Microsoft.AspNetCore.Mvc;
-using AForge.Video;
-using AForge.Video.DirectShow;
-using ZXing;
-using ZXing.QrCode;
+
 
 using System;
 using System.Collections.Generic;
@@ -24,46 +21,8 @@ namespace GameAPI.App_Code
     public sealed class DalGlobal
 
     {
-        FilterInfoCollection FilterInfoCollection;
-        VideoCaptureDevice VideoCaptureDevice;
-
-        public string getQRCode()
-        {
-            FilterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-            foreach(FilterInfo item in FilterInfoCollection)
-            {
-                string cameraname = item.Name;
-            }
-            VideoCaptureDevice = new VideoCaptureDevice(FilterInfoCollection[0].MonikerString);
-            VideoCaptureDevice.NewFrame += CaptureDevice_NewFrame;
-            VideoCaptureDevice.Start();
-
-            
-            return "";
-        }
-
-        public void CaptureDevice_NewFrame(object sender, NewFrameEventArgs eventArgs)
-        {
-            BinaryBitmap binaryBitmap = (BinaryBitmap)eventArgs.Frame.Clone();
-        }
-
-        public string ReadQRImage(BinaryBitmap qrbitmap)
-        {
-
-            //IBarcodeReader reader = new BarcodeReader<QRCodeReader>();
-            QRCodeReader qrCodeReader = new QRCodeReader();
-            Result result = qrCodeReader.decode(qrbitmap);
-            //Result result = reader.Decode(bitmap);
-            if (result != null)
-            {
-                return result.ToString();
-            }
-            else
-            {
-                return "";
-            }
-            
-        }
+  
+        
 
 
         public async Task<dynamic> GetAudio(string filename)
