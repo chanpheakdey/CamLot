@@ -11,6 +11,14 @@ using AForge.Video;
 using AForge.Video.DirectShow;
 using ZXing;
 using ZXing.QrCode;
+
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
+
+
 namespace GameAPI.App_Code
 {
     public sealed class DalGlobal
@@ -56,6 +64,25 @@ namespace GameAPI.App_Code
             }
             
         }
+
+
+        public async Task<dynamic> GetAudio(string filename)
+        {
+            try
+            {
+                FileStream fs = System.IO.File.Open($"wwwroot/Audio/{filename}.wav", FileMode.Open, FileAccess.Read, FileShare.Read);
+                FileStreamResult fsresult;
+                fsresult = new FileStreamResult(fs, "audio/wav");
+                return fsresult;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                return "Internal server error !";
+            }
+        }
+
+
         public async Task<string> getUserlist(string Username)
         {
             try
@@ -284,6 +311,85 @@ namespace GameAPI.App_Code
                 clUser_result.UserID = -1;
                 clUser_result.UserName = ex.ToString();
                 return clUser_result;
+            }
+        }
+
+        public ClUser UserLoginbyToken(ClToken clToken)
+        {
+
+            ClUser clUser_result = new ClUser();
+            try
+            {
+                DataSet ds = new DataSet();
+                using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
+                {
+
+
+                    using (SqlCommand command = new SqlCommand("Sp_Login_byToken", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+
+                        SqlParameter sqlParameter3 = command.Parameters.Add("@TokenID", SqlDbType.VarChar);
+                        sqlParameter3.Value = clToken.TokenID;
+
+                        connection.Open();
+                        using (SqlDataAdapter da = new SqlDataAdapter(command))
+                        {
+                            da.Fill(ds);
+
+                        }
+                        connection.Close();
+                        clUser_result.UserID = 5; //(int)ds.Tables[0].Rows[0]["UserID"];
+                        clUser_result.PlaceID = (int)ds.Tables[0].Rows[0]["PlaceID"];
+                        clUser_result.Betting = (bool)ds.Tables[0].Rows[0]["Betting"];
+                        clUser_result.Withdrawal = (bool)ds.Tables[0].Rows[0]["Withdrawal"];
+                        clUser_result.Report = (bool)ds.Tables[0].Rows[0]["Report"];
+                        clUser_result.Display = (bool)ds.Tables[0].Rows[0]["Display"];
+                        clUser_result.Admin = (bool)ds.Tables[0].Rows[0]["Admin"];
+                        return clUser_result;
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                clUser_result.UserID = -1;
+                clUser_result.UserName = ex.ToString();
+                return clUser_result;
+            }
+        }
+
+        public string UserLogout(ClToken clToken)
+        {
+
+            ClUser clUser_result = new ClUser();
+            try
+            {
+                DataSet ds = new DataSet();
+                using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
+                {
+
+
+                    using (SqlCommand command = new SqlCommand("Sp_Logout", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+
+                        SqlParameter sqlParameter3 = command.Parameters.Add("@TokenID", SqlDbType.VarChar);
+                        sqlParameter3.Value = clToken.TokenID;
+
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                        connection.Close();
+                        return "success";
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                return "failed";
             }
         }
         public string CreateUser(ClUser cluser)

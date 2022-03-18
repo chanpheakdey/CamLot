@@ -44,7 +44,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-//app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
@@ -64,6 +64,19 @@ app.MapPost("api/userlogin", (ClUser clUser) =>
 {
     DalGlobal dalGlobal = new DalGlobal();
     return dalGlobal.UserLogin(clUser);
+
+});
+app.MapPost("api/userloginbytoken", (ClToken clToken) =>
+{
+    DalGlobal dalGlobal = new DalGlobal();
+    return dalGlobal.UserLoginbyToken(clToken);
+
+});
+
+app.MapPost("api/logout", (ClToken clToken) =>
+{
+    DalGlobal dalGlobal = new DalGlobal();
+    return dalGlobal.UserLogout(clToken);
 
 });
 app.MapPost("api/createuser", (ClUser clUser) =>
@@ -226,14 +239,10 @@ app.MapGet("api/getauido/{filename}", async (http) =>
         return;
     }
 
-    FileStream fs = System.IO.File.Open($"Audio/{filename}.mp3", FileMode.Open, FileAccess.Read, FileShare.Read);
-    //return File(fs, "audio/mp3");
-
-
-    DalGlobal dalGlobal = new DalGlobal();
 
     //await http.Response.WriteAsync(fs);
-    await http.Response.WriteAsJsonAsync(fs);
+    DalGlobal dalGlobal = new DalGlobal();
+    await dalGlobal.GetAudio(filename.ToString());
 });
 
 

@@ -146,3 +146,4 @@ C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\bin\Debug\net6.0\AForge.dll
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\bin\Debug\net6.0\AForge.Video.dll
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\bin\Debug\net6.0\AForge.Video.DirectShow.dll
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\bin\Debug\net6.0\zxing.dll
+C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Debug\net6.0\SignalR.csproj.AssemblyReference.cache

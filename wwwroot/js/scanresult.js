@@ -83,7 +83,7 @@ function scanresult() {
                 if (withdrawal == true) {
                     html += "ឈ្នះ: R" + (dataobj.winAmountA + dataobj.winAmountB + dataobj.winAmountC + dataobj.winAmountD + dataobj.winAmountE) + " <span style='color:red;'>(បានដកប្រាក់ហើយ)</span>";
                     html += '<div>អ្នកដកៈ ' + dataobj.withdrawalBy + ' (' + dataobj.withdrawalDate + ')</div>';
-                    html += '<div style="text-align:center;"><input type="button" class="button-print print_button" value="Print" onclick="Printwithdraw()"></div>';
+                    //html += '<div style="text-align:center;"><input type="button" class="button-print print_button" value="Print" onclick="Printwithdraw()"></div>';
 
                 } else {
                     html += "<div>ឈ្នះ: R" + (dataobj.winAmountA + dataobj.winAmountB + dataobj.winAmountC + dataobj.winAmountD + dataobj.winAmountE) + "</div>";

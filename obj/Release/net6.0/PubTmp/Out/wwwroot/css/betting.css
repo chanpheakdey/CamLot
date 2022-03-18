@@ -18,7 +18,7 @@
     color: var(--search-box-text);
     font-family: inherit;
     font-size: inherit;
-    min-height: 100px;
+    min-height: 115px;
     padding-inline-end: 15px;
     padding-inline-start: 15px;
     position: relative;

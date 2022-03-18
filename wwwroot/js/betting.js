@@ -54,6 +54,7 @@ connection.start().then(function () {
 
 $(document).ready(function () {
     console.log("page load");
+
     checktokendetail();
 });
 
@@ -73,32 +74,35 @@ function getUrlVars() {
 
 function checktokendetail() {
     var token = getUrlVars()["token"];
+    if (token != "" && token != undefined) {
+        $.ajax({
+            //cache: false,
+            async: false,
+            type: "POST",
+            //dataType: "Json",
+            contentType: "application/json; charset=utf-8",
+            url: "api/CheckTokenDetail",
+            data: '{"TokenID":"' + token + '"}',
+            success: function (data) {
+                console.log(data);
+                if (data.expired == true) {
 
-    $.ajax({
-        //cache: false,
-        async: false,
-        type: "POST",
-        //dataType: "Json",
-        contentType: "application/json; charset=utf-8",
-        url: "api/CheckTokenDetail",
-        data: '{"TokenID":"' + token + '"}',
-        success: function (data) {
-            console.log(data);
-            if (data.expired == true) {
-
-                window.location = "login";
-            } else {
-                $("#hdUsername").val(data.username);
-                var username = $("#hdUsername").val();
-                console.log(username);
-                //getuserlist(username);
+                    window.location = "login?toke=";
+                } else {
+                    $("#hdUsername").val(data.username);
+                    var username = $("#hdUsername").val();
+                    console.log(username);
+                    //getuserlist(username);
+                }
+            },
+            error: function (result) {
+                console.log(result);
+                //$('#loading').hide();
             }
-        },
-        error: function (result) {
-            console.log(result);
-            //$('#loading').hide();
-        }
-    });
+        });
+    } else {
+        window.location = "login?toke=";
+    }
 
 
 }
@@ -305,6 +309,25 @@ function PrintElem(html,imgdata,qrcode) {
     mycss += 'page-break-after: always;';
     mycss += '}';
 
+    mycss += `.button-print {
+        padding: 10px;
+        border-radius: 15px;
+        background-color: white;
+        font-weight: bold;
+        border: solid 1px gray;
+        margin-right: 10px;
+    }`
+
+    mycss += `.div-popup {
+    position: absolute;
+    z-index: 9999;
+    background-color: rgb(0 0 0 / 70%);
+    width: 100vw;
+    height: 100vh;
+    left: 0px;
+    padding-top: 40vh;
+    padding-left: 40vw;
+}`
 
     var mywindow = window.open('', 'PRINT', 'height=1000,width=500');
     mywindow.document.write('<html><head>');
@@ -312,9 +335,20 @@ function PrintElem(html,imgdata,qrcode) {
 
     var java = '';
     java += 'function print_receipt(){'
-    java += 'window.print();setTimeout(function(){window.close()}, 2000);}';
+    //java += 'window.print();setTimeout(function(){window.close()}, 2000);}';
+    java += 'window.print();load_close();}';
 
-    //mywindow.document.write('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paper-css/0.3.0/paper.css">');
+    java += 'function load_close(){'
+    java += 'setTimeout(function(){$("#div_popup_close").show()}, 1000);}';
+
+    java += 'function Closepopup(){'
+    java += 'window.close()}';
+
+    java += 'function Reprint(){'
+    java += '$("#div_popup_close").hide();window.print();setTimeout(function(){$("#div_popup_close").show()}, 1000);}';
+
+
+    mywindow.document.write('<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>');
     mywindow.document.write('<script>');
     mywindow.document.write(java);
     mywindow.document.write('<\/script>');
@@ -323,7 +357,9 @@ function PrintElem(html,imgdata,qrcode) {
     mywindow.document.write(mycss);
     mywindow.document.write('</style>');
 
+    mywindow.document.write('<meta name="viewport" content="width=device-width, initial-scale=1.0" />')
     mywindow.document.write('</head><body>');
+    mywindow.document.write('<div class="div-popup" style="display:none;" id="div_popup_close"><input type="button" class="button-print" value="Reprint" onclick="Reprint()" /><input class="button-print"  type="button" value="Close" onclick="Closepopup()" /></div>')
     mywindow.document.write('<div style="width:8cm;">');
     //mywindow.document.write('<span id="sp_print" onclick="printme(this)" style="cursor:pointer;position:fixed;top:10px;right:10px;border-radius: 30px;background-color: #908d8d;color: white;padding: 5px;width: 60px;text-align: center;box-shadow: 1px 1px 1px rgb(0 0 0 / 32%), inset 1px 1px 1px rgb(255 255 255 / 44%);">Print</span>');
     mywindow.document.write(innerhtml);
@@ -368,47 +404,67 @@ function cancelprint() {
 }
 function print() {
 
-    var gameid = $("#hdGameID").val();
-    if (gameid == "0") {
-        alert("time up! bet later!")
-        cancelprint();
+    var jsonslot = $("#hdSlot").val();
+    console.log(jsonslot);
+    var objslot = JSON.parse(jsonslot);
+    var slotA = objslot.slotA;
+    var slotB = objslot.slotB;
+    var slotC = objslot.slotC;
+    var slotD = objslot.slotD;
+    var slotE = objslot.slotE;
+
+    if (slotA == 'inactive' && slotB == 'inactive' && slotC == 'inactive' && slotD == 'inactive' && slotE == 'inactive') {
+        alert("Please select slot!");
+
     } else {
-        var betamount = parseInt($("#hd_betamount").val());
-        if (betamount <= 0) {
-            alert("Please enter bet amount.");
+
+
+
+        var gameid = $("#hdGameID").val();
+        if (gameid == "0") {
+            alert("time up! bet later!")
+            cancelprint();
         } else {
-            $("#div_printpopup").show();
-
-            var html = "";
-
-            html += "<div>";
-            //html += "<div>ប្រភេទ:</div>";
-            html += html_slot();
-            html += "</div>";
-
-            html += "<div>";
-            //html += "<div>លេខដែលបានចាក់:</div>";
-            html += load_numberlist_html(listnumber);
-            html += "</div>";
-
-            html += "<div style='width: 100%;display: inline-block;margin-top: 20px;' >";
-
-            var numberofslot = parseInt($("#hd_numberofslot").val());
-
-            html += "<div>ចំនួនទឹកប្រាក់:" + betamount + " KHR</div>";
-            html += "<div>សរុប:" + (betamount * numberofslot * listnumber.length) + " KHR</div>";
-            html += "</div>";
+            var betamount = parseInt($("#hd_betamount").val());
 
 
-            html += "<div style='width: 100%;display: inline-block;margin-top: 20px;' id='div_print_button' class='print_button'>";
-            html += '<input type="button" class="button-print" value="Print" onclick="confirmprint()" />';
-            html += '<input type="button" class="button-print" value="Cancel" onclick="cancelprint()" />';
+            if (betamount <= 0) {
+                alert("Please enter bet amount.");
+            }
+            else {
+                $("#div_printpopup").show();
 
-            html += "</div>";
+                var html = "";
 
-            //console.log(html);
-            $("#div_printdetail").html(html);
+                html += "<div>";
+                //html += "<div>ប្រភេទ:</div>";
+                html += html_slot();
+                html += "</div>";
 
+                html += "<div>";
+                //html += "<div>លេខដែលបានចាក់:</div>";
+                html += load_numberlist_html(listnumber);
+                html += "</div>";
+
+                html += "<div style='width: 100%;display: inline-block;margin-top: 20px;' >";
+
+                var numberofslot = parseInt($("#hd_numberofslot").val());
+                html += "<div>" + $("#div_GameID").html() + "</div>";
+                html += "<div>ចំនួនទឹកប្រាក់:" + betamount + " KHR</div>";
+                html += "<div>សរុប:" + (betamount * numberofslot * listnumber.length) + " KHR</div>";
+                html += "</div>";
+
+
+                html += "<div style='width: 100%;display: inline-block;margin-top: 20px;' id='div_print_button' class='print_button'>";
+                html += '<input type="button" class="button-print" value="Print" onclick="confirmprint()" />';
+                html += '<input type="button" class="button-print" value="Cancel" onclick="cancelprint()" />';
+
+                html += "</div>";
+
+                //console.log(html);
+                $("#div_printdetail").html(html);
+
+            }
         }
     }
 
@@ -590,17 +646,17 @@ function html_slot() {
 function input_number(inputnumber) {
     var jsonslot = $("#hdSlot").val();
     console.log(jsonslot);
-    var objslot = JSON.parse(jsonslot);
-    var slotA = objslot.slotA;
-    var slotB = objslot.slotB;
-    var slotC = objslot.slotC;
-    var slotD = objslot.slotD;
-    var slotE = objslot.slotE;
+    //var objslot = JSON.parse(jsonslot);
+    //var slotA = objslot.slotA;
+    //var slotB = objslot.slotB;
+    //var slotC = objslot.slotC;
+    //var slotD = objslot.slotD;
+    //var slotE = objslot.slotE;
 
-    if (slotA == 'inactive' && slotB == 'inactive' && slotC == 'inactive' && slotD == 'inactive' && slotE == 'inactive') {
-        alert("Please select slot!");
-        return;
-    }
+    //if (slotA == 'inactive' && slotB == 'inactive' && slotC == 'inactive' && slotD == 'inactive' && slotE == 'inactive') {
+    //    alert("Please select slot!");
+    //    return;
+    //}
 
     var hdrange = $("#hdselectrange").val();
     if (hdrange == "") {

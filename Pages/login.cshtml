@@ -16,6 +16,7 @@
 
 
 <div>
+     
     <input type="hidden" id="hd_placeid" value="0" />
     <div class="div-print-popup" id="div_printpopup">
         <div class="div-print-detail" id="div_printdetail">
@@ -25,7 +26,17 @@
     </div>
     <div class="div-container">
         <div class="calculator" style="display:none;text-align:center;" id="div_calculator">
-            <div style="text-align:left;"><a href="login"><i class="fas fa-home"></i>Home</a></div>
+            <table style="width:100%">
+                <tr>
+                    <td>
+                      
+                    </td>
+                    <td style="text-align">
+                        <div style="text-align:left;"><a href="#" onclick="logout()"><i class="fas fa-home"></i>Log Out</a></div>
+                    </td>
+                </tr>
+            </table>
+            
             <span id="span_betting">
                 <input type="button" class="button-print option-margin" value="ភ្នាល់" onclick="viewform('betting')" />
             </span>
