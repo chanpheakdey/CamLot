@@ -30,7 +30,7 @@ body {
 .page-root .page-container {
     max-width: 1200px;
     margin: 0 auto;
-    background-color: #fff;
+   
     font-family: ArialMT,Arial,sans-serif;
     font-size: 18px;
     min-height: 800px
@@ -219,8 +219,8 @@ body {
     }
 
     .article-main .font-style-2 {
-        color: #666;
-        font-size: 18px;
+        color: white;
+        font-size: 24px;
         font-weight: 400;
         margin-right: 20px
     }
@@ -241,7 +241,7 @@ body {
     }
 
     .article-main .margin-top-35 {
-        margin-top: 35px
+        margin-top: 0px
     }
 
     .article-main .split-main {
@@ -260,7 +260,7 @@ body {
 
         .article-main .split-main .recent-area {
             margin-left: 15px;
-            color: #666;
+            color: white;
             font-size: 18px;
             flex: 1;
          
@@ -431,7 +431,7 @@ body {
 
         .article-main .custom-main .right-column {
             float: right;
-            margin-top: -125px
+            margin-top: -80px
         }
 
             .article-main .custom-main .right-column .timer {
@@ -1116,7 +1116,7 @@ body {
 
 .lotto-90 .custom-main .lotto-special, .lotto-home .custom-main .lotto-special {
     display: block;
-    margin: 15px 0
+    margin: 5px 0
 }
 
     .lotto-90 .custom-main .lotto-special > div, .lotto-home .custom-main .lotto-special > div {
@@ -1133,26 +1133,27 @@ body {
     .lotto-90 .custom-main .lotto-special .lotto-special-num, .lotto-home .custom-main .lotto-special .lotto-special-num {
         display: inline-block;
         float: left;
-        background: #fa0000;
+        /* background: #fa0000; */
         color: #Fff;
         font-size: 48px;
         font-weight: 700;
         padding-left: 6px;
         line-height: 56px;
         transition: all .6s;
-        border: 2px solid #f33;
+        border: 2px solid #f9fafb;
         border-radius: 25px;
+        background-color: hsla(0,0%,100%,.12);
     }
 
         .lotto-90 .custom-main .lotto-special .lotto-special-num > span, .lotto-home .custom-main .lotto-special .lotto-special-num > span {
             display: inline-block;
             width: 95px;
-            height: 65px;
-            color: #555;
-            font-size: 70px;
+            height: 90px;
+            color: #ff7733;
+            font-size: 85px;
             text-align: center;
-            line-height: 56px;
-            background-color: #fff;
+            line-height: 85px;
+            background-color: #0a4465;
             margin-left: 8px;
             float: right;
             font-weight: 750;

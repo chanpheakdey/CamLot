@@ -14,12 +14,15 @@ connection.on("ReceiveMessage", function (Eventmessage) {
 
         $("#div_gameinfo").html(gameinfo);
         $("#div_resultinfo").html("");
-        clear_result();
+        
         loadnumbers();
     } else if (Eventmessage.subject == "count down") {
         var objgame = JSON.parse(Eventmessage.message);
         console.log(objgame)
         countdown(objgame.timeremaining, objgame.gameid);
+        if (objgame.timeremaining <= 10) {
+            clear_result();
+        }
     }
     else if (Eventmessage.subject == "start result") {
         var objresult = JSON.parse(Eventmessage.message);
@@ -228,7 +231,9 @@ var result_index = 0;
 function load_result(result_index, result) {
 
 
-
+    if (result < 10) {
+        result = '0' + result;
+    }
         var result_number;
         if (result_index == 1) {
             result_number = result;

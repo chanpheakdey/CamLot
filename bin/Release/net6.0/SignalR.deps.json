@@ -8,45 +8,12 @@
     ".NETCoreApp,Version=v6.0": {
       "SignalR/1.0.0": {
         "dependencies": {
-          "AForge.Video": "2.2.5",
-          "AForge.Video.DirectShow": "2.2.5",
           "System.Data.SqlClient": "4.6.0",
           "System.Drawing.Common": "6.0.0",
-          "ZXing.Net": "0.16.8",
           "QRCoder": "1.0.0.0"
         },
         "runtime": {
           "SignalR.dll": {}
-        }
-      },
-      "AForge/2.2.5": {
-        "runtime": {
-          "lib/AForge.dll": {
-            "assemblyVersion": "2.2.5.0",
-            "fileVersion": "2.2.5.0"
-          }
-        }
-      },
-      "AForge.Video/2.2.5": {
-        "dependencies": {
-          "AForge": "2.2.5"
-        },
-        "runtime": {
-          "lib/AForge.Video.dll": {
-            "assemblyVersion": "2.2.5.0",
-            "fileVersion": "2.2.5.0"
-          }
-        }
-      },
-      "AForge.Video.DirectShow/2.2.5": {
-        "dependencies": {
-          "AForge.Video": "2.2.5"
-        },
-        "runtime": {
-          "lib/AForge.Video.DirectShow.dll": {
-            "assemblyVersion": "2.2.5.0",
-            "fileVersion": "2.2.5.0"
-          }
         }
       },
       "Microsoft.NETCore.Platforms/2.0.0": {},
@@ -177,14 +144,6 @@
           "System.Runtime.CompilerServices.Unsafe": "4.5.0"
         }
       },
-      "ZXing.Net/0.16.8": {
-        "runtime": {
-          "lib/net6.0/zxing.dll": {
-            "assemblyVersion": "0.16.8.0",
-            "fileVersion": "0.16.8.0"
-          }
-        }
-      },
       "QRCoder/1.0.0.0": {
         "runtime": {
           "QRCoder.dll": {
@@ -200,27 +159,6 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
-    },
-    "AForge/2.2.5": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-clkumhM9DggqIzEXAHgVLeWO4arG5YfoPr7J4jfjJx35AoeEIJSSm49J25bwp/9mXQYLwi7y1Wunc8qgYJsGxg==",
-      "path": "aforge/2.2.5",
-      "hashPath": "aforge.2.2.5.nupkg.sha512"
-    },
-    "AForge.Video/2.2.5": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-XqzcOXtBUagEPRqg/00oayxlCPmxP4284SdM62mVotsNoD03fs19BrzdMBfhUOOYPyd0B/IXH7tEWnSDmc2gxA==",
-      "path": "aforge.video/2.2.5",
-      "hashPath": "aforge.video.2.2.5.nupkg.sha512"
-    },
-    "AForge.Video.DirectShow/2.2.5": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-pEch6felU/RGAbl0A7yjaQjsGxwiRFU9R+qBqR92wQo++XhzPLeQaZHnAPIBYaG7MfoqtjgCDkK4z3Tra4VQ3w==",
-      "path": "aforge.video.directshow/2.2.5",
-      "hashPath": "aforge.video.directshow.2.2.5.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/2.0.0": {
       "type": "package",
@@ -312,13 +250,6 @@
       "sha512": "sha512-S0wEUiKcLvRlkFUXca8uio1UQ5bYQzYgOmOKtCqaBQC3GR9AJjh43otcM32IGsAyvadFTaAMw9Irm6dS4Evfng==",
       "path": "system.text.encoding.codepages/4.5.0",
       "hashPath": "system.text.encoding.codepages.4.5.0.nupkg.sha512"
-    },
-    "ZXing.Net/0.16.8": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Cbbe+x7I7E+VJ0VxU1fPc7AktIw/9xea/ZY/fh38sXqTQ75LJp9ooGUjpzFqfpPfIKozAoXgJ4yvY4GzKpPBzQ==",
-      "path": "zxing.net/0.16.8",
-      "hashPath": "zxing.net.0.16.8.nupkg.sha512"
     },
     "QRCoder/1.0.0.0": {
       "type": "reference",
