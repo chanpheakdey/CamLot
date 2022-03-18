@@ -334,7 +334,13 @@ function clear_result_list() {
 function loadnumbers() {
     var html = "";
     for (var i = 1; i < 100; i++) {
-        html += "<div class='round-number' id='span_n" + i + "'>" + i + "</div>";
+        if (i < 10) {
+            html += "<div class='round-number' id='span_n" + i + "'>0" + i + "</div>";
+
+        } else {
+            html += "<div class='round-number' id='span_n" + i + "'>" + i + "</div>";
+
+        }
     }
       
 
