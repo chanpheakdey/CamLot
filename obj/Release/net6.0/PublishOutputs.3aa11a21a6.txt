@@ -6,13 +6,9 @@ C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\PubTmp\Out
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\PubTmp\Out\SignalR.deps.json
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\PubTmp\Out\SignalR.runtimeconfig.json
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\PubTmp\Out\SignalR.pdb
-C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\PubTmp\Out\AForge.dll
-C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\PubTmp\Out\AForge.Video.dll
-C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\PubTmp\Out\AForge.Video.DirectShow.dll
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\PubTmp\Out\Microsoft.Win32.SystemEvents.dll
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\PubTmp\Out\System.Data.SqlClient.dll
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\PubTmp\Out\System.Drawing.Common.dll
-C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\PubTmp\Out\zxing.dll
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\PubTmp\Out\runtimes\win-arm64\native\sni.dll
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\PubTmp\Out\runtimes\win-x64\native\sni.dll

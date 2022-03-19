@@ -22,6 +22,7 @@ connection.on("ReceiveMessage", function (Eventmessage) {
         countdown(objgame.timeremaining, objgame.gameid);
         if (objgame.timeremaining <= 10) {
             clear_result();
+            playeraudio("clear-announce-8s");
         }
     }
     else if (Eventmessage.subject == "start result") {
@@ -36,18 +37,23 @@ connection.on("ReceiveMessage", function (Eventmessage) {
     } else if (Eventmessage.subject == "result1") {
         var resultstring = Eventmessage.message;
         load_result(1, resultstring);
+        playeraudio("winning");
     } else if (Eventmessage.subject == "result2") {
         var resultstring = Eventmessage.message;
         load_result(2, resultstring);
+        playeraudio("winning");
     } else if (Eventmessage.subject == "result3") {
         var resultstring = Eventmessage.message;
         load_result(3, resultstring);
+        playeraudio("winning");
     } else if (Eventmessage.subject == "result4") {
         var resultstring = Eventmessage.message;
         load_result(4, resultstring);
+        playeraudio("winning");
     } else if (Eventmessage.subject == "result5") {
         var resultstring = Eventmessage.message;
         load_result(5, resultstring);
+        playeraudio("winning");
     } else if (Eventmessage.subject == "end result") {
         var jsonresult = Eventmessage.message;
         show_result(jsonresult);
@@ -89,6 +95,7 @@ connection.start().then(function () {
 $(document).ready(function () {
 
     checktoken();
+    playeraudio("winning");
 });
 
 function getUrlVars() {
@@ -376,4 +383,52 @@ function replaceAll(str, find, replace) {
     return str.replace(new RegExp(find, 'g'), replace);
 }
 
+function playeraudio(filename) {
+    console.log("player audio");
+    let fileUrl = "https://gameaudio.azurewebsites.net/api/Audio?filename=" + filename;
+    $("#audioplayer").append(`<source type="audio/wav" src="${fileUrl}"/>`)
+    $("#audioplayer").get(0).play();
+
+}
+
+
+
+
+function playeraudioold(filename) {
+    console.log("player audio");
+    let fileUrl = "https://gameaudio.azurewebsites.net/api/Audio?filename=" + filename;
+    $.ajax({
+        url: fileUrl,
+        type: "GET",
+        xhr: function () {
+            var xhr = new window.XMLHttpRequest();
+            xhr.addEventListener("progress", function (evt) {
+                if (evt.lengthComputable) {
+                    var percentComplete = evt.loaded / evt.total;
+                    if (evt.total > 0) {
+                        //$('#percentage').html(Math.round(percentComplete * 100) + "%");
+                    }
+                }
+                //console.log(evt.loaded)
+            }, false);
+            return xhr;
+        },
+        xhrFields: { responseType: 'blob' },
+        success: (r) => {
+            let blob = new Blob([r], { type: 'audio/wav' })
+            let src = URL.createObjectURL(blob);
+            $("#audioplayer").append(`<source type="audio/wav" src="${src}"/>`)
+        },
+        error: () => {
+            Swal.fire(
+                'Error',
+                'There was something wrong\nI\'m redirecting you back!',
+                'error'
+            ).then(() => {
+                location.reload()
+            })
+            //console.log("Error")
+        }
+    })
+}
 

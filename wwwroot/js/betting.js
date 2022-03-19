@@ -56,7 +56,10 @@ $(document).ready(function () {
     console.log("page load");
 
     checktokendetail();
+  
 });
+
+
 
 function getUrlVars() {
     var vars = [], hash;
