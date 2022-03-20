@@ -110,6 +110,14 @@ app.MapPost("api/LatestResult", () =>
     return dalGlobal.getLatestResult();
 
 });
+app.MapPost("api/getCurrentGame", () =>
+{
+    DalGlobal dalGlobal = new DalGlobal();
+    return dalGlobal.getCurrentGame();
+
+});
+
+
 
 app.MapPost("api/UploadImage", (IFormFile file) =>
 {

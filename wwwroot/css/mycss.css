@@ -1,5 +1,18 @@
-﻿.lotto-close-time{
-    font-size:34px;
+﻿.lotto-close-time {
+    font-size: 100px;
+    font-weight: 800;
+}
+.gameid {
+    font-size: 32px;
+    font-weight: 800;
+}
+.span-result-letter {
+    font-size: 34px;
+    font-weight: 800;
+    text-align: center;
+    background-color: #ff7733;
+    color: white;
+    border-radius: 25px 25px 0px 0px;
 }
 .div-popup-detail {
     padding: 100px 0px;

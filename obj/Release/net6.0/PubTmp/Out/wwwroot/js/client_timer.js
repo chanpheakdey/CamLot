@@ -8,11 +8,7 @@ connection.on("ReceiveMessage", function (Eventmessage) {
     if (Eventmessage.subject == "start new game") {
         $("#div_printpopup").hide();
         var objgame = JSON.parse(Eventmessage.message);
-        var gameinfo = ""
-        gameinfo += '<span class="font-style-2">' + objgame.createddate.substr(8, 2) + '/' + objgame.createddate.substr(5, 2) + '/' + objgame.createddate.substr(0, 4) + '</span>';
-        gameinfo += '<span class="font-style-2">#' + objgame.gameid + '&nbsp;' + objgame.createddate.substr(11, 8) + '</span>';
-
-        $("#div_gameinfo").html(gameinfo);
+        loadgameinfo(objgame.gameid, objgame.createddate);
         $("#div_resultinfo").html("");
         
         loadnumbers();
@@ -20,7 +16,10 @@ connection.on("ReceiveMessage", function (Eventmessage) {
         var objgame = JSON.parse(Eventmessage.message);
         console.log(objgame)
         countdown(objgame.timeremaining, objgame.gameid);
-        if (objgame.timeremaining <= 10) {
+
+      
+
+        if (objgame.timeremaining == 10) {
             clear_result();
             playeraudio("clear-announce-8s");
         }
@@ -29,7 +28,7 @@ connection.on("ReceiveMessage", function (Eventmessage) {
         var objresult = JSON.parse(Eventmessage.message);
         var resultinfo = ""
         resultinfo += '<span class="font-style-2">' + objresult.ResultDate.substr(8, 2) + '/' + objresult.ResultDate.substr(5, 2) + '/' + objresult.ResultDate.substr(0, 4) + '</span>';
-        resultinfo += '<span class="font-style-2">#' + objresult.GameID + '&nbsp;' + objresult.ResultDate.substr(11, 8) + '</span>';
+        resultinfo += '<span class="font-style-2"><span class="gameid" > ឆ្នោតទី ' + objresult.GameID + '</span>&nbsp;' + objresult.ResultDate.substr(11, 8) + '</span>';
 
         $("#div_resultinfo").html(resultinfo);
 
@@ -67,7 +66,16 @@ connection.on("ReceiveMessage", function (Eventmessage) {
 
 });
 
+function loadgameinfo(gameid, gamedate) {
+    console.log("GameDate:")
+  
 
+    var gameinfo = ""
+    gameinfo += '<span class="font-style-2">' + gamedate.substr(8, 2) + '/' + gamedate.substr(5, 2) + '/' + gamedate.substr(0, 4) + '</span>';
+    gameinfo += '<span class="font-style-2">' + gamedate.substr(11, 8) + '</span>';
+    gameinfo += '<div class="gameid">ឆ្នោតទី ' + gameid + '</div>';
+    $("#div_gameinfo").html(gameinfo);
+}
 
 
 connection.start().then(function () {
@@ -79,7 +87,7 @@ connection.start().then(function () {
 
     
     get_latestresult();
-
+    get_currentgame();
 
     var server = getUrlParameter("server");
     loadnumbers();
@@ -95,7 +103,7 @@ connection.start().then(function () {
 $(document).ready(function () {
 
     checktoken();
-   
+    //playeraudio("winning");
 });
 
 function getUrlVars() {
@@ -154,14 +162,6 @@ function get_latestresult() {
             show_latest_result(data)
 
             console.log(data[0]);
-            var objgame = JSON.parse(data[0]);
-            console.log("GameDate:")
-            console.log(objgame.GameDate)
-            var gameinfo = ""
-            gameinfo += '<span class="font-style-2">' + objgame.GameDate.substr(8, 2) + '/' + objgame.GameDate.substr(5, 2) + '/' + objgame.GameDate.substr(0, 4) + '</span>';
-            gameinfo += '<span class="font-style-2">#' + objgame.LastGameID + '&nbsp;' + objgame.GameDate.substr(11, 8) + '</span>';
-
-            $("#div_gameinfo").html(gameinfo);
             $("#div_resultinfo").html("");
         },
         error: function (result) {
@@ -171,6 +171,32 @@ function get_latestresult() {
         }
     });
 }
+
+
+function get_currentgame() {
+    console.log("get current game");
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "POST",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/getCurrentGame",
+        data: '',
+        success: function (data) {
+            console.log(data);
+            var objgame = JSON.parse(data);
+            loadgameinfo(objgame.GameID, objgame.GameDate);
+        },
+        error: function (result) {
+            console.log(result);
+            //return "";
+            //$('#loading').hide();
+        }
+    });
+}
+
+
 
 function show_result_html(datajson) {
     var data =JSON.parse( datajson);
@@ -207,9 +233,10 @@ function show_result_html(datajson) {
 }
 function clientTimer(secondsout) {
   
-    var totalminute = parseInt((maxsecond - secondsout) / 60);
-    var seconds = maxsecond - totalminute * 60 - secondsout;
-    $("#div_timer").html("Minute:" + totalminute + ";Second:" + seconds);
+    //var totalminute = parseInt((maxsecond - secondsout) / 60);
+    //var seconds = maxsecond - totalminute * 60 - secondsout;
+    //$("#div_timer").html("Minute:" + totalminute + ";Second:" + seconds);
+    $("#div_timer").html(maxsecond-secondsout);
 }
 
 
@@ -228,8 +255,8 @@ function countdown(timeremaining,gameid) {
         $("#div_timer").html("Time up!");
 
     } else {
-        $("#div_timer").html("Minute:" + totalminute + ";Second:" + seconds);
-
+        //$("#div_timer").html("Minute:" + totalminute + ";Second:" + seconds);
+        $("#div_timer").html(timeremaining);
     }
         
 }
@@ -386,8 +413,10 @@ function replaceAll(str, find, replace) {
 function playeraudio(filename) {
     console.log("player audio");
     let fileUrl = "https://gameaudio.azurewebsites.net/api/Audio?filename=" + filename;
-    $("#audioplayer").append(`<source type="audio/wav" src="${fileUrl}"/>`)
-
+    //$("#audioplayer").append(`<source type="audio/wav" src="${fileUrl}"/>`)
+    //$("#audioplayer").get(0).play();
+    var myAudio = new Audio(fileUrl);
+    myAudio.play();
 }
 
 

@@ -9,6 +9,9 @@ connection.on("ReceiveMessage", function (Eventmessage) {
         var objgame = JSON.parse(Eventmessage.message);
         var gameid = objgame.gameid;
         $("#hdGameID").val(gameid);
+        if (objgame.timeremaining <= 10) {
+            $("#hdGameID").val(0);
+        };
         $("#div_GameID").html("ឆ្នោតលេខ:" + gameid);
 
     }

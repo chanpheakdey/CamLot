@@ -721,7 +721,47 @@ namespace GameAPI.App_Code
 
 
 
-     
+        public string getCurrentGame()
+        {
+
+            try
+            {
+                ClResult clResult=new ClResult();
+                DataSet ds = new DataSet();
+                using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
+                {
+
+
+                    using (SqlCommand command = new SqlCommand("Sp_getCurrentGame", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+
+                        connection.Open();
+
+                        using (SqlDataAdapter da = new SqlDataAdapter(command))
+                        {
+                            da.Fill(ds);
+                        }
+                        connection.Close();
+
+                        clResult.GameID = (int)ds.Tables[0].Rows[0]["GameID"];
+                        clResult.GameDate = (string)ds.Tables[0].Rows[0]["CreatedDate"];
+                        string jsonString = JsonSerializer.Serialize(clResult);
+                        return jsonString;
+
+
+                    }
+                }
+
+         
+
+            }
+            catch (SqlException ex)
+            {
+                return null;
+            }
+        }
 
         public List<string> getLatestResult()
         {

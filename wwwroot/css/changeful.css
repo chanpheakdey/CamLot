@@ -28,7 +28,7 @@ body {
 }
 
 .page-root .page-container {
-    max-width: 1200px;
+    max-width: 1600px;
     margin: 0 auto;
    
     font-family: ArialMT,Arial,sans-serif;
@@ -592,7 +592,7 @@ body {
 
             .article-main .split-main .recent-area {
                 margin-left: 5px;
-                margin-top: 20px
+                margin-top: 0px
             }
 
                 .article-main .split-main .recent-area .recent-list {
@@ -1137,26 +1137,27 @@ body {
         color: #Fff;
         font-size: 48px;
         font-weight: 700;
-        padding-left: 6px;
+        padding-left: 0px;
         line-height: 56px;
         transition: all .6s;
         border: 2px solid #f9fafb;
         border-radius: 25px;
         background-color: hsla(0,0%,100%,.12);
+       
     }
 
         .lotto-90 .custom-main .lotto-special .lotto-special-num > span, .lotto-home .custom-main .lotto-special .lotto-special-num > span {
             display: inline-block;
-            width: 95px;
-            height: 90px;
+            width: 140px;
+            height: 140px;
             color: #ff7733;
-            font-size: 85px;
+            font-size: 100px;
             text-align: center;
-            line-height: 85px;
+            line-height: 100px;
             background-color: #0a4465;
-            margin-left: 8px;
-            float: right;
-            font-weight: 750;
+            margin-left: 0px;
+            float: left;
+            font-weight: 800;
             border-radius: 25px;
         }
 
@@ -1165,7 +1166,7 @@ body {
     }
 
         .lotto-90 .custom-main .lotto-special .lotto-special-list .lotto-special-num, .lotto-home .custom-main .lotto-special .lotto-special-list .lotto-special-num {
-            margin-right: 6px
+            margin-right: 10px
         }
 
         .lotto-90 .custom-main .lotto-special .lotto-special-list > div:last-child, .lotto-home .custom-main .lotto-special .lotto-special-list > div:last-child {
