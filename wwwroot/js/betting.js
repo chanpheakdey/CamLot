@@ -57,7 +57,6 @@ connection.start().then(function () {
 
 $(document).ready(function () {
     console.log("page load");
-
     checktokendetail();
   
 });
@@ -80,6 +79,7 @@ function getUrlVars() {
 
 function checktokendetail() {
     var token = getUrlVars()["token"];
+    console.log("token:" + token);
     if (token != "" && token != undefined) {
         $.ajax({
             //cache: false,
@@ -98,6 +98,7 @@ function checktokendetail() {
                     $("#hdUsername").val(data.username);
                     var username = $("#hdUsername").val();
                     console.log(username);
+                    getusercredit(username);
                     //getuserlist(username);
                 }
             },
@@ -163,7 +164,26 @@ function getwithdrawurl(username) {
     return returnurl;
 }
 
+function getusercredit(username) {
+  
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "Get",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/getusercredit/" + username,
+        data: '',
+        success: function (data) {
 
+            $("#div_credit").html("$" + data);
+        },
+        error: function (result) {
+            console.log(result);
+            //$('#loading').hide();
+        }
+    });
+}
 function confirmprint() {
     var jsonslot = $("#hdSlot").val();
     console.log(jsonslot);
@@ -227,6 +247,7 @@ function confirmprint() {
                     qrcode_img_base64(bettingid,html);
                     cancelprint();
                     clear_betting();
+                    getusercredit(username);
                 }
                 
 

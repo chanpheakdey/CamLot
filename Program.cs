@@ -73,12 +73,38 @@ app.MapPost("api/userloginbytoken", (ClToken clToken) =>
 
 });
 
+
 app.MapPost("api/logout", (ClToken clToken) =>
 {
     DalGlobal dalGlobal = new DalGlobal();
     return dalGlobal.UserLogout(clToken);
 
 });
+
+app.MapGet("api/getusercredit/{username}", async (http) =>
+{
+    object? username;
+    if (!http.Request.RouteValues.TryGetValue("username", out username))
+    {
+        http.Response.StatusCode = 400;
+        return;
+    }
+
+
+    DalGlobal dalGlobal = new DalGlobal();
+
+
+    var todoItem = await dalGlobal.getUserCredit(username.ToString());
+    if (todoItem == null)
+    {
+        http.Response.StatusCode = 404;
+        return;
+    }
+
+    await http.Response.WriteAsJsonAsync(todoItem);
+});
+
+
 app.MapPost("api/createuser", (ClUser clUser) =>
 {
     DalGlobal dalGlobal = new DalGlobal();

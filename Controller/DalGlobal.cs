@@ -82,6 +82,49 @@ namespace GameAPI.App_Code
 
 
         }
+
+
+        public async Task<string> getUserCredit(string Username)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                await using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
+                {
+
+
+                    using (SqlCommand command = new SqlCommand("Sp_getUserCredit", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        SqlParameter sqlParameter1 = command.Parameters.Add("@Username", SqlDbType.VarChar);
+                        sqlParameter1.Value = Username;
+                        connection.Open();
+                        using (SqlDataAdapter da = new SqlDataAdapter(command))
+                        {
+                            da.Fill(ds);
+
+                        }
+                        connection.Close();
+                        int usercredit = (int)ds.Tables[0].Rows[0]["Credit"];
+
+
+
+
+                        return usercredit.ToString("#,##0");
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                return ex.ToString();
+            }
+
+
+        }
+
+
         public async Task<string> getToken(string Username)
         {
             try

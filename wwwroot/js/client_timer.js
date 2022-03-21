@@ -19,10 +19,15 @@ connection.on("ReceiveMessage", function (Eventmessage) {
 
       
 
-        if (objgame.timeremaining == 10) {
-            $("#div_resultinfo").html("");
-            clear_result();
-            playeraudio("clear-announce-8s");
+        if (objgame.timeremaining <= 10) {
+            if (objgame.timeremaining >= 9) {
+                $("#div_resultinfo").html("");
+                clear_result();
+            }
+            if (objgame.timeremaining >= 1) {
+                playeraudio("clear-announce");
+            }
+            
 
         }
     }

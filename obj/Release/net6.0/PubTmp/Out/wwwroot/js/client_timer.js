@@ -9,7 +9,7 @@ connection.on("ReceiveMessage", function (Eventmessage) {
         $("#div_printpopup").hide();
         var objgame = JSON.parse(Eventmessage.message);
         loadgameinfo(objgame.gameid, objgame.createddate);
-        $("#div_resultinfo").html("");
+        //$("#div_resultinfo").html("");
         
         loadnumbers();
     } else if (Eventmessage.subject == "count down") {
@@ -19,9 +19,16 @@ connection.on("ReceiveMessage", function (Eventmessage) {
 
       
 
-        if (objgame.timeremaining == 10) {
-            clear_result();
-            playeraudio("clear-announce-8s");
+        if (objgame.timeremaining <= 10) {
+            if (objgame.timeremaining >= 9) {
+                $("#div_resultinfo").html("");
+                clear_result();
+            }
+            if (objgame.timeremaining >= 1) {
+                playeraudio("clear-announce");
+            }
+            
+
         }
     }
     else if (Eventmessage.subject == "start result") {
