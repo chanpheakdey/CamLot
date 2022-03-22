@@ -165,16 +165,17 @@ namespace GameAPI.App_Code
 
         }
 
-        public async Task<string> getReport(Object? StartDate, Object? EndDate)
+        public async Task<ClReport> getReport(Object? StartDate, Object? EndDate)
         {
             try
             {
+                ClReport clReport = new ClReport();
                 DataSet ds = new DataSet();
                 await using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
                 {
 
 
-                    using (SqlCommand command = new SqlCommand("Sp_Report1", connection))
+                    using (SqlCommand command = new SqlCommand("Sp_ReportSummary", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
@@ -189,19 +190,23 @@ namespace GameAPI.App_Code
 
                         }
                         connection.Close();
-                        string report_html = (string)ds.Tables[0].Rows[0]["ReportHtml"];
-                        
+                        clReport.TotalGames = (int)ds.Tables[0].Rows[0]["TotalGames"];
+                        clReport.BetAmount = (int)ds.Tables[0].Rows[0]["BetAmount"];
+                        clReport.WinAmount = (int)ds.Tables[0].Rows[0]["WinAmount"];
+                        clReport.AgentBalance = (int)ds.Tables[0].Rows[0]["AgentBalance"];
+                        clReport.Profit = (int)ds.Tables[0].Rows[0]["Profit"];
+                        clReport.Comission = (int)ds.Tables[0].Rows[0]["Comission"];
 
-                       
 
-                        return report_html;
+
+                        return clReport;
 
                     }
                 }
             }
             catch (SqlException ex)
             {
-                return ex.ToString();
+                return null ;
             }
 
            
@@ -675,6 +680,10 @@ namespace GameAPI.App_Code
 
                         SqlParameter sqlParameter2 = command.Parameters.Add("@Username", SqlDbType.VarChar);
                         sqlParameter2.Value = clBettingResult.CreatedBy;
+
+                        SqlParameter sqlParameter3 = command.Parameters.Add("@WithdrawalAmount", SqlDbType.Int);
+                        sqlParameter3.Value = clBettingResult.WithdrawalAmount;
+
 
                         connection.Open();
                         command.ExecuteNonQuery();

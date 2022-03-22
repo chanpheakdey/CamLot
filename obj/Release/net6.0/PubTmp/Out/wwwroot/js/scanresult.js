@@ -5,6 +5,7 @@
     });
 
     checktokendetail();
+   
 });
 
 function getUrlVars() {
@@ -39,6 +40,7 @@ function checktokendetail() {
                 $("#hdUsername").val(data.username);
                 var username = $("#hdUsername").val();
                 console.log(username);
+                getusercredit(username);
                 //getuserlist(username);
             }
         },
@@ -49,6 +51,30 @@ function checktokendetail() {
     });
 
 
+}
+
+
+
+
+function getusercredit(username) {
+
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "Get",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/getusercredit/" + username,
+        data: '',
+        success: function (data) {
+            console.log(data);
+            $("#div_credit").html("R" + data);
+        },
+        error: function (result) {
+            console.log(result);
+            //$('#loading').hide();
+        }
+    });
 }
 
 
@@ -86,10 +112,11 @@ function scanresult() {
                     //html += '<div style="text-align:center;"><input type="button" class="button-print print_button" value="Print" onclick="Printwithdraw()"></div>';
 
                 } else {
-                    html += "<div>ឈ្នះ: R" + (dataobj.winAmountA + dataobj.winAmountB + dataobj.winAmountC + dataobj.winAmountD + dataobj.winAmountE) + "</div>";
+                    var totalwin = dataobj.winAmountA + dataobj.winAmountB + dataobj.winAmountC + dataobj.winAmountD + dataobj.winAmountE;
+                    html += "<div>ឈ្នះ: R" + totalwin + "</div>";
                     var username = $("#hdUsername").val();
                     console.log("username:" + username);
-                    html += '<div style="text-align:center;"><input type="button" class="button-print" value="Withdraw" onclick="withdraw(' + code + ',' + "'" + username+ "'" + ')"></div>';
+                    html += '<div style="text-align:center;"><input type="button" class="button-print" value="Withdraw" onclick="withdraw(' + code + ',' + "'" + username+ "'" + ',' + totalwin + ')"></div>';
                 }
                
             } else {
@@ -106,7 +133,7 @@ function scanresult() {
 
 }
 
-function withdraw(bettingid,username) {
+function withdraw(bettingid, username,withdrawalAmount) {
     if (confirm('តើអ្នកដកប្រាក់ឈ្នះនេះមែនទេ?')) {
         $.ajax({
             //cache: false,
@@ -115,7 +142,7 @@ function withdraw(bettingid,username) {
             //dataType: "Json",
             contentType: "application/json; charset=utf-8",
             url: "api/withdraw",
-            data: '{"bettingID": ' + bettingid + ',"createdBy":"' + username + '"}',
+            data: '{"bettingID": ' + bettingid + ',"createdBy":"' + username + '","WithdrawalAmount":' + withdrawalAmount + '}',
             success: function (dataobj) {
                 var result_tran = dataobj.d;
                 if (result_tran == "error") {
@@ -123,6 +150,7 @@ function withdraw(bettingid,username) {
                     window.location = window.location.href;
                 } else {
                     scanresult();
+                    getusercredit(username);
                 }
 
             },

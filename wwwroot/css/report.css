@@ -19,3 +19,35 @@ th,td {
 .f-money{
     text-align:right;
 }
+
+.report-title{
+    font-weight:800;
+    font-size:xx-large;
+}
+
+
+.report-title-date {
+    font-weight: bold;
+    font-size: x-large;
+}
+.report-row{
+    padding:5px;
+}
+.row-caption{
+    color:gray;
+}
+.row-value{
+    float:right;
+    font-weight:bold;
+}
+.report-panel{
+    max-width:600px;
+}
+
+.div-date-caption{
+    padding:5px;
+}
+.date-caption{
+    width:120px;
+    float:left;
+}

@@ -24,7 +24,7 @@ connection.on("ReceiveMessage", function (Eventmessage) {
                 $("#div_resultinfo").html("");
                 clear_result();
             }
-            if (objgame.timeremaining >= 1) {
+            if (objgame.timeremaining == 2 || objgame.timeremaining == 4 || objgame.timeremaining == 6 || objgame.timeremaining == 8 || objgame.timeremaining == 10    ) {
                 playeraudio("clear-announce");
             }
             

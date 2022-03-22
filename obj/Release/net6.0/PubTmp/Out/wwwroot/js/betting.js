@@ -818,12 +818,17 @@ function multiply() {
 }
 function addrange(stringrange) {
     console.log("str-range:" + stringrange);
-    var num1 = stringrange.substr(0, 2);
-    var num2 = stringrange.substr(3, 2);
+    var num1 = parseInt(stringrange.substr(0, 2));
+    var num2 = parseInt(stringrange.substr(3, 2));
 
     var string_number = $("#hdinput_number").val();
     for (var i = num1; i <= num2; i++) {
-        listnumber.push(i);
+        if (i < 10) {
+            listnumber.push('0' + i);
+        } else {
+            listnumber.push(i);
+        }
+        
         string_number += i;
     }
     listnumber = unique(listnumber);

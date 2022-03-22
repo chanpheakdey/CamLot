@@ -54,6 +54,8 @@
         public string? WithdrawalDate { get; set; }
         public string? WithdrawalBy { get; set; }
 
+        public int WithdrawalAmount { get; set; }
+
 
     }
 
