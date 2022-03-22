@@ -187,7 +187,7 @@ app.MapPost("api/CheckTokenDetail", (ClToken clToken) =>
 
 });
 
-app.MapGet("api/getReport/{startdate}/{enddate}", async (http) =>
+app.MapGet("api/getReport/{startdate}/{enddate}/{username}", async (http) =>
 {
     object ?startdate;
     if (!http.Request.RouteValues.TryGetValue("startdate", out startdate))
@@ -202,10 +202,16 @@ app.MapGet("api/getReport/{startdate}/{enddate}", async (http) =>
         return;
     }
 
+    object? username;
+    if (!http.Request.RouteValues.TryGetValue("username", out username))
+    {
+        http.Response.StatusCode = 400;
+        return;
+    }
     DalGlobal dalGlobal = new DalGlobal();
 
 
-    var todoItem = await dalGlobal.getReport(startdate, enddate);
+    var todoItem = await dalGlobal.getReport(startdate, enddate, username);
     if (todoItem == null)
     {
         http.Response.StatusCode = 404;

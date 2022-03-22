@@ -25,7 +25,10 @@ th,td {
     font-size:xx-large;
 }
 
-
+.date-textbox{
+    padding:5px;
+    border-radius:10px;
+}
 .report-title-date {
     font-weight: bold;
     font-size: x-large;
@@ -47,7 +50,13 @@ th,td {
 .div-date-caption{
     padding:5px;
 }
-.date-caption{
-    width:120px;
-    float:left;
+.date-caption {
+    width: 80px;
+    float: left;
+    padding: 5px;
+}
+.button-preview{
+    padding:5px;
+    border-radius:10px;
+    margin-left:5px;
 }

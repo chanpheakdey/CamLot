@@ -165,7 +165,7 @@ namespace GameAPI.App_Code
 
         }
 
-        public async Task<ClReport> getReport(Object? StartDate, Object? EndDate)
+        public async Task<ClReport> getReport(Object? StartDate, Object? EndDate, Object? Username)
         {
             try
             {
@@ -183,6 +183,8 @@ namespace GameAPI.App_Code
                         sqlParameter1.Value = StartDate.ToString().Substring(6, 4) + "-" + StartDate.ToString().Substring(3, 2) + "-" + StartDate.ToString().Substring(0,2);
                         SqlParameter sqlParameter2 = command.Parameters.Add("@EndDate", SqlDbType.Date);
                         sqlParameter2.Value = EndDate.ToString().Substring(6, 4) + "-" + EndDate.ToString().Substring(3, 2) + "-" + EndDate.ToString().Substring(0, 2);
+                        SqlParameter sqlParameter3 = command.Parameters.Add("@Username", SqlDbType.VarChar);
+                        sqlParameter3.Value = Username.ToString();
                         connection.Open();
                         using (SqlDataAdapter da = new SqlDataAdapter(command))
                         {

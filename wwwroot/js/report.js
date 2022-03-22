@@ -18,8 +18,8 @@ const formatter = new Intl.NumberFormat('en-US', {
 })
 
 
-function loadreport(startdate, enddate) {
-
+function loadreport(startdate, enddate,) {
+    var username = $("#hdUsername").val();
     console.log(startdate + ';' + enddate);
     $.ajax({
         //cache: false,
@@ -27,7 +27,7 @@ function loadreport(startdate, enddate) {
         type: "Get",
         //dataType: "Json",
         contentType: "application/json; charset=utf-8",
-        url: "api/getReport/" + startdate + "/" + enddate,
+        url: "api/getReport/" + startdate + "/" + enddate + "/" + username,
         data: '',
         success: function (data) {
             console.log(data);
@@ -63,7 +63,7 @@ function loadreport(startdate, enddate) {
 
 $(document).ready(function () {
 
-    checktoken();
+    checktokendetail();
 });
 
 function getUrlVars() {
@@ -105,3 +105,37 @@ function checktoken() {
 
 }
 
+
+
+function checktokendetail() {
+    var token = getUrlVars()["token"];
+
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "POST",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/CheckTokenDetail",
+        data: '{"TokenID":"' + token + '"}',
+        success: function (data) {
+            console.log(data);
+            if (data.expired == true) {
+
+                window.location = "login";
+            } else {
+                $("#hdUsername").val(data.username);
+                var username = $("#hdUsername").val();
+                console.log(username);
+              
+                //getuserlist(username);
+            }
+        },
+        error: function (result) {
+            console.log(result);
+            //$('#loading').hide();
+        }
+    });
+
+
+}
