@@ -3,8 +3,14 @@
         if (e.keyCode == 13)
             scanresult();
     });
+    var qrcode = getUrlVars()["qrcode"];
 
-    checktokendetail();
+    if (qrcode != "1" && qrcode !=null) {        
+        scanQRresult(qrcode);
+    } else {
+        checktokendetail();
+    }
+    
    
 });
 
@@ -77,7 +83,9 @@ function getusercredit(username) {
     });
 }
 
-
+function gotoscanner() {
+    window.location = window.location + "&scanner=1";
+}
 function scanresult() {
     $("#div_result").show();
     var code = $("#txt_code").val();
@@ -121,6 +129,62 @@ function scanresult() {
                
             } else {
                 
+            }
+            $("#div_result").html(html);
+        },
+        error: function (result) {
+            console.log(result);
+            //$('#loading').hide();
+        }
+    });
+
+
+}
+
+
+function scanQRresult(qrcode) {
+    $("#div_result").show();
+    var code = qrcode;
+
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "POST",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/getbettingresult",
+        data: '{"bettingID": ' + code + '}',
+        success: function (dataobj) {
+            console.log(dataobj);
+            var html = create_receipt(dataobj);
+            var win = dataobj.win;
+            html += "<table class='tbl-result'>"
+            html += "<tr>"
+            html += "<td></td><td style='width:40px;text-align:center;'>A</td><td style='width:40px;text-align:center;'>B</td><td>C</td><td>D</td><td>E</td>"
+            html += "</tr>"
+            html += "<tr>"
+            html += "<td>លទ្ធផលៈ</td><td>" + dataobj.resultSlotA + "</td><td>" + dataobj.resultSlotB + "</td><td>" + dataobj.resultSlotC + "</td><td>" + dataobj.resultSlotD + "</td><td>" + dataobj.resultSlotE + "</td>"
+            html += "</tr>"
+            html += "</table>"
+
+            if (win == true) {
+                //qrcode_img_base64(bettingid, html);                  
+                var withdrawal = dataobj.withdrawal;
+                if (withdrawal == true) {
+                    html += "ឈ្នះ: R" + (dataobj.winAmountA + dataobj.winAmountB + dataobj.winAmountC + dataobj.winAmountD + dataobj.winAmountE) + " <span style='color:red;'>(បានដកប្រាក់ហើយ)</span>";
+                    html += '<div>អ្នកដកៈ ' + dataobj.withdrawalBy + ' (' + dataobj.withdrawalDate + ')</div>';
+                    //html += '<div style="text-align:center;"><input type="button" class="button-print print_button" value="Print" onclick="Printwithdraw()"></div>';
+
+                } else {
+                    var totalwin = dataobj.winAmountA + dataobj.winAmountB + dataobj.winAmountC + dataobj.winAmountD + dataobj.winAmountE;
+                    html += "<div>ឈ្នះ: R" + totalwin + "</div>";
+                    var username = $("#hdUsername").val();
+                    console.log("username:" + username);
+                    html += '<div style="text-align:center;"><input type="button" class="button-print" value="Withdraw" onclick="withdraw(' + code + ',' + "'" + username + "'" + ',' + totalwin + ')"></div>';
+                }
+
+            } else {
+
             }
             $("#div_result").html(html);
         },

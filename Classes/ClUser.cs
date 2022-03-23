@@ -16,6 +16,7 @@
         public bool Report {get; set;}
         public bool Display { get; set; }
         public bool Admin { get; set; }
+        public string? Token { get; set; } = string.Empty;
 
     }
 }

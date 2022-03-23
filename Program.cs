@@ -11,10 +11,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddHostedService<messageworker>();
 builder.Services.AddRazorPages();
-//builder.Services.AddMvc().AddRazorPagesOptions(options =>
-//{
-//    options.Conventions.AddPageRoute("/login", "");
-//});
+builder.Services.AddMvc().AddRazorPagesOptions(options =>
+{
+    options.Conventions.AddPageRoute("/login", "");
+
+
+});
 
 builder.Services.AddSignalR(hubOption =>
 {
@@ -244,7 +246,28 @@ app.MapGet("api/getToken/{username}", async (http) =>
     await http.Response.WriteAsJsonAsync(todoItem);
 });
 
+app.MapGet("api/getnewToken/{token}", async (http) =>
+{
+    object? token;
+    if (!http.Request.RouteValues.TryGetValue("token", out token))
+    {
+        http.Response.StatusCode = 400;
+        return;
+    }
 
+
+    DalGlobal dalGlobal = new DalGlobal();
+
+
+    var todoItem = await dalGlobal.getnewToken(token.ToString());
+    if (todoItem == null)
+    {
+        http.Response.StatusCode = 404;
+        return;
+    }
+
+    await http.Response.WriteAsJsonAsync(todoItem);
+});
 
 app.MapGet("api/getuserlist/{username}", async (http) =>
 {

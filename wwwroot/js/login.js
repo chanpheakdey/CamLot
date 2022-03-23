@@ -5,6 +5,9 @@ $(document).ready(function () {
     var token = getUrlVars()["token"];
     if (token != "" && token != undefined) {
         loginbytoken(token);
+    } else {
+        $("#div_calculator").hide();
+        $("#div_login").show();
     }
     
 });
@@ -22,11 +25,42 @@ function getUrlVars() {
 }
 
 
-
-
 function viewform(formname) {
+    var token = getUrlVars()["token"];
+    if (token != "" && token != undefined) {
+        viewformbytoken(formname,token);
+    }
+    //else {
+    //    var username = $("#txt_username").val();
+    //    viewformbyusername(formname, username);
+    //}
+}
+
+function viewformbytoken(formname, token) {
     //console.log(startdate + ';' + enddate);
-    var username = $("#txt_username").val();
+
+ 
+
+            if (formname == 'betting') {
+                window.location = 'bet?token=' + data;
+            } else if (formname == 'withdrawal') {
+                window.location = 'scanresult?token=' + data;
+            } else if (formname == 'report') {
+                window.location = 'report?token=' + data;
+            } else if (formname == 'display') {
+                window.location = 'display?token=' + data;
+            } else if (formname == 'user') {
+                window.location = 'user?token=' + data;
+            }
+        
+
+
+}
+
+function viewformbyusername(formname,username) {
+    //console.log(startdate + ';' + enddate);
+
+    
     $.ajax({
         //cache: false,
         async: false,
@@ -38,7 +72,7 @@ function viewform(formname) {
         success: function (data) {
 
             if (formname == 'betting') {
-                window.location = 'index?username=' + username + '&token=' + data;
+                window.location = 'bet?username=' + username + '&token=' + data;
             } else if (formname == 'withdrawal') {
                 window.location = 'scanresult?username=' + username + '&token=' + data;
             } else if (formname == 'report') {
@@ -59,6 +93,7 @@ function viewform(formname) {
   
 }
 function login() {
+    var token = getUrlVars()["token"];
     var username = $("#txt_username").val();
     var password = $("#txt_password").val();
     console.log(username + ',' + password);
@@ -72,7 +107,7 @@ function login() {
             //dataType: "Json",
             contentType: "application/json; charset=utf-8",
             url: "api/userlogin",
-            data: '{"Username":"' + username + '","Password":"' + password + '"}',
+            data: '{"Username":"' + username + '","Password":"' + password + '","Token":"' + token + '"}',
             success: function (dataobj) {
                 console.log(dataobj);
                 var userid = dataobj.userID;
@@ -130,7 +165,7 @@ function login() {
 
 
 function loginbytoken(token) {
-   
+    console.log(token);
         $.ajax({
             //cache: false,
             async: false,
@@ -145,9 +180,13 @@ function loginbytoken(token) {
                 console.log("UserID:" + userid);
                 if (userid == -1) {
                     alert("error");
+                    $("#div_calculator").hide();
+                    $("#div_login").show();
                 } else {
                     if (userid == 0) {
-                        alert("invalid username or password!");
+                        //token expired
+                        $("#div_calculator").hide();
+                        $("#div_login").show();
                     } else {
                         console.log("PlaceID:" + dataobj.placeID);
 
@@ -207,7 +246,7 @@ function logout() {
             data: '{"TokenID":"' + token + '"}',
             success: function (dataobj) {
 
-                window.location = "login?token="
+                window.location = "login?token=" + token;
 
 
             },

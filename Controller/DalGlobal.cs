@@ -165,6 +165,47 @@ namespace GameAPI.App_Code
 
         }
 
+
+        public async Task<string> getnewToken(string token)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                await using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
+                {
+
+
+                    using (SqlCommand command = new SqlCommand("Sp_GenerateNewToken", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        SqlParameter sqlParameter1 = command.Parameters.Add("@Token", SqlDbType.VarChar);
+                        sqlParameter1.Value = token;
+                        connection.Open();
+                        using (SqlDataAdapter da = new SqlDataAdapter(command))
+                        {
+                            da.Fill(ds);
+
+                        }
+                        connection.Close();
+                        string newtoken = (string)ds.Tables[0].Rows[0]["TokenID"];
+
+
+
+
+                        return newtoken;
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                return ex.ToString();
+            }
+
+
+        }
+
         public async Task<ClReport> getReport(Object? StartDate, Object? EndDate, Object? Username)
         {
             try
@@ -296,7 +337,8 @@ namespace GameAPI.App_Code
                         sqlParameter3.Value = cluser.UserName;
                         SqlParameter sqlParameter4 = command.Parameters.Add("@Password", SqlDbType.VarChar);
                         sqlParameter4.Value = cluser.Password;
-
+                        SqlParameter sqlParameter5 = command.Parameters.Add("@Token", SqlDbType.VarChar);
+                        sqlParameter5.Value = cluser.Token;
                         connection.Open();
                         using (SqlDataAdapter da = new SqlDataAdapter(command))
                         {
@@ -304,7 +346,7 @@ namespace GameAPI.App_Code
 
                         }
                         connection.Close();
-                        clUser_result.UserID = 5; //(int)ds.Tables[0].Rows[0]["UserID"];
+                        clUser_result.UserID = (int)ds.Tables[0].Rows[0]["UserID"];
                         clUser_result.PlaceID = (int)ds.Tables[0].Rows[0]["PlaceID"];
                         clUser_result.Betting = (bool)ds.Tables[0].Rows[0]["Betting"];
                         clUser_result.Withdrawal = (bool)ds.Tables[0].Rows[0]["Withdrawal"];
@@ -350,7 +392,7 @@ namespace GameAPI.App_Code
 
                         }
                         connection.Close();
-                        clUser_result.UserID = 5; //(int)ds.Tables[0].Rows[0]["UserID"];
+                        clUser_result.UserID = (int)ds.Tables[0].Rows[0]["UserID"];
                         clUser_result.PlaceID = (int)ds.Tables[0].Rows[0]["PlaceID"];
                         clUser_result.Betting = (bool)ds.Tables[0].Rows[0]["Betting"];
                         clUser_result.Withdrawal = (bool)ds.Tables[0].Rows[0]["Withdrawal"];
