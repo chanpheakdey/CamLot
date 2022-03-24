@@ -109,7 +109,7 @@ connection.start().then(function () {
 
 $(document).ready(function () {
 
-    checktoken();
+    //checktoken();
     //playeraudio("winning");
 });
 

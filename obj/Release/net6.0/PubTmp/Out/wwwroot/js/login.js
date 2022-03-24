@@ -39,7 +39,7 @@ function viewform(formname) {
 function viewformbytoken(formname, token) {
     //console.log(startdate + ';' + enddate);
 
- 
+    var data = token;
 
             if (formname == 'betting') {
                 window.location = 'bet?token=' + data;
