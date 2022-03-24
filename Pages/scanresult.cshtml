@@ -8,33 +8,33 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 
 <script src="js/public.js"></script>
-<script src="js/scanresult.js"></script>
+<script src="js/scanresult.js?v=2"></script>
 <link href="~/css/betting.css" rel="stylesheet" />
 <link href="~/css/mycss.css" rel="stylesheet" />
+<link href="~/css/scan.css" rel="stylesheet" />
 
 <style>
-    .receipt{
-        padding:5px;
-       background-color:white;
-    }
-    .tbl-result tr td{
-        width:40px;
-        text-align:center;
-    }
-    
+   
 </style>
  <input type="hidden" value="" id="hdUsername" />
 <div class="div-container">  
+    <div class="login div-confirm" id="div_confirm" style="display:none;">
+        <div class="confirm-popup-title">តើអ្នកដកប្រាក់ឈ្នះនេះមែនទេ?</div>
+        <div class="div-confirm-action" id="div_confirm_action">
+            <span class="span-confirm-action"><input type="button" class="button-preview" onclick="confirmwithdraw()" /></span>
+            <span class="span-confirm-action"><input type="button" class="button-preview" onclick="cancelwithdraw()" /></span>
+        </div>
+    </div>
     <div class="login" id="div_login">
        <div style="text-align:left;margin-bottom: 25px;"><a href="#" onclick="backhome()" style="background-color: white;  padding: 5px; border-radius: 10px;"><i class="fas fa-home"></i>Home</a></div>
              <div style="font-size:xx-large;display:none;">
             <img src='images/CamLotto.png' style='width:150px;'>
             <span class="logo-title" ><span style="color:black;">CAM</span><span style="color:#c67819"> LOTTO</span> <br></span>
             </div>
-            <div id="div_credit"></div>
+            <div id="div_credit" style="text-align:right;"></div>
             <div class="div-user">
-            <div class="div-username">លេខកូដ:<span><input type="text" class="div-input-text" id="txt_code" /></span></div> 
-            <div><input type="button" value="QR Code" onclick="gotoscanner()" /></div>
+            <div class="div-username" style="display:none;">លេខកូដ:<span><input type="text" class="div-input-text" id="txt_code" /></span></div> 
+            <div class="div-qrcode"><input class="button-print" type="button" value="QR កូដ" onclick="gotoscanner()" /></div>
             </div>         
            
             

@@ -99,6 +99,8 @@ connection.start().then(function () {
     var server = getUrlParameter("server");
     loadnumbers();
     clear_result();
+
+    
    
 
 }).catch(function (err) {
@@ -419,7 +421,8 @@ function replaceAll(str, find, replace) {
 
 function playeraudio(filename) {
     console.log("player audio");
-    let fileUrl = "https://gameaudio.azurewebsites.net/api/Audio?filename=" + filename;
+    //let fileUrl = "https://gameaudio.azurewebsites.net/api/Audio?filename=" + filename;
+    let fileUrl = "Audio/" + filename + ".wav";
     //$("#audioplayer").append(`<source type="audio/wav" src="${fileUrl}"/>`)
     //$("#audioplayer").get(0).play();
     var myAudio = new Audio(fileUrl);

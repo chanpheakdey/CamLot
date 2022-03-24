@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <Content Include="Classes\qrcode.cs" />
+    <Content Include="wwwroot\.well-known\pki-validation\F3856B0A9DBBDCBC7FB4034D3DED98EC.txt" />
   </ItemGroup>
 <ItemGroup>
     

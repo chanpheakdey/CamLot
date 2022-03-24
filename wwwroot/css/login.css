@@ -1,0 +1,19 @@
+﻿.button-viewform {
+    font-size: x-large;
+    font-family: inherit;
+    width: 100%;
+    margin: 0.5em 0;
+    outline: none;
+    padding: 1em;
+    border-radius: 100px;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    border: none;
+    background-color: #fff;
+    color: #000;
+    max-width: 280px;
+    font-weight: 900;
+}
+.div-viewform{
+    margin:5px;
+}

@@ -1,0 +1,27 @@
+﻿.receipt {
+    padding: 5px;
+    background-color: white;
+}
+
+.tbl-result tr td {
+    width: 40px;
+    text-align: center;
+}
+
+.div-qrcode {
+    text-align: center;
+}
+.div-confirm{
+
+}
+.confirm-popup-title{
+    font-weight:bold;
+    text-align:center;
+    padding:20px;
+}
+.div-confirm-action{
+    text-align:center;
+}
+.span-confirm-action{
+    margin:5px;
+}

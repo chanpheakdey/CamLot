@@ -4,8 +4,8 @@
             scanresult();
     });
     var qrcode = getUrlVars()["qrcode"];
-
-    if (qrcode != "1" && qrcode !=null) {        
+    console.log(qrcode);
+    if (qrcode != "" && qrcode !=null) {        
         scanQRresult(qrcode);
     } else {
         checktokendetail();
@@ -197,8 +197,23 @@ function scanQRresult(qrcode) {
 
 }
 
-function withdraw(bettingid, username,withdrawalAmount) {
-    if (confirm('តើអ្នកដកប្រាក់ឈ្នះនេះមែនទេ?')) {
+function withdraw(bettingid, username, withdrawalAmount) {
+    var html = '';
+    html +=`<span class="span-confirm-action"><input type="button" class="button-print" value="Yes" onclick="confirmwithdraw(` + bettingid + `,'` + username + `',` + withdrawalAmount + `)" /></span>
+            <span class="span-confirm-action"><input type="button" class="button-print" value="Cancel" onclick="cancelwithdraw()" /></span>`
+
+    $("#div_confirm_action").html(html);
+    $("#div_confirm").show();
+    $("#div_login").hide();
+}
+
+function cancelwithdraw() {
+    $("#div_confirm").hide();
+    $("#div_login").show();
+}
+
+function confirmwithdraw(bettingid, username,withdrawalAmount) {
+   
         $.ajax({
             //cache: false,
             async: false,
@@ -210,11 +225,18 @@ function withdraw(bettingid, username,withdrawalAmount) {
             success: function (dataobj) {
                 var result_tran = dataobj.d;
                 if (result_tran == "error") {
-                    alert("error");
+                    //alert("error");
                     window.location = window.location.href;
                 } else {
-                    scanresult();
+                    var qrcode = getUrlVars()["qrcode"];
+                    
+                    if (qrcode != "" && qrcode != null) {
+                        scanQRresult(qrcode);
+                    } else {
+                        scanresult();
+                    }
                     getusercredit(username);
+                    cancelwithdraw();
                 }
 
             },
@@ -223,9 +245,7 @@ function withdraw(bettingid, username,withdrawalAmount) {
                 //$('#loading').hide();
             }
         });
-    } else {
-        
-    }
+    
    
 }
 
