@@ -62,7 +62,7 @@ namespace SignalR.MessageWorker
                 else if (game_stage=="get result")
                 {
                     runninghelp++;
-                    if (runninghelp % 4 == 0)
+                    if (runninghelp % 2 == 0)
                     {
                         resultcount++;
                         EventMessage eventMessage;
@@ -79,19 +79,39 @@ namespace SignalR.MessageWorker
                         }
                         else if (resultcount == 2)
                         {
-                            eventMessage = new EventMessage("", clResult.Result2.ToString(), "result2");
+                            eventMessage = new EventMessage("", clResult.Result2.ToString(), "result1stop");
                         }
                         else if (resultcount == 3)
                         {
-                            eventMessage = new EventMessage("", clResult.Result3.ToString(), "result3");
+                            eventMessage = new EventMessage("", clResult.Result2.ToString(), "result2");
                         }
                         else if (resultcount == 4)
                         {
-                            eventMessage = new EventMessage("", clResult.Result4.ToString(), "result4");
+                            eventMessage = new EventMessage("", clResult.Result2.ToString(), "result2stop");
                         }
                         else if (resultcount == 5)
                         {
+                            eventMessage = new EventMessage("", clResult.Result3.ToString(), "result3");
+                        }
+                        else if (resultcount == 6)
+                        {
+                            eventMessage = new EventMessage("", clResult.Result3.ToString(), "result3stop");
+                        }
+                        else if (resultcount == 7)
+                        {
+                            eventMessage = new EventMessage("", clResult.Result4.ToString(), "result4");
+                        }
+                        else if (resultcount == 8)
+                        {
+                            eventMessage = new EventMessage("", clResult.Result4.ToString(), "result4stop");
+                        }
+                        else if (resultcount == 9)
+                        {
                             eventMessage = new EventMessage("", clResult.Result5.ToString(), "result5");
+                        }
+                        else if (resultcount == 10)
+                        {
+                            eventMessage = new EventMessage("", clResult.Result5.ToString(), "result5stop");
                         }
                         else
                         {

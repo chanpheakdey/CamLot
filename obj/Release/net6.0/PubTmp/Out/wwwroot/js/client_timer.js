@@ -46,28 +46,37 @@ connection.on("ReceiveMessage", function (Eventmessage) {
         stop_drawing(resultstring);
         load_result(1, resultstring);
         playeraudio("winning");
-        
-    } else if (Eventmessage.subject == "result2") {
+    } else if (Eventmessage.subject == "result1stop") {
+        load_drawing();
+    } else if (Eventmessage.subject == "result2") {        
         var resultstring = Eventmessage.message;
+        stop_drawing(resultstring);
         load_result(2, resultstring);
         playeraudio("winning");
-        stop_drawing(resultstring);
+    } else if (Eventmessage.subject == "result2stop") {
+        load_drawing();
     } else if (Eventmessage.subject == "result3") {
         var resultstring = Eventmessage.message;
+        stop_drawing(resultstring)
         load_result(3, resultstring);
         playeraudio("winning");
         stop_drawing(resultstring);
+    } else if (Eventmessage.subject == "result3stop") {
+        load_drawing();
     } else if (Eventmessage.subject == "result4") {
         var resultstring = Eventmessage.message;
+        stop_drawing(resultstring);
         load_result(4, resultstring);
         playeraudio("winning");
-        stop_drawing(resultstring);
+    } else if (Eventmessage.subject == "result4stop") {
+        load_drawing();
     } else if (Eventmessage.subject == "result5") {
         var resultstring = Eventmessage.message;
+        stop_drawing(resultstring);
         load_result(5, resultstring);
         playeraudio("winning");
-        stop_drawing(resultstring);
     } else if (Eventmessage.subject == "end result") {
+        
         var jsonresult = Eventmessage.message;
         show_result(jsonresult);
         $("#div_popup_drawing").hide();
@@ -233,9 +242,37 @@ function show_result_html(datajson) {
     //html += "<span class='round-number-green'>" + data.Result5 + "</span>";;
     //html += "</div>"
 
+    var result1, result2, result3, result4, result5;
+    result1 = parseInt(data.Result1);
+    result2 = parseInt(data.Result2);
+    result3 = parseInt(data.Result3);
+    result4 = parseInt(data.Result4);
+    result5 = parseInt(data.Result5);
+    var result1str, result2str, result3str, result4str, result5str;
+    result1str = data.Result1;
+    result2str = data.Result2;
+    result3str = data.Result3;
+    result4str = data.Result4;
+    result5str = data.Result5;
+
+    if (result1 < 10) {
+        result1str = '0' + data.Result1;
+    }
+    if (result2 < 10) {
+        result2str = '0' + data.Result2;
+    }
+    if (result3 < 10) {
+        result3str = '0' + data.Result3;
+    }
+    if (result4 < 10) {
+        result4str = '0' + data.Result4;
+    }
+    if (result5 < 10) {
+        result5str = '0' + data.Result5;
+    }
     html += '<div class="recent-item">'
     html += '<p><span style="margin-right: 15px">#' + data.GameID + '&nbsp;' + data.ResultDate.substr(11, 8) + '</span><a href="javascript: void(0);" onclick="LottoInst.showRecentDetail(0)"> &gt;&gt;</a></p>'
-    html += '<div class="special"><div class="special-abcde"><span>' + data.Result1 + '</span><span>' + data.Result2 + '</span><span>' + data.Result3 + '</span><span>' + data.Result4 + '</span><span>' + data.Result5 + '</span></div>'
+    html += '<div class="special"><div class="special-abcde"><span>' + result1str + '</span><span>' + result2str + '</span><span>' + result3str + '</span><span>' + result4str + '</span><span>' + result5str + '</span></div>'
     html += '<div class="special-x"><span style="background: #f73">U</span><span style="background: #ea8d34">R1</span></div></div>'
     html += '</div>'
 
@@ -282,7 +319,7 @@ function countdown(timeremaining,gameid) {
 var result_index = 0;
 function load_result(result_index, result) {
 
-
+    console.log(result);
     if (result < 10) {
         result = '0' + result;
     }
@@ -325,7 +362,7 @@ function load_result(result_index, result) {
 
     }
 
-    load_drawing();
+   
 
 
 }
@@ -389,7 +426,7 @@ function loadnumbers() {
     var html = "";
     for (var i = 1; i < 100; i++) {
         if (i < 10) {
-            html += "<div class='round-number' id='span_n" + i + "'>0" + i + "</div>";
+            html += "<div class='round-number' id='span_n0" + i + "'>0" + i + "</div>";
 
         } else {
             html += "<div class='round-number' id='span_n" + i + "'>" + i + "</div>";

@@ -10,12 +10,18 @@ function load_drawing() {
           $("#div_loto").html(number);
       }
       
-    }, 100);
+    }, 10);
 }
 
 
 function stop_drawing(resultstring) {
     clearInterval(mytimer);
-    $("#div_loto").html(resultstring);
+    var intresult = parseInt(resultstring);
+
+    if (intresult < 10) {
+        $("#div_loto").html('0' + resultstring);
+    } else {
+        $("#div_loto").html(resultstring);
+    }
 }
 
