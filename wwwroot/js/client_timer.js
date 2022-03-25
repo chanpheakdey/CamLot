@@ -48,26 +48,31 @@ connection.on("ReceiveMessage", function (Eventmessage) {
         playeraudio("winning");
         
     } else if (Eventmessage.subject == "result2") {
+        load_drawing();
         var resultstring = Eventmessage.message;
         load_result(2, resultstring);
         playeraudio("winning");
         stop_drawing(resultstring);
     } else if (Eventmessage.subject == "result3") {
+        load_drawing();
         var resultstring = Eventmessage.message;
         load_result(3, resultstring);
         playeraudio("winning");
         stop_drawing(resultstring);
     } else if (Eventmessage.subject == "result4") {
+        load_drawing();
         var resultstring = Eventmessage.message;
         load_result(4, resultstring);
         playeraudio("winning");
         stop_drawing(resultstring);
     } else if (Eventmessage.subject == "result5") {
+        load_drawing();
         var resultstring = Eventmessage.message;
         load_result(5, resultstring);
         playeraudio("winning");
         stop_drawing(resultstring);
     } else if (Eventmessage.subject == "end result") {
+        
         var jsonresult = Eventmessage.message;
         show_result(jsonresult);
         $("#div_popup_drawing").hide();
@@ -325,7 +330,7 @@ function load_result(result_index, result) {
 
     }
 
-    load_drawing();
+   
 
 
 }
