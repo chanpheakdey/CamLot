@@ -38,31 +38,40 @@ connection.on("ReceiveMessage", function (Eventmessage) {
         resultinfo += '<span class="font-style-2"><span class="gameid" > ឆ្នោតទី ' + objresult.GameID + '</span>&nbsp;' + objresult.ResultDate.substr(11, 8) + '</span>';
 
         $("#div_resultinfo").html(resultinfo);
-
+        $("#div_popup_drawing").show();
+        load_drawing();
 
     } else if (Eventmessage.subject == "result1") {
         var resultstring = Eventmessage.message;
+        stop_drawing(resultstring);
         load_result(1, resultstring);
         playeraudio("winning");
+        
     } else if (Eventmessage.subject == "result2") {
         var resultstring = Eventmessage.message;
         load_result(2, resultstring);
         playeraudio("winning");
+        stop_drawing(resultstring);
     } else if (Eventmessage.subject == "result3") {
         var resultstring = Eventmessage.message;
         load_result(3, resultstring);
         playeraudio("winning");
+        stop_drawing(resultstring);
     } else if (Eventmessage.subject == "result4") {
         var resultstring = Eventmessage.message;
         load_result(4, resultstring);
         playeraudio("winning");
+        stop_drawing(resultstring);
     } else if (Eventmessage.subject == "result5") {
         var resultstring = Eventmessage.message;
         load_result(5, resultstring);
         playeraudio("winning");
+        stop_drawing(resultstring);
     } else if (Eventmessage.subject == "end result") {
         var jsonresult = Eventmessage.message;
         show_result(jsonresult);
+        $("#div_popup_drawing").hide();
+        stop_drawing("");
 
     } else if (Eventmessage.subject == "end game") {
 
@@ -314,7 +323,9 @@ function load_result(result_index, result) {
 
             }
 
-        }
+    }
+
+    load_drawing();
 
 
 }

@@ -25,3 +25,17 @@
 .span-confirm-action{
     margin:5px;
 }
+
+
+body {
+    width: 100vw;
+    overflow: hidden;
+    font-family: Arial,sans-serif;
+    background: url(../images/bg.jpg) #f8f8f8;
+    background-size: 70px 80px !important;
+    -webkit-overflow-scrolling: touch;
+    touch-action: manipulation;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover
+}

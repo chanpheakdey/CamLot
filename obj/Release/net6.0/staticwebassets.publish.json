@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "solU3NJrGOkuVs//rBmIaedWCJ+zWPKml01Z1WPI2xA=",
+  "Hash": "svv/6KpKZa4fB2kqpn0+71DwAZNuBILC8OxxeCWvhxY=",
   "Source": "SignalR",
   "BasePath": "_content/SignalR",
   "Mode": "Default",
@@ -151,6 +151,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\changeless.css"
+    },
+    {
+      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\css\\display.css",
+      "SourceId": "SignalR",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "BasePath": "_content/SignalR",
+      "RelativePath": "css/display.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\display.css"
     },
     {
       "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\css\\jquery-ui.css",
@@ -508,6 +525,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\client_timer.js"
+    },
+    {
+      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\display.js",
+      "SourceId": "SignalR",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "BasePath": "_content/SignalR",
+      "RelativePath": "js/display.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\display.js"
     },
     {
       "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\dom-to-image.js",

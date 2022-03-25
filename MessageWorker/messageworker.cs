@@ -24,6 +24,7 @@ namespace SignalR.MessageWorker
             ClGame clGame = new ClGame();
             var waitingcount = 0;
             var resultcount = -1;
+            var runninghelp = 0;
             while (!stoppingToken.IsCancellationRequested)
             {
                 await Task.Delay(1000);
@@ -60,44 +61,49 @@ namespace SignalR.MessageWorker
                 }
                 else if (game_stage=="get result")
                 {
-                   
-                    resultcount++;
-                    EventMessage eventMessage;
-                    if (resultcount == 0){
-                        clResult = dalGlobal.GenerateResult(clGame.gameid);
-                        string jsonString = JsonSerializer.Serialize(clResult);
-                        eventMessage = new EventMessage("", jsonString, "start result");
-                        
-                    }
-                    else if (resultcount == 1)
+                    runninghelp++;
+                    if (runninghelp % 4 == 0)
                     {
-                        eventMessage = new EventMessage("", clResult.Result1.ToString(), "result1");
-                    }
-                    else if (resultcount == 2)
-                    {
-                        eventMessage = new EventMessage("", clResult.Result2.ToString(), "result2");
-                    }
-                    else if (resultcount == 3)
-                    {
-                        eventMessage = new EventMessage("", clResult.Result3.ToString(), "result3");
-                    }
-                    else if (resultcount == 4)
-                    {
-                        eventMessage = new EventMessage("", clResult.Result4.ToString(), "result4");
-                    }
-                    else if (resultcount == 5)
-                    {
-                        eventMessage = new EventMessage("", clResult.Result5.ToString(), "result5");
-                    }
-                    else
-                    {
-                        string jsonString = JsonSerializer.Serialize(clResult);
-                        eventMessage = new EventMessage("", jsonString, "end result");
-                        resultcount = -1;
-                        game_stage = "end game";
-                    }
+                        resultcount++;
+                        EventMessage eventMessage;
+                        if (resultcount == 0)
+                        {
+                            clResult = dalGlobal.GenerateResult(clGame.gameid);
+                            string jsonString = JsonSerializer.Serialize(clResult);
+                            eventMessage = new EventMessage("", jsonString, "start result");
 
-                    await _messageContext.Clients.All.SendAsync("ReceiveMessage", eventMessage, stoppingToken);
+                        }
+                        else if (resultcount == 1)
+                        {
+                            eventMessage = new EventMessage("", clResult.Result1.ToString(), "result1");
+                        }
+                        else if (resultcount == 2)
+                        {
+                            eventMessage = new EventMessage("", clResult.Result2.ToString(), "result2");
+                        }
+                        else if (resultcount == 3)
+                        {
+                            eventMessage = new EventMessage("", clResult.Result3.ToString(), "result3");
+                        }
+                        else if (resultcount == 4)
+                        {
+                            eventMessage = new EventMessage("", clResult.Result4.ToString(), "result4");
+                        }
+                        else if (resultcount == 5)
+                        {
+                            eventMessage = new EventMessage("", clResult.Result5.ToString(), "result5");
+                        }
+                        else
+                        {
+                            string jsonString = JsonSerializer.Serialize(clResult);
+                            eventMessage = new EventMessage("", jsonString, "end result");
+                            resultcount = -1;
+                            game_stage = "end game";
+                        }
+
+                        await _messageContext.Clients.All.SendAsync("ReceiveMessage", eventMessage, stoppingToken);
+                    }
+                    
 
 
                    

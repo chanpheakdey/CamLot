@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "l8LYib/yBHrKMVHREF6gV1OCHbddPqKDttOeGkmWjyA=",
+  "Hash": "UTaWsadPDDO7Uypd+vjiHEEY9gb9mPgWV2CqfN7WSZY=",
   "Source": "SignalR",
   "BasePath": "_content/SignalR",
   "Mode": "Default",
@@ -525,6 +525,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\client_timer.js"
+    },
+    {
+      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\display.js",
+      "SourceId": "SignalR",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "BasePath": "_content/SignalR",
+      "RelativePath": "js/display.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\display.js"
     },
     {
       "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\dom-to-image.js",
