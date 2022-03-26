@@ -13,7 +13,18 @@
     font-weight:800;
 }
 .div-popup-drawingdetail{
-    text-align:right;
+    text-align:left;
+}
+
+.button-start {
+    font-size: 70px;
+    font-weight: 800;
+    text-align: center;
+    background-color: #ff7733;
+    color: white;
+    border-radius: 25px;
+    padding: 30px;
+    font-family: Koh Santepheap;
 }
 
 @media (max-width: 1199px){

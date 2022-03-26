@@ -6,7 +6,7 @@ var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
 connection.on("ReceiveMessage", function (Eventmessage) {
     
     if (Eventmessage.subject == "start new game") {
-        $("#div_printpopup").hide();
+        //$("#div_printpopup").hide();
         var objgame = JSON.parse(Eventmessage.message);
         loadgameinfo(objgame.gameid, objgame.createddate);
         //$("#div_resultinfo").html("");
@@ -105,7 +105,7 @@ function loadgameinfo(gameid, gamedate) {
 
 connection.start().then(function () {
 
-    $("#div_printpopup").hide();
+    $("#div_printpopup").show();
     console.log("hub connected");
     clear_result();
     loadnumbers();

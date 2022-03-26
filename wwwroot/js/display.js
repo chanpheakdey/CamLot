@@ -25,3 +25,17 @@ function stop_drawing(resultstring) {
     }
 }
 
+
+$(document).ready(function () {
+
+    //checktoken();
+    //playeraudio("winning");
+});
+
+
+function startdisplaygame() {
+    //var html = `<div><img src="/images/waiting.gif" style="height:100px;" /></div>
+      //      <div style="color:white">Please wait...</div>`
+    //$("#div_printdetail").html(html);
+    $("#div_printpopup").hide();
+}
