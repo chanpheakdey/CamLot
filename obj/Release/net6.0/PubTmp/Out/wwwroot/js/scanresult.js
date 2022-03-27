@@ -100,7 +100,8 @@ function scanresult() {
         data: '{"bettingID": ' + code + '}',
         success: function (dataobj) {
             console.log(dataobj);
-            var html = create_receipt(dataobj);
+            var html = "";
+            
             var win = dataobj.win;
             html += "<table class='tbl-result'>"
             html += "<tr>"
@@ -130,6 +131,8 @@ function scanresult() {
             } else {
                 
             }
+            html += create_receipt(dataobj);
+
             $("#div_result").html(html);
         },
         error: function (result) {
@@ -156,7 +159,7 @@ function scanQRresult(qrcode) {
         data: '{"bettingID": ' + code + '}',
         success: function (dataobj) {
             console.log(dataobj);
-            var html = create_receipt(dataobj);
+            var html = "";
             var win = dataobj.win;
             html += "<table class='tbl-result'>"
             html += "<tr>"
@@ -186,6 +189,7 @@ function scanQRresult(qrcode) {
             } else {
 
             }
+            html += create_receipt(dataobj);
             $("#div_result").html(html);
         },
         error: function (result) {

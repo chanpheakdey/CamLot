@@ -703,6 +703,59 @@ namespace GameAPI.App_Code
             }
         }
 
+        public ClBettingResult GetBettingReceipt(ClBettingResult clBettingResult)
+        {
+
+            ClBettingResult clBetting_result = new ClBettingResult();
+            try
+            {
+                DataSet ds = new DataSet();
+                using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
+                {
+
+
+                    using (SqlCommand command = new SqlCommand("Sp_GeBettingReceipt", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        SqlParameter sqlParameter1 = command.Parameters.Add("@BettingID", SqlDbType.Int);
+                        sqlParameter1.Value = clBettingResult.BettingID;
+
+                        connection.Open();
+                        using (SqlDataAdapter da = new SqlDataAdapter(command))
+                        {
+                            da.Fill(ds);
+
+                        }
+                        connection.Close();
+                        clBetting_result.BettingID = (int)ds.Tables[0].Rows[0]["BettingID"];
+                        clBetting_result.BetNumber = (string)ds.Tables[0].Rows[0]["BetNumber"];
+                        clBetting_result.SlotNumber = (string)ds.Tables[0].Rows[0]["SlotNumber"];
+
+                        clBetting_result.BetAmount = (double)ds.Tables[0].Rows[0]["BetAmount"];
+                        clBetting_result.TotalBet = (double)ds.Tables[0].Rows[0]["TotalBet"];
+
+
+                        clBetting_result.CreatedDate = ((DateTime)ds.Tables[0].Rows[0]["CreatedDate"]).ToString("dd/MM/yyyy HH:mm:ss");
+                        clBetting_result.CreatedBy = (string)ds.Tables[0].Rows[0]["CreatedBy"];
+
+                        clBetting_result.GameID = (int)ds.Tables[0].Rows[0]["GameID"];
+                        clBetting_result.PlaceID = (int)ds.Tables[0].Rows[0]["PlaceID"];
+                        clBetting_result.Withdrawal = (bool)ds.Tables[0].Rows[0]["Withdrawal"];
+                        clBetting_result.WithdrawalDate = (string)ds.Tables[0].Rows[0]["WithdrawalDate"];
+                        clBetting_result.WithdrawalBy = (string)ds.Tables[0].Rows[0]["WithdrawalBy"];
+
+                        return clBetting_result;
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                clBetting_result.BettingID = -1;
+                return clBetting_result;
+            }
+        }
 
         public string Withdraw(ClBettingResult clBettingResult)
         {

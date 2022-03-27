@@ -61,7 +61,19 @@ $(document).ready(function () {
   
 });
 
+function alertme(title) {
+    $("#div_alert_title").html(title);
+    $("#div_alert").show();
 
+}
+
+function alertok() {
+    hidealert();
+}
+
+function hidealert() {
+    $("#div_alert").hide();
+}
 
 function getUrlVars() {
     var vars = [], hash;
@@ -237,17 +249,20 @@ function confirmprint() {
             var bettingid = dataobj.bettingID;
             console.log("BettingID:" + bettingid);
             if (bettingid == -1) {
-                alert("error!")
+                //alert("error!")
+                alertme("error!");
             } else {
                 if (bettingid == 0) {
-                    alert("ឆ្នោតចាប់លេងហើយ។")
+                    //alert("ឆ្នោតចាប់លេងហើយ។")
+                    alertme("ឆ្នោតចាប់លេងហើយ។")
                     cancelprint();
                 } else {
-                    var html = create_receipt(dataobj);
-                    qrcode_img_base64(bettingid,html);
+                    //var html = create_receipt(dataobj);
+                    //qrcode_img_base64(bettingid,html);
                     cancelprint();
                     clear_betting();
                     getusercredit(username);
+                    window.location = "print?qrcode=" + bettingid;
                 }
                 
 
@@ -441,7 +456,8 @@ function print() {
     var slotE = objslot.slotE;
 
     if (slotA == 'inactive' && slotB == 'inactive' && slotC == 'inactive' && slotD == 'inactive' && slotE == 'inactive') {
-        alert("Please select slot!");
+        //alert("Please select slot!");
+        alertme("Please select slot!");
 
     } else {
 
@@ -449,14 +465,16 @@ function print() {
 
         var gameid = $("#hdGameID").val();
         if (gameid == "0") {
-            alert("time up! bet later!")
+            //alert("time up! bet later!")
+            alertme("time up! bet later!");
             cancelprint();
         } else {
             var betamount = parseInt($("#hd_betamount").val());
 
 
             if (betamount <= 0) {
-                alert("Please enter bet amount.");
+                //alert("Please enter bet amount.");
+                alertme("Please enter bet amount.");
             }
             else {
                 $("#div_printpopup").show();
@@ -501,7 +519,8 @@ function print() {
 
 function betnow(amount) {
     if (amount > 5000) {
-        alert("Can not bet more then 2000Riel");
+        //alert("Can not bet more then 2000Riel");
+        alertme("Can not bet more then 5000Riel");
     } else {
         var currentamount = parseInt($("#hd_betamount").val());
         if (amount == 0) {

@@ -8,7 +8,7 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 
 <script src="js/public.js"></script>
-<script src="js/scanresult.js?v=2"></script>
+<script src="js/scanresult.js?v=3"></script>
 <link href="~/css/betting.css" rel="stylesheet" />
 <link href="~/css/mycss.css" rel="stylesheet" />
 <link href="~/css/scan.css" rel="stylesheet" />
@@ -31,10 +31,13 @@
             <img src='images/CamLotto.png' style='width:150px;'>
             <span class="logo-title" ><span style="color:black;">CAM</span><span style="color:#c67819"> LOTTO</span> <br></span>
             </div>
-            <div id="div_credit" style="text-align:right;"></div>
+            <div id="div_credit" style="text-align:left;"></div>
             <div class="div-user">
             <div class="div-username" style="display:none;">លេខកូដ:<span><input type="text" class="div-input-text" id="txt_code" /></span></div> 
-            <div class="div-qrcode"><input class="button-print" type="button" value="ស្កេន QR កូដ" onclick="gotoscanner()" /></div>
+            <div class="div-qrcode"><span style="cursor:pointer;position: absolute;right: 30px;top: 20px;font-size: 50px;" onclick="gotoscanner()" >
+                <i class="fa-solid fa-qrcode"></i>
+                </span>
+                </div>
             </div>         
            
             

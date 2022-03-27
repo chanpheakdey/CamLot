@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\ACE\CamLOT
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/ACE/CamLOT/Pages/app.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYXBwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/ACE/CamLOT/Pages/bet.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYmV0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -29,6 +33,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/ACE/CamLOT/Pages/login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcbG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ACE/CamLOT/Pages/print.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNccHJpbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/ACE/CamLOT/Pages/Privacy.cshtml]

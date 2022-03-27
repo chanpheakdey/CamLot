@@ -1,6 +1,6 @@
-﻿.receipt {
+﻿
+.receipt {
     padding: 5px;
-    background-color: white;
 }
 
 .tbl-result tr td {
@@ -18,6 +18,7 @@
     font-weight:bold;
     text-align:center;
     padding:20px;
+    color:black;
 }
 .div-confirm-action{
     text-align:center;

@@ -161,6 +161,13 @@ app.MapPost("api/getbettingresult", (ClBettingResult clbetting) =>
 
 });
 
+app.MapPost("api/getbettingreceipt", (ClBettingResult clbetting) =>
+{
+    DalGlobal dalGlobal = new DalGlobal();
+    return dalGlobal.GetBettingReceipt(clbetting);
+
+});
+
 app.MapPost("api/withdraw", (ClBettingResult clbetting) =>
 {
     DalGlobal dalGlobal = new DalGlobal();
