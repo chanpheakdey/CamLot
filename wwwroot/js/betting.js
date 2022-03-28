@@ -500,9 +500,9 @@ function print() {
                 html += "</div>";
 
 
-                html += "<div style='width: 100%;display: inline-block;margin-top: 20px;' id='div_print_button' class='print_button'>";
-                html += '<input type="button" class="button-print" value="Print" onclick="confirmprint()" />';
-                html += '<input type="button" class="button-print" value="Cancel" onclick="cancelprint()" />';
+                html += "<div style='width: 100%;margin-top: 20px;' id='div_print_button' class='print_button'>";
+                html += '<input type="button" class="button-round" value="Print" onclick="confirmprint()" />';
+                html += '<input type="button" class="button-round" value="Cancel" onclick="cancelprint()" />';
 
                 html += "</div>";
 

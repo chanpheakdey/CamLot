@@ -13,6 +13,23 @@ function getUrlVars() {
     return vars;
 }
 
+function alertme(title) {
+    $("#div_alert_title").html(title);
+    $("#div_alert").show();
+
+}
+
+function LoadReprint() {
+    setTimeout(function () {
+        alertme("");
+    }, 2000);
+}
+function reprint() {
+    window.location = window.location.href;
+}
+function closepopup() {
+    window.location = window.location.href + "&back=1";
+}
 
 function html_slot(objresult) {
     var slotstring = objresult.slotNumber;
@@ -113,6 +130,7 @@ function receipt(qrcode) {
             var html = create_receipt(dataobj);
 
             $("#div_receipt").html(html);
+            LoadReprint();
         },
         error: function (result) {
             console.log(result);
