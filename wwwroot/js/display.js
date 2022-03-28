@@ -10,7 +10,7 @@ function load_drawing() {
           $("#div_loto").html(number);
       }
       
-    }, 10);
+    }, 5);
 }
 
 
@@ -28,8 +28,7 @@ function stop_drawing(resultstring) {
 
 $(document).ready(function () {
 
-    //checktoken();
-    //playeraudio("winning");
+    
 });
 
 

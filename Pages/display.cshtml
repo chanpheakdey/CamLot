@@ -57,8 +57,8 @@
 		<div class="result-area main-top overflow-hidden">
 			<div class="title-detail">
 				<div class="logo-line">
-	<img src="images/logo.png" class="img-logo">
-	<span class="logo-title"><span style="color:white;">CAM</span><span style="color:#c67819"> LOTTO</span> <br></span>
+	<img src="images/logo.png?v=1" class="img-logo">
+	<span class="logo-title" style="display:none;"><span style="color:white;">CAM</span><span style="color:#c67819"> LOTTO</span> <br></span>
 
 </div>
 
@@ -66,13 +66,15 @@
 			</div>
 
 			<div class="margin-top-35 clearfix">
+				<div id="div_gameinfo" class="game-info">
+					
+							
+							
+				</div>
 				<div class="right-column">
 					<div>
 				<div class="lotto-close-time">
-						<div id="div_gameinfo">
-							<span id="curr_date" class="font-style-2" ></span>
-							<span id="curr_seq" class="font-style-2" >#000&nbsp;00:00</span>
-						</div>
+						
 						<div id="div_timer" class="Time">
 							
 						</div>
@@ -162,8 +164,12 @@
 
 <div class="container">
 	
-	<audio style="display:none" id="audioplayer" controls="controls">
-                    </audio>
+	<audio id="audioplayer_notice" style="display:none;" controls="controls">
+	<source type="audio/wav" src="Audio/clear-announce.wav"/>	
+	</audio>
+	<audio id="audioplayer_result" style="display:none;" controls="controls">
+	<source type="audio/wav" src="Audio/winning.wav"/>	
+	</audio>
  <input id="hdGameID" type="hidden" value="0" />
   <input id="hdServer" type="hidden" value="0" />
         
@@ -174,8 +180,8 @@
 
 <script src="~/js/signalr/dist/browser/signalr.js"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-<script src="~/js/client_timer.js?v=5"></script>
-<script src="~/js/display.js?v=5"></script>
+<script src="~/js/client_timer.js?v=6"></script>
+<script src="~/js/display.js?v=6"></script>
 
 <link href="~/css/mycss.css?v=2" rel="stylesheet" />
 <link href="~/css/changeful.css?v=2" rel="stylesheet" />

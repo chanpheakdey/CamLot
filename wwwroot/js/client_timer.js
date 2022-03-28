@@ -25,7 +25,8 @@ connection.on("ReceiveMessage", function (Eventmessage) {
                 clear_result();
             }
             if (objgame.timeremaining == 2 || objgame.timeremaining == 4 || objgame.timeremaining == 6 || objgame.timeremaining == 8 || objgame.timeremaining == 10    ) {
-                playeraudio("clear-announce");
+                //playeraudio("clear-announce");
+                playaudiofromcontrol("audioplayer_notice");
             }
             
 
@@ -45,21 +46,21 @@ connection.on("ReceiveMessage", function (Eventmessage) {
         var resultstring = Eventmessage.message;
         stop_drawing(resultstring);
         load_result(1, resultstring);
-        playeraudio("winning");
+        playaudiofromcontrol("audioplayer_result");
     } else if (Eventmessage.subject == "result1stop") {
         load_drawing();
     } else if (Eventmessage.subject == "result2") {        
         var resultstring = Eventmessage.message;
         stop_drawing(resultstring);
         load_result(2, resultstring);
-        playeraudio("winning");
+        playaudiofromcontrol("audioplayer_result");
     } else if (Eventmessage.subject == "result2stop") {
         load_drawing();
     } else if (Eventmessage.subject == "result3") {
         var resultstring = Eventmessage.message;
         stop_drawing(resultstring)
         load_result(3, resultstring);
-        playeraudio("winning");
+        playaudiofromcontrol("audioplayer_result");
         stop_drawing(resultstring);
     } else if (Eventmessage.subject == "result3stop") {
         load_drawing();
@@ -67,14 +68,14 @@ connection.on("ReceiveMessage", function (Eventmessage) {
         var resultstring = Eventmessage.message;
         stop_drawing(resultstring);
         load_result(4, resultstring);
-        playeraudio("winning");
+        playaudiofromcontrol("audioplayer_result");
     } else if (Eventmessage.subject == "result4stop") {
         load_drawing();
     } else if (Eventmessage.subject == "result5") {
         var resultstring = Eventmessage.message;
         stop_drawing(resultstring);
         load_result(5, resultstring);
-        playeraudio("winning");
+        playaudiofromcontrol("audioplayer_result");
     } else if (Eventmessage.subject == "end result") {
         
         var jsonresult = Eventmessage.message;
@@ -94,11 +95,16 @@ connection.on("ReceiveMessage", function (Eventmessage) {
 function loadgameinfo(gameid, gamedate) {
     console.log("GameDate:")
   
-
-    var gameinfo = ""
-    gameinfo += '<span class="font-style-2">' + gamedate.substr(8, 2) + '/' + gamedate.substr(5, 2) + '/' + gamedate.substr(0, 4) + '</span>';
-    gameinfo += '<span class="font-style-2">' + gamedate.substr(11, 8) + '</span>';
-    gameinfo += '<div class="gameid">ឆ្នោតទី ' + gameid + '</div>';
+    var gamedatestr = '<span class="font-style-2">' + gamedate.substr(8, 2) + '/' + gamedate.substr(5, 2) + '/' + gamedate.substr(0, 4) + '</span>';
+    var gametime = '<span class="font-style-2">' + gamedate.substr(11, 8) + '</span>';
+    var gameinfo = `<table style="width:100%">
+						<tr>
+							<td>` + gamedatestr + ' ' + gametime + `</td>
+							<td style="text-align:right;">` + '<div class="gameid">ឆ្នោតទី ' + gameid + '</div>' + `</td>
+						</tr>
+					</table>`
+   
+    ;
     $("#div_gameinfo").html(gameinfo);
 }
 
@@ -288,10 +294,10 @@ function show_result_html(datajson) {
 }
 function clientTimer(secondsout) {
   
-    //var totalminute = parseInt((maxsecond - secondsout) / 60);
-    //var seconds = maxsecond - totalminute * 60 - secondsout;
-    //$("#div_timer").html("Minute:" + totalminute + ";Second:" + seconds);
-    $("#div_timer").html(maxsecond-secondsout);
+    var totalminute = parseInt((maxsecond - secondsout) / 60);
+    var seconds = maxsecond - totalminute * 60 - secondsout;
+    $("#div_timer").html("Minute:" + totalminute + ";Second:" + seconds);
+    //$("#div_timer").html(maxsecond-secondsout);
 }
 
 
@@ -307,11 +313,16 @@ function countdown(timeremaining,gameid) {
     var seconds = timeremaining - totalminute * 60;
 
     if (seconds < 0) {
-        $("#div_timer").html("Time up!");
+        $("#div_timer").html("0");
 
     } else {
-        //$("#div_timer").html("Minute:" + totalminute + ";Second:" + seconds);
-        $("#div_timer").html(timeremaining);
+        if (seconds < 10) {
+            $("#div_timer").html('0' + totalminute + ":0" + seconds + "");
+        } else {
+            $("#div_timer").html('0' + totalminute + ":" + seconds + "");
+        }
+        
+       // $("#div_timer").html(timeremaining);
     }
         
 }
@@ -473,10 +484,14 @@ function playeraudio(filename) {
     let fileUrl = "Audio/" + filename + ".wav";
     //$("#audioplayer").append(`<source type="audio/wav" src="${fileUrl}"/>`)
     //$("#audioplayer").get(0).play();
-    var myAudio = new Audio(fileUrl);
+    //var myAudio = new Audio(fileUrl);
+    var myAudio = $("#audioplayer");
     myAudio.play();
 }
+function playaudiofromcontrol(id) {
+    $("#" + id).get(0).play();
 
+}
 
 
 

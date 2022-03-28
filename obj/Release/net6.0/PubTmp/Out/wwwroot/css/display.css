@@ -1,4 +1,8 @@
-﻿.big-loto {
+﻿.game-info {
+    width: 70%;
+    float: right;
+}
+.big-loto {
     width: 300px;
     height: 300px;
     line-height: 270px;
@@ -10,7 +14,7 @@
     padding: 10px;
     float: right;
     margin-right: 15px;
-    font-weight:800;
+    font-weight: 800;
 }
 .div-popup-drawingdetail{
     text-align:left;

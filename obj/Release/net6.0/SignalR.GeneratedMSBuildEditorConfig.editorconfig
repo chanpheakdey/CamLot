@@ -8,73 +8,77 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SignalR
 build_property.RootNamespace = SignalR
-build_property.ProjectDir = C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\
+build_property.ProjectDir = D:\ACE\CamLOT\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot
+build_property.MSBuildProjectDirectory = D:\ACE\CamLOT
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/chanpheakdey.vong/Documents/GitHub/CamLot/Pages/app.cshtml]
+[D:/ACE/CamLOT/Pages/app.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYXBwLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chanpheakdey.vong/Documents/GitHub/CamLot/Pages/bet.cshtml]
+[D:/ACE/CamLOT/Pages/bet.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYmV0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chanpheakdey.vong/Documents/GitHub/CamLot/Pages/display.cshtml]
+[D:/ACE/CamLOT/Pages/betnow.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYmV0bm93LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ACE/CamLOT/Pages/display.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcZGlzcGxheS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chanpheakdey.vong/Documents/GitHub/CamLot/Pages/Error.cshtml]
+[D:/ACE/CamLOT/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chanpheakdey.vong/Documents/GitHub/CamLot/Pages/login.cshtml]
+[D:/ACE/CamLOT/Pages/login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcbG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chanpheakdey.vong/Documents/GitHub/CamLot/Pages/print.cshtml]
+[D:/ACE/CamLOT/Pages/print.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNccHJpbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chanpheakdey.vong/Documents/GitHub/CamLot/Pages/Privacy.cshtml]
+[D:/ACE/CamLOT/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chanpheakdey.vong/Documents/GitHub/CamLot/Pages/privacypolicy.cshtml]
+[D:/ACE/CamLOT/Pages/privacypolicy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNccHJpdmFjeXBvbGljeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chanpheakdey.vong/Documents/GitHub/CamLot/Pages/report.cshtml]
+[D:/ACE/CamLOT/Pages/report.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNccmVwb3J0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chanpheakdey.vong/Documents/GitHub/CamLot/Pages/scanresult.cshtml]
+[D:/ACE/CamLOT/Pages/scanresult.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcc2NhbnJlc3VsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chanpheakdey.vong/Documents/GitHub/CamLot/Pages/server.cshtml]
+[D:/ACE/CamLOT/Pages/server.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcc2VydmVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chanpheakdey.vong/Documents/GitHub/CamLot/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[D:/ACE/CamLOT/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chanpheakdey.vong/Documents/GitHub/CamLot/Pages/user.cshtml]
+[D:/ACE/CamLOT/Pages/user.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcdXNlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chanpheakdey.vong/Documents/GitHub/CamLot/Pages/_ViewImports.cshtml]
+[D:/ACE/CamLOT/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chanpheakdey.vong/Documents/GitHub/CamLot/Pages/_ViewStart.cshtml]
+[D:/ACE/CamLOT/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/chanpheakdey.vong/Documents/GitHub/CamLot/Pages/Shared/_Layout.cshtml]
+[D:/ACE/CamLOT/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-o3x0qkhyr3
