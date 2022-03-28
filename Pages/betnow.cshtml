@@ -1,0 +1,47 @@
+﻿@page
+@model SignalR.Pages.betnowModel
+@{
+}
+<div class="div-container">
+<div>
+    <table>
+        <tr>
+            <td><div id="div_gameid" class="div-gameid"></div></td>
+            <td><div id="div_credit" class="div-credit"></div></td>
+        </tr>
+    </table>
+</div>
+<div id="div_betamount" class="bet-amount">
+    <table>
+        <tr>
+            <td><span>ទឹកប្រាក់ភ្នាល់:</span>
+                <span id="betAmount" class="span-betamount" onclick="show_betamount()">
+                    0R
+                </span>
+            </td>
+            <td>
+                <div id="div_time"></div>  
+            </td>
+        </tr>
+    </table>
+        
+</div>
+<div id="div_bettype">
+
+</div>
+ <div class="div-slot">
+                <input type="hidden" id="hdSlot" value='{"slotA":"inactive","slotB":"inactive","slotC":"inactive","slotD":"inactive","slotE":"inactive"}' />
+                <div id='spanA' class="Slot-letter round-small-slot" onclick="select_slot('A')">A</div>
+                <div id='spanB' class="Slot-letter round-small-slot" onclick="select_slot('B')">B</div>
+                <div id='spanC' class="Slot-letter round-small-slot" onclick="select_slot('C')">C</div>
+                <div id='spanD' class="Slot-letter round-small-slot" onclick="select_slot('D')">D</div>
+                <div id='spanE' class="Slot-letter round-small-slot" onclick="select_slot('E')">E</div>
+</div>
+<div id="div_betnumber">
+    
+</div>
+
+</div>
+
+
+<link href="~/css/betnow.css?v=2" rel="stylesheet" />
