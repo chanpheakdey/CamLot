@@ -639,19 +639,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\LENOVO\\.nuget\\packages\\": {}
+    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\ACE\\CamLOT\\SignalR.csproj",
+      "projectUniqueName": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\SignalR.csproj",
       "projectName": "SignalR",
-      "projectPath": "D:\\ACE\\CamLOT\\SignalR.csproj",
-      "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "D:\\ACE\\CamLOT\\obj\\",
+      "projectPath": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\SignalR.csproj",
+      "packagesPath": "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\chanpheakdey.vong\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

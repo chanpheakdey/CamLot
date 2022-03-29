@@ -10,10 +10,10 @@
         }
        
         if (i < 10) {
-            html += "<div class='round-small-number' id='span_n0" + i + "'><div class='div-number'>0" + i + "</div></div>";
+            html += "<div class='round-small-number' id='span_n0" + i + "' onclick='selectnumber(" + i + ")'><div class='div-number'>0" + i + "</div></div>";
 
         } else {
-            html += "<div class='round-small-number' id='span_n0" + i + "'><div class='div-number'>" + i + "</div></div>";
+            html += "<div class='round-small-number' id='span_n" + i + "' onclick='selectnumber(" + i + ")'><div class='div-number'>" + i + "</div></div>";
 
         }
         if (i % 10 == 0) {
@@ -90,6 +90,100 @@ $(document).ready(function () {
     loadtimer();
     loadnumbers();
 });
+
+
+var betendnumber = false;
+var betstartnumber = 0;
+
+function checknumber(number) {
+    if (jQuery.inArray(number,listnumber) != -1) {
+        console.log("is in array");     
+
+        listnumber = jQuery.grep(listnumber, function (value) {
+            return value != number;
+        });
+    } else {
+        listnumber.push(number);
+    }
+}
+function selectnumber(number) {
+
+    var bettype = $("#hdBetType").val();
+
+    if (bettype == "number") {
+        checknumber(number);
+    } else if (bettype == "row") {
+        if (betendnumber == false) {
+            betstartnumber = number;
+            betendnumber = true;
+        } else {
+            if (betstartnumber > number) {
+                addnumbers(number, betstartnumber);
+            } else {
+                addnumbers(betstartnumber, number);
+            }
+            betendnumber = false;
+            betstartnumber = 0;
+        }
+    } else if (bettype == "colum") {
+        if (betendnumber == false) {
+            betstartnumber = number;
+            betendnumber = true;
+        } else {
+            var rightDigit = parseInt(number.substr(1, 1));
+
+            if (parseInt(betstartnumber.substr(1, 1)) == rightDigit) {
+                if (betstartnumber < number) {
+                    addnumbers_colum(betstartnumber, number);
+                    betendnumber = false;
+                    betstartnumber = 0;
+                } else {
+                    addnumbers_colum(number, betstartnumber);
+                }
+                
+            } else {
+                alertme("លេខនៅជួរខុសគ្នា!")
+            }
+            
+        }
+    }
+
+    display_selectednumber();
+
+}
+
+function addnumbers(startnumber, endnumber) {
+    for (var i = startnumber; i <= endnumber; i++) {
+        listnumber.push(i);
+    }
+    display_selectednumber();
+}
+
+function addnumbers_colum(startnumber, endnumber) {
+    var leftdigitstart = parseInt(startnumber.substr(0, 1));
+    var leftdigitend = parseInt(endnumber.substr(0, 1));
+
+    var rightdigit = startnumber.substr(1, 1);
+    for (var i = leftdigitstart; i <= leftdigitend; i++) {
+        var newnumber = i + rightdigit;
+        listnumber.push(newnumber);
+    }
+    display_selectednumber();
+}
+
+function display_selectednumber() {
+    listnumber = unique(listnumber);
+    console.log(listnumber);
+    for (var i = 0; i < listnumber.length; i++) {
+        var number = listnumber[i];
+        if (number < 10) {
+            $("#span_n0" + number + " .div-number").addClass("active");
+        } else {
+            $("#span_n" + number + " .div-number").addClass("active");
+        }
+       
+    }
+}
 
 function alertme(title) {
     $("#div_alert_title").html(title);
