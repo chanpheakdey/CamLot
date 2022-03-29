@@ -2,33 +2,53 @@
 @model SignalR.Pages.betnowModel
 @{
 }
+
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+
+
+<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/betnow.js"></script>
+
 <div class="div-container">
+     <input id="hdGameID" type="hidden" value="0" />
+     <input id="hdBetType" type="hidden" value="number" />
+     
+     <input type="hidden" value="" id="hdUsername" />
 <div>
-    <table>
+    <table style="width:100%">
         <tr>
-            <td><div id="div_gameid" class="div-gameid"></div></td>
+            <td><div id="div_GameID" class="div-gameid"></div></td>
             <td><div id="div_credit" class="div-credit"></div></td>
         </tr>
     </table>
 </div>
 <div id="div_betamount" class="bet-amount">
-    <table>
+    <table style="width:100%">
         <tr>
-            <td><span>ទឹកប្រាក់ភ្នាល់:</span>
-                <span id="betAmount" class="span-betamount" onclick="show_betamount()">
-                    0R
-                </span>
+            <td>
+                <table>
+                    <tr>
+                        <td><span>ទឹកប្រាក់ភ្នាល់:</span>
+                           
+                        </td>
+                        <td>
+                             <div id="betAmount" class="span-betamount" onclick="show_betamount()">
+                                0R
+                            </div>  
+                        </td>
+                    </tr>
+                </table>
             </td>
             <td>
-                <div id="div_time"></div>  
+                <div id="div_time" class="div-time"></div>  
             </td>
         </tr>
     </table>
         
 </div>
 <div id="div_bettype">
-
-</div>
+    <span id="btype_number"​ class="bet-type" onclick="bettype('number')">លេខ</span><span id="btype_row"​ class="bet-type" onclick="bettype('row')">ចាក់អូសជួរដេក</span><span id="btype_colum"​ class="bet-type" onclick="bettype('colum')">ចាក់អូសជួរឈរ</span>
+</div>​
  <div class="div-slot">
                 <input type="hidden" id="hdSlot" value='{"slotA":"inactive","slotB":"inactive","slotC":"inactive","slotD":"inactive","slotE":"inactive"}' />
                 <div id='spanA' class="Slot-letter round-small-slot" onclick="select_slot('A')">A</div>
@@ -39,6 +59,24 @@
 </div>
 <div id="div_betnumber">
     
+</div>
+
+<div class="footer">
+    <table style="width:100%">
+        <tr>
+            <td>
+                <div class="div-total">សរុប</div>
+            </td>
+            <td>
+            </td>
+            <td>
+                <div style="text-align:right;">
+                <span id="btnSubmit"​ style="width: 130px;text-align:center;float: right;" class="action-button active" onclick="print()">បញ្ជូន</span>
+                <span id="btnDelete"​ style="width: 100px;text-align:center;float: right;" class="action-button" onclick="cancel()">លុប</span>
+                </div>
+            </td>
+        </tr>
+    </table>
 </div>
 
 </div>
