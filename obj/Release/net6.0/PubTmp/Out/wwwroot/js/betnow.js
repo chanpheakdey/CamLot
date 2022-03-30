@@ -95,6 +95,23 @@ $(document).ready(function () {
 var betendnumber = false;
 var betstartnumber = 0;
 
+
+function select_slot(number) {
+    if (jQuery.inArray(number, listslot) != -1) {
+        console.log("is in array");
+
+        listslot = jQuery.grep(listslot, function (value) {
+            return value != number;
+        });
+
+
+    } else {
+        listslot.push(number);
+    }
+    display_selectedslot();
+    loadtotalbet();
+}
+
 function checknumber(number) {
     if (jQuery.inArray(number,listnumber) != -1) {
         console.log("is in array");     
@@ -102,6 +119,8 @@ function checknumber(number) {
         listnumber = jQuery.grep(listnumber, function (value) {
             return value != number;
         });
+
+    
     } else {
         listnumber.push(number);
     }
@@ -116,6 +135,7 @@ function selectnumber(number) {
         if (betendnumber == false) {
             betstartnumber = number;
             betendnumber = true;
+            listnumber.push(number);
         } else {
             if (betstartnumber > number) {
                 addnumbers(number, betstartnumber);
@@ -129,18 +149,31 @@ function selectnumber(number) {
         if (betendnumber == false) {
             betstartnumber = number;
             betendnumber = true;
+            listnumber.push(number);
         } else {
-            var rightDigit = parseInt(number.substr(1, 1));
-
-            if (parseInt(betstartnumber.substr(1, 1)) == rightDigit) {
+            console.log('start number:' + betstartnumber);
+            var rightDigit = 0;
+            var start_rightdigit = 0;
+            if (betstartnumber < 10) {
+                start_rightdigit = parseInt(('0' + betstartnumber).substr(1, 1));
+            } else {
+                start_rightdigit = parseInt(('' + betstartnumber).substr(1, 1));
+            }
+            if (number < 10) {
+                rightDigit = parseInt(('0' + number).substr(1, 1));
+            } else {
+                rightDigit = parseInt(('' + number).substr(1, 1));
+            }
+            console.log('right digit' + rightDigit);
+            console.log('start right digit' + start_rightdigit);
+            if (start_rightdigit == rightDigit) {
                 if (betstartnumber < number) {
                     addnumbers_colum(betstartnumber, number);
-                    betendnumber = false;
-                    betstartnumber = 0;
                 } else {
                     addnumbers_colum(number, betstartnumber);
                 }
-                
+                betendnumber = false;
+                betstartnumber = 0;
             } else {
                 alertme("លេខនៅជួរខុសគ្នា!")
             }
@@ -149,7 +182,7 @@ function selectnumber(number) {
     }
 
     display_selectednumber();
-
+    loadtotalbet();
 }
 
 function addnumbers(startnumber, endnumber) {
@@ -160,10 +193,22 @@ function addnumbers(startnumber, endnumber) {
 }
 
 function addnumbers_colum(startnumber, endnumber) {
-    var leftdigitstart = parseInt(startnumber.substr(0, 1));
-    var leftdigitend = parseInt(endnumber.substr(0, 1));
-
-    var rightdigit = startnumber.substr(1, 1);
+    var leftdigitstart = 0;
+    var leftdigitend = 0;
+    var rightdigit = 0;
+    if (startnumber < 10) {
+        leftdigitstart = parseInt(('0' + startnumber).substr(0, 1));
+        rightdigit = ('0' + startnumber).substr(1, 1);
+    } else {
+        leftdigitstart = parseInt(('' + startnumber).substr(0, 1));
+        rightdigit = ('' + startnumber).substr(1, 1);
+    }
+    if (endnumber < 10) {
+        leftdigitend = parseInt(('0' + endnumber).substr(0, 1));
+    } else {
+        leftdigitend = parseInt(('' + endnumber).substr(0, 1));
+    }
+    
     for (var i = leftdigitstart; i <= leftdigitend; i++) {
         var newnumber = i + rightdigit;
         listnumber.push(newnumber);
@@ -172,17 +217,35 @@ function addnumbers_colum(startnumber, endnumber) {
 }
 
 function display_selectednumber() {
+    unselectedall();
     listnumber = unique(listnumber);
+    console.log(listnumber);
     for (var i = 0; i < listnumber.length; i++) {
-        if (i < 10) {
-            $("#span_n0" + i).addClass("active");
+        var number = listnumber[i];
+        if (number < 10) {
+            $("#span_n0" + number + " .div-number").addClass("active");
         } else {
-            $("#span_n" + i).addClass("active");
+            $("#span_n" + number + " .div-number").addClass("active");
         }
        
     }
 }
 
+function display_selectedslot() {
+    $(".round-small-slot").removeClass("active");
+    listslot = unique(listslot);
+    console.log(listslot);
+    for (var i = 0; i < listslot.length; i++) {
+        var number = listslot[i];
+        $("#spanslot" + number + "").addClass("active");
+
+    }
+}
+
+function unselectedall() {
+    $(".div-number").removeClass("active");
+    
+}
 function alertme(title) {
     $("#div_alert_title").html(title);
     $("#div_alert").show();
@@ -240,7 +303,10 @@ function checktokendetail() {
                     window.location = "login?toke=";
                 } else {
                     $("#hdUsername").val(data.username);
+                    $("#hd_placeid").val(data.placeID);
+                    console.log("placeid:" + data.placeID);
                     var username = $("#hdUsername").val();
+
                     console.log(username);
                     getusercredit(username);
                     //getuserlist(username);
@@ -320,7 +386,7 @@ function getusercredit(username) {
         data: '',
         success: function (data) {
 
-            $("#div_credit").html("$" + data);
+            $("#div_credit").html("R" + data);
         },
         error: function (result) {
             console.log(result);
@@ -412,19 +478,13 @@ function confirmprint() {
 
 function clear_betting() {
     listnumber = [];
-    //$("#div_betamount").val("0R");
-    $("#div_range").val("XX-YY");
-    $("#hdinput_number").val("");
+    listslot = [];
+    $("#span_totalbetamount").html("");
     $("#hd_betamount").val("0");
-
-    $("#hd_numberofslot").val("0");
-    $("#hdSlot").val('{"slotA":"inactive","slotB":"inactive","slotC":"inactive","slotD":"inactive","slotE":"inactive"}');
-    $("#spanA").removeClass("slot-active");
-    $("#spanB").removeClass("slot-active");
-    $("#spanC").removeClass("slot-active");
-    $("#spanD").removeClass("slot-active");
-    $("#spanE").removeClass("slot-active");
-    $("#div_numbers").html("");
+    $("#betAmount").html('R0');
+    display_selectedslot();
+    display_selectednumber();
+   
 }
 
 
@@ -654,20 +714,19 @@ function betnow(amount) {
         //alert("Can not bet more then 2000Riel");
         alertme("Can not bet more then 5000Riel");
     } else {
-        var currentamount = parseInt($("#hd_betamount").val());
+        var currentamount = amount
         if (amount == 0) {
             $("#hd_betamount").val("0");
             //$("#div_betamount").html("0R");
         } else {
-            currentamount += amount;
             $("#hd_betamount").val(currentamount);
             //$("#div_betamount").html(currentamount + "R");
         }
 
     }
-    load_numberlist(listnumber);
-
-
+    $("#betAmount").html('R' + currentamount);
+    closepopup_betamount();
+    loadtotalbet();
 }
 function select_range() {
     var hdrange = $("#hdselectrange").val();
@@ -682,7 +741,7 @@ function select_range() {
         $("#div_range").hide();
     }
 }
-function select_slot(slotname) {
+function select_slot_old(slotname) {
     var newjsonstring = "";
     var jsonslot = $("#hdSlot").val();
     console.log(jsonslot);
@@ -782,6 +841,7 @@ function select_slot(slotname) {
 
 }
 var listnumber = new Array();
+var listslot = new Array();
 function html_slot() {
     var jsonslot = $("#hdSlot").val();
     console.log(jsonslot);
@@ -991,6 +1051,8 @@ function addrange(stringrange) {
 }
 
 function bettype(typename) {
+     betendnumber = false;
+     betstartnumber = 0;
     $("#hdBetType").val(typename);
 
     $("#btype_number").removeClass("active");
@@ -1004,4 +1066,122 @@ function bettype(typename) {
     } else if (typename == "colum") {
         $("#btype_colum").addClass("active");
     }
+}
+
+function closepopup_betamount() {
+    $("#div_popup_betamount").hide();
+}
+
+function show_betamount() {
+    $("#div_popup_betamount").show();
+
+    var html = "";
+    html += "<div class='button-betamount' onClick='betnow(100)'>R100</div>"
+    html += "<div class='button-betamount' onClick='betnow(200)'>R200</div>"
+    html += "<div class='button-betamount' onClick='betnow(500)'>R500</div>"
+    html += "<div class='button-betamount' onClick='betnow(1000)'>R1000</div>"
+    html += "<div class='button-betamount' onClick='betnow(1500)'>R1500</div>"
+    html += "<div class='button-betamount' onClick='betnow(2000)'>R2000</div>"
+    html += "<div class='button-betamount' onClick='betnow(2500)'>R2500</div>"
+    html += "<div class='button-betamount' onClick='betnow(3000)'>R3000</div>"
+    html += "<div class='button-betamount' onClick='betnow(3500)'>R3500</div>"
+    html += "<div class='button-betamount' onClick='betnow(4000)'>R4000</div>"
+    html += "<div class='button-betamount' onClick='betnow(4500)'>R4500</div>"
+    html += "<div class='button-betamount' onClick='betnow(5000)'>R5000</div>"
+
+
+
+
+
+    $("#div_betamount_option").html(html);
+}
+
+function loadtotalbet() {
+    var betamount = parseInt($("#hd_betamount").val());
+    var numberofslot = listslot.length;
+
+    var total = (betamount * numberofslot * listnumber.length);
+    $("#span_totalbetamount").html('R' + total);
+
+}
+
+function submit() {
+    var invalids = 0;
+    if (listslot.length == 0) {
+        alertme("សូមជ្រើសរើសប៉ុស្តិ៍");
+        invalids += 1;
+    }
+
+    if (listnumber.length == 0) {
+        alertme("សូមជ្រើសរើសលេខ");
+        invalids += 1;
+    }
+
+    var betamount = $("#hd_betamount").val();
+    if (betamount == "0") {
+        alertme("សូមជ្រើសរើសទឹកប្រាក់ភ្នាល់");
+        invalids += 1;
+    }
+
+    if (invalids == 0) {
+        addbetting()
+    }
+}
+
+function addbetting() {
+    var slotNumber = "";
+    for (var i = 0; i < listslot.length; i++) {
+        var number = listslot[i];
+        slotNumber += number + ","
+    }
+    var betNumbers = "";
+    for (var i = 0; i < listnumber.length; i++) {
+        var number = listnumber[i];
+        betNumbers += number + ","
+    }
+    betNumbers = betNumbers.substr(0, betNumbers.length - 1);
+    var betamount = $("#hd_betamount").val();
+    var gameid = $("#hdGameID").val();
+    var placeid = $("#hd_placeid").val();
+    var username = $("#hdUsername").val();
+
+    console.log(username);
+
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "POST",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/betting",
+        data: '{"gameId": ' + gameid + ',"placeid":' + placeid + ',"slotNumber":"' + slotNumber + '","BetType":"N","BetNumber":"' + betNumbers + '","BetAmount":' + betamount + ',"UnitWinAmount":90,"CreatedBy":"' + username + '"}',
+        success: function (dataobj) {
+            console.log(dataobj);
+            var bettingid = dataobj.bettingID;
+            console.log("BettingID:" + bettingid);
+            if (bettingid == -1) {
+                //alert("error!")
+                alertme("error!");
+            } else {
+                if (bettingid == 0) {
+                    //alert("ឆ្នោតចាប់លេងហើយ។")
+                    alertme("ឆ្នោតចាប់លេងហើយ។")
+                   
+                } else {
+                    //var html = create_receipt(dataobj);
+                    //qrcode_img_base64(bettingid,html);
+                    clear_betting();
+                    getusercredit(username);
+                    window.location = "print?qrcode=" + bettingid;
+                }
+
+
+            }
+
+        },
+        error: function (result) {
+            console.log(result);
+            //$('#loading').hide();
+        }
+    });
 }

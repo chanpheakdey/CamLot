@@ -42,7 +42,7 @@ function viewformbytoken(formname, token) {
     var data = token;
 
             if (formname == 'betting') {
-                window.location = 'bet?token=' + data;
+                window.location = 'betnow?token=' + data;
             } else if (formname == 'withdrawal') {
                 window.location = 'scanresult?token=' + data;
             } else if (formname == 'report') {

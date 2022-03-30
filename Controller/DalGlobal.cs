@@ -1151,6 +1151,7 @@ namespace GameAPI.App_Code
                         connection.Close();
                         clTokendetail.Expired = (bool)ds.Tables[0].Rows[0]["TokenExpired"];
                         clTokendetail.Username = (string)ds.Tables[0].Rows[0]["Username"];
+                        clTokendetail.PlaceID = (int)ds.Tables[0].Rows[0]["PlaceID"];
                         return clTokendetail;
 
                     }

@@ -8,18 +8,50 @@
 
 <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="js/betnow.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+
+<div class="div-popup-betamount" id="div_alert" style="display:none;">
+         <div class="div-popup-detail">
+        <div class="alert-popup-title" id="div_alert_title">តើអ្នកដកប្រាក់ឈ្នះនេះមែនទេ?</div>
+        <div class="div-confirm-action" id="div_confirm_action">
+            
+            <span class="span-confirm-action"><input type="button" value="យល់ព្រម" class="button-ok" onclick="alertok()" /></span>
+        </div>
+        </div>
+</div>
+
+<div class="div-popup-betamount" id="div_popup_betamount" style="display:none;">
+         <div class="div-popup-detail">
+        <div class="confirm-popup-title" id="div_popup_title">
+            <table style="width:100%">
+                <tr>
+                    <td>ចំនួនទឹកប្រាក់ភ្នាល់</td>
+                    <td style="text-align:right;"><span class="botton-close" onclick="closepopup_betamount()">X</span></td>
+                </tr>
+            </table>
+
+        </div>
+        <div class="bet-amount-option" id="div_betamount_option">
+            
+            
+        </div>
+        </div>
+</div>
 
 <div class="div-container">
      <input id="hdGameID" type="hidden" value="0" />
+      <input id="hd_placeid" type="hidden" value="0" />
      <input id="hdBetType" type="hidden" value="number" />
      <input type="hidden" id="hdinput_number" value="" />
-
+        <input type="hidden" id="hd_betamount" value="0" />
      <input type="hidden" value="" id="hdUsername" />
+
 <div>
     <table style="width:100%">
         <tr>
-            <td><div id="div_GameID" class="div-gameid"></div></td>
-            <td><div id="div_credit" class="div-credit"></div></td>
+            <td style="width:33%;text-align:left"><div style="text-align:left;margin: 10px 0px;"><a href="#" onclick="backhome()" style="background-color: #f73;padding: 10px;border-radius: 10px;color: white;"><i class="fas fa-home" aria-hidden="true"></i></a></div></td>
+            <td style="text-align:center"><div id="div_GameID" class="div-gameid"></div></td>
+            <td style="width:33%;text-align:center"><div id="div_credit" class="div-credit"></div></td>
         </tr>
     </table>
 </div>
@@ -48,15 +80,15 @@
         
 </div>
 <div id="div_bettype">
-    <span id="btype_number"​ class="bet-type" onclick="bettype('number')">លេខ</span><span id="btype_row"​ class="bet-type" onclick="bettype('row')">ចាក់អូសជួរដេក</span><span id="btype_colum"​ class="bet-type" onclick="bettype('colum')">ចាក់អូសជួរឈរ</span>
+    <span id="btype_number"​ class="bet-type active" style="padding-left: 35px;padding-right: 35px;" onclick="bettype('number')">លេខ</span><span id="btype_row"​ class="bet-type" onclick="bettype('row')">ចាក់អូសជួរដេក</span><span id="btype_colum"​ class="bet-type" onclick="bettype('colum')">ចាក់អូសជួរឈរ</span>
 </div>​
  <div class="div-slot">
                 <input type="hidden" id="hdSlot" value='{"slotA":"inactive","slotB":"inactive","slotC":"inactive","slotD":"inactive","slotE":"inactive"}' />
-                <div id='spanA' class="Slot-letter round-small-slot" onclick="select_slot('A')">A</div>
-                <div id='spanB' class="Slot-letter round-small-slot" onclick="select_slot('B')">B</div>
-                <div id='spanC' class="Slot-letter round-small-slot" onclick="select_slot('C')">C</div>
-                <div id='spanD' class="Slot-letter round-small-slot" onclick="select_slot('D')">D</div>
-                <div id='spanE' class="Slot-letter round-small-slot" onclick="select_slot('E')">E</div>
+                <div id='spanslot1' class="round-small-slot" onclick="select_slot(1)">A</div>
+                <div id='spanslot2' class="round-small-slot" onclick="select_slot(2)">B</div>
+                <div id='spanslot3' class="round-small-slot" onclick="select_slot(3)">C</div>
+                <div id='spanslot4' class="round-small-slot" onclick="select_slot(4)">D</div>
+                <div id='spanslot5' class="round-small-slot" onclick="select_slot(5)">E</div>
 </div>
 <div id="div_betnumber">
     
@@ -66,14 +98,14 @@
     <table style="width:100%">
         <tr>
             <td>
-                <div class="div-total">សរុប</div>
+                <div class="div-total">សរុប: <span class="span-total" id="span_totalbetamount"></span></div>
             </td>
             <td>
             </td>
             <td>
                 <div style="text-align:right;">
-                <span id="btnSubmit"​ style="width: 130px;text-align:center;float: right;" class="action-button active" onclick="print()">បញ្ជូន</span>
-                <span id="btnDelete"​ style="width: 100px;text-align:center;float: right;" class="action-button" onclick="cancel()">លុប</span>
+                <span id="btnSubmit"​ style="width: 130px;text-align:center;float: right;" class="action-button active" onclick="submit()">បញ្ជូន</span>
+                <span id="btnDelete"​ style="width: 100px;text-align:center;float: right;" class="action-button" onclick="clear_betting()">លុប</span>
                 </div>
             </td>
         </tr>
@@ -83,4 +115,4 @@
 </div>
 
 
-<link href="~/css/betnow.css?v=2" rel="stylesheet" />
+<link href="~/css/betnow.css?v=3" rel="stylesheet" />

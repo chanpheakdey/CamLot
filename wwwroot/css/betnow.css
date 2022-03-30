@@ -22,16 +22,17 @@ body {
 
 }
 .round-small-slot {
-    width: 34px;
-    height: 34px;
-    line-height: 34px;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
     text-align: center;
-    font-size: 20px;
-    color: #fff;
+    font-size: 30px;
+    color: #d34600;
     border-radius: 50%;
-    background-color: #f73;
+    background-color: white;
     float: left;
-    margin-right:10px;
+    margin-right: 10px;
+    font-weight: 700;
 }
 .round-small-number {
     width: 9.5vw;
@@ -44,6 +45,7 @@ body {
 
 .bet-amount{
     padding:10px 0px;
+    height:65px;
 }
 .span-betamount {
     padding: 5px;
@@ -55,13 +57,14 @@ body {
     text-align:right;
 }
 .div-slot{
-    height:50px;
+    height:60px;
 }
 .div-container-number {
     width: 95vw;
     position: absolute;
     left: 0;
     margin: 0vw 2.5vw;
+    max-width:800px;
 }
 .div-number {
     line-height: 8.5vw;
@@ -81,8 +84,9 @@ body {
 .bet-type {
     background-color: white;
     color: black;
-    padding: 10px;
+    padding: 12px;
     margin-right: 5px;
+    font-size: large;
 }
 
  .active {
@@ -102,9 +106,72 @@ body {
 .action-button {
     background-color: white;
     color: black;
-    padding: 10px;
+    padding: 12px;
     margin-right: 0px;
+    font-size: large;
 }
 .div-total{
     padding:5px;
+    font-size:large;
+}
+.botton-close{
+    color:white;
+    padding:5px;
+    font-weight:bold;
+}
+.div-popup-betamount {
+    position: fixed;
+    z-index: 9999;
+    background-color: rgb(0 0 0 / 70%);
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top:0;
+    padding: 10px;
+}
+.confirm-popup-title{
+    background-color:#f73;
+    padding:5px;
+    font-size:x-large;
+}
+.button-betamount {
+    width: 25%;
+    padding: 10px;
+    font-size: large;
+    float: left;
+    background-color: white;
+    margin: 4%;
+    color: black;
+    text-align: center;
+}
+.span-total{
+    padding:5px;
+    font-weight:bold;
+}
+.alert-popup-title {
+    padding: 5px;
+    font-size: x-large;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+.div-confirm-action{
+    text-align:center;
+}
+.div-container{
+    max-width:600px;
+}
+.div-popup-detail {
+    padding: 10px;
+    background-color: #f73;
+    border-radius: 15px;
+}
+
+.button-ok {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    margin-right: 0px;
+    border: solid 1px #f73;
+    border-radius: 15px;
 }
