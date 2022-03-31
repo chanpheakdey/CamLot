@@ -987,8 +987,12 @@ function load_numberlist_html(list) {
     html += "<span class='span-slot'>ចាក់លេខៈ</span> ";
     for (var i = 0; i < list.length; i++) {
         var number = list[i];
-
-        html += "<div class='round-number' style='line-height: 20px;float:none;display:inline-block;padding: 2px;height: 25px;width: 25px;font-size: 16px;font-weight: bold;'>" + number + "</div>";
+        if (parseInt(number) < 10) {
+            html += "<div class='round-number' style='line-height: 20px;float:none;display:inline-block;padding: 2px;height: 25px;width: 25px;font-size: 16px;font-weight: bold;'>0" + number + "</div>";
+        } else {
+            html += "<div class='round-number' style='line-height: 20px;float:none;display:inline-block;padding: 2px;height: 25px;width: 25px;font-size: 16px;font-weight: bold;'>" + number + "</div>";
+        }
+        
     }
 
     return html;

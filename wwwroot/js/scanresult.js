@@ -94,7 +94,7 @@ function scanresult() {
         type: "POST",
         //dataType: "Json",
         contentType: "application/json; charset=utf-8",
-        url: "api/getbettingresult",
+        url: "api/`1                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ",
         data: '{"bettingID": ' + code + '}',
         success: function (dataobj) {
             console.log(dataobj);
@@ -164,7 +164,14 @@ function scanQRresult(qrcode) {
             html += "<td></td><td style='width:40px;text-align:center;'>A</td><td style='width:40px;text-align:center;'>B</td><td>C</td><td>D</td><td>E</td>"
             html += "</tr>"
             html += "<tr>"
-            html += "<td>លទ្ធផលៈ</td><td>" + dataobj.resultSlotA + "</td><td>" + dataobj.resultSlotB + "</td><td>" + dataobj.resultSlotC + "</td><td>" + dataobj.resultSlotD + "</td><td>" + dataobj.resultSlotE + "</td>"
+            var result1 = ""; var result2 = ""; var result3 = ""; var result4 = ""; var result5 = "";
+            if (parseInt(dataobj.resultSlotA) < 10) { result1 = '0' + dataobj.resultSlotA } else { result1 = dataobj.resultSlotA }
+            if (parseInt(dataobj.resultSlotB) < 10) { result2 = '0' + dataobj.resultSlotB } else { result2 = dataobj.resultSlotB }
+            if (parseInt(dataobj.resultSlotC) < 10) { result3 = '0' + dataobj.resultSlotC } else { result3 = dataobj.resultSlotC }
+            if (parseInt(dataobj.resultSlotD) < 10) { result4 = '0' + dataobj.resultSlotD } else { result4 = dataobj.resultSlotD }
+            if (parseInt(dataobj.resultSlotE) < 10) { result5 = '0' + dataobj.resultSlotE } else { result5 = dataobj.resultSlotE }
+
+            html += "<td>លទ្ធផលៈ</td><td>" + result1 + "</td><td>" + result2 + "</td><td>" + result3 + "</td><td>" + result4 + "</td><td>" + result5 + "</td>"
             html += "</tr>"
             html += "</table>"
 
@@ -308,8 +315,12 @@ function load_numberlist_html(list) {
     html += "<span class='span-slot'>ចាក់លេខៈ</span> ";
     for (var i = 0; i < list.length; i++) {
         var number = list[i];
-
-        html += "<div class='round-number' style='line-height:30px;float:none;display:inline-block;'>" + number + "</div>";
+        if (parseInt(number) < 10) {
+            html += "<div class='round-number' style='line-height:30px;float:none;display:inline-block;'>0" + number + "</div>";
+        } else {
+            html += "<div class='round-number' style='line-height:30px;float:none;display:inline-block;'>" + number + "</div>";
+        }
+        
     }
 
     return html;

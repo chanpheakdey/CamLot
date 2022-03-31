@@ -165,7 +165,6 @@ body {
 }
 .div-popup-detail {
     padding: 10px;
-    background-color: #f73;
     border-radius: 15px;
 }
 
@@ -178,5 +177,5 @@ body {
     border-radius: 15px;
 }
 .bet-amount-option{
-    padding-top:20px;
+    padding-top:50px;
 }

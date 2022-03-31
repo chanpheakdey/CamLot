@@ -201,8 +201,12 @@ function load_numberlist_html(list) {
     html += "<span class='div'>ចាក់លេខៈ</div> ";
     for (var i = 0; i < list.length; i++) {
         var number = list[i];
-
-        html += "<div class='round-number' style='line-height:30px;float:none;display:inline-block;'>" + number + "</div>";
+        if (parseInt(number) < 10) {
+            html += "<div class='round-number' style='line-height:30px;float:none;display:inline-block;'>0" + number + "</div>";
+        } else {
+            html += "<div class='round-number' style='line-height:30px;float:none;display:inline-block;'>" + number + "</div>";
+        }
+        
     }
 
     return html;
