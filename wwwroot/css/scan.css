@@ -45,3 +45,17 @@ body {
     -moz-user-select: none;
     user-select: none;
 }
+.div-scan-lost {
+    text-align: center;
+    color: #f73;
+    font-size: xxx-large;
+
+}
+.button-withdrawal {
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #f73;
+    font-weight: bold;
+    color: white;
+    font-size: x-large;
+}

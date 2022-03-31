@@ -37,7 +37,7 @@ th,td {
     padding:5px;
 }
 .row-caption{
-    color:gray;
+   color:white;
 }
 .row-value{
     float:right;
@@ -59,4 +59,23 @@ th,td {
     padding:5px;
     border-radius:10px;
     margin-left:5px;
+}
+
+
+body {
+    margin: 0;
+    background-color: #052d40;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-repeat: repeat;
+    background-image: linear-gradient(180deg,#052d40,rgba(14,90,136,.8901960784313725),#052d40),url(../images/bg01.gif);
+    background-size: auto;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover !important;
+    color: #fff;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
 }

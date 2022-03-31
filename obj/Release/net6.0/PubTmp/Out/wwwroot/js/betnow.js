@@ -1122,10 +1122,15 @@ function submit() {
         alertme("សូមជ្រើសរើសទឹកប្រាក់ភ្នាល់");
         invalids += 1;
     }
-
+    var gameid = $("#hdGameID").val();
+    if (gameid == 0) {
+        alertme("ឆ្នោតកំពុងចេញលទ្ធផល")
+        invalids += 1;
+    }
     if (invalids == 0) {
         addbetting()
     }
+
 }
 
 function addbetting() {
@@ -1134,6 +1139,7 @@ function addbetting() {
         var number = listslot[i];
         slotNumber += number + ","
     }
+    slotNumber = slotNumber.substr(0, slotNumber.length - 1);
     var betNumbers = "";
     for (var i = 0; i < listnumber.length; i++) {
         var number = listnumber[i];

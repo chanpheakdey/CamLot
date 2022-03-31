@@ -2,7 +2,9 @@
     var startdate;
     startdate = $("#txtstartdate").val();
     enddate = $("#txtenddate").val();
-    loadreport(startdate, enddate);
+    if (startdate != "" && enddate != "") {
+        loadreport(startdate, enddate);
+    }
 }
 
 

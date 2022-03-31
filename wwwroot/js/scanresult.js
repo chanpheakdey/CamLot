@@ -1,15 +1,8 @@
 ﻿$(document).ready(function () {
-    $('#txt_code').keypress(function (e) {
-        if (e.keyCode == 13)
-            scanresult();
-    });
-    var qrcode = getUrlVars()["qrcode"];
-    console.log(qrcode);
-    if (qrcode != "" && qrcode !=null) {        
-        scanQRresult(qrcode);
-    } else {
+   
+   
         checktokendetail();
-    }
+    
     
    
 });
@@ -47,6 +40,11 @@ function checktokendetail() {
                 var username = $("#hdUsername").val();
                 console.log(username);
                 getusercredit(username);
+                var qrcode = getUrlVars()["qrcode"];
+                console.log(qrcode);
+                if (qrcode != "" && qrcode != null) {
+                    scanQRresult(qrcode);
+                } 
                 //getuserlist(username);
             }
         },
@@ -174,20 +172,21 @@ function scanQRresult(qrcode) {
                 //qrcode_img_base64(bettingid, html);                  
                 var withdrawal = dataobj.withdrawal;
                 if (withdrawal == true) {
-                    html += "ឈ្នះ: R" + (dataobj.winAmountA + dataobj.winAmountB + dataobj.winAmountC + dataobj.winAmountD + dataobj.winAmountE) + " <span style='color:red;'>(បានដកប្រាក់ហើយ)</span>";
+                    html += "ឈ្នះ: R" + (dataobj.winAmountA + dataobj.winAmountB + dataobj.winAmountC + dataobj.winAmountD + dataobj.winAmountE);
                     html += '<div>អ្នកដកៈ ' + dataobj.withdrawalBy + ' (' + dataobj.withdrawalDate + ')</div>';
+                    html += " <div class='div-scan-lost'>បានដកប្រាក់ហើយ</div>"
                     //html += '<div style="text-align:center;"><input type="button" class="button-print print_button" value="Print" onclick="Printwithdraw()"></div>';
 
                 } else {
                     var totalwin = dataobj.winAmountA + dataobj.winAmountB + dataobj.winAmountC + dataobj.winAmountD + dataobj.winAmountE;
-                    html += "<div>ឈ្នះ: R" + totalwin + "</div>";
+                    html += "<div class='div-scan-lost'>ឈ្នះ: R" + totalwin + "</div>";
                     var username = $("#hdUsername").val();
                     console.log("username:" + username);
-                    html += '<div style="text-align:center;"><input type="button" class="button-print" value="Withdraw" onclick="withdraw(' + code + ',' + "'" + username + "'" + ',' + totalwin + ')"></div>';
+                    html += '<div style="text-align:center;"><input type="button" class="button-withdrawal" value="ដកប្រាក់" onclick="confirmwithdraw(' + code + ',' + "'" + username + "'" + ',' + totalwin + ')"></div>';
                 }
 
             } else {
-
+                html += "<div class='div-scan-lost'>មិនត្រូវរង្វាន់</div>";
             }
             html += create_receipt(dataobj);
             $("#div_result").html(html);
@@ -240,7 +239,7 @@ function confirmwithdraw(bettingid, username,withdrawalAmount) {
                         scanresult();
                     }
                     getusercredit(username);
-                    cancelwithdraw();
+                   // cancelwithdraw();
                 }
 
             },

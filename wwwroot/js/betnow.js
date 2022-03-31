@@ -1125,6 +1125,7 @@ function submit() {
     var gameid = $("#hdGameID").val();
     if (gameid == 0) {
         alertme("ឆ្នោតកំពុងចេញលទ្ធផល")
+        invalids += 1;
     }
     if (invalids == 0) {
         addbetting()

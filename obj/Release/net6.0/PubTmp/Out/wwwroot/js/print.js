@@ -1,6 +1,8 @@
 ﻿
 $(document).ready(function () {
-    loadreceipt();
+
+            loadreceipt();
+    
 });
 function getUrlVars() {
     var vars = [], hash;
@@ -22,7 +24,7 @@ function alertme(title) {
 function LoadReprint() {
     setTimeout(function () {
         alertme("");
-    }, 2000);
+    }, 3000);
 }
 function reprint() {
     window.location = window.location.href;
