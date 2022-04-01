@@ -27,7 +27,8 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
                       builder =>
                       {
-                          builder.AllowAnyOrigin();
+                          builder.WithOrigins("https://camloto.live", "https://camloto.azurewebsites.net");
+                          //builder.AllowAnyOrigin();
                           builder.AllowAnyMethod();
                           builder.AllowAnyHeader();
                       });

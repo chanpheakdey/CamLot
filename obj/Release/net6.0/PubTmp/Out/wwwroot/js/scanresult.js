@@ -94,7 +94,7 @@ function scanresult() {
         type: "POST",
         //dataType: "Json",
         contentType: "application/json; charset=utf-8",
-        url: "api/getbettingresult",
+        url: "api/`1                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ",
         data: '{"bettingID": ' + code + '}',
         success: function (dataobj) {
             console.log(dataobj);
