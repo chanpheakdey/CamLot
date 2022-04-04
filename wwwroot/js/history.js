@@ -50,11 +50,11 @@ function loadhistory(bettingtype) {
         success: function (data) {
             console.log(data);
             var html = "";
-            for (var i = 0; i < data.d.length; i++) {
-                var GameID = data.d[i].gameID;
-                var CreatedDate = data.d[i].CreatedDate;
-                var BetAmount =  data.d[i].BetAmount;
-                var WinAmount = data.d[i].WinAmount;
+            for (var i = 0; i < data.length; i++) {
+                var GameID = data[i].gameID;
+                var CreatedDate = data[i].createdDate;
+                var BetAmount =  data[i].betAmount;
+                var WinAmount = data[i].winAmount;
                 console.log(GameID)
                 html += "<div>";
                 html += "<div class=''>ឆ្នោតទី:" + GameID ;
