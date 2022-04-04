@@ -1166,5 +1166,58 @@ namespace GameAPI.App_Code
 
         }
 
+
+        public async Task<List<ClHistory>> getHistory(Object? BettingType, Object? Username)
+        {
+            try
+            {
+               List<ClHistory> lstHistory = new List<ClHistory>();
+                DataSet ds = new DataSet();
+                await using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
+                {
+
+
+                    using (SqlCommand command = new SqlCommand("Sp_History", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        SqlParameter sqlParameter1 = command.Parameters.Add("@BettingType", SqlDbType.VarChar);
+                        sqlParameter1.Value = BettingType.ToString();
+                        SqlParameter sqlParameter2 = command.Parameters.Add("@Username", SqlDbType.VarChar);
+                        sqlParameter2.Value = Username.ToString();
+                        connection.Open();
+                        using (SqlDataAdapter da = new SqlDataAdapter(command))
+                        {
+                            da.Fill(ds);
+
+                        }
+                        connection.Close();
+
+                        for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                        {
+                            ClHistory clHistory = new ClHistory();
+                            clHistory.BettingID = (int)ds.Tables[0].Rows[i]["BettingID"];
+                            clHistory.GameID = (int)ds.Tables[0].Rows[i]["GameID"];
+                            clHistory.CreatedDate = (string)ds.Tables[0].Rows[i]["CreatedDate"];
+                            clHistory.WinAmount = (int)ds.Tables[0].Rows[i]["WinAmount"];
+                            clHistory.BetAmount = (int)ds.Tables[0].Rows[i]["BetAmount"];
+                            lstHistory.Add(clHistory);
+                        }
+
+
+
+                        return lstHistory;
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                return null;
+            }
+
+
+        }
+
     }
 }

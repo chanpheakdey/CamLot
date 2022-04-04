@@ -99,6 +99,13 @@ D:\ACE\CamLOT\obj\Release\net6.0\SignalR.dll
 D:\ACE\CamLOT\obj\Release\net6.0\ref\SignalR.dll
 D:\ACE\CamLOT\obj\Release\net6.0\SignalR.pdb
 D:\ACE\CamLOT\obj\Release\net6.0\SignalR.genruntimeconfig.cache
+C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\SignalR.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\SignalR.AssemblyInfoInputs.cache
+C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\SignalR.AssemblyInfo.cs
+C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\SignalR.csproj.CoreCompileInputs.cache
+C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\SignalR.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\SignalR.RazorAssemblyInfo.cache
+C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\SignalR.RazorAssemblyInfo.cs
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\bin\Release\net6.0\appsettings.Development.json
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\bin\Release\net6.0\appsettings.json
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\bin\Release\net6.0\libman.json
@@ -121,13 +128,6 @@ C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\bin\Release\net6.0\runtimes\w
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\bin\Release\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\bin\Release\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\bin\Release\net6.0\QRCoder.dll
-C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\SignalR.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\SignalR.AssemblyInfoInputs.cache
-C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\SignalR.AssemblyInfo.cs
-C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\SignalR.csproj.CoreCompileInputs.cache
-C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\SignalR.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\SignalR.RazorAssemblyInfo.cache
-C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\SignalR.RazorAssemblyInfo.cs
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\staticwebassets.build.json
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\staticwebassets.development.json
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css

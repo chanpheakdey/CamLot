@@ -1,0 +1,28 @@
+﻿@page
+@model SignalR.Pages.historyModel
+@{
+}
+
+<script type="text/javascript" src="~/js/jquery-latest.min.js"></script>
+
+@*    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />*@
+
+
+<script src="~/js/history.js?v=2"></script>
+<link href="~/css/history.css" rel="stylesheet" />
+  <input type="hidden" value="" id="hdUsername" />
+  <input type="hidden" value="Current" id="hdbettype" />
+<div>
+
+    <div id="div_bettype" style="height:40px;">
+    <div id="btnCurrent"​ class="bet-type active" onclick="bettype('Current')">ភ្នាល់ក្នុងដៃ</div>
+    <span id="btnPrevious"​ class="bet-type" onclick="bettype('Previous')">ភ្នាល់ដៃមុន</span>
+    </div>​
+
+    <div id="div_result">
+
+    </div>
+</div>

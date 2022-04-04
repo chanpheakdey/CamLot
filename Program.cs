@@ -27,7 +27,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
                       builder =>
                       {
-                          builder.WithOrigins("https://camloto.live", "https://camloto.azurewebsites.net");
+                          builder.WithOrigins("https://camloto.live", "https://camloto.azurewebsites.net", "https://localhost:7111/");
                           //builder.AllowAnyOrigin();
                           builder.AllowAnyMethod();
                           builder.AllowAnyHeader();
@@ -317,6 +317,34 @@ app.MapGet("api/getauido/{filename}", async (http) =>
     await http.Response.WriteAsJsonAsync(dalGlobal.GetAudio(filename.ToString()));
 });
 
+
+app.MapGet("api/getHistory/{bettype}/{username}", async (http) =>
+{
+    object? bettype;
+    if (!http.Request.RouteValues.TryGetValue("bettype", out bettype))
+    {
+        http.Response.StatusCode = 400;
+        return;
+    }
+  
+    object? username;
+    if (!http.Request.RouteValues.TryGetValue("username", out username))
+    {
+        http.Response.StatusCode = 400;
+        return;
+    }
+    DalGlobal dalGlobal = new DalGlobal();
+
+
+    var todoItem = await dalGlobal.getHistory(bettype, username);
+    if (todoItem == null)
+    {
+        http.Response.StatusCode = 404;
+        return;
+    }
+
+    await http.Response.WriteAsJsonAsync(todoItem);
+});
 
 app.Run();
 
