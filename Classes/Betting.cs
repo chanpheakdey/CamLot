@@ -27,8 +27,8 @@
         public string? BetNumber { get; set; }
         public string? SlotNumber { get; set; }
 
-        public double BetAmount { get; set; }
-        public double TotalBet { get; set; }
+        public int BetAmount { get; set; }
+        public int TotalBet { get; set; }
 
         public string? CreatedDate { get; set; }
         public string? CreatedBy { get; set; }
@@ -37,11 +37,11 @@
         public int PlaceID { get; set; }
         public int ResultID { get; set; }
 
-        public double WinAmountA { get; set; }
-        public double WinAmountB { get; set; }
-        public double WinAmountC { get; set; }
-        public double WinAmountD { get; set; }
-        public double WinAmountE { get; set; }
+        public int WinAmountA { get; set; }
+        public int WinAmountB { get; set; }
+        public int WinAmountC { get; set; }
+        public int WinAmountD { get; set; }
+        public int WinAmountE { get; set; }
 
         public int ResultSlotA { get; set; }
         public int ResultSlotB { get; set; }

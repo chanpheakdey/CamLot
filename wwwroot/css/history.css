@@ -47,7 +47,7 @@ min-width:auto !important;
     color: black;
     padding: 12px;
     margin-right: 3%;
-    font-size: small;
+    font-size:medium;
     width: 45%;
     float: left;
 }
@@ -56,4 +56,25 @@ min-width:auto !important;
     background-color: #f73 !important;
     color: white !important;
     border-color: #f73 !important;
+}
+.field-colum {
+    width: 50%;
+    float: left;
+    height: 50px;
+}
+.span-print{
+    font-size:x-large;
+}
+.field-left{
+    width:85%;
+    float:left;
+}
+.field-right{
+    width:15%;
+    float:left;
+}
+.div-row {
+    border-bottom: solid 1px white;
+    height: 90px;
+    margin-bottom: 15px;
 }

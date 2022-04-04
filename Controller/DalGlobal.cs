@@ -663,8 +663,8 @@ namespace GameAPI.App_Code
                         clBetting_result.BetNumber = (string)ds.Tables[0].Rows[0]["BetNumber"];
                         clBetting_result.SlotNumber = (string)ds.Tables[0].Rows[0]["SlotNumber"];
 
-                        clBetting_result.BetAmount = (double)ds.Tables[0].Rows[0]["BetAmount"];
-                        clBetting_result.TotalBet = (double)ds.Tables[0].Rows[0]["TotalBet"];
+                        clBetting_result.BetAmount = (int)ds.Tables[0].Rows[0]["BetAmount"];
+                        clBetting_result.TotalBet = (int)ds.Tables[0].Rows[0]["TotalBet"];
 
 
                         clBetting_result.CreatedDate = ((DateTime)ds.Tables[0].Rows[0]["CreatedDate"]).ToString("dd/MM/yyyy HH:mm:ss");
@@ -674,11 +674,11 @@ namespace GameAPI.App_Code
                         clBetting_result.PlaceID = (int)ds.Tables[0].Rows[0]["PlaceID"];
                         clBetting_result.ResultID = (int)ds.Tables[0].Rows[0]["ResultID"];
 
-                        clBetting_result.WinAmountA = (double)ds.Tables[0].Rows[0]["WinAmountA"];
-                        clBetting_result.WinAmountB = (double)ds.Tables[0].Rows[0]["WinAmountB"];
-                        clBetting_result.WinAmountC = (double)ds.Tables[0].Rows[0]["WinAmountC"];
-                        clBetting_result.WinAmountD = (double)ds.Tables[0].Rows[0]["WinAmountD"];
-                        clBetting_result.WinAmountE = (double)ds.Tables[0].Rows[0]["WinAmountE"];
+                        clBetting_result.WinAmountA = (int)ds.Tables[0].Rows[0]["WinAmountA"];
+                        clBetting_result.WinAmountB = (int)ds.Tables[0].Rows[0]["WinAmountB"];
+                        clBetting_result.WinAmountC = (int)ds.Tables[0].Rows[0]["WinAmountC"];
+                        clBetting_result.WinAmountD = (int)ds.Tables[0].Rows[0]["WinAmountD"];
+                        clBetting_result.WinAmountE = (int)ds.Tables[0].Rows[0]["WinAmountE"];
 
                         clBetting_result.ResultSlotA = (int)ds.Tables[0].Rows[0]["SlotA"];
                         clBetting_result.ResultSlotB = (int)ds.Tables[0].Rows[0]["SlotB"];
@@ -732,8 +732,8 @@ namespace GameAPI.App_Code
                         clBetting_result.BetNumber = (string)ds.Tables[0].Rows[0]["BetNumber"];
                         clBetting_result.SlotNumber = (string)ds.Tables[0].Rows[0]["SlotNumber"];
 
-                        clBetting_result.BetAmount = (double)ds.Tables[0].Rows[0]["BetAmount"];
-                        clBetting_result.TotalBet = (double)ds.Tables[0].Rows[0]["TotalBet"];
+                        clBetting_result.BetAmount = (int)ds.Tables[0].Rows[0]["BetAmount"];
+                        clBetting_result.TotalBet = (int)ds.Tables[0].Rows[0]["TotalBet"];
 
 
                         clBetting_result.CreatedDate = ((DateTime)ds.Tables[0].Rows[0]["CreatedDate"]).ToString("dd/MM/yyyy HH:mm:ss");
@@ -1201,6 +1201,11 @@ namespace GameAPI.App_Code
                             clHistory.CreatedDate = (string)ds.Tables[0].Rows[i]["CreatedDate"];
                             clHistory.WinAmount = (int)ds.Tables[0].Rows[i]["WinAmount"];
                             clHistory.BetAmount = (int)ds.Tables[0].Rows[i]["BetAmount"];
+                            clHistory.TotalBet = (int)ds.Tables[0].Rows[i]["TotalBet"];
+                            clHistory.BetNumber = ds.Tables[0].Rows[i]["BetNumber"].ToString().Replace(",",", ");
+                            clHistory.SlotNumber = ds.Tables[0].Rows[i]["SlotNumber"].ToString().Replace("1","A").Replace("2", "B").Replace("3", "C").Replace("4", "D").Replace("5", "E");
+                            clHistory.Win = (bool)ds.Tables[0].Rows[i]["Win"];
+
                             lstHistory.Add(clHistory);
                         }
 

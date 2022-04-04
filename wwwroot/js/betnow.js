@@ -460,7 +460,8 @@ function confirmprint() {
                     cancelprint();
                     clear_betting();
                     getusercredit(username);
-                    window.location = "print?qrcode=" + bettingid;
+                    var token = getUrlVars()["token"];
+                    window.location = "print?qrcode=" + bettingid + "&token=" + token;
                 }
 
 
@@ -1194,4 +1195,9 @@ function addbetting() {
             //$('#loading').hide();
         }
     });
+}
+
+function history() {
+    var token = getUrlVars()["token"];
+    window.location = "history?token=" + token;
 }

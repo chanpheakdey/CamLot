@@ -5,8 +5,15 @@
         public int BettingID { get; set; }
         public int GameID { get; set; }
         public string CreatedDate { get; set; }
+
+        public string BetNumber { get; set; }
+
+        public bool Win { get; set; }
         public int BetAmount { get; set; }
 
         public int WinAmount { get; set; }
+        public int TotalBet { get; set; }
+
+        public string SlotNumber { get; set; }
     }
 }
