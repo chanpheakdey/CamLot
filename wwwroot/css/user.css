@@ -4,16 +4,9 @@
     font-weight:bold;
 }
 
-table {
-    border: 1px solid black;
-}
 
-th, td {
-    border: 1px solid black;
-    width: 100px;
-    overflow: hidden;
-    padding: 5px;
-}
+
+
 
 .tbldate {
     border: none;
@@ -42,4 +35,39 @@ th, td {
     font-weight: bold;
     border: solid 1px gray;
     margin-right: 10px;
+}
+
+
+body {
+    margin: 0;
+    background-color: #052d40;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-repeat: repeat;
+    background-image: linear-gradient(180deg,#052d40,rgba(14,90,136,.8901960784313725),#052d40),url(../images/bg01.gif) !important;
+    background-size: auto;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover !important;
+    color: #fff;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.div-field-caption {
+    padding: 5px;
+}
+.field-caption {
+    width: 80px;
+    float: left;
+    padding: 5px;
+}
+.textbox {
+    padding: 5px;
+    border-radius: 10px;
+}
+.span-locked{
+    color:red;
 }

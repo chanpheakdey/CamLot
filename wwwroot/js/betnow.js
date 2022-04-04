@@ -300,7 +300,7 @@ function checktokendetail() {
                 console.log(data);
                 if (data.expired == true) {
 
-                    window.location = "login?toke=";
+                    window.location = "login?token=";
                 } else {
                     $("#hdUsername").val(data.username);
                     $("#hd_placeid").val(data.placeID);
