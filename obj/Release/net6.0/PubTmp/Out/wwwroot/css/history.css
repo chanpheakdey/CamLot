@@ -1,0 +1,80 @@
+﻿body {
+    margin: 0;
+    background-color: #052d40;
+    background-position-x: 0%;
+    background-position-y: 0%;
+    background-repeat: repeat;
+    background-image: linear-gradient(180deg,#052d40,rgba(14,90,136,.8901960784313725),#052d40),url(../images/bg01.gif);
+    background-size: auto;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover !important;
+    color: #fff;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+.select-type {
+    padding: 5px;
+    border-radius: 10px;
+  
+}
+.daterangepicker .ranges ul{
+    color:black;
+}
+.daterangepicker .drp-calendar{
+    color:black;
+}
+.div-daterangepicker {
+    cursor: pointer;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+.daterangepicker{
+    width:auto !important;
+}
+.daterangepicker .calendar-table th, .daterangepicker .calendar-table td{
+min-width:auto !important;
+
+    }
+
+.bet-type {
+    background-color: white;
+    color: black;
+    padding: 12px;
+    margin-right: 3%;
+    font-size:medium;
+    width: 45%;
+    float: left;
+}
+
+.active {
+    background-color: #f73 !important;
+    color: white !important;
+    border-color: #f73 !important;
+}
+.field-colum {
+    width: 50%;
+    float: left;
+    height: 50px;
+}
+.span-print{
+    font-size:x-large;
+}
+.field-left{
+    width:85%;
+    float:left;
+}
+.field-right{
+    width:15%;
+    float:left;
+}
+.div-row {
+    border-bottom: solid 1px white;
+    height: 90px;
+    margin-bottom: 15px;
+}

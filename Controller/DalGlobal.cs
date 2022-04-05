@@ -206,11 +206,11 @@ namespace GameAPI.App_Code
 
         }
 
-        public async Task<ClReport> getReport(Object? StartDate, Object? EndDate, Object? Username)
+        public async Task<List<ClReport>> getReport(Object? StartDate, Object? EndDate, Object? Username)
         {
             try
             {
-                ClReport clReport = new ClReport();
+                List<ClReport> lstReport = new List<ClReport>();
                 DataSet ds = new DataSet();
                 await using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
                 {
@@ -233,16 +233,22 @@ namespace GameAPI.App_Code
 
                         }
                         connection.Close();
-                        clReport.TotalGames = (int)ds.Tables[0].Rows[0]["TotalGames"];
-                        clReport.BetAmount = (int)ds.Tables[0].Rows[0]["BetAmount"];
-                        clReport.WinAmount = (int)ds.Tables[0].Rows[0]["WinAmount"];
-                        clReport.AgentBalance = (int)ds.Tables[0].Rows[0]["AgentBalance"];
-                        clReport.Profit = (int)ds.Tables[0].Rows[0]["Profit"];
-                        clReport.Comission = (int)ds.Tables[0].Rows[0]["Comission"];
+                        for (var i = 0; i < ds.Tables[0].Rows.Count; i++)
+                        {
+                            ClReport clReport = new ClReport();
+                            clReport.TotalGames = (int)ds.Tables[0].Rows[i]["TotalGames"];
+                            clReport.BetAmount = (int)ds.Tables[0].Rows[i]["BetAmount"];
+                            clReport.WinAmount = (int)ds.Tables[0].Rows[i]["WinAmount"];
+                            clReport.AgentBalance = (int)ds.Tables[0].Rows[i]["AgentBalance"];
+                            clReport.Profit = (int)ds.Tables[0].Rows[i]["Profit"];
+                            clReport.Comission = (int)ds.Tables[0].Rows[i]["Comission"];
+                            clReport.Username = (string)ds.Tables[0].Rows[i]["Username"];
+                            lstReport.Add(clReport);
+                        }
 
 
 
-                        return clReport;
+                        return lstReport;
 
                     }
                 }

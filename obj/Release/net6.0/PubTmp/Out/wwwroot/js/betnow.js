@@ -300,7 +300,7 @@ function checktokendetail() {
                 console.log(data);
                 if (data.expired == true) {
 
-                    window.location = "login?toke=";
+                    window.location = "login?token=";
                 } else {
                     $("#hdUsername").val(data.username);
                     $("#hd_placeid").val(data.placeID);
@@ -460,7 +460,8 @@ function confirmprint() {
                     cancelprint();
                     clear_betting();
                     getusercredit(username);
-                    window.location = "print?qrcode=" + bettingid;
+                    var token = getUrlVars()["token"];
+                    window.location = "print?qrcode=" + bettingid + "&token=" + token;
                 }
 
 
@@ -1194,4 +1195,9 @@ function addbetting() {
             //$('#loading').hide();
         }
     });
+}
+
+function history() {
+    var token = getUrlVars()["token"];
+    window.location = "history?token=" + token;
 }

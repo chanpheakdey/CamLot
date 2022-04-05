@@ -13,5 +13,7 @@
         public int Comission { get; set; }
        public int AgentBalance { get; set; }
 
+        public string Username { get; set; }
+
     }
 }

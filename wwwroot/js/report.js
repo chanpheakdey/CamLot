@@ -35,25 +35,67 @@ function loadreport(startdate, enddate,) {
             console.log(data);
             
             var html = "";
-            var betamount = data.betAmount;
-            var winamount = data.winAmount;
-            var profit = data.profit;
-            var comission = data.comission;
-            var agentBalance = data.agentBalance;
 
-            html += "<div class='report-panel'>"
-            html += "<div class='report-title'>របាយការណ៌សង្ខេប</div>"
-            html += "<div class='report-title-date'>" + startdate + "-" + enddate + "</div>"
-            html += "<div class='report-row'><span class='row-caption'>ទឹកប្រាក់ភ្នាក់ងារ</span><span class='row-value'>" + formatToCurrency(agentBalance) + "</span></div>"
+            var htmlheader = "";
+            htmlheader += "<div class='report-panel'>"
+            htmlheader += "<div class='report-title'>របាយការណ៌សង្ខេប</div>"
+            htmlheader += "<div class='report-title-date'>" + startdate + " ដល់​ " + enddate + "</div>"
+            htmlheader += "</div>"
 
-            html += "<div class='report-row'><span class='row-caption'>ទឹកប្រាក់លក់</span><span class='row-value'>" + formatToCurrency(betamount) + "</span></div>"
-            html += "<div class='report-row'><span class='row-caption'>ទឹកប្រាក់រង្វាន់</span><span class='row-value'>" + formatToCurrency(winamount) + "</span></div>"
-            html += "<div class='report-row'><span class='row-caption'>ចំណេញ</span><span class='row-value'>" + formatToCurrency(profit) + "</span></div>"
-            html += "<div class='report-row'><span class='row-caption'>កំរៃជើងសារ(៨០%)</span><span class='row-value'>" + formatToCurrency(comission) + "</span></div>"
-            html += "<hr>"
-            html += "<div class='report-row'><span class='row-caption'>ទឹកប្រាក់ភ្នាក់ងារចុងគ្រា</span><span class='row-value'>" + formatToCurrency(agentBalance-profit) + "</span></div>"
-            html += "</div>"
-            $("#div_report").html(html);
+            var betamount = 0;
+            var winamount = 0;
+            var profit = 0;
+            var comission = 0;
+            var agentBalance = 0;
+            var agent_username = '';
+
+            var total_betamount = 0;
+            var total_winamount = 0;
+            var total_profit = 0;
+
+
+            for (var i = 0; i < data.length; i++) {
+                betamount = data[i].betAmount;
+                winamount = data[i].winAmount;
+                profit = data[i].profit;
+                total_betamount += betamount;
+                total_winamount += winamount;
+                total_profit += profit;
+                comission = data[i].comission;
+                agentBalance = data[i].agentBalance;
+                agent_username = data[i].username;
+                html += "<div class='report-usergroup'>"
+                html += "<div class='report-username'>" + agent_username + "</div>"
+                //html += "<div class='report-title-date'>" + startdate + "-" + enddate + "</div>"
+                //html += "<div class='report-row'><span class='row-caption'>ទឹកប្រាក់ភ្នាក់ងារ</span><span class='row-value'>" + formatToCurrency(agentBalance) + "</span></div>"
+
+                html += "<div class='report-row'><span class='row-caption'>ទឹកប្រាក់លក់</span><span class='row-value'>" + formatToCurrency(betamount) + "</span></div>"
+                html += "<div class='report-row'><span class='row-caption'>ទឹកប្រាក់រង្វាន់</span><span class='row-value'>" + formatToCurrency(winamount) + "</span></div>"
+                html += "<div class='report-row'><span class='row-caption'>ចំណេញ</span><span class='row-value'>" + formatToCurrency(profit) + "</span></div>"
+                //html += "<div class='report-row'><span class='row-caption'>កំរៃជើងសារ(៨០%)</span><span class='row-value'>" + formatToCurrency(comission) + "</span></div>"
+                html += "<hr>"
+                html += "<div class='report-row'><span class='row-caption'>ទឹកប្រាក់ភ្នាក់ងារចុងគ្រា</span><span class='row-value'>" + formatToCurrency(agentBalance - profit) + "</span></div>"
+                html += "</div>"
+            }
+       
+
+            var htmltotal = ""
+            if (username == "admin") {
+                htmltotal += "<div class='report-usergroup'>"
+                htmltotal += "<div class='report-username'>សរុប</div>"
+                
+                htmltotal += "<div class='report-row'><span class='row-caption'>ទឹកប្រាក់ភ្នាក់ងារ</span><span class='row-value'>" + formatToCurrency(agentBalance) + "</span></div>"
+
+                htmltotal += "<div class='report-row'><span class='row-caption'>ទឹកប្រាក់លក់</span><span class='row-value'>" + formatToCurrency(total_betamount) + "</span></div>"
+                htmltotal += "<div class='report-row'><span class='row-caption'>ទឹកប្រាក់រង្វាន់</span><span class='row-value'>" + formatToCurrency(total_winamount) + "</span></div>"
+                htmltotal += "<div class='report-row'><span class='row-caption'>ចំណេញ</span><span class='row-value'>" + formatToCurrency(total_profit) + "</span></div>"
+                htmltotal += "<hr>"
+                htmltotal += "<div class='report-row'><span class='row-caption'>ទឹកប្រាក់ភ្នាក់ងារចុងគ្រា</span><span class='row-value'>" + formatToCurrency(agentBalance - total_profit) + "</span></div>"
+                htmltotal += "</div>"
+
+            }
+
+            $("#div_report").html(htmlheader + htmltotal + html);
         },
         error: function (result) {
             console.log(result);

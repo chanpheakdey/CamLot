@@ -79,3 +79,13 @@ body {
     -moz-user-select: none;
     user-select: none;
 }
+
+.report-usergroup {
+    padding: 5px;
+    margin-bottom: 30px;
+}
+.report-username {
+    padding: 5px;
+    background-color: #f73;
+    font-size: large;
+}

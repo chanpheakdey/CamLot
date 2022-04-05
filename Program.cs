@@ -13,7 +13,7 @@ builder.Services.AddHostedService<messageworker>();
 builder.Services.AddRazorPages();
 builder.Services.AddMvc().AddRazorPagesOptions(options =>
 {
-    options.Conventions.AddPageRoute("/display", "");
+    options.Conventions.AddPageRoute("/home", "");
 
 
 });
@@ -27,7 +27,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
                       builder =>
                       {
-                          builder.WithOrigins("https://camloto.live", "https://camloto.azurewebsites.net", "https://localhost:7111/");
+                          builder.WithOrigins("http://camloto.live", "https://camloto.live", "https://camloto.azurewebsites.net", "https://localhost:7111/");
                           //builder.AllowAnyOrigin();
                           builder.AllowAnyMethod();
                           builder.AllowAnyHeader();
@@ -47,7 +47,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
