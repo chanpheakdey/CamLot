@@ -50,13 +50,18 @@ function loadhistory(bettingtype) {
         success: function (data) {
             console.log(data);
             var html = "";
+            var G_totalBet = 0;
+            var G_WinAmount = 0;
             for (var i = 0; i < data.length; i++) {
                 var GameID = data[i].gameID;
                 var CreatedDate = data[i].createdDate;
                 var BetAmount = data[i].betAmount;
                 var totalBet = data[i].totalBet;
+                G_totalBet += totalBet;
+               
                 var WinAmount = data[i].winAmount;
                 var Win = data[i].win;
+
                 var betnumber = data[i].betNumber;
                 var slotnumber = data[i].slotNumber;
                 var bettingID = data[i].bettingID;
@@ -71,7 +76,11 @@ function loadhistory(bettingtype) {
                 html += "<div class='field-colum'>"
                 html += "<div>ប្រភេទ:" + slotnumber + "</span></div>";
                 html += "<div>លេខភ្នាល់:" + betnumber + "</div>";
-                
+                if (Win == true) {
+                    html += "<div>រង្វាន់: R" + WinAmount + "</div>";
+                    G_WinAmount += WinAmount;
+                }
+
                 html += "</div>";
                 html += "</div>";
                 html += "<div class='field-right'>";
@@ -79,8 +88,11 @@ function loadhistory(bettingtype) {
                 html += "</div>";
                 html += "</div>";
 
-
             }
+
+            html += "<div>ចំនួនភ្នាល់: <span>" + data.length + " វិក័យបត្រ</span></div>"
+            html += "<div>ទឹកប្រាក់ភ្នាល់សរុប: <span>R" + G_totalBet + "</span></div>"
+            html += "<div>រង្វាន់សរុប: <span>R" + G_WinAmount + "</span></div>"
 
             if (html == "") {
                 $("#div_result").html("គ្មានលទ្ធផល");
