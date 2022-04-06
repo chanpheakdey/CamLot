@@ -13,7 +13,7 @@ builder.Services.AddHostedService<messageworker>();
 builder.Services.AddRazorPages();
 builder.Services.AddMvc().AddRazorPagesOptions(options =>
 {
-    options.Conventions.AddPageRoute("/home", "");
+    options.Conventions.AddPageRoute("/display", "");
 
 
 });

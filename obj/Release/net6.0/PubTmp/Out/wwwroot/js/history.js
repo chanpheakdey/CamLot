@@ -90,7 +90,7 @@ function loadhistory(bettingtype) {
 
             }
 
-            html += "<div>ចំនួនប្ភ្នាល់សរុប: <span>" + data.length + " វិក័យបត្រ</span></div>"
+            html += "<div>ចំនួនភ្នាល់: <span>" + data.length + " វិក័យបត្រ</span></div>"
             html += "<div>ទឹកប្រាក់ភ្នាល់សរុប: <span>R" + G_totalBet + "</span></div>"
             html += "<div>រង្វាន់សរុប: <span>R" + G_WinAmount + "</span></div>"
 
