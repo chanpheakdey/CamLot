@@ -86,7 +86,7 @@ body {
 .alert-popup-title {
     padding: 5px;
     font-size: x-large;
-    text-align: center;
+    text-align: left;
     color: white;
     font-weight: bold;
 }

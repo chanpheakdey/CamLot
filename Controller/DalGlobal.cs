@@ -595,8 +595,8 @@ namespace GameAPI.App_Code
 
                         SqlParameter sqlParameter3 = command.Parameters.Add("@Username", SqlDbType.VarChar);
                         sqlParameter3.Value = cluser.UserName;
-                        SqlParameter sqlParameter4 = command.Parameters.Add("@CreatedBy", SqlDbType.VarChar);
-                        sqlParameter4.Value = cluser.CreatedBy;
+                        SqlParameter sqlParameter4 = command.Parameters.Add("@Password", SqlDbType.VarChar);
+                        sqlParameter4.Value = cluser.Password;
                         connection.Open();
                         using (SqlDataAdapter da = new SqlDataAdapter(command))
                         {

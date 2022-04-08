@@ -83,6 +83,7 @@ function deleteuser() {
                 if (data == "Success") {
                     var username = $("#hdUsername").val();
                     getuserlist(username);
+                    closepopup();
                 }
             },
             error: function (result) {
@@ -112,6 +113,7 @@ function unlockuser() {
                 if (data == "Success") {
                     var username = $("#hdUsername").val();
                     getuserlist(username);
+                    closepopup();
                 }
             },
             error: function (result) {
@@ -126,7 +128,7 @@ function unlockuser() {
 
 function showoption(username,password) {
     $("#div_alert").show();
-    $("#div_popup_title").html(username);
+    $("#div_popup_title").html("Username: " + username);
     $("#hdSelectedUser").val(username);
     $("#txtchangepassword").val(password);
 }
@@ -149,8 +151,9 @@ function updatepassword() {
         success: function (data) {
 
             if (data == "Success") {
-                //var username = $("#hdUsername").val();
-                //getuserlist(username);
+                var username = $("#hdUsername").val();
+                getuserlist(username);
+                closepopup();
             }
         },
         error: function (result) {
