@@ -127,6 +127,14 @@ app.MapPost("api/unlockuser", (ClUser clUser) =>
     return dalGlobal.UnlockUser(clUser);
 
 });
+
+app.MapPost("api/updatePassword", (ClUser clUser) =>
+{
+    DalGlobal dalGlobal = new DalGlobal();
+    return dalGlobal.UpdatePassword(clUser);
+
+});
+
 app.MapPost("api/QRCode", (qrcode clqrcode) =>
 {
     DalGlobal dalGlobal = new DalGlobal();

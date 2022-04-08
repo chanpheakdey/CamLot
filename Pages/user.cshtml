@@ -10,6 +10,37 @@
 <link href="~/css/user.css" rel="stylesheet" />
 
 
+<input type="hidden" value="" id="hdSelectedUser" />
+<div class="div-popup" id="div_alert" style="display:none;">
+         <div class="div-popup-detail">
+        <div class="div-popup-close"><span class="span-close" onclick="closepopup()">X</spanc></div>
+        <div class="alert-popup-title" id="div_popup_title">តើអ្នកដកប្រាក់ឈ្នះនេះមែនទេ?</div>
+        <div class="" id="div_popup_detail">
+            <div class="" id="div_popup_detail">
+            <div class="div-option-button">
+                <div>
+                <span class="titile-password">Password</span>
+                <span>
+                    <input type="button" value="" style="float:left;" class="textbox" id="txtchangepassword" />
+                </span>
+                
+                <span class="button-option" onclick="updatepassword()">Update</span>
+                
+                </div>
+            </div>
+            <div>
+                            <span class="button-option" onclick="unlockuser()">Unlock</span>
+            <span class="button-option" onclick="deleteuser()">Delete</span>
+
+                
+            </div>
+            
+        </div>
+            
+        </div>
+        </div>
+</div>
+
 <div>
     <div style="text-align:left;margin: 10px 0px;"><a href="#" onclick="backhome()" style="background-color: #f73;padding: 10px;border-radius: 10px;color: white;"><i class="fas fa-home" aria-hidden="true"></i></a></div>
     <input type="hidden" value="" id="hdUsername" />

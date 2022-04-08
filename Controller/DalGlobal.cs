@@ -576,6 +576,45 @@ namespace GameAPI.App_Code
                 return "error";
             }
         }
+
+        public string UpdatePassword(ClUser cluser)
+        {
+
+            ClUser clUser_result = new ClUser();
+            try
+            {
+                DataSet ds = new DataSet();
+                using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
+                {
+
+
+                    using (SqlCommand command = new SqlCommand("Sp_UpdatePassword", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+
+                        SqlParameter sqlParameter3 = command.Parameters.Add("@Username", SqlDbType.VarChar);
+                        sqlParameter3.Value = cluser.UserName;
+                        SqlParameter sqlParameter4 = command.Parameters.Add("@CreatedBy", SqlDbType.VarChar);
+                        sqlParameter4.Value = cluser.CreatedBy;
+                        connection.Open();
+                        using (SqlDataAdapter da = new SqlDataAdapter(command))
+                        {
+                            da.Fill(ds);
+
+                        }
+                        connection.Close();
+                        return (string)ds.Tables[0].Rows[0]["Status"]; ;
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                clUser_result.UserID = -1;
+                return "error";
+            }
+        }
         public ClBetting Betting(ClBetting clBetting)
         {
 

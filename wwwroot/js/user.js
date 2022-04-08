@@ -66,9 +66,10 @@ function addnewuser() {
 
 }
 
-function deleteuser(username) {
+function deleteuser() {
     var createdby = $("#hdUsername").val();
-    if (confirm('Are you sure to delete this user?')) {
+    var username = $("#hdSelectedUser").val();
+
         $.ajax({
             //cache: false,
             async: false,
@@ -89,12 +90,13 @@ function deleteuser(username) {
                 //$('#loading').hide();
             }
         });
-    } 
+    
 
 }
 
 
-function unlockuser(username) {
+function unlockuser() {
+    var username = $("#hdSelectedUser").val();
     var createdby = $("#hdUsername").val();
     if (confirm('Are you sure to unlock this user?')) {
         $.ajax({
@@ -118,5 +120,43 @@ function unlockuser(username) {
             }
         });
     }
+
+}
+
+
+function showoption(username,password) {
+    $("#div_alert").show();
+    $("#div_popup_title").html(username);
+    $("#hdSelectedUser").val(username);
+    $("#txtchangepassword").val(password);
+}
+function closepopup() {
+    $("#div_alert").hide();
+    $("#hdSelectedUser").val("");
+}
+
+function updatepassword() {
+    var username = $("#hdSelectedUser").val();
+    var newpassword = $("#txtchangepassword").val();
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "Post",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/updatePassword",
+        data: '{"UserName":"' + username + '","Password":"' + newpassword + '"}',
+        success: function (data) {
+
+            if (data == "Success") {
+                //var username = $("#hdUsername").val();
+                //getuserlist(username);
+            }
+        },
+        error: function (result) {
+            console.log(result);
+            //$('#loading').hide();
+        }
+    });
 
 }
