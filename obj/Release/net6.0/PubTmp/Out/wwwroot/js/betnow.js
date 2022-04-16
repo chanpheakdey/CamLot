@@ -37,10 +37,11 @@ connection.on("ReceiveMessage", function (Eventmessage) {
     } else if (Eventmessage.subject == "count down") {
         var objgame = JSON.parse(Eventmessage.message);
         var gameid = objgame.gameid;
-        $("#hdGameID").val(gameid);
         if (objgame.timeremaining <= 10) {
             $("#hdGameID").val(0);
-        };
+        } else {
+            $("#hdGameID").val(gameid);
+        }
         $("#div_GameID").html("ឆ្នោតលេខ:" + gameid);
 
     }
@@ -453,6 +454,7 @@ function confirmprint() {
                 if (bettingid == 0) {
                     //alert("ឆ្នោតចាប់លេងហើយ។")
                     alertme("ឆ្នោតចាប់លេងហើយ។")
+                    window.location = window.location.href;
                     cancelprint();
                 } else {
                     //var html = create_receipt(dataobj);
@@ -1131,6 +1133,7 @@ function submit() {
     if (gameid == 0) {
         alertme("ឆ្នោតកំពុងចេញលទ្ធផល")
         invalids += 1;
+        window.location = window.location.href;
     }
     if (invalids == 0) {
         addbetting()
@@ -1177,7 +1180,7 @@ function addbetting() {
                 if (bettingid == 0) {
                     //alert("ឆ្នោតចាប់លេងហើយ។")
                     alertme("ឆ្នោតចាប់លេងហើយ។")
-                   
+                    window.location = window.location.href;
                 } else {
                     //var html = create_receipt(dataobj);
                     //qrcode_img_base64(bettingid,html);
