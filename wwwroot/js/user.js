@@ -126,6 +126,15 @@ function unlockuser() {
 }
 
 
+function uploadid() {
+    var username = $("#hdSelectedUser").val();
+    var createdby = $("#hdUsername").val();
+    window.location = window.location + "&uploadphoto=1&username=" + username;
+
+}
+
+
+
 function showoption(username,password) {
     $("#div_alert").show();
     $("#div_popup_title").html("Username: " + username);
