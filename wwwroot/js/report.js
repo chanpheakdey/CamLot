@@ -71,10 +71,9 @@ function loadreport(startdate, enddate,) {
 
                 html += "<div class='report-row'><span class='row-caption'>ទឹកប្រាក់លក់</span><span class='row-value'>" + formatToCurrency(betamount) + "</span></div>"
                 html += "<div class='report-row'><span class='row-caption'>ទឹកប្រាក់រង្វាន់</span><span class='row-value'>" + formatToCurrency(winamount) + "</span></div>"
-                html += "<div class='report-row'><span class='row-caption'>ចំណេញ</span><span class='row-value'>" + formatToCurrency(profit) + "</span></div>"
                 //html += "<div class='report-row'><span class='row-caption'>កំរៃជើងសារ(៨០%)</span><span class='row-value'>" + formatToCurrency(comission) + "</span></div>"
                 html += "<hr>"
-                html += "<div class='report-row'><span class='row-caption'>ទឹកប្រាក់ភ្នាក់ងារចុងគ្រា</span><span class='row-value'>" + formatToCurrency(agentBalance - profit) + "</span></div>"
+                //html += "<div class='report-row'><span class='row-caption'>ទឹកប្រាក់ភ្នាក់ងារចុងគ្រា</span><span class='row-value'>" + formatToCurrency(agentBalance - profit) + "</span></div>"
                 html += "</div>"
             }
        
@@ -88,9 +87,7 @@ function loadreport(startdate, enddate,) {
 
                 htmltotal += "<div class='report-row'><span class='row-caption'>ទឹកប្រាក់លក់</span><span class='row-value'>" + formatToCurrency(total_betamount) + "</span></div>"
                 htmltotal += "<div class='report-row'><span class='row-caption'>ទឹកប្រាក់រង្វាន់</span><span class='row-value'>" + formatToCurrency(total_winamount) + "</span></div>"
-                htmltotal += "<div class='report-row'><span class='row-caption'>ចំណេញ</span><span class='row-value'>" + formatToCurrency(total_profit) + "</span></div>"
                 htmltotal += "<hr>"
-                htmltotal += "<div class='report-row'><span class='row-caption'>ទឹកប្រាក់ភ្នាក់ងារចុងគ្រា</span><span class='row-value'>" + formatToCurrency(agentBalance - total_profit) + "</span></div>"
                 htmltotal += "</div>"
 
             }

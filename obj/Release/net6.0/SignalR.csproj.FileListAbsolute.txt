@@ -107,7 +107,6 @@ C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\bin\Release\net6.0\SignalR.ex
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\bin\Release\net6.0\SignalR.deps.json
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\bin\Release\net6.0\SignalR.runtimeconfig.json
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\bin\Release\net6.0\SignalR.dll
-C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\bin\Release\net6.0\ref\SignalR.dll
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\bin\Release\net6.0\SignalR.pdb
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\bin\Release\net6.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\bin\Release\net6.0\System.Data.SqlClient.dll
@@ -139,3 +138,4 @@ C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\ref\Signal
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\SignalR.pdb
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\SignalR.genruntimeconfig.cache
 C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\SignalR.csproj.AssemblyReference.cache
+C:\Users\chanpheakdey.vong\Documents\GitHub\CamLot\obj\Release\net6.0\refint\SignalR.dll

@@ -4,7 +4,6 @@
 }
 
 <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/user.js?v=1"></script>
 <script type="text/javascript" src="js/public.js"></script>
 <link href="~/css/user.css" rel="stylesheet" />
@@ -27,13 +26,37 @@
                 <span class="button-option" onclick="updatepassword()">Update</span>
                 
                 </div>
+           
             </div>
             <div>
-            <span class="button-option" onclick="uploadid()">Upload</span>
+
+            <div id="div_credit">
+            <div class="div-agent-credit">ទឹកប្រាក់ភ្នាក់ងារ</div>
+            <div class="div-current-credit">
+                <span id="spancredit" class="span-credit"></span>
+                <span id="spanaddcredit" onclick="showaddcredit()">+</span>
+                <span id="spanaddcredit" onclick="showdeductcredit()">-</span>
+            </div>
+            </div>
+            <div id="div_update_credit" style="display:none;">
+                <span id="span_credit_title" class="span-credit-title"></span>
+                <input type="text" id="txtcredit" value="" />
+                <span id="spanaddcredit" onclick="addcredit()">+</span>
+                <span id="spandeductcredit" onclick="deductcredit()">-</span>
+            </div>
+            <div style="display:none;">
+                <div style="text-align:center;">
+                    <div class="div-imgupload">
+                    <img src="~/images/DefaultID.jpg" class="imgupload" />
+                    <span id="actionimg" class="icon-fullscreen"  onclick="fullscreen(this)" style="margin-top:60px;"><i class="fa fa-expand"></i> </span>
+                    <span id="actionimg" class="icon-fullscreen"  onclick="uploadid(this)"><i class="fa fa-upload"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="div-action-button">
             <span class="button-option" onclick="unlockuser()">Unlock</span>
             <span class="button-option" onclick="deleteuser()">Delete</span>
-
-                
+            </div>    
             </div>
             
         </div>

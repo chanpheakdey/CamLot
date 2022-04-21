@@ -354,6 +354,14 @@ app.MapGet("api/getHistory/{bettype}/{username}", async (http) =>
     await http.Response.WriteAsJsonAsync(todoItem);
 });
 
+app.MapPost("api/addcredit", (int amount) =>
+{
+    DalGlobal dalGlobal = new DalGlobal();
+    return dalGlobal.AddCredit(amount);
+
+});
+
+
 app.Run();
 
 

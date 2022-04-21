@@ -713,7 +713,7 @@ function print() {
 
 
 function betnow(amount) {
-    var betamount = $("#hd_betamount").val();
+    var betamount = parseInt($("#hd_betamount").val());
     betamount = betamount + amount;
     if (betamount > 5000) {
         //alert("Can not bet more then 2000Riel");
@@ -721,6 +721,7 @@ function betnow(amount) {
     } else {
        
         if (amount == 0) {
+            betamount = 0;
             $("#hd_betamount").val("0");
             //$("#div_betamount").html("0R");
         } else {

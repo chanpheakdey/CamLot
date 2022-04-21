@@ -1269,5 +1269,42 @@ namespace GameAPI.App_Code
 
         }
 
+
+        public string AddCredit(int Amount)
+        {
+
+            
+            try
+            {
+                DataSet ds = new DataSet();
+                using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
+                {
+
+
+                    using (SqlCommand command = new SqlCommand("Sp_AddCredit", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        SqlParameter sqlParameter1 = command.Parameters.Add("@Amount", SqlDbType.Int);
+                        sqlParameter1.Value = Amount;
+
+
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                        connection.Close();
+
+
+                        return "success";
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                return "error";
+            }
+        }
+
+
     }
 }

@@ -1,6 +1,53 @@
 ﻿
 
 
+$(document).ready(function () {
+
+    checktokendetail();
+
+});
+
+
+function checktokendetail() {
+    var token = getUrlVars()["token"];
+
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "POST",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/CheckTokenDetail",
+        data: '{"TokenID":"' + token + '"}',
+        success: function (data) {
+
+            if (data.expired == true) {
+
+                window.location = "login";
+            } else {
+                $("#hdUsername").val(data.username);
+                var username = $("#hdUsername").val();
+                getuserlist(username);
+                var url = window.location.href;
+                if (url.includes("uploadphoto")) {
+                    var username = getUrlVars()["username"];
+                    var password = getUrlVars()["password"];
+                    showoption(username, password);
+                }
+
+            }
+        },
+        error: function (result) {
+            console.log(result);
+            //$('#loading').hide();
+        }
+    });
+
+
+}
+
+
+
 function getuserlist(username) {
 
 
@@ -129,7 +176,8 @@ function unlockuser() {
 function uploadid() {
     var username = $("#hdSelectedUser").val();
     var createdby = $("#hdUsername").val();
-    window.location = window.location + "&uploadphoto=1&username=" + username;
+    var password = $("#txtchangepassword").val();
+    window.location = window.location + "&uploadphoto=1&username=" + username + "&password=" + password;
 
 }
 
@@ -140,6 +188,7 @@ function showoption(username,password) {
     $("#div_popup_title").html("Username: " + username);
     $("#hdSelectedUser").val(username);
     $("#txtchangepassword").val(password);
+    $("#imgupload").prop("src", username + ".jpg");
 }
 function closepopup() {
     $("#div_alert").hide();
@@ -171,4 +220,59 @@ function updatepassword() {
         }
     });
 
+}
+
+function addcredit(amount) {
+    var username = $("#hdSelectedUser").val();
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "Post",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/addcredit",
+        data: '{"UserName":"' + username + '","Amount":' + amount + '}',
+        success: function (data) {
+
+        },
+        error: function (result) {
+            console.log(result);
+            //$('#loading').hide();
+        }
+    });
+}
+
+function deductcredit(amount) {
+    var username = $("#hdSelectedUser").val();
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "Post",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/deductcredit",
+        data: '{"UserName":"' + username + '","Amount":' + amount + '}',
+        success: function (data) {
+
+        },
+        error: function (result) {
+            console.log(result);
+            //$('#loading').hide();
+        }
+    });
+}
+
+function showaddcredit() {
+    $("#div_update_credit").show();
+    $("#span_credit_title").html("ទឹកប្រាក់ត្រូវដាក់បន្ថែម");
+    $("#spanaddcredit").show();
+    $("#spandeductcredit").hide();
+}
+
+
+function showdeductcredit() {
+    $("#div_update_credit").show();
+    $("#span_credit_title").html("ទឹកប្រាក់ត្រូវដកចេញ");
+    $("#spanaddcredit").hide();
+    $("#spandeductcredit").show();
 }
