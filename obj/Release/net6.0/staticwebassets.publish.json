@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kIDKssmgVglOTNSU82pvEq1kh7OGkihc156a+d/l8Po=",
+  "Hash": "n9cWR5HWkfsB0sKdmxX9MQ5PSxpEdgaDirKyGvXJzNE=",
   "Source": "SignalR",
   "BasePath": "_content/SignalR",
   "Mode": "Default",
@@ -508,6 +508,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\CamLotto.png"
+    },
+    {
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\images\\DefaultID.jpg",
+      "SourceId": "SignalR",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
+      "BasePath": "_content/SignalR",
+      "RelativePath": "images/DefaultID.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\DefaultID.jpg"
     },
     {
       "Identity": "D:\\ACE\\CamLOT\\wwwroot\\images\\logo.png",

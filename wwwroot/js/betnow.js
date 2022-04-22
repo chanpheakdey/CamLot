@@ -1187,9 +1187,14 @@ function addbetting() {
                 } else {
                     //var html = create_receipt(dataobj);
                     //qrcode_img_base64(bettingid,html);
-                    clear_betting();
-                    getusercredit(username);
-                    window.location = "print?qrcode=" + bettingid;
+                    if (bettingid == -2) {
+                        alertme("ទឹកប្រាក់ភ្នាក់ងារមិនគ្រប់");
+                    } else {
+                        clear_betting();
+                        getusercredit(username);
+                        window.location = "print?qrcode=" + bettingid;
+
+                    }
                 }
 
 

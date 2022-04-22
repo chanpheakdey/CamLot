@@ -35,9 +35,10 @@ body {
     font-weight: 700;
 }
 .round-small-number {
-    width: 9.5vw;
-    height: 9.5vw;
+    width: 8.5vw;
+    height: 8.5vw;
     float: left;
+    margin-right: 1vw;
 }
 .div-credit{
     text-align:right;
@@ -52,9 +53,17 @@ body {
     border: solid 1px white;
     width: 120px;
     border-radius: 15px;
+    float:left;
 }
-.div-time{
-    text-align:right;
+.span-clear-betamount {
+    padding: 10px 10px;
+    color: #f73;
+    font-size: large;
+    line-height: 35px;
+    font-weight: 700;
+}
+.div-time {
+    text-align: right;
 }
 .div-slot{
     height:60px;
@@ -68,9 +77,9 @@ body {
     padding-bottom:50px;
 }
 .div-number {
-    line-height: 8.5vw;
+    line-height: 8vw;
     text-align: center;
-    font-size: 4.5vw;
+    font-size: 4.3vw;
     color: black;
     border-radius: 50%;
     border: solid 2px white;
@@ -80,7 +89,7 @@ body {
     margin: 0 5%;
 }
 .div-rownumber{
-    height:50px;
+    height:9.5vw;
 }
 .bet-type {
     background-color: white;

@@ -1269,8 +1269,56 @@ namespace GameAPI.App_Code
 
         }
 
+        public async Task<List<UserCredit>> getUserCreditHistory( Object? Username)
+        {
+            try
+            {
+                List<UserCredit> lstuserCredit = new List<UserCredit>();
+                DataSet ds = new DataSet();
+                await using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
+                {
 
-        public string AddCredit(int Amount)
+
+                    using (SqlCommand command = new SqlCommand("Sp_UserCreditHistory", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                
+                        SqlParameter sqlParameter2 = command.Parameters.Add("@Username", SqlDbType.VarChar);
+                        sqlParameter2.Value = Username.ToString();
+                        connection.Open();
+                        using (SqlDataAdapter da = new SqlDataAdapter(command))
+                        {
+                            da.Fill(ds);
+
+                        }
+                        connection.Close();
+
+                        for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                        {
+                            UserCredit userCredit = new UserCredit();
+                            userCredit.CreatedDate = (string)ds.Tables[0].Rows[i]["CreatedDate"];
+                            userCredit.CreatedBy = (string)ds.Tables[0].Rows[i]["CreatedBy"];
+                            userCredit.Amount = (int)ds.Tables[0].Rows[i]["Amount"];
+
+                            lstuserCredit.Add(userCredit);
+                        }
+
+
+
+                        return lstuserCredit;
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                return null;
+            }
+
+
+        }
+        public string AddCredit(UserCredit usercredit)
         {
 
             
@@ -1286,7 +1334,11 @@ namespace GameAPI.App_Code
                         command.CommandType = CommandType.StoredProcedure;
 
                         SqlParameter sqlParameter1 = command.Parameters.Add("@Amount", SqlDbType.Int);
-                        sqlParameter1.Value = Amount;
+                        sqlParameter1.Value = usercredit.Amount;
+                        SqlParameter sqlParameter2 = command.Parameters.Add("@Username", SqlDbType.VarChar);
+                        sqlParameter2.Value = usercredit.Username;
+                        SqlParameter sqlParameter3 = command.Parameters.Add("@CreatedBy", SqlDbType.VarChar);
+                        sqlParameter3.Value = usercredit.CreatedBy;
 
 
                         connection.Open();

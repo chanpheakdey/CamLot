@@ -481,7 +481,7 @@ function confirmprint() {
 
 function clear_betting() {
     listnumber = [];
-    listslot = [];
+    //listslot = [];
     $("#span_totalbetamount").html("");
     $("#hd_betamount").val("0");
     $("#betAmount").html('R0');
@@ -713,21 +713,24 @@ function print() {
 
 
 function betnow(amount) {
-    if (amount > 5000) {
+    var betamount = parseInt($("#hd_betamount").val());
+    betamount = betamount + amount;
+    if (betamount > 5000) {
         //alert("Can not bet more then 2000Riel");
         alertme("Can not bet more then 5000Riel");
     } else {
-        var currentamount = amount
+       
         if (amount == 0) {
+            betamount = 0;
             $("#hd_betamount").val("0");
             //$("#div_betamount").html("0R");
         } else {
-            $("#hd_betamount").val(currentamount);
+            $("#hd_betamount").val(betamount);
             //$("#div_betamount").html(currentamount + "R");
         }
 
     }
-    $("#betAmount").html('R' + currentamount);
+    $("#betAmount").html('R' + betamount);
     closepopup_betamount();
     loadtotalbet();
 }
@@ -1184,9 +1187,14 @@ function addbetting() {
                 } else {
                     //var html = create_receipt(dataobj);
                     //qrcode_img_base64(bettingid,html);
-                    clear_betting();
-                    getusercredit(username);
-                    window.location = "print?qrcode=" + bettingid;
+                    if (bettingid == -2) {
+                        alertme("ទឹកប្រាក់ភ្នាក់ងារមិនគ្រប់");
+                    } else {
+                        clear_betting();
+                        getusercredit(username);
+                        window.location = "print?qrcode=" + bettingid;
+
+                    }
                 }
 
 

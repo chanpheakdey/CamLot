@@ -4,16 +4,26 @@
 }
 
 <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="js/user.js?v=1"></script>
+<script type="text/javascript" src="js/user.js?v=2"></script>
 <script type="text/javascript" src="js/public.js"></script>
-<link href="~/css/user.css" rel="stylesheet" />
+<link href="~/css/user.css?v=2" rel="stylesheet" />
 
 
 <input type="hidden" value="" id="hdSelectedUser" />
+<div class="div-popup" id="div_popup_credithistory" style="display:none;z-index:99999">
+         
+
+        <div class="div-popup-close"><span class="alert-popup-title">ទឹកប្រាក់បានដាក់ ឬដក</span><span class="span-close" onclick="closepopupcredithistory()">X</span></div>
+        <div class="" id="div_credithistory">
+
+        </div>
+</div>
+
 <div class="div-popup" id="div_alert" style="display:none;">
          <div class="div-popup-detail">
-        <div class="div-popup-close"><span class="span-close" onclick="closepopup()">X</span></div>
-        <div class="alert-popup-title" id="div_popup_title">តើអ្នកដកប្រាក់ឈ្នះនេះមែនទេ?</div>
+
+        <div class="div-popup-close"><span class="alert-popup-title" id="div_popup_title">តើអ្នកដកប្រាក់ឈ្នះនេះមែនទេ?</span><span class="span-close" onclick="closepopup()">X</span></div>
+        
         <div class="" id="div_popup_detail">
             <div class="" id="div_popup_detail">
             <div class="div-option-button">
@@ -31,18 +41,23 @@
             <div>
 
             <div id="div_credit">
-            <div class="div-agent-credit">ទឹកប្រាក់ភ្នាក់ងារ</div>
+            
             <div class="div-current-credit">
+                <div class="div-agent-credit">ទឹកប្រាក់ភ្នាក់ងារ
                 <span id="spancredit" class="span-credit"></span>
-                <span id="spanaddcredit" onclick="showaddcredit()">+</span>
-                <span id="spanaddcredit" onclick="showdeductcredit()">-</span>
+                                <span class="button-action-credit" onclick="credithistory()"><i class="fa fa-history"></i></span>
+
+                <span id="spanshowaddcredit" onclick="showaddcredit()" class="button-action-credit">+</span>
+                <span id="spanshowdeductcredit" onclick="showdeductcredit()" class="button-action-credit button-minus">-</span>
+                </div>
             </div>
             </div>
             <div id="div_update_credit" style="display:none;">
                 <span id="span_credit_title" class="span-credit-title"></span>
                 <input type="text" id="txtcredit" value="" />
-                <span id="spanaddcredit" onclick="addcredit()">+</span>
-                <span id="spandeductcredit" onclick="deductcredit()">-</span>
+                <span id="spanaddcredit" onclick="addcredit()" class="button-action-credit">+</span>
+                <span id="spandeductcredit" onclick="deductcredit()" class="button-action-credit button-minus">-</span>
+                <span onclick="cancelcredit()" class="button-action-credit">x</span>
             </div>
             <div style="display:none;">
                 <div style="text-align:center;">

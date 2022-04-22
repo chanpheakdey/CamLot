@@ -1,6 +1,53 @@
 ﻿
 
 
+$(document).ready(function () {
+
+    checktokendetail();
+
+});
+
+
+function checktokendetail() {
+    var token = getUrlVars()["token"];
+
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "POST",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/CheckTokenDetail",
+        data: '{"TokenID":"' + token + '"}',
+        success: function (data) {
+
+            if (data.expired == true) {
+
+                window.location = "login";
+            } else {
+                $("#hdUsername").val(data.username);
+                var username = $("#hdUsername").val();
+                getuserlist(username);
+                var url = window.location.href;
+                if (url.includes("uploadphoto")) {
+                    var username = getUrlVars()["username"];
+                    var password = getUrlVars()["password"];
+                    showoption(username, password);
+                }
+
+            }
+        },
+        error: function (result) {
+            console.log(result);
+            //$('#loading').hide();
+        }
+    });
+
+
+}
+
+
+
 function getuserlist(username) {
 
 
@@ -126,11 +173,24 @@ function unlockuser() {
 }
 
 
-function showoption(username,password) {
+function uploadid() {
+    var username = $("#hdSelectedUser").val();
+    var createdby = $("#hdUsername").val();
+    var password = $("#txtchangepassword").val();
+    window.location = window.location + "&uploadphoto=1&username=" + username + "&password=" + password;
+
+}
+
+
+
+function showoption(username, password) {
+    getusercredit(username);
+    
     $("#div_alert").show();
     $("#div_popup_title").html("Username: " + username);
     $("#hdSelectedUser").val(username);
     $("#txtchangepassword").val(password);
+    $("#imgupload").prop("src", username + ".jpg");
 }
 function closepopup() {
     $("#div_alert").hide();
@@ -162,4 +222,144 @@ function updatepassword() {
         }
     });
 
+}
+
+function addcredit() {
+    var amount = parseInt($("#txtcredit").val());
+
+    var username = $("#hdSelectedUser").val();
+    var createdby = $("#hdUsername").val();
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "Post",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/addcredit",
+        data: '{"UserName":"' + username + '","Amount":' + amount + ',"CreatedBy":"' + createdby + '"}',
+        success: function (data) {
+            if (data == "success") {
+                cancelcredit();
+                getusercredit(username);
+            }
+        },
+        error: function (result) {
+            console.log(result);
+            //$('#loading').hide();
+        }
+    });
+}
+
+function deductcredit() {
+    var amount = parseInt($("#txtcredit").val());
+    var username = $("#hdSelectedUser").val();
+    var createdby = $("#hdUsername").val();
+    amount = -amount;
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "Post",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/addcredit",
+        data: '{"UserName":"' + username + '","Amount":' + amount + ',"CreatedBy":"' + createdby + '"}',
+       success: function (data) {
+           if (data == "success") {
+               cancelcredit();
+               getusercredit(username);
+           }
+        },
+        error: function (result) {
+            console.log(result);
+            //$('#loading').hide();
+        }
+    });
+}
+function credithistory() {
+    var username = $("#hdSelectedUser").val();
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "Get",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/getUserCreditHistory/" + username,
+        data: '',
+        success: function (data) {
+            var html = '';
+            html += '<table style="width:100%"><tr>';
+            html += '<td>ថ្ងៃទី</td><td>ទឹកប្រាក់</td>';
+            html += '</tr>';
+            for (var i = 0; i < data.length; i++) {
+                var createdDate = data[i].createdDate;
+                var amount = data[i].amount;
+                var createdBy = data[i].createdby;
+                html += '<tr>';
+                html += '<td>'+ createdDate + '</td><td>' + amount + 'R</td>';
+                html += '</tr>';
+
+            }
+            html += '</table>';
+            $("#div_popup_credithistory").show();
+            $("#div_credithistory").html(html);
+        },
+        error: function (result) {
+            console.log(result);
+            //$('#loading').hide();
+        }
+    });
+}
+function closepopupcredithistory() {
+    $("#div_popup_credithistory").hide();
+}
+function showaddcredit() {
+  
+   
+    $("#div_update_credit").show();
+    $("#span_credit_title").html("ទឹកប្រាក់ត្រូវដាក់បន្ថែម");
+    $("#spanaddcredit").show();
+    $("#spandeductcredit").hide();
+    $("#spanshowaddcredit").hide();
+    $("#spanshowdeductcredit").hide();
+
+}
+
+
+function showdeductcredit() {
+    $("#div_update_credit").show();
+    $("#span_credit_title").html("ទឹកប្រាក់ត្រូវដកចេញ");
+    $("#spanaddcredit").hide();
+    $("#spandeductcredit").show();
+    $("#spanshowaddcredit").hide();
+    $("#spanshowdeductcredit").hide();
+
+}
+function cancelcredit() {
+    $("#div_update_credit").hide();
+    $("#spanshowaddcredit").show();
+    $("#spanshowdeductcredit").show();
+}
+
+
+function getusercredit(username) {
+
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "Get",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/getusercredit/" + username,
+        data: '',
+        success: function (data) {
+            console.log(data);
+            
+            //$("#div_credit").html("R" + data);
+            $("#spancredit").html("R" + data);
+        },
+        error: function (result) {
+            console.log(result);
+            //$('#loading').hide();
+        }
+    });
 }

@@ -354,12 +354,39 @@ app.MapGet("api/getHistory/{bettype}/{username}", async (http) =>
     await http.Response.WriteAsJsonAsync(todoItem);
 });
 
-app.MapPost("api/addcredit", (int amount) =>
+
+app.MapGet("api/getUserCreditHistory/{username}", async (http) =>
+{
+    
+
+    object? username;
+    if (!http.Request.RouteValues.TryGetValue("username", out username))
+    {
+        http.Response.StatusCode = 400;
+        return;
+    }
+    DalGlobal dalGlobal = new DalGlobal();
+
+
+    var todoItem = await dalGlobal.getUserCreditHistory(username);
+    if (todoItem == null)
+    {
+        http.Response.StatusCode = 404;
+        return;
+    }
+
+    await http.Response.WriteAsJsonAsync(todoItem);
+});
+
+
+app.MapPost("api/addcredit", (UserCredit userCredit) =>
 {
     DalGlobal dalGlobal = new DalGlobal();
-    return dalGlobal.AddCredit(amount);
+    return dalGlobal.AddCredit(userCredit);
 
 });
+
+
 
 
 app.Run();
