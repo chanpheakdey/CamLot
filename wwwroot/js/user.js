@@ -184,13 +184,18 @@ function uploadid() {
 
 
 function showoption(username, password) {
+    console.log("show option");
     getusercredit(username);
     
     $("#div_alert").show();
     $("#div_popup_title").html("Username: " + username);
     $("#hdSelectedUser").val(username);
     $("#txtchangepassword").val(password);
-    $("#imgupload").prop("src", username + ".jpg");
+
+    var d = new Date($.now());
+    var datestr = (d.getDate() + (d.getMonth() + 1) + d.getFullYear() + d.getHours() + d.getMinutes() + d.getSeconds());
+    $("#imgupload").prop("src", "https://gamestorage.azurewebsites.net/id/" + username + ".jpg?" + datestr);
+
 }
 function closepopup() {
     $("#div_alert").hide();
@@ -275,6 +280,16 @@ function deductcredit() {
         }
     });
 }
+
+function fullscreen(e) {
+    $("#div_popup_credithistory").show();
+    $("#span_popup_title").html("អត្តសញ្ញាណ");
+    //$("#div_credithistory").html("");
+    //console.log($(e).attr("src"));
+    $("#div_credithistory").html('<img style="width:100%" src="' + $("#imgupload").attr('src') + '" />');
+    
+}
+
 function credithistory() {
     var username = $("#hdSelectedUser").val();
     $.ajax({
@@ -301,6 +316,7 @@ function credithistory() {
             }
             html += '</table>';
             $("#div_popup_credithistory").show();
+            $("#span_popup_title").html("ទឹកប្រាក់បានដាក់ ឬដក");
             $("#div_credithistory").html(html);
         },
         error: function (result) {
