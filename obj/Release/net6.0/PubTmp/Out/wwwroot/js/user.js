@@ -184,13 +184,19 @@ function uploadid() {
 
 
 function showoption(username, password) {
+    console.log("show option");
     getusercredit(username);
     
     $("#div_alert").show();
     $("#div_popup_title").html("Username: " + username);
     $("#hdSelectedUser").val(username);
     $("#txtchangepassword").val(password);
-    $("#imgupload").prop("src", username + ".jpg");
+
+    userdocument();
+    //var d = new Date($.now());
+    //var datestr = (d.getDate() + (d.getMonth() + 1) + d.getFullYear() + d.getHours() + d.getMinutes() + d.getSeconds());
+    //$("#imgupload").prop("src", "https://gamestorage.azurewebsites.net/id/" + username + ".jpg?" + datestr);
+
 }
 function closepopup() {
     $("#div_alert").hide();
@@ -275,6 +281,39 @@ function deductcredit() {
         }
     });
 }
+
+function fullscreen(url) {
+    $("#div_popup_credithistory").show();
+    $("#span_popup_title").html("លិខិតបញ្ជាក់អត្តសញ្ញាណ");
+    //$("#div_credithistory").html("");
+    //console.log($(e).attr("src"));
+    $("#div_credithistory").html('<img style="width:100%" src="' + url + '" />');
+    
+}
+
+function deletefile(uploadid) {
+    var createdby = $("#hdUsername").val();
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "Post",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/deletedocument",
+        data: '{"UploadID":' + uploadid + ',"CreatedBy":"' + createdby + '"}',
+        success: function (data) {
+            if (data == "success") {
+                userdocument();
+            }
+            
+        },
+        error: function (result) {
+            console.log(result);
+            //$('#loading').hide();
+        }
+    });
+}
+
 function credithistory() {
     var username = $("#hdSelectedUser").val();
     $.ajax({
@@ -301,7 +340,48 @@ function credithistory() {
             }
             html += '</table>';
             $("#div_popup_credithistory").show();
+            $("#span_popup_title").html("ទឹកប្រាក់បានដាក់ ឬដក");
             $("#div_credithistory").html(html);
+        },
+        error: function (result) {
+            console.log(result);
+            //$('#loading').hide();
+        }
+    });
+}
+
+function userdocument() {
+    var username = $("#hdSelectedUser").val();
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "Get",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/getUserDocument/" + username,
+        data: '',
+        success: function (data) {
+            var html = '';
+            html += '<table style="width:100%">';
+            //html += '<tr>'
+            //html += '<td>ថ្ងៃទី</td><td>ឈ្មោះ</td>';
+            //html += '</tr>';
+            for (var i = 0; i < data.length; i++) {
+                var createdDate = data[i].createdDate;
+                var filename = data[i].filename;
+                var createdBy = data[i].createdby;
+                var photoUrl = data[i].photoUrl;
+                var uploadid = data[i].uploadID;
+                html += '<tr>';
+                html += '<td style="text-align:left;">រូបថត ' + createdDate + '</td>'
+                html += '<td><span id="actionimg" class="icon-fullscreen"  onclick="fullscreen(' + "'" + photoUrl + "'" + ')"><i class="fa fa-picture-o"></i> </span>';
+                html += '<span id="actionimg" class="icon-fullscreen"  onclick="deletefile(' + uploadid + ')"><i class="fa fa-trash"></i> </span></td> ';
+                html += '</tr>';
+
+            }
+            html += '</table>';
+           
+            $("#div_doc").html(html);
         },
         error: function (result) {
             console.log(result);

@@ -132,11 +132,9 @@ body {
 }
 
 .icon-fullscreen {
-    float: right;
-    position: absolute;
     color: #f73;
-    font-size: large;
-    margin: 15px -30px;
+    font-size: x-large;
+    margin-left: 20px;
 }
 .div-imgupload {
     width: 300px;
@@ -153,7 +151,7 @@ body {
     background-color: #f73;
     border-radius: 45px;
     font-size: 20px;
-    margin: 0px 5px;
+    margin: 0px 15px;
 }
 .button-minus {
     padding: 5px 13px !important;
@@ -164,4 +162,7 @@ body {
 .span-credit {
     font-size: large;
     color: #f73;
+}
+#div_credit{
+    margin-bottom:20px;
 }

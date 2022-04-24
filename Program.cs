@@ -378,6 +378,28 @@ app.MapGet("api/getUserCreditHistory/{username}", async (http) =>
     await http.Response.WriteAsJsonAsync(todoItem);
 });
 
+app.MapGet("api/getUserDocument/{username}", async (http) =>
+{
+
+
+    object? username;
+    if (!http.Request.RouteValues.TryGetValue("username", out username))
+    {
+        http.Response.StatusCode = 400;
+        return;
+    }
+    DalGlobal dalGlobal = new DalGlobal();
+
+
+    var todoItem = await dalGlobal.getUserDocument(username);
+    if (todoItem == null)
+    {
+        http.Response.StatusCode = 404;
+        return;
+    }
+
+    await http.Response.WriteAsJsonAsync(todoItem);
+});
 
 app.MapPost("api/addcredit", (UserCredit userCredit) =>
 {
@@ -386,7 +408,12 @@ app.MapPost("api/addcredit", (UserCredit userCredit) =>
 
 });
 
+app.MapPost("api/deletedocument", (UserDocument userDocument) =>
+{
+    DalGlobal dalGlobal = new DalGlobal();
+    return dalGlobal.DeleteDocument(userDocument);
 
+});
 
 
 app.Run();

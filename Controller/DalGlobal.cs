@@ -1269,7 +1269,59 @@ namespace GameAPI.App_Code
 
         }
 
-        public async Task<List<UserCredit>> getUserCreditHistory( Object? Username)
+        public async Task<List<UserDocument>> getUserDocument(Object? Username)
+        {
+            try
+            {
+                List<UserDocument> lstUserDocument = new List<UserDocument>();
+                DataSet ds = new DataSet();
+                await using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
+                {
+
+
+                    using (SqlCommand command = new SqlCommand("Sp_UserDocument", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+
+                        SqlParameter sqlParameter2 = command.Parameters.Add("@Username", SqlDbType.VarChar);
+                        sqlParameter2.Value = Username.ToString();
+                        connection.Open();
+                        using (SqlDataAdapter da = new SqlDataAdapter(command))
+                        {
+                            da.Fill(ds);
+
+                        }
+                        connection.Close();
+
+                        for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                        {
+                            UserDocument userDocument = new UserDocument();
+                            userDocument.UploadID = (int)ds.Tables[0].Rows[i]["UploadID"];
+                            userDocument.CreatedDate = (string)ds.Tables[0].Rows[i]["CreatedDate"];
+                            userDocument.CreatedBy = (string)ds.Tables[0].Rows[i]["CreatedBy"];
+                            userDocument.PhotoUrl = (string)ds.Tables[0].Rows[i]["PhotoUrl"];
+                            userDocument.Filename = (string)ds.Tables[0].Rows[i]["Filename"];
+
+
+                            lstUserDocument.Add(userDocument);
+                        }
+
+
+
+                        return lstUserDocument;
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                return null;
+            }
+
+
+        }
+        public async Task<List<UserCredit>> getUserCreditHistory(Object? Username)
         {
             try
             {
@@ -1283,7 +1335,7 @@ namespace GameAPI.App_Code
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
-                
+
                         SqlParameter sqlParameter2 = command.Parameters.Add("@Username", SqlDbType.VarChar);
                         sqlParameter2.Value = Username.ToString();
                         connection.Open();
@@ -1357,6 +1409,43 @@ namespace GameAPI.App_Code
             }
         }
 
+        public string DeleteDocument(UserDocument userDocument)
+        {
+
+
+            try
+            {
+                DataSet ds = new DataSet();
+                using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
+                {
+
+
+                    using (SqlCommand command = new SqlCommand("Sp_DeleteDocument", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                     
+                        SqlParameter sqlParameter2 = command.Parameters.Add("@UploadID", SqlDbType.Int);
+                        sqlParameter2.Value = userDocument.UploadID;
+                        SqlParameter sqlParameter3 = command.Parameters.Add("@Username", SqlDbType.VarChar);
+                        sqlParameter3.Value = userDocument.CreatedBy;
+
+
+                        connection.Open();
+                        command.ExecuteNonQuery();
+                        connection.Close();
+
+
+                        return "success";
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                return "error";
+            }
+        }
 
     }
 }
