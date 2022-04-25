@@ -1150,10 +1150,10 @@ body {
 
         .lotto-90 .custom-main .lotto-special .lotto-special-num > span, .lotto-home .custom-main .lotto-special .lotto-special-num > span {
             display: inline-block;
-            width: 160px;
+            width: auto;
             height: 150px;
             color: #ff7733;
-            font-size: 120px;
+            font-size: 100px;
             text-align: center;
             line-height: 135px;
             background-color: #0a4465;
@@ -1161,14 +1161,17 @@ body {
             float: left;
             font-weight: 800;
             border-radius: 25px;
+        
         }
 
     .lotto-90 .custom-main .lotto-special .lotto-special-list, .lotto-home .custom-main .lotto-special .lotto-special-list {
-        margin-left: 10px
+        margin-left: 10px;
+        width: 100%;
     }
 
         .lotto-90 .custom-main .lotto-special .lotto-special-list .lotto-special-num, .lotto-home .custom-main .lotto-special .lotto-special-list .lotto-special-num {
-            margin-right: 25px
+            margin-right: 2%;
+            width: 18%;
         }
 
         .lotto-90 .custom-main .lotto-special .lotto-special-list > div:last-child, .lotto-home .custom-main .lotto-special .lotto-special-list > div:last-child {
