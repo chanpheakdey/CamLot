@@ -71,6 +71,9 @@ function loadreport(startdate, enddate,) {
 
                 html += "<div class='report-row'><span class='row-caption'>ទឹកប្រាក់លក់</span><span class='row-value'>" + formatToCurrency(betamount) + "</span></div>"
                 html += "<div class='report-row'><span class='row-caption'>ទឹកប្រាក់រង្វាន់</span><span class='row-value'>" + formatToCurrency(winamount) + "</span></div>"
+                if (username == "admin") {
+                    html += "<div class='report-row'><span class='row-caption'>ទឹកប្រាក់ចំណេញ</span><span class='row-value'>" + formatToCurrency(betamount - winamount) + "</span></div>"
+                }
                 //html += "<div class='report-row'><span class='row-caption'>កំរៃជើងសារ(៨០%)</span><span class='row-value'>" + formatToCurrency(comission) + "</span></div>"
                 html += "<hr>"
                 //html += "<div class='report-row'><span class='row-caption'>ទឹកប្រាក់ភ្នាក់ងារចុងគ្រា</span><span class='row-value'>" + formatToCurrency(agentBalance - profit) + "</span></div>"
@@ -83,10 +86,12 @@ function loadreport(startdate, enddate,) {
                 htmltotal += "<div class='report-usergroup'>"
                 htmltotal += "<div class='report-username'>សរុប</div>"
                 
-                htmltotal += "<div class='report-row'><span class='row-caption'>ទឹកប្រាក់ភ្នាក់ងារ</span><span class='row-value'>" + formatToCurrency(agentBalance) + "</span></div>"
+                //htmltotal += "<div class='report-row'><span class='row-caption'>ទឹកប្រាក់ភ្នាក់ងារ</span><span class='row-value'>" + formatToCurrency(agentBalance) + "</span></div>"
 
                 htmltotal += "<div class='report-row'><span class='row-caption'>ទឹកប្រាក់លក់</span><span class='row-value'>" + formatToCurrency(total_betamount) + "</span></div>"
                 htmltotal += "<div class='report-row'><span class='row-caption'>ទឹកប្រាក់រង្វាន់</span><span class='row-value'>" + formatToCurrency(total_winamount) + "</span></div>"
+                htmltotal += "<div class='report-row'><span class='row-caption'>ទឹកប្រាក់ចំណេញ</span><span class='row-value'>" + formatToCurrency(total_betamount - total_winamount) + "</span></div>"
+
                 htmltotal += "<hr>"
                 htmltotal += "</div>"
 

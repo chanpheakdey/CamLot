@@ -138,3 +138,4 @@ D:\ACE\CamLOT\obj\Release\net6.0\SignalR.dll
 D:\ACE\CamLOT\obj\Release\net6.0\ref\SignalR.dll
 D:\ACE\CamLOT\obj\Release\net6.0\SignalR.pdb
 D:\ACE\CamLOT\obj\Release\net6.0\SignalR.genruntimeconfig.cache
+D:\ACE\CamLOT\obj\Release\net6.0\SignalR.csproj.AssemblyReference.cache
