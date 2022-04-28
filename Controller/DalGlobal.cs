@@ -465,6 +465,8 @@ namespace GameAPI.App_Code
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
+                        SqlParameter sqlParameter2 = command.Parameters.Add("@UserLevel", SqlDbType.VarChar);
+                        sqlParameter2.Value = cluser.UserLevel;
 
                         SqlParameter sqlParameter3 = command.Parameters.Add("@Username", SqlDbType.VarChar);
                         sqlParameter3.Value = cluser.UserName;

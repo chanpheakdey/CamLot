@@ -183,8 +183,8 @@ function printdetail(objresult) {
     html += "<div style='width: 100%;display: inline-block;margin-top: 20px;' >";
 
 
-    html += "<div>ចំនួនទឹកប្រាក់:" + objresult.betAmount + " KHR</div>";
-    html += "<div>សរុប:" + objresult.totalBet + " KHR</div>";
+    html += "<div>ចំនួនទឹកប្រាក់:<span class='bet-amount'>" + objresult.betAmount + " KHR</span></div>";
+    html += "<div>សរុប:<span class='bet-amount'>" + objresult.totalBet + " KHR</span></div>";
     html += "</div>";
 
     html += "</div>";

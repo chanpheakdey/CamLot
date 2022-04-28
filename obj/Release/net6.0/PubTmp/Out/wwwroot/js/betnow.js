@@ -303,7 +303,7 @@ function checktokendetail() {
 
                     window.location = "login?token=";
                 } else {
-                    $("#hdUsername").val(data.username);
+                    $("#hdUsername").val(data.username.toLowerCase());
                     $("#hd_placeid").val(data.placeID);
                     console.log("placeid:" + data.placeID);
                     var username = $("#hdUsername").val();

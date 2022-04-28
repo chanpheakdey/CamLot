@@ -71,7 +71,7 @@ function loadreport(startdate, enddate,) {
 
                 html += "<div class='report-row'><span class='row-caption'>ទឹកប្រាក់លក់</span><span class='row-value'>" + formatToCurrency(betamount) + "</span></div>"
                 html += "<div class='report-row'><span class='row-caption'>ទឹកប្រាក់រង្វាន់</span><span class='row-value'>" + formatToCurrency(winamount) + "</span></div>"
-                if (username == "admin") {
+                if (username.toLowerCase() == "admin") {
                     html += "<div class='report-row'><span class='row-caption'>ទឹកប្រាក់ចំណេញ</span><span class='row-value'>" + formatToCurrency(betamount - winamount) + "</span></div>"
                 }
                 //html += "<div class='report-row'><span class='row-caption'>កំរៃជើងសារ(៨០%)</span><span class='row-value'>" + formatToCurrency(comission) + "</span></div>"
@@ -82,7 +82,7 @@ function loadreport(startdate, enddate,) {
        
 
             var htmltotal = ""
-            if (username == "admin") {
+            if (username.toLowerCase() == "admin") {
                 htmltotal += "<div class='report-usergroup'>"
                 htmltotal += "<div class='report-username'>សរុប</div>"
                 

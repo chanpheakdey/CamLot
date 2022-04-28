@@ -70,23 +70,54 @@ function getuserlist(username) {
     });
 }
 
+function hidedivuser() {
+    $("#divuser").hide();
 
+}
+function showdivuser(userlevel) {
+    $("#divuser").show();
+    $("#txt_username").val("");
+    $("#txt_password").val("");
+    $("#txt_retypepassword").val("");
+    var html = "";
+    if (userlevel == 'Admin') {
+        html += "<select id='selectlevel' class='select-level'>"
+        html += "<option value='Master'>Master</option>";
+        html += "<option value='Master'>Agent</option>";
+        html += "</select>";
+    } else {
+        html += "<select id='selectlevel' class='select-level'>"
+        html += "<option value='Master'>Agent</option>";
+        html += "</select>";
+    }
+    $("#spanlevel").html(html);
+
+}
 function addnewuser() {
+    
     var username = $("#txt_username").val();
     var password = $("#txt_password").val();
     if (username == '' || password == '') {
         alert("Please enter both username and password.");
+        return;
     }
-    var betting = $('#chkBetting').prop('checked');
-    var withdrawal = $('#chkWithdrawal').prop('checked');
-    var report = $('#chkReport').prop('checked');
-    var display = $('#chkDisplay').prop('checked');
+    var retypepassword = $("#txt_retypepassword").val();
+    if (password != retypepassword) {
+        alert("Password not matched.");
+        return;
+    }
+    var userlevel = $("#selectlevel").val();
+    var betting = true; //$('#chkBetting').prop('checked');
+    var withdrawal = true; //$('#chkWithdrawal').prop('checked');
+    var report = true; //$('#chkReport').prop('checked');
+    var display = true;//$('#chkDisplay').prop('checked');
     var createdby = $("#hdUsername").val();
 
     console.log("betting:" + betting.toString());
 
     if (betting == false && withdrawal == false && report == false && display == false) {
         alert("Please select a permission");
+
     } else {
 
         $.ajax({
@@ -96,12 +127,14 @@ function addnewuser() {
             //dataType: "Json",
             contentType: "application/json; charset=utf-8",
             url: "api/CreateUser",
-            data: '{"UserName":"' + username + '","Password":"' + password + '","Betting":' + betting.toString() + ',"Withdrawal":' + withdrawal.toString() + ',"Report":' + report.toString() + ',"Display":' + display.toString() + ',"CreatedBy":"' + createdby + '"}',
+            data: '{"UserName":"' + username + '","UserLevel":"' + userlevel + '","Password":"' + password + '","Betting":' + betting.toString() + ',"Withdrawal":' + withdrawal.toString() + ',"Report":' + report.toString() + ',"Display":' + display.toString() + ',"CreatedBy":"' + createdby + '"}',
             success: function (data) {
 
                 if (data == "Success") {
+                    $("#divuser").hide();
                     var username = $("#hdUsername").val();
                     getuserlist(username);
+                    hidedivuser();
                 }
             },
             error: function (result) {
@@ -113,9 +146,9 @@ function addnewuser() {
 
 }
 
-function deleteuser() {
+function deleteuser(username) {
     var createdby = $("#hdUsername").val();
-    var username = $("#hdSelectedUser").val();
+    //var username = $("#hdSelectedUser").val();
 
         $.ajax({
             //cache: false,
@@ -129,8 +162,8 @@ function deleteuser() {
 
                 if (data == "Success") {
                     var username = $("#hdUsername").val();
-                    getuserlist(username);
-                    closepopup();
+                    getuserlist(createdby);
+                    //closepopup();
                 }
             },
             error: function (result) {
@@ -143,10 +176,10 @@ function deleteuser() {
 }
 
 
-function unlockuser() {
-    var username = $("#hdSelectedUser").val();
+function unlockuser(username) {
+    //var username = $("#hdSelectedUser").val();
     var createdby = $("#hdUsername").val();
-    if (confirm('Are you sure to unlock this user?')) {
+    //if (confirm('Are you sure to unlock this user?')) {
         $.ajax({
             //cache: false,
             async: false,
@@ -158,9 +191,9 @@ function unlockuser() {
             success: function (data) {
 
                 if (data == "Success") {
-                    var username = $("#hdUsername").val();
-                    getuserlist(username);
-                    closepopup();
+                    //var username = $("#hdUsername").val();
+                    getuserlist(createdby);
+                    //closepopup();
                 }
             },
             error: function (result) {
@@ -168,7 +201,7 @@ function unlockuser() {
                 //$('#loading').hide();
             }
         });
-    }
+    //}
 
 }
 
@@ -246,7 +279,8 @@ function addcredit() {
         success: function (data) {
             if (data == "success") {
                 cancelcredit();
-                getusercredit(username);
+                //getusercredit(username);
+                getuserlist(createdby);
             }
         },
         error: function (result) {
@@ -272,7 +306,8 @@ function deductcredit() {
        success: function (data) {
            if (data == "success") {
                cancelcredit();
-               getusercredit(username);
+               //getusercredit(username);
+               getuserlist(createdby);
            }
         },
         error: function (result) {
@@ -392,7 +427,7 @@ function userdocument() {
 function closepopupcredithistory() {
     $("#div_popup_credithistory").hide();
 }
-function showaddcredit() {
+function showaddcredit(username) {
   
    
     $("#div_update_credit").show();
@@ -401,17 +436,18 @@ function showaddcredit() {
     $("#spandeductcredit").hide();
     $("#spanshowaddcredit").hide();
     $("#spanshowdeductcredit").hide();
-
+    $("#hdSelectedUser").val(username);
 }
 
 
-function showdeductcredit() {
+function showdeductcredit(username) {
     $("#div_update_credit").show();
     $("#span_credit_title").html("ទឹកប្រាក់ត្រូវដកចេញ");
     $("#spanaddcredit").hide();
     $("#spandeductcredit").show();
     $("#spanshowaddcredit").hide();
     $("#spanshowdeductcredit").hide();
+    $("#hdSelectedUser").val(username);
 
 }
 function cancelcredit() {

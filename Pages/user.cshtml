@@ -19,6 +19,15 @@
         </div>
 </div>
 
+<div class="div-popup" id="div_update_credit" style="display:none;">
+    <div class="div-update-credit">
+                <span id="span_credit_title" class="span-credit-title"></span>
+                <input type="text" id="txtcredit" value="" />
+                <span id="spanaddcredit" onclick="addcredit()" class="button-action-credit">+</span>
+                <span id="spandeductcredit" onclick="deductcredit()" class="button-action-credit button-minus">-</span>
+                <span onclick="cancelcredit()" class="button-action-credit">x</span>
+            </div>
+</div>
 <div class="div-popup" id="div_alert" style="display:none;">
          <div class="div-popup-detail">
 
@@ -52,13 +61,7 @@
                 </div>
             </div>
             </div>
-            <div id="div_update_credit" style="display:none;">
-                <span id="span_credit_title" class="span-credit-title"></span>
-                <input type="text" id="txtcredit" value="" />
-                <span id="spanaddcredit" onclick="addcredit()" class="button-action-credit">+</span>
-                <span id="spandeductcredit" onclick="deductcredit()" class="button-action-credit button-minus">-</span>
-                <span onclick="cancelcredit()" class="button-action-credit">x</span>
-            </div>
+            
             <div style="display:block;">
                 <div>លិខិតបញ្ជាក់អត្តសញ្ញាណ<span id="actionimg" class="icon-fullscreen"  onclick="uploadid(this)"><i class="fa fa-upload"></i></span></div>
                 <div style="text-align:center;">
@@ -84,10 +87,18 @@
 <div>
     <div style="text-align:left;margin: 10px 0px;"><a href="#" onclick="backhome()" style="background-color: #f73;padding: 10px;border-radius: 10px;color: white;"><i class="fas fa-home" aria-hidden="true"></i></a></div>
     <input type="hidden" value="" id="hdUsername" />
-    <div class="div-user">
+    <div id = "divuser" class="div-popup" style="display:none;z-index:99999">
+          <div class="div-popup-detail-user">
 
+        <div class="div-popup-close"><span class="alert-popup-title" id="div_popup_title">User Account</span><span class="span-close" onclick="hidedivuser()">X</span></div>
+       
         <div class="div-field-caption"><div class="field-caption">Username:</div><span><input class="textbox" type="text" id="txt_username"></span></div>
-        <div class="div-field-caption"><div class="field-caption">Password:</div><span><input class="textbox" type="text" id="txt_password"></span></div>
+        <div class="div-field-caption"><div class="field-caption">Level:</div><span id="spanlevel"></span></div>
+        <div class="div-field-caption"><div class="field-caption">Password:</div><span><input class="textbox" type="text" id="txt_password" placeholder="6 charactors"></span></div>
+        <div class="div-field-caption"><div class="field-caption">Retype Password:</div><span><input class="textbox" type="text" id="txt_retypepassword" placeholder="6 charactors"></span></div>
+        <div class="div-submit-user">
+            <input type="button" value="submit" onclick="addnewuser()" class="span-close" />
+        </div>
         <div>
         <table class="tbldate">
             
@@ -112,10 +123,9 @@
             </tr>
         </table>
         </div>
+        </div>
     </div>
-    <div>
-        <input type="button" class="button-add" value="Add new user" onclick="addnewuser()" />
-    </div>
+  
     <div class="userlist-title">បញ្ជីគណនី:</div>
     <div id="userlist">
 

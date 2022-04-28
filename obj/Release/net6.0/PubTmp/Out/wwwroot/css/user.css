@@ -10,6 +10,7 @@
 
 .tbldate {
     border: none;
+    display:none;
 }
 
     .tbldate tr td {
@@ -26,6 +27,7 @@
     padding: 5px;
     border: solid 1px gray;
     margin: 5px 0px;
+    display:none;
 }
 
 .button-add {
@@ -58,14 +60,15 @@ body {
 
 .div-field-caption {
     padding: 5px;
+    min-height:50px;
 }
 .field-caption {
-    width: 80px;
+    min-width: 150px;
     float: left;
     padding: 10px 5px;
 }
 .textbox {
-    padding: 10px;
+    padding: 5px;
     border-radius: 10px;
     width: 120px;
 }
@@ -147,10 +150,10 @@ body {
     padding-top:30px;
 }
 .button-action-credit {
-    padding: 5px 11px;
+    padding: 5px 10px;
     background-color: #f73;
     border-radius: 45px;
-    font-size: 20px;
+    font-size: 16px;
     margin: 0px 15px;
 }
 .button-minus {
@@ -165,4 +168,47 @@ body {
 }
 #div_credit{
     margin-bottom:20px;
+    float:left;
+}
+.username-header {
+    width: 20%;
+    float: left;
+}
+.level-header {
+    width: 10%;
+    float: left;
+}
+.transaction-header {
+    width: 25%;
+    float: left;
+    text-align:right;
+}
+.lock-icon{
+    padding-left:10px;
+}
+.select-level {
+    padding: 5px;
+    border-radius: 5px;
+    min-width: 120px;
+}
+
+.div-popup-detail-user {
+    padding: 10px;
+    border-radius: 15px;
+    max-width: 400px;
+    margin: auto;
+}
+.div-submit-user {
+    text-align: center;
+    padding: 10px;
+}
+.div-update-credit {
+    max-width: 400px;
+    margin: auto;
+    padding-top: 45vh;
+}
+.balance-header {
+    width: 20%;
+    float: left;
+    text-align: right;
 }

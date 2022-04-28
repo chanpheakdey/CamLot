@@ -18,5 +18,7 @@
         public bool Admin { get; set; }
         public string? Token { get; set; } = string.Empty;
 
+        public string UserLevel { get; set; } = string.Empty;
+
     }
 }
