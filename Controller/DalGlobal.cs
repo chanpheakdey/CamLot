@@ -206,6 +206,98 @@ namespace GameAPI.App_Code
 
         }
 
+        public async Task<String> getReportBalance(Object? StartDate, Object? EndDate, Object? Username)
+        {
+            try
+            {
+                List<ClReport> lstReport = new List<ClReport>();
+                DataSet ds = new DataSet();
+                await using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
+                {
+
+
+                    using (SqlCommand command = new SqlCommand("Sp_ReportUserBalance", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        SqlParameter sqlParameter1 = command.Parameters.Add("@StartDate", SqlDbType.Date);
+                        sqlParameter1.Value = StartDate.ToString().Substring(6, 4) + "-" + StartDate.ToString().Substring(3, 2) + "-" + StartDate.ToString().Substring(0, 2);
+                        SqlParameter sqlParameter2 = command.Parameters.Add("@EndDate", SqlDbType.Date);
+                        sqlParameter2.Value = EndDate.ToString().Substring(6, 4) + "-" + EndDate.ToString().Substring(3, 2) + "-" + EndDate.ToString().Substring(0, 2);
+                        SqlParameter sqlParameter3 = command.Parameters.Add("@Username", SqlDbType.VarChar);
+                        sqlParameter3.Value = Username.ToString();
+                        connection.Open();
+                        using (SqlDataAdapter da = new SqlDataAdapter(command))
+                        {
+                            da.Fill(ds);
+
+                        }
+                        connection.Close();
+
+                        string HtmlReport = (string)ds.Tables[0].Rows[0]["HtmlReport"];
+
+
+
+
+                        return HtmlReport;
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                return "error. try again.";
+            }
+
+
+        }
+
+        public async Task<String> getReportUnderSale(Object? StartDate, Object? EndDate, Object? Username)
+        {
+            try
+            {
+                List<ClReport> lstReport = new List<ClReport>();
+                DataSet ds = new DataSet();
+                await using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
+                {
+
+
+                    using (SqlCommand command = new SqlCommand("Sp_ReportUserUnderSale", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        SqlParameter sqlParameter1 = command.Parameters.Add("@StartDate", SqlDbType.Date);
+                        sqlParameter1.Value = StartDate.ToString().Substring(6, 4) + "-" + StartDate.ToString().Substring(3, 2) + "-" + StartDate.ToString().Substring(0, 2);
+                        SqlParameter sqlParameter2 = command.Parameters.Add("@EndDate", SqlDbType.Date);
+                        sqlParameter2.Value = EndDate.ToString().Substring(6, 4) + "-" + EndDate.ToString().Substring(3, 2) + "-" + EndDate.ToString().Substring(0, 2);
+                        SqlParameter sqlParameter3 = command.Parameters.Add("@Username", SqlDbType.VarChar);
+                        sqlParameter3.Value = Username.ToString();
+                        connection.Open();
+                        using (SqlDataAdapter da = new SqlDataAdapter(command))
+                        {
+                            da.Fill(ds);
+
+                        }
+                        connection.Close();
+                       
+                        string HtmlReport = (string)ds.Tables[0].Rows[0]["HtmlReport"];
+
+
+
+
+                        return HtmlReport;
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                return "error. try again.";
+            }
+
+
+        }
+
         public async Task<List<ClReport>> getReport(Object? StartDate, Object? EndDate, Object? Username)
         {
             try
@@ -1048,10 +1140,10 @@ namespace GameAPI.App_Code
             }
         }
 
-        public byte[] getQRCode(qrcode clQrcode)
+        public string getQRCode(qrcode clQrcode)
         {
             QRCodeGenerator qrGenerator = new QRCodeGenerator();
-            QRCodeGenerator.QRCode qrCode = qrGenerator.CreateQrCode(clQrcode.qrCode, QRCodeGenerator.ECCLevel.Q);
+            QRCodeGenerator.QRCode qrCode = qrGenerator.CreateQrCode(clQrcode.qrCode, QRCodeGenerator.ECCLevel.H);
             //System.Web.UI.WebControls.Image imgBarCode = new System.Web.UI.WebControls.Image();
             Image imgBarCode;
 
@@ -1066,7 +1158,8 @@ namespace GameAPI.App_Code
                     byte[] byteImage = ms.ToArray();
                     //imgBarCode = Image.FromStream("data:image/png;base64," + Convert.ToBase64String(byteImage));
                     //return "data:image/png;base64," + Convert.ToBase64String(byteImage);
-                    return byteImage;
+                    return Convert.ToBase64String(byteImage);
+                    //return byteImage;
                 }
                 // PlaceHolder1.Controls.Add(imgBarCode);
             }

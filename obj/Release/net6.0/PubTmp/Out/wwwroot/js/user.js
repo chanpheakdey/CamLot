@@ -47,6 +47,10 @@ function checktokendetail() {
 }
 
 
+function filteruser(e) {
+    var usertype = $(e).val();
+
+}
 
 function getuserlist(username) {
 

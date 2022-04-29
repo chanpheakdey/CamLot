@@ -90,10 +90,12 @@ function html_slot(objresult) {
 
 function loadreceipt() {
     var qrcode = getUrlVars()["qrcode"];
+    console.log("qrcode:" + qrcode);
     receipt(qrcode);
     qrcode_img_base64(qrcode);
 }
 function qrcode_img_base64(qrcode) {
+    console.log("qrcode:" + qrcode);
     $.ajax({
         //cache: false,
         async: false,

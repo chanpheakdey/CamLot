@@ -2,9 +2,16 @@
     var startdate;
     startdate = $("#txtstartdate").val();
     enddate = $("#txtenddate").val();
-    if (startdate != "" && enddate != "") {
-        loadreport(startdate, enddate);
+    var reportname = $("#hdReportName").val();
+    console.log("reportname:" + reportname);
+
+    if (reportname == "Under Sale") {
+        if (startdate != "" && enddate != "") {
+            loadreportUnderSale(startdate, enddate);
+        }
     }
+
+    
 }
 
 
@@ -19,8 +26,62 @@ const formatter = new Intl.NumberFormat('en-US', {
     minimumFractionDigits: 2
 })
 
+function selectreport(reportname) {
+    $("#hdReportName").val(reportname);
+    preview();
 
-function loadreport(startdate, enddate,) {
+}
+
+
+function loadreportBalance(startdate, enddate) {
+    var username = $("#hdUsername").val();
+    console.log(startdate + ';' + enddate);
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "Get",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/getReportBalance/" + startdate + "/" + enddate + "/" + username,
+        data: '',
+        success: function (data) {
+            //console.log(data);
+
+
+            $("#div_report").html(data);
+        },
+        error: function (result) {
+            console.log(result);
+            //$('#loading').hide();
+        }
+    });
+}
+
+function loadreportUnderSale(startdate, enddate) {
+    var username = $("#hdUsername").val();
+    console.log(startdate + ';' + enddate);
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "Get",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/getReportUnderSale/" + startdate + "/" + enddate + "/" + username,
+        data: '',
+        success: function (data) {
+            //console.log(data);
+
+       
+            $("#div_report").html(data);
+        },
+        error: function (result) {
+            console.log(result);
+            //$('#loading').hide();
+        }
+    });
+}
+
+function loadreport(startdate, enddate) {
     var username = $("#hdUsername").val();
     console.log(startdate + ';' + enddate);
     $.ajax({

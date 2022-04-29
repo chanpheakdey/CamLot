@@ -19,17 +19,18 @@
     
 </style>
 <div>   
-
+    <input type="hidden" value="Under Sale" id="hdReportName" />
      <input type="hidden" value="" id="hdUsername" />
         <div style="text-align:left;margin: 25px 0px;"><a href="#" onclick="backhome()" style="background-color: white;  padding: 10px; border-radius: 10px;"><i class="fas fa-home" aria-hidden="true"></i></a></div>
 
+    <div style="height: 50px;">
+        <div class="Report-Header" onclick="selectreport('Under Sale')">Under Sale</div>
+        <div class="Report-Header" onclick="selectreport('Balance')">Balance</div>
+    </div>
     <div>
                 <div  class="div-date-caption"><div class="date-caption">ចាប់ពីថ្ងៃ:</div><span><input class="date-textbox" type="text" id="txtstartdate" onchange="preview()"></span></div>
-                <div  class="div-date-caption"><div class="date-caption">ដល់ថ្ងៃ:</div><span><input  class="date-textbox" type="text" id="txtenddate" onchange="preview()"></span>
-                
-                
-        <div></div>
-    </div>
+                <div  class="div-date-caption"><div class="date-caption">ដល់ថ្ងៃ:</div><span><input  class="date-textbox" type="text" id="txtenddate" onchange="preview()"></span></div>
+
     <div id="div_report">
 
     </div>
@@ -49,4 +50,5 @@
             });
         })
     </script>
-</div>
+
+    </div>

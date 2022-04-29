@@ -26,8 +26,9 @@ function checktokendetail() {
                 window.location = "login";
             } else {
                 $("#hdUsername").val(data.username);
-                var username = $("#hdUsername").val();
-                getuserlist(username);
+                //var username = $("#hdUsername").val();
+                //getuserlist(username);
+                filteruser();
                 var url = window.location.href;
                 if (url.includes("uploadphoto")) {
                     var username = getUrlVars()["username"];
@@ -47,7 +48,33 @@ function checktokendetail() {
 }
 
 
+function filteruser() {
+    var usertype = $("#selectusertype").val();
+    var username = $("#hdUsername").val();
+    getuserlist(username);
+    console.log("usertype:" + usertype);
 
+    if (usertype == "All") {
+        
+    } else {
+        if (usertype == "Active") {
+            hide_elementbyclass("row-user-locked");
+        } else {
+            console.log("hide active users");
+            hide_elementbyclass("row-user-active");
+
+        }
+    }
+
+}
+
+function hide_elementbyclass(className) {
+    var elements = document.getElementsByClassName(className)
+
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.display = "none";
+    }
+}
 function getuserlist(username) {
 
 
@@ -132,8 +159,7 @@ function addnewuser() {
 
                 if (data == "Success") {
                     $("#divuser").hide();
-                    var username = $("#hdUsername").val();
-                    getuserlist(username);
+                    filteruser();
                     hidedivuser();
                 }
             },
@@ -161,8 +187,7 @@ function deleteuser(username) {
             success: function (data) {
 
                 if (data == "Success") {
-                    var username = $("#hdUsername").val();
-                    getuserlist(createdby);
+                    filteruser()
                     //closepopup();
                 }
             },
@@ -192,7 +217,8 @@ function unlockuser(username) {
 
                 if (data == "Success") {
                     //var username = $("#hdUsername").val();
-                    getuserlist(createdby);
+                    //getuserlist(createdby);
+                    filteruser();
                     //closepopup();
                 }
             },
@@ -250,8 +276,9 @@ function updatepassword() {
         success: function (data) {
 
             if (data == "Success") {
-                var username = $("#hdUsername").val();
-                getuserlist(username);
+                //var username = $("#hdUsername").val();
+                //getuserlist(username);
+                filteruser();
                 closepopup();
             }
         },
@@ -280,7 +307,8 @@ function addcredit() {
             if (data == "success") {
                 cancelcredit();
                 //getusercredit(username);
-                getuserlist(createdby);
+                //getuserlist(createdby);
+                filteruser();
             }
         },
         error: function (result) {
@@ -307,7 +335,8 @@ function deductcredit() {
            if (data == "success") {
                cancelcredit();
                //getusercredit(username);
-               getuserlist(createdby);
+               //getuserlist(createdby);
+               filteruser();
            }
         },
         error: function (result) {
