@@ -1489,11 +1489,15 @@ namespace GameAPI.App_Code
 
 
                         connection.Open();
-                        command.ExecuteNonQuery();
+                        using (SqlDataAdapter da = new SqlDataAdapter(command))
+                        {
+                            da.Fill(ds);
+
+                        }
                         connection.Close();
 
 
-                        return "success";
+                        return (string)ds.Tables[0].Rows[0]["Status"]; ;
 
                     }
                 }

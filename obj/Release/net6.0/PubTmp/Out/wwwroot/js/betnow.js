@@ -283,7 +283,47 @@ function getUrlVars() {
 }
 
 
+function addbetting_unkownuser(gameid, placeid, slotNumber, betNumbers, betamount) {
+    var token = getUrlVars()["token"];
+    console.log("token:" + token);
+    if (token != "" && token != undefined) {
+        $.ajax({
+            //cache: false,
+            async: false,
+            type: "POST",
+            //dataType: "Json",
+            contentType: "application/json; charset=utf-8",
+            url: "api/CheckTokenDetail",
+            data: '{"TokenID":"' + token + '"}',
+            success: function (data) {
+                console.log(data);
+                if (data.expired == true) {
 
+                    window.location = "login?token=";
+                } else {
+                    $("#hdUsername").val(data.username.toLowerCase());
+                    $("#hd_placeid").val(data.placeID);
+                    console.log("placeid:" + data.placeID);
+                    var username = $("#hdUsername").val();
+
+                    console.log(username);
+                    getusercredit(username);
+
+                    addbettingrecord(gameid, placeid, slotNumber, betNumbers, betamount, username);
+                    //getuserlist(username);
+                }
+            },
+            error: function (result) {
+                console.log(result);
+                //$('#loading').hide();
+            }
+        });
+    } else {
+        window.location = "login?toke=";
+    }
+
+
+}
 
 function checktokendetail() {
     var token = getUrlVars()["token"];
@@ -1161,9 +1201,20 @@ function addbetting() {
     var gameid = $("#hdGameID").val();
     var placeid = $("#hd_placeid").val();
     var username = $("#hdUsername").val();
-
     console.log(username);
 
+    if (username == "") {
+        addbetting_unkownuser(gameid, placeid, slotNumber, betNumbers, betamount);
+    } else {
+        addbettingrecord(gameid, placeid, slotNumber, betNumbers, betamount, username);
+    }
+    
+
+   
+}
+
+
+function addbettingrecord(gameid, placeid, slotNumber, betNumbers, betamount, username) {
     $.ajax({
         //cache: false,
         async: false,

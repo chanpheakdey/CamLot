@@ -1,12 +1,57 @@
-﻿function preview() {
+﻿function initpreview() {
+    var d = new Date($.now());
+    var datestr = "";
+    var day = "";
+    if (d.getDate() < 10) {
+        day = "0" + d.getDate();
+    } else {
+        day = d.getDate();
+    }
+    var month = "";
+    if (d.getMonth()+1 < 10) {
+        month = "0" + (d.getMonth() + 1);
+    } else {
+        month = d.getMonth() + 1;
+    }
+    datestr = (day + "-" + month + "-" + d.getFullYear());
+    var startdate;
+    startdate = datestr;
+    enddate = datestr;
+    var reportname = $("#hdReportName").val();
+    console.log("reportname:" + reportname);
+
+    if (reportname == "Under Sale") {
+        if (startdate != "" && enddate != "") {
+            loadreportUnderSale(startdate, enddate);
+        }
+    } else {
+        if (startdate != "" && enddate != "") {
+            loadreportBalance(startdate, enddate);
+        }
+    }
+
+    
+}
+
+function preview() {
     var startdate;
     startdate = $("#txtstartdate").val();
     enddate = $("#txtenddate").val();
-    if (startdate != "" && enddate != "") {
-        loadreport(startdate, enddate);
-    }
-}
+    var reportname = $("#hdReportName").val();
+    console.log("reportname:" + reportname);
 
+    if (reportname == "Under Sale") {
+        if (startdate != "" && enddate != "") {
+            loadreportUnderSale(startdate, enddate);
+        }
+    } else {
+        if (startdate != "" && enddate != "") {
+            loadreportBalance(startdate, enddate);
+        }
+    }
+
+
+}
 
 
 const formatToCurrency = amount => {
@@ -19,8 +64,75 @@ const formatter = new Intl.NumberFormat('en-US', {
     minimumFractionDigits: 2
 })
 
+function selectreport(reportname) {
+    if (reportname == 'Under Sale') {
+        $("#div_balance").removeClass("Report-Header");
+        $("#div_undersale").removeClass("Report-Header-inactive");
+        $("#div_undersale").addClass("Report-Header");
+        $("#div_balance").addClass("Report-Header-inactive");
 
-function loadreport(startdate, enddate,) {
+    } else {
+        $("#div_undersale").removeClass("Report-Header");
+        $("#div_balance").removeClass("Report-Header-inactive");
+        $("#div_undersale").addClass("Report-Header-inactive");
+        $("#div_balance").addClass("Report-Header");
+
+    }
+    $("#hdReportName").val(reportname);
+    preview();
+
+}
+
+
+function loadreportBalance(startdate, enddate) {
+    var username = $("#hdUsername").val();
+    console.log(startdate + ';' + enddate);
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "Get",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/getReportBalance/" + startdate + "/" + enddate + "/" + username,
+        data: '',
+        success: function (data) {
+            //console.log(data);
+
+
+            $("#div_report").html(data);
+        },
+        error: function (result) {
+            console.log(result);
+            //$('#loading').hide();
+        }
+    });
+}
+
+function loadreportUnderSale(startdate, enddate) {
+    var username = $("#hdUsername").val();
+    console.log(startdate + ';' + enddate);
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "Get",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/getReportUnderSale/" + startdate + "/" + enddate + "/" + username,
+        data: '',
+        success: function (data) {
+            //console.log(data);
+
+       
+            $("#div_report").html(data);
+        },
+        error: function (result) {
+            console.log(result);
+            //$('#loading').hide();
+        }
+    });
+}
+
+function loadreport(startdate, enddate) {
     var username = $("#hdUsername").val();
     console.log(startdate + ';' + enddate);
     $.ajax({
@@ -110,6 +222,7 @@ function loadreport(startdate, enddate,) {
 $(document).ready(function () {
 
     checktokendetail();
+    initpreview();
 });
 
 function getUrlVars() {
@@ -173,7 +286,8 @@ function checktokendetail() {
                 $("#hdUsername").val(data.username);
                 var username = $("#hdUsername").val();
                 console.log(username);
-              
+
+                
                 //getuserlist(username);
             }
         },

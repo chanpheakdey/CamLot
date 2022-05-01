@@ -26,8 +26,9 @@ function checktokendetail() {
                 window.location = "login";
             } else {
                 $("#hdUsername").val(data.username);
-                var username = $("#hdUsername").val();
-                getuserlist(username);
+                //var username = $("#hdUsername").val();
+                //getuserlist(username);
+                filteruser();
                 var url = window.location.href;
                 if (url.includes("uploadphoto")) {
                     var username = getUrlVars()["username"];
@@ -47,11 +48,53 @@ function checktokendetail() {
 }
 
 
-function filteruser(e) {
-    var usertype = $(e).val();
+function filteruser() {
+    var usertype = $("#selectusertype").val();
+    var username = $("#hdUsername").val();
+    getuserlist(username);
+    console.log("usertype:" + usertype);
+
+    if (usertype == "All") {
+        
+    } else {
+        if (usertype == "Active") {
+            hide_elementbyclass("row-user-locked");
+        } else {
+            console.log("hide active users");
+            hide_elementbyclass("row-user-active");
+
+        }
+    }
 
 }
 
+function filteruserlevel(username) {
+    var usertype = $("#selectusertype").val();
+    //var username = $("#hdUsername").val();
+    getuserlist(username);
+    console.log("usertype:" + usertype);
+
+    if (usertype == "All") {
+
+    } else {
+        if (usertype == "Active") {
+            hide_elementbyclass("row-user-locked");
+        } else {
+            console.log("hide active users");
+            hide_elementbyclass("row-user-active");
+
+        }
+    }
+
+}
+
+function hide_elementbyclass(className) {
+    var elements = document.getElementsByClassName(className)
+
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.display = "none";
+    }
+}
 function getuserlist(username) {
 
 
@@ -84,15 +127,24 @@ function showdivuser(userlevel) {
     $("#txt_password").val("");
     $("#txt_retypepassword").val("");
     var html = "";
+    console.log(userlevel);
     if (userlevel == 'Admin') {
         html += "<select id='selectlevel' class='select-level'>"
         html += "<option value='Master'>Master</option>";
-        html += "<option value='Master'>Agent</option>";
+        //html += "<option value='Agent'>Agent</option>";
+        //html += "<option value='Member'>Member</option>";
         html += "</select>";
     } else {
-        html += "<select id='selectlevel' class='select-level'>"
-        html += "<option value='Master'>Agent</option>";
-        html += "</select>";
+        if (userlevel == 'Master') {
+            html += "<select id='selectlevel' class='select-level'>"
+            html += "<option value='Agent'>Agent</option>";
+            //html += "<option value='Member'>Member</option>";
+            html += "</select>";
+        } else {
+            html += "<select id='selectlevel' class='select-level'>"
+            html += "<option value='Member'>Member</option>";
+            html += "</select>";
+        }
     }
     $("#spanlevel").html(html);
 
@@ -136,8 +188,7 @@ function addnewuser() {
 
                 if (data == "Success") {
                     $("#divuser").hide();
-                    var username = $("#hdUsername").val();
-                    getuserlist(username);
+                    filteruser();
                     hidedivuser();
                 }
             },
@@ -165,8 +216,7 @@ function deleteuser(username) {
             success: function (data) {
 
                 if (data == "Success") {
-                    var username = $("#hdUsername").val();
-                    getuserlist(createdby);
+                    filteruser()
                     //closepopup();
                 }
             },
@@ -180,7 +230,7 @@ function deleteuser(username) {
 }
 
 
-function unlockuser(username) {
+function unlockuser(username,oldstatus) {
     //var username = $("#hdSelectedUser").val();
     var createdby = $("#hdUsername").val();
     //if (confirm('Are you sure to unlock this user?')) {
@@ -196,7 +246,9 @@ function unlockuser(username) {
 
                 if (data == "Success") {
                     //var username = $("#hdUsername").val();
-                    getuserlist(createdby);
+                    //getuserlist(createdby);
+                    filteruser();
+                    userstatus(oldstatus,username);
                     //closepopup();
                 }
             },
@@ -209,7 +261,14 @@ function unlockuser(username) {
 
 }
 
+function userstatus(oldstatus,username) {
+    if (oldstatus == "active") {
+        $("#div_action").html('<div style="color:#19ff00;">Status<span class="lock-icon" onclick="unlockuser(' + "'" + username + "','inactive'" + ')" ><i style="font-size: xx-large;" class="fa fa-toggle-on"></i></span></div>')
+    } else {
+        $("#div_action").html('<div style="color:red;">Status<span class="lock-icon" onclick="unlockuser(' + "'" + username + "','active'" + ')" ><i style="font-size: xx-large;" class="fa fa-toggle-off"></i></span></div>')
 
+    }
+}
 function uploadid() {
     var username = $("#hdSelectedUser").val();
     var createdby = $("#hdUsername").val();
@@ -220,7 +279,7 @@ function uploadid() {
 
 
 
-function showoption(username, password) {
+function showoption(username, password, oldstatus) {
     console.log("show option");
     getusercredit(username);
     
@@ -230,6 +289,8 @@ function showoption(username, password) {
     $("#txtchangepassword").val(password);
 
     userdocument();
+    userstatus(oldstatus,username);
+
     //var d = new Date($.now());
     //var datestr = (d.getDate() + (d.getMonth() + 1) + d.getFullYear() + d.getHours() + d.getMinutes() + d.getSeconds());
     //$("#imgupload").prop("src", "https://gamestorage.azurewebsites.net/id/" + username + ".jpg?" + datestr);
@@ -254,8 +315,9 @@ function updatepassword() {
         success: function (data) {
 
             if (data == "Success") {
-                var username = $("#hdUsername").val();
-                getuserlist(username);
+                //var username = $("#hdUsername").val();
+                //getuserlist(username);
+                filteruser();
                 closepopup();
             }
         },
@@ -268,6 +330,7 @@ function updatepassword() {
 }
 
 function addcredit() {
+    $("#divinfo").html('');
     var amount = parseInt($("#txtcredit").val());
 
     var username = $("#hdSelectedUser").val();
@@ -281,10 +344,16 @@ function addcredit() {
         url: "api/addcredit",
         data: '{"UserName":"' + username + '","Amount":' + amount + ',"CreatedBy":"' + createdby + '"}',
         success: function (data) {
+            console.log(data);
             if (data == "success") {
                 cancelcredit();
                 //getusercredit(username);
-                getuserlist(createdby);
+                //getuserlist(createdby);
+                filteruser();
+            } else {
+                if (data == 'Out of credit') {
+                    $("#divinfo").html('ទឹកប្រាក់មិនគ្រប់');
+                }
             }
         },
         error: function (result) {
@@ -311,7 +380,8 @@ function deductcredit() {
            if (data == "success") {
                cancelcredit();
                //getusercredit(username);
-               getuserlist(createdby);
+               //getuserlist(createdby);
+               filteruser();
            }
         },
         error: function (result) {
@@ -441,6 +511,7 @@ function showaddcredit(username) {
     $("#spanshowaddcredit").hide();
     $("#spanshowdeductcredit").hide();
     $("#hdSelectedUser").val(username);
+    $("#divinfo").html('');
 }
 
 
@@ -452,6 +523,7 @@ function showdeductcredit(username) {
     $("#spanshowaddcredit").hide();
     $("#spanshowdeductcredit").hide();
     $("#hdSelectedUser").val(username);
+    $("#divinfo").html('');
 
 }
 function cancelcredit() {

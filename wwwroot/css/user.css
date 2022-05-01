@@ -101,7 +101,7 @@ body {
     border-radius: 15px;
 }
 .button-option {
-    padding: 15px;
+    padding: 7px;
     background-color: #f73;
     margin-right: 10px;
     border-radius: 15px;
@@ -144,10 +144,9 @@ body {
     margin: auto;
 }
 .div-action-button {
-    text-align: center;
+    text-align: left;
     width: 165px;
-    margin: auto;
-    padding-top:30px;
+    padding-top: 30px;
 }
 .button-action-credit {
     padding: 5px 10px;
@@ -168,7 +167,7 @@ body {
 }
 #div_credit{
     margin-bottom:20px;
-    float:left;
+   
 }
 .username-header {
     width: 20%;

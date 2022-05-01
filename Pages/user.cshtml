@@ -4,7 +4,7 @@
 }
 
 <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="js/user.js?v=2"></script>
+<script type="text/javascript" src="js/user.js?v=3"></script>
 <script type="text/javascript" src="js/public.js"></script>
 <link href="~/css/user.css?v=2" rel="stylesheet" />
 
@@ -26,6 +26,10 @@
                 <span id="spanaddcredit" onclick="addcredit()" class="button-action-credit">+</span>
                 <span id="spandeductcredit" onclick="deductcredit()" class="button-action-credit button-minus">-</span>
                 <span onclick="cancelcredit()" class="button-action-credit">x</span>
+                
+            </div>
+            <div style="color: #f73;text-align: center;padding: 10px;" id="divinfo">
+
             </div>
 </div>
 <div class="div-popup" id="div_alert" style="display:none;">
@@ -56,8 +60,7 @@
                 <span id="spancredit" class="span-credit"></span>
                                 <span class="button-action-credit" onclick="credithistory()"><i class="fa fa-history"></i></span>
 
-                <span id="spanshowaddcredit" onclick="showaddcredit()" class="button-action-credit">+</span>
-                <span id="spanshowdeductcredit" onclick="showdeductcredit()" class="button-action-credit button-minus">-</span>
+               
                 </div>
             </div>
             </div>
@@ -72,9 +75,10 @@
                     </div>
                 </div>
             </div>
-            <div class="div-action-button">
-            <span class="button-option" onclick="unlockuser()">Unlock</span>
-            <span class="button-option" onclick="deleteuser()">Delete</span>
+            <div class="div-action-button" id="div_action">
+
+             <span class="lock-icon" onclick='unlockuser(this)' ><i style="font-size: x-large;" class="fa fa-toggle-on"></i></span>
+
             </div>    
             </div>
             

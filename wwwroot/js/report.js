@@ -1,4 +1,39 @@
-﻿function preview() {
+﻿function initpreview() {
+    var d = new Date($.now());
+    var datestr = "";
+    var day = "";
+    if (d.getDate() < 10) {
+        day = "0" + d.getDate();
+    } else {
+        day = d.getDate();
+    }
+    var month = "";
+    if (d.getMonth()+1 < 10) {
+        month = "0" + (d.getMonth() + 1);
+    } else {
+        month = d.getMonth() + 1;
+    }
+    datestr = (day + "-" + month + "-" + d.getFullYear());
+    var startdate;
+    startdate = datestr;
+    enddate = datestr;
+    var reportname = $("#hdReportName").val();
+    console.log("reportname:" + reportname);
+
+    if (reportname == "Under Sale") {
+        if (startdate != "" && enddate != "") {
+            loadreportUnderSale(startdate, enddate);
+        }
+    } else {
+        if (startdate != "" && enddate != "") {
+            loadreportBalance(startdate, enddate);
+        }
+    }
+
+    
+}
+
+function preview() {
     var startdate;
     startdate = $("#txtstartdate").val();
     enddate = $("#txtenddate").val();
@@ -9,11 +44,14 @@
         if (startdate != "" && enddate != "") {
             loadreportUnderSale(startdate, enddate);
         }
+    } else {
+        if (startdate != "" && enddate != "") {
+            loadreportBalance(startdate, enddate);
+        }
     }
 
-    
-}
 
+}
 
 
 const formatToCurrency = amount => {
@@ -27,6 +65,19 @@ const formatter = new Intl.NumberFormat('en-US', {
 })
 
 function selectreport(reportname) {
+    if (reportname == 'Under Sale') {
+        $("#div_balance").removeClass("Report-Header");
+        $("#div_undersale").removeClass("Report-Header-inactive");
+        $("#div_undersale").addClass("Report-Header");
+        $("#div_balance").addClass("Report-Header-inactive");
+
+    } else {
+        $("#div_undersale").removeClass("Report-Header");
+        $("#div_balance").removeClass("Report-Header-inactive");
+        $("#div_undersale").addClass("Report-Header-inactive");
+        $("#div_balance").addClass("Report-Header");
+
+    }
     $("#hdReportName").val(reportname);
     preview();
 
@@ -171,6 +222,7 @@ function loadreport(startdate, enddate) {
 $(document).ready(function () {
 
     checktokendetail();
+    initpreview();
 });
 
 function getUrlVars() {
@@ -234,7 +286,8 @@ function checktokendetail() {
                 $("#hdUsername").val(data.username);
                 var username = $("#hdUsername").val();
                 console.log(username);
-              
+
+                
                 //getuserlist(username);
             }
         },

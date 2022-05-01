@@ -3,7 +3,7 @@
 }
 
 th,td {
-    border: 1px solid black;
+    border: 1px solid white;
     width: 100px;
     overflow: hidden;
     padding:5px;
@@ -25,9 +25,10 @@ th,td {
     font-size:xx-large;
 }
 
-.date-textbox{
-    padding:5px;
-    border-radius:10px;
+.date-textbox {
+    padding: 5px;
+    border-radius: 10px;
+    width: 130px;
 }
 .report-title-date {
     font-weight: bold;
@@ -47,8 +48,10 @@ th,td {
     max-width:600px;
 }
 
-.div-date-caption{
-    padding:5px;
+.div-date-caption {
+    padding: 5px;
+    width: 150px;
+    float: left;
 }
 .date-caption {
     width: 80px;
@@ -116,4 +119,11 @@ body {
     width: 20%;
     float: left;
     text-align: right;
+}
+.Report-Header-inactive {
+    padding: 5px;
+    width: 120px;
+    float: left;
+    background-color: gray;
+    margin-left: 5px;
 }
