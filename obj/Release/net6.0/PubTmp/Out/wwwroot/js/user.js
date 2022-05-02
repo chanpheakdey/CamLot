@@ -26,6 +26,7 @@ function checktokendetail() {
                 window.location = "login";
             } else {
                 $("#hdUsername").val(data.username);
+                var nickname = data.nickname;
                 //var username = $("#hdUsername").val();
                 //getuserlist(username);
                 filteruser();
@@ -33,7 +34,8 @@ function checktokendetail() {
                 if (url.includes("uploadphoto")) {
                     var username = getUrlVars()["username"];
                     var password = getUrlVars()["password"];
-                    showoption(username, password);
+                    var nickname = getUrlVars()["nickname"];
+                    showoption(username, password,"active",nickname);
                 }
 
             }
@@ -279,7 +281,7 @@ function uploadid() {
 
 
 
-function showoption(username, password, oldstatus) {
+function showoption(username, password, oldstatus, nickname) {
     console.log("show option");
     getusercredit(username);
     
@@ -288,6 +290,7 @@ function showoption(username, password, oldstatus) {
     $("#hdSelectedUser").val(username);
     $("#txtusername").val(username);
     $("#txtchangepassword").val(password);
+    $("#txtnickname").val(nickname);
 
     userdocument();
     userstatus(oldstatus,username);
@@ -305,7 +308,32 @@ function closepopup() {
 function refreshpage() {
     window.location = window.location.href;
 }
+function updatenickname() {
+    var username = $("#hdSelectedUser").val();
+    var newnickname = $("#txtnickname").val();
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "Post",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/updatenickname",
+        data: '{"UserName":"' + username + '","NickName":"' + newnickname + '"}',
+        success: function (data) {
+            if (data == "Success") {
+                //var username = $("#hdUsername").val();
+                //getuserlist(username);
+                filteruser();
+                closepopup();
+            }
+        },
+        error: function (result) {
+            console.log(result);
+            //$('#loading').hide();
+        }
+    });
 
+}
 function updateusername() {
     var username = $("#hdSelectedUser").val();
     var newusername = $("#txtusername").val();

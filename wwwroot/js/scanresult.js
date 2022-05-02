@@ -16,6 +16,7 @@ function closepopupsearch() {
 }
 function showsearch() {
     $("#div_search").show();
+    $("#div_searchresult").html("");
 }
 
 function searchreceipt() {
