@@ -8,16 +8,27 @@
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 
 <script src="js/public.js"></script>
-<script src="js/scanresult.js?v=3"></script>
+<script src="js/scanresult.js?v=4"></script>
 <link href="~/css/betting.css" rel="stylesheet" />
 <link href="~/css/mycss.css" rel="stylesheet" />
-<link href="~/css/scan.css" rel="stylesheet" />
+<link href="~/css/scan.css?v=1" rel="stylesheet" />
 
 <style>
    
 </style>
  <input type="hidden" value="" id="hdUsername" />
-<div class="div-container">  
+<div class="div-container">
+    <div class="div-popup" id="div_search" style="display:none;">
+        <div class="div-popup-detail-user">
+        <div class="div-popup-close"><span class="alert-popup-title" id="span_popup_title">ស្វែងរកបុង</span><span class="span-close" onclick="closepopupsearch()">X</span></div>
+        <div class="div-confirm-action" id="div_search_detail">
+            <input type="text" value="" placeholder="ឆ្នោតទី" id="txtGameID" onchange="searchreceipt" /><span onclick="searchreceipt()" style="padding-left:10px;font-size:large;"><i class="fa fa-search" aria-hidden="true"></i></span>
+            <div id="div_searchresult">
+
+            </div>
+        </div>
+        </div>
+    </div>
     <div class="login div-confirm" id="div_confirm" style="display:none;">
         <div class="confirm-popup-title">តើអ្នកដកប្រាក់ឈ្នះនេះមែនទេ?</div>
         <div class="div-confirm-action" id="div_confirm_action">
@@ -26,7 +37,12 @@
         </div>
     </div>
     <div class="login" id="div_login" style="background-color:transparent;">
-       <div style="text-align:left;margin-bottom: 25px;"><a href="#" onclick="backhome()" style="background-color: white;  padding: 10px; border-radius: 10px;"><i class="fas fa-home"></i></a></div>
+       <div style="text-align:left;margin-bottom: 25px;">
+           <span><a href="#" onclick="backhome()" style="background-color: white;  padding: 10px; border-radius: 10px;"><i class="fas fa-home"></i></a></span>
+            <span><a href="#" onclick="refreshpage()" style="background-color: white;  padding: 10px; border-radius: 10px;"><i class="fas fa-refresh"></i></a></span>
+            <span style="padding-left:30px;"><a href="#" onclick="showsearch()" style="background-color: white;padding: 10px;border-radius: 10px;"><i class="fa fa-search" aria-hidden="true"></i></a></span>
+
+           </div>
              <div style="font-size:xx-large;display:none;">
             <img src='images/CamLotto.png' style='width:150px;'>
             <span class="logo-title" ><span style="color:black;">CAM</span><span style="color:#c67819"> LOTTO</span> <br></span>

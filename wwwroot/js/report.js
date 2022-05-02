@@ -52,7 +52,9 @@ function preview() {
 
 
 }
-
+function refreshpage() {
+    window.location = window.location.href;
+}
 
 const formatToCurrency = amount => {
     return formatter.format(amount).replace("$","R");

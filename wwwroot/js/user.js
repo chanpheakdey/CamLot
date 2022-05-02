@@ -284,8 +284,9 @@ function showoption(username, password, oldstatus) {
     getusercredit(username);
     
     $("#div_alert").show();
-    $("#div_popup_title").html("Username: " + username);
+    $("#div_popup_title").html("គ្រប់គ្រងគណនី");
     $("#hdSelectedUser").val(username);
+    $("#txtusername").val(username);
     $("#txtchangepassword").val(password);
 
     userdocument();
@@ -301,6 +302,36 @@ function closepopup() {
     $("#hdSelectedUser").val("");
 }
 
+function refreshpage() {
+    window.location = window.location.href;
+}
+
+function updateusername() {
+    var username = $("#hdSelectedUser").val();
+    var newusername = $("#txtusername").val();
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "Post",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/updateusername",
+        data: '{"UserName":"' + username + '","Newusername":"' + newusername  + '"}',
+        success: function (data) {
+            if (data == "Success") {
+                //var username = $("#hdUsername").val();
+                //getuserlist(username);
+                filteruser();
+                closepopup();
+            }
+        },
+        error: function (result) {
+            console.log(result);
+            //$('#loading').hide();
+        }
+    });
+
+}
 function updatepassword() {
     var username = $("#hdSelectedUser").val();
     var newpassword = $("#txtchangepassword").val();

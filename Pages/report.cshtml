@@ -8,7 +8,7 @@
 @*<script src="js/jquery.min-2.1.3.js"></script>*@
 <script src="js/report.js?v=7"></script>
 <script src="https://kit.fontawesome.com/7603579037.js" crossorigin="anonymous"></script>
-<link href="~/css/report.css?v=6" rel="stylesheet" />
+<link href="~/css/report.css?v=7" rel="stylesheet" />
 
  <link href='~/css/jquery-ui.css'   rel='stylesheet'>
       
@@ -21,11 +21,14 @@
 <div>   
     <input type="hidden" value="Under Sale" id="hdReportName" />
      <input type="hidden" value="" id="hdUsername" />
-        <div style="text-align:left;margin: 25px 0px;"><a href="#" onclick="backhome()" style="background-color: white;  padding: 10px; border-radius: 10px;"><i class="fas fa-home" aria-hidden="true"></i></a></div>
+        <div style="text-align:left;margin: 25px 0px;">
+            <a href="#" onclick="backhome()" style="background-color: white;  padding: 10px; border-radius: 10px;"><i class="fas fa-home" aria-hidden="true"></i></a>
+            <a href="#" onclick="refreshpage()" style="background-color: white;  padding: 10px; border-radius: 10px;"><i class="fas fa-refresh" aria-hidden="true"></i></a>
+        </div>
 
     <div style="height: 35px;">
-        <div id="div_undersale" class="Report-Header" onclick="selectreport('Under Sale')">Under Sale</div>
-        <div id="div_balance" class="Report-Header-inactive" onclick="selectreport('Balance')">Balance</div>
+        <div id="div_undersale" class="Report-Header" onclick="selectreport('Under Sale')">Sale Report</div>
+        <div id="div_balance" class="Report-Header-inactive" onclick="selectreport('Balance')">Balance Report</div>
     </div>
     <div>
                 <div  class="div-date-caption"><div class="date-caption">ចាប់ពីថ្ងៃ:</div><span><input class="date-textbox" type="text" id="txtstartdate" onchange="preview()"></span></div>

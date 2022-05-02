@@ -247,6 +247,9 @@ function unselectedall() {
     $(".div-number").removeClass("active");
     
 }
+function refreshpage() {
+    window.location = window.location.href;
+}
 function alertme(title) {
     $("#div_alert_title").html(title);
     $("#div_alert").show();

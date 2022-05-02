@@ -134,7 +134,7 @@ function receipt(qrcode) {
             var html = create_receipt(dataobj);
 
             $("#div_receipt").html(html);
-            LoadReprint();
+            //LoadReprint();
         },
         error: function (result) {
             console.log(result);

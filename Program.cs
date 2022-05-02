@@ -134,6 +134,12 @@ app.MapPost("api/updatePassword", (ClUser clUser) =>
     return dalGlobal.UpdatePassword(clUser);
 
 });
+app.MapPost("api/updateusername", (ClUser clUser) =>
+{
+    DalGlobal dalGlobal = new DalGlobal();
+    return dalGlobal.UpdateUsername(clUser);
+
+});
 
 app.MapPost("api/QRCode", (qrcode clqrcode) =>
 {
@@ -413,6 +419,28 @@ app.MapGet("api/getHistory/{bettype}/{username}", async (http) =>
 
 
     var todoItem = await dalGlobal.getHistory(bettype, username);
+    if (todoItem == null)
+    {
+        http.Response.StatusCode = 404;
+        return;
+    }
+
+    await http.Response.WriteAsJsonAsync(todoItem);
+});
+
+
+app.MapGet("api/getHistorybyGameID/{gameid}", async (http) =>
+{
+    object? gameid;
+    if (!http.Request.RouteValues.TryGetValue("gameid", out gameid))
+    {
+        http.Response.StatusCode = 400;
+        return;
+    }
+    DalGlobal dalGlobal = new DalGlobal();
+
+
+    var todoItem = await dalGlobal.getHistorybyGameID(gameid);
     if (todoItem == null)
     {
         http.Response.StatusCode = 404;

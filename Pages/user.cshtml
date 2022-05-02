@@ -41,6 +41,18 @@
             <div class="" id="div_popup_detail">
             <div class="div-option-button">
                 <div>
+                <span class="titile-password">Username</span>
+                <span>
+                    <input type="text" value="" style="float:left;" class="textbox" id="txtusername" />
+                </span>
+                
+                <span class="button-option" onclick="updateusername()">Update</span>
+                
+                </div>
+            </div>
+            <div class="div-option-button">
+                
+                <div>
                 <span class="titile-password">Password</span>
                 <span>
                     <input type="text" value="" style="float:left;" class="textbox" id="txtchangepassword" />
@@ -89,7 +101,10 @@
 </div>
 
 <div>
-    <div style="text-align:left;margin: 10px 0px;"><a href="#" onclick="backhome()" style="background-color: #f73;padding: 10px;border-radius: 10px;color: white;"><i class="fas fa-home" aria-hidden="true"></i></a></div>
+    <div style="text-align:left;margin: 10px 0px;">
+        <a href="#" onclick="backhome()" style="background-color: #f73;padding: 10px;border-radius: 10px;color: white;"><i class="fas fa-home" aria-hidden="true"></i></a>
+        <a href="#" onclick="refreshpage()" style="background-color: #f73;padding: 10px;border-radius: 10px;color: white;"><i class="fas fa-refresh" aria-hidden="true"></i></a>    
+    </div>
     <input type="hidden" value="" id="hdUsername" />
     <div id = "divuser" class="div-popup" style="display:none;z-index:99999">
           <div class="div-popup-detail-user">

@@ -709,6 +709,45 @@ namespace GameAPI.App_Code
                 return "error";
             }
         }
+
+        public string UpdateUsername(ClUser cluser)
+        {
+
+            ClUser clUser_result = new ClUser();
+            try
+            {
+                DataSet ds = new DataSet();
+                using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
+                {
+
+
+                    using (SqlCommand command = new SqlCommand("Sp_UpdateUsername", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+
+                        SqlParameter sqlParameter3 = command.Parameters.Add("@Username", SqlDbType.VarChar);
+                        sqlParameter3.Value = cluser.UserName;
+                        SqlParameter sqlParameter4 = command.Parameters.Add("@Newusername", SqlDbType.VarChar);
+                        sqlParameter4.Value = cluser.NewUserName;
+                        connection.Open();
+                        using (SqlDataAdapter da = new SqlDataAdapter(command))
+                        {
+                            da.Fill(ds);
+
+                        }
+                        connection.Close();
+                        return (string)ds.Tables[0].Rows[0]["Status"]; ;
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                clUser_result.UserID = -1;
+                return "error";
+            }
+        }
         public ClBetting Betting(ClBetting clBetting)
         {
 
@@ -1344,6 +1383,61 @@ namespace GameAPI.App_Code
                             clHistory.TotalBet = (int)ds.Tables[0].Rows[i]["TotalBet"];
                             clHistory.BetNumber = ds.Tables[0].Rows[i]["BetNumber"].ToString().Replace(",",", ");
                             clHistory.SlotNumber = ds.Tables[0].Rows[i]["SlotNumber"].ToString().Replace("1","A").Replace("2", "B").Replace("3", "C").Replace("4", "D").Replace("5", "E");
+                            clHistory.Win = (bool)ds.Tables[0].Rows[i]["Win"];
+
+                            lstHistory.Add(clHistory);
+                        }
+
+
+
+                        return lstHistory;
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                return null;
+            }
+
+
+        }
+
+        public async Task<List<ClHistory>> getHistorybyGameID(Object? gameid)
+        {
+            try
+            {
+                List<ClHistory> lstHistory = new List<ClHistory>();
+                DataSet ds = new DataSet();
+                await using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
+                {
+
+
+                    using (SqlCommand command = new SqlCommand("Sp_HistorybyGameID", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        SqlParameter sqlParameter1 = command.Parameters.Add("@GameID", SqlDbType.Int);
+                        sqlParameter1.Value = gameid.ToString();
+                        connection.Open();
+                        using (SqlDataAdapter da = new SqlDataAdapter(command))
+                        {
+                            da.Fill(ds);
+
+                        }
+                        connection.Close();
+
+                        for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                        {
+                            ClHistory clHistory = new ClHistory();
+                            clHistory.BettingID = (int)ds.Tables[0].Rows[i]["BettingID"];
+                            clHistory.GameID = (int)ds.Tables[0].Rows[i]["GameID"];
+                            clHistory.CreatedDate = (string)ds.Tables[0].Rows[i]["CreatedDate"];
+                            clHistory.WinAmount = (int)ds.Tables[0].Rows[i]["WinAmount"];
+                            clHistory.BetAmount = (int)ds.Tables[0].Rows[i]["BetAmount"];
+                            clHistory.TotalBet = (int)ds.Tables[0].Rows[i]["TotalBet"];
+                            clHistory.BetNumber = ds.Tables[0].Rows[i]["BetNumber"].ToString().Replace(",", ", ");
+                            clHistory.SlotNumber = ds.Tables[0].Rows[i]["SlotNumber"].ToString().Replace("1", "A").Replace("2", "B").Replace("3", "C").Replace("4", "D").Replace("5", "E");
                             clHistory.Win = (bool)ds.Tables[0].Rows[i]["Win"];
 
                             lstHistory.Add(clHistory);

@@ -94,7 +94,7 @@ body {
 }
 .Report-Header {
     padding: 5px;
-    width: 120px;
+    width: 150px;
     float: left;
     background-color: #f73;
     margin-left: 5px;
@@ -122,7 +122,7 @@ body {
 }
 .Report-Header-inactive {
     padding: 5px;
-    width: 120px;
+    width: 150px;
     float: left;
     background-color: gray;
     margin-left: 5px;

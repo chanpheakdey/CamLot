@@ -52,6 +52,7 @@ function loadhistory(bettingtype) {
             var html = "";
             var G_totalBet = 0;
             var G_WinAmount = 0;
+            html += "<table style='width:100%'>"
             for (var i = 0; i < data.length; i++) {
                 var GameID = data[i].gameID;
                 var CreatedDate = data[i].createdDate;
@@ -66,14 +67,16 @@ function loadhistory(bettingtype) {
                 var slotnumber = data[i].slotNumber;
                 var bettingID = data[i].bettingID;
                 console.log(GameID)
-                html += "<div class='div-row'>"
-                html += "<div class='field-left'>";
-                html += "<div class='field-colum'>"
+                html += "<tr style='border-bottom:solid 1px white;'>"
+                html += "<td style='width:40%;    vertical-align: top;'>";
+                html += "<div>"
                 html += "<div>ឆ្នោតទី:" + GameID + "</div>";
                 html += "<div>" + CreatedDate + "</div>";
                 html += "<div>ភ្នាល់ R" + BetAmount + " សរុប R" + totalBet + "</div>";
                 html += "</div>";
-                html += "<div class='field-colum'>"
+                html += "</td>";
+                html += "<td style='width:40%'>";
+                html += "<div>"
                 html += "<div>ប្រភេទ:" + slotnumber + "</span></div>";
                 html += "<div>លេខភ្នាល់:" + betnumber + "</div>";
                 if (Win == true) {
@@ -82,13 +85,20 @@ function loadhistory(bettingtype) {
                 }
 
                 html += "</div>";
-                html += "</div>";
-                html += "<div class='field-right'>";
+                html += "</td>";
+
+                html += "<td>";
+
+                html += "<div style='text-align:center;'>";
                 html += '<span class="span-print" onclick="reprint(' + bettingID + ')"><i class="fa fa-print" aria-hidden="true"></i></span>';
                 html += "</div>";
-                html += "</div>";
+                html += "</td>";
+                html += "</tr>";
+
 
             }
+
+            html += "</table>"
 
             html += "<div>ចំនួនភ្នាល់: <span>" + data.length + " វិក័យបត្រ</span></div>"
             html += "<div>ទឹកប្រាក់ភ្នាល់សរុប: <span>R" + G_totalBet + "</span></div>"
