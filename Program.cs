@@ -141,6 +141,13 @@ app.MapPost("api/updateusername", (ClUser clUser) =>
 
 });
 
+app.MapPost("api/updatenickname", (ClUser clUser) =>
+{
+    DalGlobal dalGlobal = new DalGlobal();
+    return dalGlobal.UpdateNickname(clUser);
+
+});
+
 app.MapPost("api/QRCode", (qrcode clqrcode) =>
 {
     DalGlobal dalGlobal = new DalGlobal();

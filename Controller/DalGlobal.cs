@@ -728,8 +728,47 @@ namespace GameAPI.App_Code
 
                         SqlParameter sqlParameter3 = command.Parameters.Add("@Username", SqlDbType.VarChar);
                         sqlParameter3.Value = cluser.UserName;
-                        SqlParameter sqlParameter4 = command.Parameters.Add("@Newusername", SqlDbType.VarChar);
+                        SqlParameter sqlParameter4 = command.Parameters.Add("@NewUserName", SqlDbType.VarChar);
                         sqlParameter4.Value = cluser.NewUserName;
+                        connection.Open();
+                        using (SqlDataAdapter da = new SqlDataAdapter(command))
+                        {
+                            da.Fill(ds);
+
+                        }
+                        connection.Close();
+                        return (string)ds.Tables[0].Rows[0]["Status"]; ;
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                clUser_result.UserID = -1;
+                return "error";
+            }
+        }
+
+        public string UpdateNickname(ClUser cluser)
+        {
+
+            ClUser clUser_result = new ClUser();
+            try
+            {
+                DataSet ds = new DataSet();
+                using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
+                {
+
+
+                    using (SqlCommand command = new SqlCommand("Sp_UpdateNickname", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+
+                        SqlParameter sqlParameter3 = command.Parameters.Add("@Username", SqlDbType.VarChar);
+                        sqlParameter3.Value = cluser.UserName;
+                        SqlParameter sqlParameter4 = command.Parameters.Add("@NickName", SqlDbType.NVarChar);
+                        sqlParameter4.Value = cluser.NickName;
                         connection.Open();
                         using (SqlDataAdapter da = new SqlDataAdapter(command))
                         {
@@ -1331,6 +1370,7 @@ namespace GameAPI.App_Code
                         clTokendetail.Expired = (bool)ds.Tables[0].Rows[0]["TokenExpired"];
                         clTokendetail.Username = (string)ds.Tables[0].Rows[0]["Username"];
                         clTokendetail.PlaceID = (int)ds.Tables[0].Rows[0]["PlaceID"];
+                        clTokendetail.Nickname = (string)ds.Tables[0].Rows[0]["Username"];
                         return clTokendetail;
 
                     }

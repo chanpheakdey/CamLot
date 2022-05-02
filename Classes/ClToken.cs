@@ -9,6 +9,7 @@
 
         public int? PlaceID { get; set; } = 0;
 
+        public string? Nickname { get; set; } = null;
 
     }
 }

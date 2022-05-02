@@ -5,6 +5,8 @@
         public int UserID { get; set; }
         public string UserName { get; set; } = string.Empty;
         public string NewUserName { get; set; } = string.Empty;
+
+        public string NickName { get; set; } = string.Empty;
         public string Password { get; set; } = String.Empty;
         public int PlaceID { get; set; }
         public bool Locked { get; set; }
