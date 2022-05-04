@@ -1424,6 +1424,7 @@ namespace GameAPI.App_Code
                             clHistory.BetNumber = ds.Tables[0].Rows[i]["BetNumber"].ToString().Replace(",",", ");
                             clHistory.SlotNumber = ds.Tables[0].Rows[i]["SlotNumber"].ToString().Replace("1","A").Replace("2", "B").Replace("3", "C").Replace("4", "D").Replace("5", "E");
                             clHistory.Win = (bool)ds.Tables[0].Rows[i]["Win"];
+                            clHistory.Nickname = ds.Tables[0].Rows[i]["Nickname"].ToString();
 
                             lstHistory.Add(clHistory);
                         }

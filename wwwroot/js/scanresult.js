@@ -7,6 +7,23 @@
    
 });
 
+
+function viewform(formname) {
+    var token = getUrlVars()["token"];
+    var backhome = getUrlVars()["backhome"];
+    if (token != "" && token != undefined) {
+        if (backhome == "0") {
+            window.location = 'betnow?token=' + token;
+        } else {
+            window.location = "login?token=" + token;
+        }
+    }
+    //else {
+    //    var username = $("#txt_username").val();
+    //    viewformbyusername(formname, username);
+    //}
+}
+
 function scansearch(qr) {
     scanQRresult(qr);
     closepopupsearch();

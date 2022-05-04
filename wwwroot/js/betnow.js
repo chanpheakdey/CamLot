@@ -85,6 +85,19 @@ connection.start().then(function () {
 });
 
 
+function viewformscan() {
+    var token = getUrlVars()["token"];
+    if (token != "" && token != undefined) {
+        window.location = 'scanresult?token=' + token + '&backhome=0';
+    }
+    //else {
+    //    var username = $("#txt_username").val();
+    //    viewformbyusername(formname, username);
+    //}
+}
+
+
+
 $(document).ready(function () {
     console.log("page load");
     checktokendetail();

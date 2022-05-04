@@ -15,5 +15,7 @@
         public int TotalBet { get; set; }
 
         public string SlotNumber { get; set; }
+        public string Nickname { get; set; }
+
     }
 }
