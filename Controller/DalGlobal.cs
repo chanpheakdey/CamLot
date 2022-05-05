@@ -1284,7 +1284,7 @@ namespace GameAPI.App_Code
         public string getQRCode(qrcode clQrcode)
         {
             QRCodeGenerator qrGenerator = new QRCodeGenerator();
-            QRCodeGenerator.QRCode qrCode = qrGenerator.CreateQrCode(clQrcode.qrCode, QRCodeGenerator.ECCLevel.H);
+            QRCodeGenerator.QRCode qrCode = qrGenerator.CreateQrCode(clQrcode.qrCode, QRCodeGenerator.ECCLevel.Q);
             //System.Web.UI.WebControls.Image imgBarCode = new System.Web.UI.WebControls.Image();
             Image imgBarCode;
 
