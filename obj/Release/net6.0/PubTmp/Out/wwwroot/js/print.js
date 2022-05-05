@@ -91,6 +91,8 @@ function html_slot(objresult) {
 function loadreceipt() {
     var qrcode = getUrlVars()["qrcode"];
     console.log("qrcode:" + qrcode);
+    $("#divbettingid").html("លេខសំគាល់ #" + qrcode);
+
     receipt(qrcode);
     qrcode_img_base64(qrcode);
 }

@@ -8,7 +8,7 @@
 });
 
 
-function viewform(formname) {
+function viewformback() {
     var token = getUrlVars()["token"];
     var backhome = getUrlVars()["backhome"];
     if (token != "" && token != undefined) {
@@ -31,14 +31,126 @@ function scansearch(qr) {
 function closepopupsearch() {
     $("#div_search").hide();
 }
+function closepopupsearchnotyetwithdraw() {
+    $("#div_search_notyet_withdraw").hide();
+}
 function showsearch() {
     $("#div_search").show();
     $("#div_searchresult").html("");
 }
 
+function showsearch_notyet_withdraw() {
+    $("#div_search_notyet_withdraw").show();
+    $("#div_searchresult_notyearwithdraw").html("");
+    loadhistory_notyetwithdraw();
+}
+
+
 function searchreceipt() {
     var gameid = $("#txtGameID").val();
     loadhistory(gameid);
+}
+
+function loadhistory_notyetwithdraw() {
+    var username = $("#hdUsername").val();
+    var startdate="";
+    var enddate="";
+    startdate = $("#txtstartdate").val();
+    enddate = $("#txtenddate").val();
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "Get",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/getHistoryNotyetwithdraw/" + startdate + "/" + enddate + "/" + username,
+        data: '',
+        success: function (data) {
+            console.log(data);
+            var html = "";
+            var G_totalBet = 0;
+            var G_WinAmount = 0;
+            html += "<table style='width:100%'>"
+
+            for (var i = 0; i < data.length; i++) {
+                var GameID = data[i].gameID;
+                var CreatedDate = data[i].createdDate;
+                var BetAmount = data[i].betAmount;
+                var totalBet = data[i].totalBet;
+                G_totalBet += totalBet;
+
+                var WinAmount = data[i].winAmount;
+                var Win = data[i].win;
+
+                var betnumber = data[i].betNumber;
+                var slotnumber = data[i].slotNumber;
+                var bettingID = data[i].bettingID;
+                var nickname = data[i].nickname;
+                var withdrawal = data[i].withdrawal;
+                var withdrawalby = data[i].withdrawalBy;
+                var withdrawaldate = data[i].withdrawalDate;
+                console.log(GameID)
+                html += "<tr style='border-bottom:solid 1px white;'>"
+                html += "<td style='width:40%;    vertical-align: top;'>";
+                html += "<div>"
+                html += "<div>ឆ្នោតទី:" + GameID + "</div>";
+                html += "<div>" + CreatedDate + "</div>";
+                html += "<div>លេខសំគាល់ #" + bettingID + "</div>";
+
+                html += "<div>ភ្នាល់ R" + BetAmount; + '</div>';
+                html += "<div>  សរុប R" + totalBet + "</div>";
+                html += "<div style='font-weight:bold;'>" + nickname + "</div>";
+                html += "</div>";
+                html += "</td>";
+                html += "<td style='width:40%'>";
+                html += "<div>"
+                html += "<div>ប្រភេទ:" + slotnumber + "</span></div>";
+                html += "<div>លេខភ្នាល់:" + betnumber + "</div>";
+                if (Win == true) {
+                    html += "<div style='color:#f73'>រង្វាន់: R" + WinAmount + "</div>";
+                    G_WinAmount += WinAmount;
+                    if (withdrawal == true) {
+                        html += "<div>បានដកប្រាក់ហើយ</div>"
+                        html += "<div>អ្នកដក " + withdrawalby + "</div><div> " + withdrawaldate + "</div>"
+
+                    } else {
+                        html += "<div style='color:#f73'>មិនទាន់ដកប្រាក់</div>"
+
+                    }
+                }
+
+                html += "</div>";
+                html += "</td>";
+
+                html += "<td>";
+
+                html += "<div style='text-align:center;'>";
+                html += '<span class="span-print" onclick="scansearch(' + bettingID + ')"><i class="fa fa-qrcode" aria-hidden="true"></i></span>';
+                html += "</div>";
+                html += "</td>";
+                html += "</tr>";
+
+            }
+            html += "</table>"
+
+            html += "<div>ចំនួនភ្នាល់: <span>" + data.length + " វិក័យបត្រ</span></div>"
+            html += "<div>ទឹកប្រាក់ភ្នាល់សរុប: <span>R" + G_totalBet + "</span></div>"
+            html += "<div>រង្វាន់សរុប: <span>R" + G_WinAmount + "</span></div>"
+
+            if (html == "") {
+                $("#div_searchresult_notyearwithdraw").html("គ្មានលទ្ធផល");
+
+            } else {
+                $("#div_searchresult_notyearwithdraw").html(html);
+
+            }
+
+        },
+        error: function (result) {
+            console.log(result);
+            //$('#loading').hide();
+        }
+    });
 }
 
 function loadhistory(gameid) {
@@ -72,13 +184,21 @@ function loadhistory(gameid) {
                 var betnumber = data[i].betNumber;
                 var slotnumber = data[i].slotNumber;
                 var bettingID = data[i].bettingID;
+                var nickname = data[i].nickname;
+                var withdrawal = data[i].withdrawal;
+                var withdrawalby = data[i].withdrawalBy;
+                var withdrawaldate = data[i].withdrawalDate;
                 console.log(GameID)
                 html += "<tr style='border-bottom:solid 1px white;'>"
                 html += "<td style='width:40%;    vertical-align: top;'>";
                 html += "<div>"
                 html += "<div>ឆ្នោតទី:" + GameID + "</div>";
                 html += "<div>" + CreatedDate + "</div>";
-                html += "<div>ភ្នាល់ R" + BetAmount + " សរុប R" + totalBet + "</div>";
+                html += "<div>លេខសំគាល់ #" + bettingID + "</div>";
+
+                html += "<div>ភ្នាល់ R" + BetAmount; + '</div>';
+                html += "<div>  សរុប R" + totalBet + "</div>";
+                html += "<div style='font-weight:bold;'>" + nickname + "</div>";
                 html += "</div>";
                 html += "</td>";
                 html += "<td style='width:40%'>";
@@ -86,8 +206,16 @@ function loadhistory(gameid) {
                 html += "<div>ប្រភេទ:" + slotnumber + "</span></div>";
                 html += "<div>លេខភ្នាល់:" + betnumber + "</div>";
                 if (Win == true) {
-                    html += "<div>រង្វាន់: R" + WinAmount + "</div>";
+                    html += "<div style='color:#f73'>រង្វាន់: R" + WinAmount + "</div>";
                     G_WinAmount += WinAmount;
+                    if (withdrawal == true) {
+                        html += "<div>បានដកប្រាក់ហើយ</div>"
+                        html += "<div>អ្នកដក " + withdrawalby + " </div><div>" + withdrawaldate + "</div>"
+
+                    } else {
+                        html += "<div style='color:#f73'>មិនទាន់ដកប្រាក់</div>"
+
+                    }
                 }
 
                 html += "</div>";
@@ -155,12 +283,19 @@ function checktokendetail() {
                 $("#hdUsername").val(data.username);
                 var username = $("#hdUsername").val();
                 console.log(username);
+                if (username == "admin" || username == "Admin") {
+                    $("#span_notyetwithdrawal").show();
+
+                } else {
+                    $("#span_notyetwithdrawal").hide();
+                }
                 getusercredit(username);
                 var qrcode = getUrlVars()["qrcode"];
                 console.log(qrcode);
                 if (qrcode != "" && qrcode != null) {
                     scanQRresult(qrcode);
-                } 
+                }
+
                 //getuserlist(username);
             }
         },

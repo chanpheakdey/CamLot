@@ -206,6 +206,69 @@ namespace GameAPI.App_Code
 
         }
 
+
+        public async Task<List<ClHistory>> getHistoryNotyetwithdraw(Object? StartDate, Object? EndDate, Object? Username)
+        {
+            try
+            {
+                List<ClHistory> lstHistory = new List<ClHistory>();
+                DataSet ds = new DataSet();
+                await using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
+                {
+
+
+                    using (SqlCommand command = new SqlCommand("Sp_getHistoryNotyetwithdraw", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        SqlParameter sqlParameter1 = command.Parameters.Add("@StartDate", SqlDbType.Date);
+                        sqlParameter1.Value = StartDate.ToString().Substring(6, 4) + "-" + StartDate.ToString().Substring(3, 2) + "-" + StartDate.ToString().Substring(0, 2);
+                        SqlParameter sqlParameter2 = command.Parameters.Add("@EndDate", SqlDbType.Date);
+                        sqlParameter2.Value = EndDate.ToString().Substring(6, 4) + "-" + EndDate.ToString().Substring(3, 2) + "-" + EndDate.ToString().Substring(0, 2);
+                        SqlParameter sqlParameter3 = command.Parameters.Add("@Username", SqlDbType.VarChar);
+                        sqlParameter3.Value = Username.ToString();
+                        connection.Open();
+                        using (SqlDataAdapter da = new SqlDataAdapter(command))
+                        {
+                            da.Fill(ds);
+
+                        }
+                        connection.Close();
+
+                        for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                        {
+                            ClHistory clHistory = new ClHistory();
+                            clHistory.BettingID = (int)ds.Tables[0].Rows[i]["BettingID"];
+                            clHistory.GameID = (int)ds.Tables[0].Rows[i]["GameID"];
+                            clHistory.CreatedDate = (string)ds.Tables[0].Rows[i]["CreatedDate"];
+                            clHistory.WinAmount = (int)ds.Tables[0].Rows[i]["WinAmount"];
+                            clHistory.BetAmount = (int)ds.Tables[0].Rows[i]["BetAmount"];
+                            clHistory.TotalBet = (int)ds.Tables[0].Rows[i]["TotalBet"];
+                            clHistory.BetNumber = ds.Tables[0].Rows[i]["BetNumber"].ToString().Replace(",", ", ");
+                            clHistory.SlotNumber = ds.Tables[0].Rows[i]["SlotNumber"].ToString().Replace("1", "A").Replace("2", "B").Replace("3", "C").Replace("4", "D").Replace("5", "E");
+                            clHistory.Win = (bool)ds.Tables[0].Rows[i]["Win"];
+                            clHistory.Nickname = ds.Tables[0].Rows[i]["Nickname"].ToString();
+                            clHistory.Withdrawal = (bool)ds.Tables[0].Rows[i]["Withdrawal"];
+
+                            clHistory.WithdrawalBy = ds.Tables[0].Rows[i]["WithdrawalBy"].ToString();
+                            clHistory.WithdrawalDate = ds.Tables[0].Rows[i]["WithdrawalDate"].ToString();
+                            lstHistory.Add(clHistory);
+                        }
+
+                        return lstHistory;
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                return null;
+            }
+
+
+        }
+
+
         public async Task<String> getReportBalance(Object? StartDate, Object? EndDate, Object? Username)
         {
             try
@@ -1425,7 +1488,10 @@ namespace GameAPI.App_Code
                             clHistory.SlotNumber = ds.Tables[0].Rows[i]["SlotNumber"].ToString().Replace("1","A").Replace("2", "B").Replace("3", "C").Replace("4", "D").Replace("5", "E");
                             clHistory.Win = (bool)ds.Tables[0].Rows[i]["Win"];
                             clHistory.Nickname = ds.Tables[0].Rows[i]["Nickname"].ToString();
+                            clHistory.Withdrawal = (bool)ds.Tables[0].Rows[i]["Withdrawal"];
 
+                            clHistory.WithdrawalBy = ds.Tables[0].Rows[i]["WithdrawalBy"].ToString();
+                            clHistory.WithdrawalDate = ds.Tables[0].Rows[i]["WithdrawalDate"].ToString();
                             lstHistory.Add(clHistory);
                         }
 
@@ -1480,7 +1546,12 @@ namespace GameAPI.App_Code
                             clHistory.BetNumber = ds.Tables[0].Rows[i]["BetNumber"].ToString().Replace(",", ", ");
                             clHistory.SlotNumber = ds.Tables[0].Rows[i]["SlotNumber"].ToString().Replace("1", "A").Replace("2", "B").Replace("3", "C").Replace("4", "D").Replace("5", "E");
                             clHistory.Win = (bool)ds.Tables[0].Rows[i]["Win"];
+                            clHistory.Nickname = ds.Tables[0].Rows[i]["Nickname"].ToString();
 
+                            clHistory.Withdrawal = (bool)ds.Tables[0].Rows[i]["Withdrawal"];
+
+                            clHistory.WithdrawalBy = ds.Tables[0].Rows[i]["WithdrawalBy"].ToString();
+                            clHistory.WithdrawalDate = ds.Tables[0].Rows[i]["WithdrawalDate"].ToString();
                             lstHistory.Add(clHistory);
                         }
 

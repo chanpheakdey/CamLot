@@ -16,6 +16,9 @@
 
         public string SlotNumber { get; set; }
         public string Nickname { get; set; }
+        public bool Withdrawal { get; set; }
+        public string WithdrawalBy { get; set; }
 
+        public string WithdrawalDate { get; set; }
     }
 }

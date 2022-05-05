@@ -1,4 +1,19 @@
-﻿.div-popup {
+﻿.date-textbox {
+    padding: 5px;
+    border-radius: 10px;
+    width: 130px;
+}
+.div-date-caption {
+    padding: 5px;
+    width: 150px;
+    float: left;
+}
+.date-caption {
+    width: 80px;
+    float: left;
+    padding: 5px;
+}
+.div-popup {
     position: absolute;
     z-index: 9999;
     background-color: #052d40;
@@ -123,6 +138,11 @@ body {
 }
 
 #div_searchresult {
+    text-align: left;
+    margin-top: 20px;
+}
+
+#div_searchresult_notyearwithdraw {
     text-align: left;
     margin-top: 20px;
 }

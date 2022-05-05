@@ -67,7 +67,9 @@ function loadhistory(bettingtype) {
                 var slotnumber = data[i].slotNumber;
                 var bettingID = data[i].bettingID;
                 var nickname = data[i].nickname;
-
+                var withdrawal = data[i].withdrawal;
+                var withdrawalby = data[i].withdrawalBy;
+                var withdrawaldate = data[i].withdrawalDate;
                 console.log(GameID)
                 html += "<tr style='border-bottom:solid 1px white;'>"
                 html += "<td style='width:40%;    vertical-align: top;'>";
@@ -86,6 +88,14 @@ function loadhistory(bettingtype) {
                 if (Win == true) {
                     html += "<div style='color:#f73'>រង្វាន់: R" + WinAmount + "</div>";
                     G_WinAmount += WinAmount;
+                    if (withdrawal == true) {
+                        html += "<div>បានដកប្រាក់ហើយ</div>"
+                        html += "<div>អ្នកដក " + withdrawalby + " </div><div>" + withdrawaldate + "</div>"
+
+                    } else {
+                        html += "<div style='color:#f73'>មិនទាន់ដកប្រាក់</div>"
+
+                    }
                 }
 
                 html += "</div>";

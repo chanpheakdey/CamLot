@@ -275,6 +275,7 @@ function uploadid() {
     var username = $("#hdSelectedUser").val();
     var createdby = $("#hdUsername").val();
     var password = $("#txtchangepassword").val();
+
     window.location = window.location + "&uploadphoto=1&username=" + username + "&password=" + password;
 
 }

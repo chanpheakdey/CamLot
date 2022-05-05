@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MphMmxHXfEJnAKlny40zDv7DlHYk2IhjN2W8oOhb6DM=",
+  "Hash": "tZNf3OYKDq8j9RN1AFQ2jJEPsetlp/RftISbV+m8lG8=",
   "Source": "SignalR",
   "BasePath": "_content/SignalR",
   "Mode": "Default",
@@ -355,6 +355,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\report.css"
+    },
+    {
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\css\\result.css",
+      "SourceId": "SignalR",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
+      "BasePath": "_content/SignalR",
+      "RelativePath": "css/result.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\result.css"
     },
     {
       "Identity": "D:\\ACE\\CamLOT\\wwwroot\\css\\scan.css",
@@ -1001,6 +1018,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\report.js"
+    },
+    {
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\result.js",
+      "SourceId": "SignalR",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
+      "BasePath": "_content/SignalR",
+      "RelativePath": "js/result.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\result.js"
     },
     {
       "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\scanresult.js",

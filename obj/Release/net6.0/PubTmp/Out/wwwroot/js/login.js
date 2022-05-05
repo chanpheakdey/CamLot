@@ -48,7 +48,7 @@ function viewformbytoken(formname, token) {
             } else if (formname == 'report') {
                 window.location = 'report?token=' + data;
             } else if (formname == 'display') {
-                window.location = 'display?token=' + data;
+                window.location = 'result?token=' + data;
             } else if (formname == 'user') {
                 window.location = 'user?token=' + data;
             }
