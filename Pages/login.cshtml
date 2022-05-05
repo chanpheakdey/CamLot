@@ -18,9 +18,20 @@
 <div>
      
     <input type="hidden" id="hd_placeid" value="0" />
-    <div class="div-print-popup" id="div_printpopup">
-        <div class="div-print-detail" id="div_printdetail">
-            
+   <div class="div-popup" id="div_alert" style="display:none;">
+        <div class="div-popup-close"><span class="alert-popup-title" id="div_popup_title">តើអ្នកដកប្រាក់ឈ្នះនេះមែនទេ?</span><span class="span-close" onclick="closepopup()">X</span></div>
+        <div class="div-print-detail" id="div_passworddetail">
+          <div class="div-option-button">
+                <div>
+                <span class="titile-password">Current Password</span>
+                <span>
+                    <input type="text" value="" style="float:left;" class="textbox" id="txtnickname" />
+                </span>
+                
+                <span class="button-option" onclick="updatenickname()">Update</span>
+                
+                </div>
+            </div>   
 
         </div>
     </div>
@@ -29,10 +40,10 @@
             <table style="width:100%">
                 <tr>
                     <td>
-                      
+                      <div style="text-align:left;margin-bottom: 25px;display:block;"><a href="#" onclick="logout()" style="background-color: #f73;padding: 10px;border-radius: 10px;color: white;font-size: large;"><i class="fas fa-sign-out"></i></a></div>
                     </td>
-                    <td style="text-align">
-                        <div style="text-align:left;margin-bottom: 25px;display:block;"><a href="#" onclick="logout()" style="background-color: #f73;padding: 10px;border-radius: 10px;color: white;font-size: large;"><i class="fas fa-sign-out"></i></a></div>
+                    <td style="text-align:right">
+                        <div style="text-align:right;margin-bottom: 25px;display:block;"><span onclick="showchangepassword()" style="background-color: #f73;padding: 10px;border-radius: 10px;color: white;font-size: large;"><i class="fas fa-asterisk"></i><i class="fas fa-asterisk"></i><i class="fas fa-asterisk"></i></span></div>
                     </td>
                 </tr>
             </table>

@@ -280,7 +280,10 @@ function uploadid() {
 
 }
 
-
+function resetpassword() {
+    var randomstring = Math.random().toString(36).slice(-8);
+    updatepassword(randomstring);
+}
 
 function showoption(username, password, oldstatus, nickname) {
     console.log("show option");
@@ -289,7 +292,7 @@ function showoption(username, password, oldstatus, nickname) {
     $("#div_alert").show();
     $("#div_popup_title").html("គ្រប់គ្រងគណនី");
     $("#hdSelectedUser").val(username);
-    $("#txtusername").val(username);
+    $("#spanusername").html(username);
     $("#txtchangepassword").val(password);
     $("#txtnickname").val(nickname);
 
@@ -361,9 +364,9 @@ function updateusername() {
     });
 
 }
-function updatepassword() {
+function updatepassword(newpassword) {
     var username = $("#hdSelectedUser").val();
-    var newpassword = $("#txtchangepassword").val();
+    //var newpassword = $("#txtchangepassword").val();
     $.ajax({
         //cache: false,
         async: false,

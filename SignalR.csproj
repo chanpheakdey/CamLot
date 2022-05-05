@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <Content Remove="Pages\logo.cshtml" />
+    <Content Remove="Pages\password.cshtml" />
     <Content Remove="Pages\useraccount.cshtml" />
   </ItemGroup>
 
@@ -32,14 +33,19 @@
 </ItemGroup>
 <ItemGroup>
   <_ContentIncludedByDefault Remove="Pages\logo.cshtml" />
+  <_ContentIncludedByDefault Remove="Pages\password.cshtml" />
 </ItemGroup>
 <ItemGroup>
   <None Include="Pages\logo.cshtml" />
+  <None Include="Pages\password.cshtml" />
   <None Include="Pages\useraccount.cshtml" />
 </ItemGroup>
 <ItemGroup>
   <Folder Include="Models\" />
   <Folder Include="wwwroot\db\" />
   <Folder Include="wwwroot\NewFolder\" />
+</ItemGroup>
+<ItemGroup>
+  <UpToDateCheckInput Remove="Pages\password.cshtml" />
 </ItemGroup>
 </Project>
