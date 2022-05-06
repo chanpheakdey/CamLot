@@ -11,14 +11,23 @@
 <script type="text/javascript" src="js/public.js"></script>
 <link href="~/css/result.css?v=1" rel="stylesheet" />
 
+ <link href='~/css/jquery-ui.css'   rel='stylesheet'>
+    <script src="js/jquery-ui.min.js"></script>
 
+
+     <input type="hidden" value="" id="hdUsername" />
 <div style="text-align:left;margin-bottom: 25px;margin-top: 25px;">
            <span onclick="backhome()" style="background-color: white;  padding: 10px; border-radius: 10px;color: #f73;"><i class="fas fa-home"></i></span>
        
            </div>
-       
+  <div class="div-confirm-action">
+             <div  class="div-date-caption"><div class="date-caption">ចាប់ពីថ្ងៃ:</div><span><input class="date-textbox" type="text" id="txtstartdate" onchange="get_resultbydate()"></span></div>
+                <div  class="div-date-caption"><div class="date-caption">ដល់ថ្ងៃ:</div><span><input  class="date-textbox" type="text" id="txtenddate" onchange="get_resultbydate()"></span></div>
+
 <div id="div_result_list" class="recent-list">
 				
 
 			
 </div>
+
+        </div>

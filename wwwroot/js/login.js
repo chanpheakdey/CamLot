@@ -107,7 +107,7 @@ function changepassword() {
     var currentpassword = $("#txtcurentpassword").val();
     var newpassword = $("#txtnewpassword").val();
     var retypepassword = $("#txtretypenewpassword").val();
-    if (newpassword == retypepassword && newpassword != "") {
+    if (newpassword == retypepassword && newpassword != "" && newpassword.length>=6) {
         var token = getUrlVars()["token"];
         if (token != "" && token != undefined) {
             $.ajax({
@@ -123,7 +123,11 @@ function changepassword() {
                     if (data == "Not matched") {
                         $("#div_info").html("Current Password not matched");
                     } else {
-                        $("#div_info").html("Password updated");
+                        if (data == "Success") {
+                            $("#div_info").html("Password updated");
+                        } else {
+                            $("#div_info").html("Enter your current password");
+                        }
                     }
                 },
                 error: function (result) {
@@ -137,7 +141,12 @@ function changepassword() {
         }
     } else {
         if (newpassword != "") {
-            $("#div_info").html("New Password not matched");
+            if (newpassword.length >= 6) {
+                $("#div_info").html("New Password not matched");
+            } else {
+                
+                $("#div_info").html("6 characters up");
+            }
         } else {
             $("#div_info").html("Please enter new password.");
         }

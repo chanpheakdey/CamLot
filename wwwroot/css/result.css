@@ -38,3 +38,20 @@
 recent-item>p>a{
     display:none;
 }
+
+.div-date-caption {
+    padding: 5px;
+    width: 150px;
+    float: left;
+}
+
+.date-caption {
+    width: 80px;
+    float: left;
+    padding: 5px;
+}
+.date-textbox {
+    padding: 5px;
+    border-radius: 10px;
+    width: 130px;
+}

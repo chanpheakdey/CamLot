@@ -257,6 +257,40 @@ app.MapGet("api/getHistoryNotyetwithdraw/{startdate}/{enddate}/{username}", asyn
     await http.Response.WriteAsJsonAsync(todoItem);
 });
 
+app.MapGet("api/getHistorywithdraw/{startdate}/{enddate}/{username}", async (http) =>
+{
+    object? startdate;
+    if (!http.Request.RouteValues.TryGetValue("startdate", out startdate))
+    {
+        http.Response.StatusCode = 400;
+        return;
+    }
+    object? enddate;
+    if (!http.Request.RouteValues.TryGetValue("enddate", out enddate))
+    {
+        http.Response.StatusCode = 400;
+        return;
+    }
+
+    object? username;
+    if (!http.Request.RouteValues.TryGetValue("username", out username))
+    {
+        http.Response.StatusCode = 400;
+        return;
+    }
+    DalGlobal dalGlobal = new DalGlobal();
+
+
+    var todoItem = await dalGlobal.getHistorywithdraw(startdate, enddate, username);
+    if (todoItem == null)
+    {
+        http.Response.StatusCode = 404;
+        return;
+    }
+
+    await http.Response.WriteAsJsonAsync(todoItem);
+});
+
 
 app.MapGet("api/getReportBalance/{startdate}/{enddate}/{username}", async (http) =>
 {
@@ -359,6 +393,9 @@ app.MapGet("api/getReport/{startdate}/{enddate}/{username}", async (http) =>
 
     await http.Response.WriteAsJsonAsync(todoItem);
 });
+
+
+
 
 app.MapGet("api/getToken/{username}", async (http) =>
 {
@@ -557,6 +594,42 @@ app.MapPost("api/deletedocument", (UserDocument userDocument) =>
     return dalGlobal.DeleteDocument(userDocument);
 
 });
+
+
+app.MapGet("api/getResult/{startdate}/{enddate}/{username}", async (http) =>
+{
+    object? startdate;
+    if (!http.Request.RouteValues.TryGetValue("startdate", out startdate))
+    {
+        http.Response.StatusCode = 400;
+        return;
+    }
+    object? enddate;
+    if (!http.Request.RouteValues.TryGetValue("enddate", out enddate))
+    {
+        http.Response.StatusCode = 400;
+        return;
+    }
+
+    object? username;
+    if (!http.Request.RouteValues.TryGetValue("username", out username))
+    {
+        http.Response.StatusCode = 400;
+        return;
+    }
+    DalGlobal dalGlobal = new DalGlobal();
+
+
+    var todoItem =  dalGlobal.getResultbyDate(startdate, enddate, username);
+    if (todoItem == null)
+    {
+        http.Response.StatusCode = 404;
+        return;
+    }
+
+    await http.Response.WriteAsJsonAsync(todoItem);
+});
+
 
 
 app.Run();

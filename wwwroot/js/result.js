@@ -1,60 +1,59 @@
-﻿"use strict";
-var connection = new signalR.HubConnectionBuilder().withUrl("/chatHub").build();
+﻿
+$(document).ready(function () {
 
-connection.on("ReceiveMessage", function (Eventmessage) {
-    $("#hdGameID").val(0);
-    if (Eventmessage.subject == "start new game") {
+    $(function () {
+        $("#txtstartdate").datepicker(
+            {
+                dateFormat: 'dd-mm-yy',
 
-    } else if (Eventmessage.subject == "count down") {
-        var objgame = JSON.parse(Eventmessage.message);
-        var gameid = objgame.gameid;
-        if (objgame.timeremaining <= 10) {
-            $("#hdGameID").val(0);
-        } else {
-            $("#hdGameID").val(gameid);
+            }).datepicker("setDate", 'now');
+        $("#txtenddate").datepicker(
+            {
+                dateFormat: 'dd-mm-yy',
+
+            }).datepicker("setDate", 'now');
+    });
+
+
+   
+    checktokendetail();
+
+
+
+});
+
+function checktokendetail() {
+    var token = getUrlVars()["token"];
+
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "POST",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/CheckTokenDetail",
+        data: '{"TokenID":"' + token + '"}',
+        success: function (data) {
+            console.log(data);
+            if (data.expired == true) {
+
+                window.location = "login";
+            } else {
+                $("#hdUsername").val(data.username);
+                var username = $("#hdUsername").val();
+                get_resultbydate(username);
+
+                //getuserlist(username);
+            }
+        },
+        error: function (result) {
+            console.log(result);
+            //$('#loading').hide();
         }
-        $("#div_GameID").html("ឆ្នោតលេខ:" + gameid);
-
-    }
-    else if (Eventmessage.subject == "start result") {
+    });
 
 
-    } else if (Eventmessage.subject == "result1") {
-
-    } else if (Eventmessage.subject == "result2") {
-
-    } else if (Eventmessage.subject == "result3") {
-
-    } else if (Eventmessage.subject == "result4") {
-
-    } else if (Eventmessage.subject == "result5") {
-
-    } else if (Eventmessage.subject == "end result") {
-        var jsonresult = Eventmessage.message;
-        show_result(jsonresult);
-
-
-    } else if (Eventmessage.subject == "end game") {
-
-    }
-
-
-});
-
-
-
-
-connection.start().then(function () {
-    console.log("hub connected");
-    get_latestresult();
-
-
-}).catch(function (err) {
-
-    return console.log(err.toString());
-});
-
-
+}
 
 function show_result(datajson) {
     var data = JSON.parse(datajson);
@@ -89,15 +88,37 @@ function show_latest_result(data) {
 }
 
 
-function get_latestresult() {
+function get_resultbydate(username) {
     console.log("get latest result");
+    var startdate = "";
+    var enddate = "";
+    startdate = $("#txtstartdate").val();
+    enddate = $("#txtenddate").val();
+
+    if (startdate == "" || enddate == "") {
+        var d = new Date($.now());
+        var m = (d.getMonth() + 1);
+        var mm = m;
+        if (m < 10) {
+            mm = "0" + m;
+        }
+        var day = d.getDate();
+        var dd = d;
+        if (day < 10) {
+            dd = "0" + day;
+        }
+
+        var datestr = (d.getFullYear() + "-" + mm + "-" + dd);
+        startdate = datestr;
+        enddate = datestr;
+    }
     $.ajax({
         //cache: false,
         async: false,
         type: "POST",
         //dataType: "Json",
         contentType: "application/json; charset=utf-8",
-        url: "api/LatestResult",
+        url: "api/getResult/" + startdate + "/" + enddate + "/" + username,
         data: '',
         success: function (data) {
             console.log(data);
