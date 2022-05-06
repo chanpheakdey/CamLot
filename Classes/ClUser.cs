@@ -8,6 +8,8 @@
 
         public string NickName { get; set; } = string.Empty;
         public string Password { get; set; } = String.Empty;
+        public string NewPassword { get; set; } = String.Empty;
+
         public int PlaceID { get; set; }
         public bool Locked { get; set; }
         public int Attempts { get; set; }

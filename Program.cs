@@ -140,6 +140,12 @@ app.MapPost("api/updateusername", (ClUser clUser) =>
     return dalGlobal.UpdateUsername(clUser);
 
 });
+app.MapPost("api/changepassword", (ClUser clUser) =>
+{
+    DalGlobal dalGlobal = new DalGlobal();
+    return dalGlobal.ChangePassword(clUser);
+
+});
 
 app.MapPost("api/updatenickname", (ClUser clUser) =>
 {

@@ -20,17 +20,31 @@
     <input type="hidden" id="hd_placeid" value="0" />
    <div class="div-popup" id="div_alert" style="display:none;">
         <div class="div-popup-close"><span class="alert-popup-title" id="div_popup_title">តើអ្នកដកប្រាក់ឈ្នះនេះមែនទេ?</span><span class="span-close" onclick="closepopup()">X</span></div>
-        <div class="div-print-detail" id="div_passworddetail">
-          <div class="div-option-button">
-                <div>
+        <div id="div_passworddetail">
+          <div >
+                <div class="div-option-button">
                 <span class="titile-password">Current Password</span>
                 <span>
-                    <input type="text" value="" style="float:left;" class="textbox" id="txtnickname" />
+                    <input type="password" value="" style="float:left;" class="textbox" id="txtcurentpassword" />
                 </span>
-                
-                <span class="button-option" onclick="updatenickname()">Update</span>
-                
                 </div>
+                 <div class="div-option-button">
+                <span class="titile-password">New Password</span>
+                <span>
+                    <input type="password" value="" style="float:left;" class="textbox" id="txtnewpassword" />
+                </span>
+                </div>
+                 <div class="div-option-button">
+                <span class="titile-password">Retype new password</span>
+                <span>
+                    <input type="password" value="" style="float:left;" class="textbox" id="txtretypenewpassword" />
+                </span>
+                </div>
+                <div class="div-option-button div-changepassword">
+                                <span class="button-option" onclick="changepassword()">Update</span>
+                                
+                </div>
+                <div id="div_info" class="div-info"></div>
             </div>   
 
         </div>
@@ -43,7 +57,7 @@
                       <div style="text-align:left;margin-bottom: 25px;display:block;"><a href="#" onclick="logout()" style="background-color: #f73;padding: 10px;border-radius: 10px;color: white;font-size: large;"><i class="fas fa-sign-out"></i></a></div>
                     </td>
                     <td style="text-align:right">
-                        <div style="text-align:right;margin-bottom: 25px;display:block;"><span onclick="showchangepassword()" style="background-color: #f73;padding: 10px;border-radius: 10px;color: white;font-size: large;"><i class="fas fa-asterisk"></i><i class="fas fa-asterisk"></i><i class="fas fa-asterisk"></i></span></div>
+                        <div style="text-align:right;margin-bottom: 25px;display:block;"><span onclick="showchangepassword()" style="background-color: #f73;padding: 10px;border-radius: 10px;color: white;font-size: large;"><i class="fas fa-key"></i></span></div>
                     </td>
                 </tr>
             </table>
@@ -51,7 +65,7 @@
                 <input type="button" class="button-viewform" value="ភ្នាល់" onclick="viewform('betting')" />
             </div>
             <div id="span_withdrawal" class="div-viewform">
-                <input type="button" class="button-viewform" value="ដកលុយ" onclick="viewform('withdrawal')" />
+                <input type="button" class="button-viewform" value="ទូទាត់រង្វាន់" onclick="viewform('withdrawal')" />
             </div>            
 
             <div id="span_report" class="div-viewform">

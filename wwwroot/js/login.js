@@ -92,6 +92,59 @@ function viewformbyusername(formname,username) {
 
   
 }
+
+function showchangepassword() {
+    $("#div_alert").show();
+   
+}
+
+function closepopup() {
+    $("#div_alert").hide();
+
+} 
+
+function changepassword() {
+    var currentpassword = $("#txtcurentpassword").val();
+    var newpassword = $("#txtnewpassword").val();
+    var retypepassword = $("#txtretypenewpassword").val();
+    if (newpassword == retypepassword && newpassword != "") {
+        var token = getUrlVars()["token"];
+        if (token != "" && token != undefined) {
+            $.ajax({
+                //cache: false,
+                async: false,
+                type: "POST",
+                //dataType: "Json",
+                contentType: "application/json; charset=utf-8",
+                url: "api/changepassword",
+                data: '{"CurrentPassword":"' + currentpassword + '","NewPassword":"' + newpassword + '","Token":"' + token + '"}',
+                success: function (data) {
+
+                    if (data == "Not matched") {
+                        $("#div_info").html("Current Password not matched");
+                    } else {
+                        $("#div_info").html("Password updated");
+                    }
+                },
+                error: function (result) {
+                    console.log(result);
+                    //$('#loading').hide();
+                }
+            });
+
+        } else {
+            window.location = "login?token="
+        }
+    } else {
+        if (newpassword != "") {
+            $("#div_info").html("New Password not matched");
+        } else {
+            $("#div_info").html("Please enter new password.");
+        }
+    }
+    
+}
+
 function login() {
     var token = getUrlVars()["token"];
     var username = $("#txt_username").val();
