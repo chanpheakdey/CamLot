@@ -513,7 +513,7 @@ app.MapGet("api/getHistory/{bettype}/{username}", async (http) =>
 });
 
 
-app.MapGet("api/getHistorybyGameID/{gameid}", async (http) =>
+app.MapGet("api/getHistorybyGameID/{gameid}/{username}", async (http) =>
 {
     object? gameid;
     if (!http.Request.RouteValues.TryGetValue("gameid", out gameid))
@@ -521,10 +521,16 @@ app.MapGet("api/getHistorybyGameID/{gameid}", async (http) =>
         http.Response.StatusCode = 400;
         return;
     }
+    object? username;
+    if (!http.Request.RouteValues.TryGetValue("username", out username))
+    {
+        http.Response.StatusCode = 400;
+        return;
+    }
     DalGlobal dalGlobal = new DalGlobal();
 
 
-    var todoItem = await dalGlobal.getHistorybyGameID(gameid);
+    var todoItem = await dalGlobal.getHistorybyGameID(gameid, username);
     if (todoItem == null)
     {
         http.Response.StatusCode = 404;

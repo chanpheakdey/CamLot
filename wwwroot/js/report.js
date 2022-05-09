@@ -22,7 +22,7 @@
 
     if (reportname == "Under Sale") {
         if (startdate != "" && enddate != "") {
-            loadreportUnderSale(startdate, enddate);
+            loadreportsale(startdate, enddate);
         }
     } else {
         if (startdate != "" && enddate != "") {
@@ -42,7 +42,7 @@ function preview() {
 
     if (reportname == "Under Sale") {
         if (startdate != "" && enddate != "") {
-            loadreportUnderSale(startdate, enddate);
+            loadreportsale(startdate, enddate);
         }
     } else {
         if (startdate != "" && enddate != "") {
@@ -110,8 +110,13 @@ function loadreportBalance(startdate, enddate) {
     });
 }
 
-function loadreportUnderSale(startdate, enddate) {
+
+function loadreportsale(startdate, enddate) {
     var username = $("#hdUsername").val();
+    loadreportUnderSale(username, startdate, enddate,'');
+}
+function loadreportUnderSale(username,startdate, enddate,userlevel) {
+    
     console.log(startdate + ';' + enddate);
     $.ajax({
         //cache: false,
@@ -124,8 +129,27 @@ function loadreportUnderSale(startdate, enddate) {
         success: function (data) {
             //console.log(data);
 
-       
-            $("#div_report").html(data);
+            if (userlevel == '') {
+                $("#div_report").html(data);
+
+            } else {
+                if (userlevel == 'master') {
+                    $("#div_popup_master").show();
+                    $("#div_popup_master_detail").html(data);
+
+                } else {
+                    if (userlevel == 'agent') {
+                        $("#div_popup_agent").show();
+                        $("#div_popup_agent_detail").html(data);
+
+                    } else {
+                        $("#div_popup_member").show();
+                        $("#div_popup_member_detail").html(data);
+
+                    }
+                }
+
+            }
         },
         error: function (result) {
             console.log(result);
@@ -300,4 +324,16 @@ function checktokendetail() {
     });
 
 
+}
+
+function closepopup_agent() {
+    $("#div_popup_agent").hide();
+}
+
+function closepopup_member() {
+    $("#div_popup_member").hide();
+}
+
+function closepopup_master() {
+    $("#div_popup_master").hide();
 }

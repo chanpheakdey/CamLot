@@ -429,7 +429,7 @@ namespace GameAPI.App_Code
                 {
 
 
-                    using (SqlCommand command = new SqlCommand("Sp_ReportUserUnderSale", connection))
+                    using (SqlCommand command = new SqlCommand("Sp_ReportUserUnderSale_V2", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
@@ -1715,7 +1715,7 @@ namespace GameAPI.App_Code
 
         }
 
-        public async Task<List<ClHistory>> getHistorybyGameID(Object? gameid)
+        public async Task<List<ClHistory>> getHistorybyGameID(Object? gameid, object? username)
         {
             try
             {
@@ -1731,6 +1731,11 @@ namespace GameAPI.App_Code
 
                         SqlParameter sqlParameter1 = command.Parameters.Add("@GameID", SqlDbType.Int);
                         sqlParameter1.Value = gameid.ToString();
+
+                        SqlParameter sqlParameter2 = command.Parameters.Add("@Username", SqlDbType.VarChar);
+                        sqlParameter2.Value = username.ToString();
+
+
                         connection.Open();
                         using (SqlDataAdapter da = new SqlDataAdapter(command))
                         {

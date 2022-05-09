@@ -19,6 +19,39 @@
     
 </style>
 <div>   
+
+    <div class="div-popup" id="div_popup_master" style="display:none;">
+         <div class="div-popup-detail">
+
+        <div class="div-popup-close"><span class="alert-popup-title" id="div_popup_title_master">តើអ្នកដកប្រាក់ឈ្នះនេះមែនទេ?</span><span class="span-close" onclick="closepopup_master()">X</span></div>
+        <div id="div_popup_master_detail">
+
+        </div>
+        </div>
+</div>
+
+
+<div class="div-popup" id="div_popup_agent" style="display:none;">
+         <div class="div-popup-detail">
+
+        <div class="div-popup-close"><span class="alert-popup-title" id="div_popup_title_agent">តើអ្នកដកប្រាក់ឈ្នះនេះមែនទេ?</span><span class="span-close" onclick="closepopup_agent()">X</span></div>
+        <div id="div_popup_agent_detail">
+
+        </div>
+        </div>
+</div>
+
+<div class="div-popup" id="div_popup_member" style="display:none;">
+         <div class="div-popup-detail">
+
+        <div class="div-popup-close"><span class="alert-popup-title" id="div_popup_title_member">តើអ្នកដកប្រាក់ឈ្នះនេះមែនទេ?</span><span class="span-close" onclick="closepopup_member()">X</span></div>
+        <div id="div_popup_member_detail">
+
+        </div>
+        </div>
+</div>
+
+
     <input type="hidden" value="Under Sale" id="hdReportName" />
      <input type="hidden" value="" id="hdUsername" />
         <div style="text-align:left;margin: 25px 0px;">
@@ -33,7 +66,7 @@
     <div>
                 <div  class="div-date-caption"><div class="date-caption">ចាប់ពីថ្ងៃ:</div><span><input class="date-textbox" type="text" id="txtstartdate" onchange="preview()"></span></div>
                 <div  class="div-date-caption"><div class="date-caption">ដល់ថ្ងៃ:</div><span><input  class="date-textbox" type="text" id="txtenddate" onchange="preview()"></span></div>
-
+</div>
     <div id="div_report">
 
     </div>

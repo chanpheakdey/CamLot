@@ -288,7 +288,7 @@ function loadhistory(gameid) {
         type: "Get",
         //dataType: "Json",
         contentType: "application/json; charset=utf-8",
-        url: "api/getHistorybyGameID/" + gameid,
+        url: "api/getHistorybyGameID/" + gameid + "/" + username,
         data: '',
         success: function (data) {
             console.log(data);
