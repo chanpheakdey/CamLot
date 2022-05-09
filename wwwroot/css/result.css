@@ -33,7 +33,7 @@
 }
 .special {
     width: 100%;
-    height: 50px;
+   
 }
 recent-item>p>a{
     display:none;
@@ -54,4 +54,7 @@ recent-item>p>a{
     padding: 5px;
     border-radius: 10px;
     width: 130px;
+}
+.recent-item{
+    margin-bottom:10px;
 }

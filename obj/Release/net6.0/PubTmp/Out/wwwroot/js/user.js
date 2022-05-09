@@ -123,11 +123,12 @@ function hidedivuser() {
     $("#divuser").hide();
 
 }
-function showdivuser(userlevel) {
+function showdivuser(userlevel, username) {
     $("#divuser").show();
     $("#txt_username").val("");
     $("#txt_password").val("");
     $("#txt_retypepassword").val("");
+    $("#hdOwner").val(username);
     var html = "";
     console.log(userlevel);
     if (userlevel == 'Admin') {
@@ -139,13 +140,23 @@ function showdivuser(userlevel) {
     } else {
         if (userlevel == 'Master') {
             html += "<select id='selectlevel' class='select-level'>"
-            html += "<option value='Agent'>Agent</option>";
-            //html += "<option value='Member'>Member</option>";
+            html += "<option value='Master'>Master</option>";
+            if (username.toLowerCase() == "admin") {
+                html += "<option value='Senoir'>Senoir</option>";
+            }
             html += "</select>";
         } else {
-            html += "<select id='selectlevel' class='select-level'>"
-            html += "<option value='Member'>Member</option>";
-            html += "</select>";
+            if (userlevel == 'Agent') {
+                html += "<select id='selectlevel' class='select-level'>"
+                html += "<option value='Agent'>Agent</option>";
+                //html += "<option value='Member'>Member</option>";
+                html += "</select>";
+            } else {
+                html += "<select id='selectlevel' class='select-level'>"
+                html += "<option value='Member'>Member</option>";
+                html += "</select>";
+
+            }
         }
     }
     $("#spanlevel").html(html);
@@ -165,6 +176,7 @@ function addnewuser() {
         return;
     }
     var userlevel = $("#selectlevel").val();
+    var owner = $("#hdOwner").val();
     var betting = true; //$('#chkBetting').prop('checked');
     var withdrawal = true; //$('#chkWithdrawal').prop('checked');
     var report = true; //$('#chkReport').prop('checked');
@@ -185,13 +197,14 @@ function addnewuser() {
             //dataType: "Json",
             contentType: "application/json; charset=utf-8",
             url: "api/CreateUser",
-            data: '{"UserName":"' + username + '","UserLevel":"' + userlevel + '","Password":"' + password + '","Betting":' + betting.toString() + ',"Withdrawal":' + withdrawal.toString() + ',"Report":' + report.toString() + ',"Display":' + display.toString() + ',"CreatedBy":"' + createdby + '"}',
+            data: '{"UserName":"' + username + '","UserLevel":"' + userlevel + '","Password":"' + password + '","Betting":' + betting.toString() + ',"Withdrawal":' + withdrawal.toString() + ',"Report":' + report.toString() + ',"Display":' + display.toString() + ',"CreatedBy":"' + owner + '","CreatedByOriginal":"' + createdby + '"}',
             success: function (data) {
 
                 if (data == "Success") {
                     $("#divuser").hide();
                     filteruser();
                     hidedivuser();
+                    showuserbylevel(owner, userlevel);
                 }
             },
             error: function (result) {
@@ -280,7 +293,10 @@ function uploadid() {
 
 }
 
-
+function resetpassword() {
+    var randomstring = Math.random().toString(36).slice(-6);
+    updatepassword(randomstring);
+}
 
 function showoption(username, password, oldstatus, nickname) {
     console.log("show option");
@@ -289,7 +305,7 @@ function showoption(username, password, oldstatus, nickname) {
     $("#div_alert").show();
     $("#div_popup_title").html("គ្រប់គ្រងគណនី");
     $("#hdSelectedUser").val(username);
-    $("#txtusername").val(username);
+    $("#spanusername").html(username);
     $("#txtchangepassword").val(password);
     $("#txtnickname").val(nickname);
 
@@ -361,9 +377,9 @@ function updateusername() {
     });
 
 }
-function updatepassword() {
+function updatepassword(newpassword) {
     var username = $("#hdSelectedUser").val();
-    var newpassword = $("#txtchangepassword").val();
+    //var newpassword = $("#txtchangepassword").val();
     $.ajax({
         //cache: false,
         async: false,
@@ -377,8 +393,10 @@ function updatepassword() {
             if (data == "Success") {
                 //var username = $("#hdUsername").val();
                 //getuserlist(username);
-                filteruser();
-                closepopup();
+                //filteruser();
+                //closepopup();
+                $("#div_passwordreset").html("<div style='padding:5px'>Password: " + newpassword + "</div>");
+
             }
         },
         error: function (result) {
@@ -614,4 +632,59 @@ function getusercredit(username) {
             //$('#loading').hide();
         }
     });
+}
+
+function showuserbylevel(createdby,userlevel) {
+    
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "Get",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/getuserlistbylevel/" + createdby + "/" + userlevel,
+        data: '',
+        success: function (data) {
+            console.log("success");
+            //console.log(data);
+
+            //$("#div_credit").html("R" + data);
+            if (userlevel == "Agent") {
+                $("#div_popup_title_agent").html(createdby + " > " + userlevel);
+                $("#div_popup_agent").show();
+                $("#div_popup_agent_detail").html(data.result);
+            } else {
+                if (userlevel == "Member") {
+                    $("#div_popup_title_member").html(createdby + " > " + userlevel);
+
+                    $("#div_popup_member").show();
+                    $("#div_popup_member_detail").html(data.result);
+                } else {
+                    if (userlevel == "Master") {
+                        $("#div_popup_title_master").html(createdby + " > " + userlevel);
+
+                        $("#div_popup_master").show();
+                        $("#div_popup_master_detail").html(data.result);
+                    }
+                }
+
+            }
+        },
+        error: function (result) {
+            console.log(result);
+            //$('#loading').hide();
+        }
+    });
+}
+
+function closepopup_agent() {
+    $("#div_popup_agent").hide();
+}
+
+function closepopup_member() {
+    $("#div_popup_member").hide();
+}
+
+function closepopup_master() {
+    $("#div_popup_master").hide();
 }

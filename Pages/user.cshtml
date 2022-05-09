@@ -4,11 +4,11 @@
 }
 
 <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="js/user.js?v=3"></script>
+<script type="text/javascript" src="js/user.js?v=4"></script>
 <script type="text/javascript" src="js/public.js"></script>
 <link href="~/css/user.css?v=2" rel="stylesheet" />
 
-
+<input type="hidden" value="" id="hdOwner" />
 <input type="hidden" value="" id="hdSelectedUser" />
 <div class="div-popup" id="div_popup_credithistory" style="display:none;z-index:99999">
          
@@ -32,7 +32,7 @@
 
             </div>
 </div>
-<div class="div-popup" id="div_alert" style="display:none;">
+<div class="div-popup" id="div_alert" style="display:none;z-index:99999">
          <div class="div-popup-detail">
 
         <div class="div-popup-close"><span class="alert-popup-title" id="div_popup_title">តើអ្នកដកប្រាក់ឈ្នះនេះមែនទេ?</span><span class="span-close" onclick="closepopup()">X</span></div>
@@ -70,7 +70,7 @@
                 </span>
                 
                 <span class="button-option" onclick="resetpassword()">Reset Password</span>
-                
+                <div id="div_passwordreset"></div>
                 </div>
            
             </div>
@@ -107,6 +107,37 @@
             
         </div>
             
+        </div>
+        </div>
+</div>
+
+<div class="div-popup" id="div_popup_master" style="display:none;">
+         <div class="div-popup-detail">
+
+        <div class="div-popup-close"><span class="alert-popup-title" id="div_popup_title_master">តើអ្នកដកប្រាក់ឈ្នះនេះមែនទេ?</span><span class="span-close" onclick="closepopup_master()">X</span></div>
+        <div id="div_popup_master_detail">
+
+        </div>
+        </div>
+</div>
+
+
+<div class="div-popup" id="div_popup_agent" style="display:none;">
+         <div class="div-popup-detail">
+
+        <div class="div-popup-close"><span class="alert-popup-title" id="div_popup_title_agent">តើអ្នកដកប្រាក់ឈ្នះនេះមែនទេ?</span><span class="span-close" onclick="closepopup_agent()">X</span></div>
+        <div id="div_popup_agent_detail">
+
+        </div>
+        </div>
+</div>
+
+<div class="div-popup" id="div_popup_member" style="display:none;">
+         <div class="div-popup-detail">
+
+        <div class="div-popup-close"><span class="alert-popup-title" id="div_popup_title_member">តើអ្នកដកប្រាក់ឈ្នះនេះមែនទេ?</span><span class="span-close" onclick="closepopup_member()">X</span></div>
+        <div id="div_popup_member_detail">
+
         </div>
         </div>
 </div>
@@ -162,6 +193,7 @@
             <option value="Active">Active Users</option>
             <option value="InActive">Inactive Users</option>
         </select>
+      
     </div>
     <div id="userlist">
 

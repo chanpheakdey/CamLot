@@ -43,6 +43,14 @@ function showsearch_notyet_withdraw() {
     $("#div_search_notyet_withdraw").show();
     $("#div_searchresult_notyearwithdraw").html("");
     loadhistory_notyetwithdraw();
+    var username = $("#hdUsername").val();
+    if (username.toLowerCase == "admin") {
+        $("#span_popup_title_win").html("ស្វែងរកបុងមិនទាន់ដកប្រាក់")
+        
+    } else {
+        $("#span_popup_title_win").html("ស្វែងរកបុងរង្វាន់")
+        
+    }
 }
 
 
@@ -55,8 +63,10 @@ function searchreceipt() {
 function loadhistory_notyetwithdraw() {
     var username = $("#hdUsername").val();
     if (username.toLowerCase == "admin") {
+        //$("#span_popup_title").html("ស្វែងរកបុងមិនទាន់ដកប្រាក់")
         loadhistory_notyetwithdraw_member(username);
     } else {
+        //$("#span_popup_title").html("ស្វែងរកបុងរង្វាន់")
         loadhistory_withdraw_member(username);
     }
 
@@ -403,7 +413,7 @@ function checktokendetail() {
                     $("#span_notyetwithdrawal").show();
 
                 } else {
-                    $("#span_notyetwithdrawal").hide();
+                    $("#span_notyetwithdrawal").show();
                 }
                 getusercredit(username);
                 var qrcode = getUrlVars()["qrcode"];

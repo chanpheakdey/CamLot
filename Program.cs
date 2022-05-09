@@ -630,6 +630,35 @@ app.MapGet("api/getResult/{startdate}/{enddate}/{username}", async (http) =>
     await http.Response.WriteAsJsonAsync(todoItem);
 });
 
+app.MapGet("api/getuserlistbylevel/{createdby}/{userlevel}", async (http) =>
+{
+    object? createdby;
+    if (!http.Request.RouteValues.TryGetValue("createdby", out createdby))
+    {
+        http.Response.StatusCode = 400;
+        return;
+    }
+    object? userlevel;
+    if (!http.Request.RouteValues.TryGetValue("userlevel", out userlevel))
+    {
+        http.Response.StatusCode = 400;
+        return;
+    }
+
+    DalGlobal dalGlobal = new DalGlobal();
+
+
+    var todoItem = dalGlobal.getuserlistbylevel(createdby, userlevel);
+    if (todoItem == null)
+    {
+        http.Response.StatusCode = 404;
+        return;
+    }
+
+    await http.Response.WriteAsJsonAsync(todoItem);
+});
+
+
 
 
 app.Run();

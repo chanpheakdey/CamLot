@@ -83,6 +83,49 @@ namespace GameAPI.App_Code
 
         }
 
+        public async Task<string> getuserlistbylevel(Object? createdby, Object? userlevel)
+        {
+            try
+            {
+                DataSet ds = new DataSet();
+                await using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
+                {
+
+
+                    using (SqlCommand command = new SqlCommand("Sp_GetUserListbyLevel", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+
+                        SqlParameter sqlParameter1 = command.Parameters.Add("@createdby", SqlDbType.VarChar);
+                        sqlParameter1.Value = createdby.ToString();
+                        SqlParameter sqlParameter2 = command.Parameters.Add("@userleveltoshow", SqlDbType.VarChar);
+                        sqlParameter2.Value = userlevel.ToString();
+
+                        connection.Open();
+                        using (SqlDataAdapter da = new SqlDataAdapter(command))
+                        {
+                            da.Fill(ds);
+
+                        }
+                        connection.Close();
+                        string userlist = (string)ds.Tables[0].Rows[0]["Userlist"];
+
+
+
+
+                        return userlist;
+
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                return ex.ToString();
+            }
+
+
+        }
+
 
         public async Task<string> getUserCredit(string Username)
         {
@@ -698,6 +741,8 @@ namespace GameAPI.App_Code
                         sqlParameter8.Value = cluser.Betting;
                         SqlParameter sqlParameter9 = command.Parameters.Add("@CreatedBy", SqlDbType.VarChar);
                         sqlParameter9.Value = cluser.CreatedBy;
+                        SqlParameter sqlParameter10 = command.Parameters.Add("@CreatedByOriginal", SqlDbType.VarChar);
+                        sqlParameter10.Value = cluser.CreatedByOriginal;
                         connection.Open();
                         using (SqlDataAdapter da = new SqlDataAdapter(command))
                         {

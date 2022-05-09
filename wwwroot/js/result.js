@@ -108,14 +108,14 @@ function get_resultbydate(username) {
             dd = "0" + day;
         }
 
-        var datestr = (d.getFullYear() + "-" + mm + "-" + dd);
+        var datestr = (dd + "-" + mm + "-" + d.getFullYear());
         startdate = datestr;
         enddate = datestr;
     }
     $.ajax({
         //cache: false,
         async: false,
-        type: "POST",
+        type: "Get",
         //dataType: "Json",
         contentType: "application/json; charset=utf-8",
         url: "api/getResult/" + startdate + "/" + enddate + "/" + username,
@@ -140,7 +140,7 @@ function get_resultbydate(username) {
 function show_result_html(datajson) {
     var data = JSON.parse(datajson);
     console.log("display result on result list");
-    console.log(data);
+    //console.log(data);
 
     var html = '';
     //html += "<div>";
@@ -183,10 +183,10 @@ function show_result_html(datajson) {
         result5str = '0' + data.Result5;
     }
     html += '<div class="recent-item">'
-    html += '<p><span style="margin-right: 15px">#' + data.GameID + '&nbsp;' + data.ResultDate.substr(11, 8) + '</span><a href="javascript: void(0);" onclick="LottoInst.showRecentDetail(0)"> &gt;&gt;</a></p>'
-    html += '<div class="special"><div class="special-abcde"><span>' + result1str + '</span><span>' + result2str + '</span><span>' + result3str + '</span><span>' + result4str + '</span><span>' + result5str + '</span></div>'
-    html += '<div class="special-x"><span style="background: #f73">U</span><span style="background: #ea8d34">R1</span></div></div>'
-    html += '</div>'
+    html += '<table style="width:100%"><tr><td><div>#' + data.GameID + '</div><div>' + data.ResultDate.substr(11, 8) + '</div></td>'
+    html += '<td><div class="special"><div class="special-abcde"><span>' + result1str + '</span><span>' + result2str + '</span><span>' + result3str + '</span><span>' + result4str + '</span><span>' + result5str + '</span></div></td>'
+    //html += '<div class="special-x"><span style="background: #f73">U</span><span style="background: #ea8d34">R1</span></div></div>'
+    html += '</tr></table></div>'
 
     //console.log(html);
 
