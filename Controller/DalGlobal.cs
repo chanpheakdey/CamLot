@@ -1639,6 +1639,7 @@ namespace GameAPI.App_Code
                         clTokendetail.Username = (string)ds.Tables[0].Rows[0]["Username"];
                         clTokendetail.PlaceID = (int)ds.Tables[0].Rows[0]["PlaceID"];
                         clTokendetail.Nickname = (string)ds.Tables[0].Rows[0]["Username"];
+                        clTokendetail.UserLevel = (string)ds.Tables[0].Rows[0]["UserLevel"];
                         return clTokendetail;
 
                     }

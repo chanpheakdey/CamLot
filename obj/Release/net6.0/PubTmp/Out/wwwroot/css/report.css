@@ -127,3 +127,49 @@ body {
     background-color: gray;
     margin-left: 5px;
 }
+
+.div-popup {
+    position: fixed;
+    z-index: 9999;
+    background-color: rgb(0 0 0 / 90%);
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    padding: 10px;
+}
+
+.alert-popup-title {
+    padding: 5px;
+    font-size: x-large;
+    text-align: left;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.div-popup-detail {
+    padding: 10px;
+    border-radius: 15px;
+}
+.button-option {
+    padding: 7px;
+    background-color: #f73;
+    margin-right: 10px;
+    border-radius: 15px;
+    float: left;
+}
+
+.div-popup-close {
+    text-align: right;
+    padding: 5px 5px 20px 5px;
+}
+
+.span-close {
+    padding: 5px 10px;
+    color: white;
+    background-color: #f73;
+    border-radius: 5px;
+}

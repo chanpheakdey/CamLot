@@ -317,6 +317,8 @@ function addbetting_unkownuser(gameid, placeid, slotNumber, betNumbers, betamoun
 
                     window.location = "login?token=";
                 } else {
+                    $("#div_alert_submit").hide();
+
                     $("#hdUsername").val(data.username.toLowerCase());
                     $("#hd_placeid").val(data.placeID);
                     console.log("placeid:" + data.placeID);
@@ -1195,7 +1197,11 @@ function submit() {
         window.location = window.location.href;
     }
     if (invalids == 0) {
-        addbetting()
+        $("#div_alert_submit").show();
+        setTimeout(function () {
+            addbetting();
+        }, 500);
+       
     }
 
 }
@@ -1254,6 +1260,8 @@ function addbettingrecord(gameid, placeid, slotNumber, betNumbers, betamount, us
                 } else {
                     //var html = create_receipt(dataobj);
                     //qrcode_img_base64(bettingid,html);
+                    $("#div_alert_submit").hide();
+
                     if (bettingid == -2) {
                         alertme("ទឹកប្រាក់ភ្នាក់ងារមិនគ្រប់");
                     } else {

@@ -8,7 +8,7 @@
 @*<script src="js/jquery.min-2.1.3.js"></script>*@
 <script src="js/report.js?v=7"></script>
 <script src="https://kit.fontawesome.com/7603579037.js" crossorigin="anonymous"></script>
-<link href="~/css/report.css?v=7" rel="stylesheet" />
+<link href="~/css/report.css?v=8" rel="stylesheet" />
 
  <link href='~/css/jquery-ui.css'   rel='stylesheet'>
       
@@ -20,10 +20,10 @@
 </style>
 <div>   
 
-    <div class="div-popup" id="div_popup_master" style="display:none;">
+    <div class="div-popup" id="div_popup_master" style="display:none;;z-index:999">
          <div class="div-popup-detail">
 
-        <div class="div-popup-close"><span class="alert-popup-title" id="div_popup_title_master">តើអ្នកដកប្រាក់ឈ្នះនេះមែនទេ?</span><span class="span-close" onclick="closepopup_master()">X</span></div>
+        <div class="div-popup-close"><span class="alert-popup-title" id="div_popup_title_master"></span><span class="span-close" onclick="closepopup_master()">X</span></div>
         <div id="div_popup_master_detail">
 
         </div>
@@ -31,20 +31,20 @@
 </div>
 
 
-<div class="div-popup" id="div_popup_agent" style="display:none;">
+<div class="div-popup" id="div_popup_agent" style="display:none;;z-index:9999">
          <div class="div-popup-detail">
 
-        <div class="div-popup-close"><span class="alert-popup-title" id="div_popup_title_agent">តើអ្នកដកប្រាក់ឈ្នះនេះមែនទេ?</span><span class="span-close" onclick="closepopup_agent()">X</span></div>
+        <div class="div-popup-close"><span class="alert-popup-title" id="div_popup_title_agent"></span><span class="span-close" onclick="closepopup_agent()">X</span></div>
         <div id="div_popup_agent_detail">
 
         </div>
         </div>
 </div>
 
-<div class="div-popup" id="div_popup_member" style="display:none;">
+<div class="div-popup" id="div_popup_member" style="display:none;z-index:999999 !important">
          <div class="div-popup-detail">
 
-        <div class="div-popup-close"><span class="alert-popup-title" id="div_popup_title_member">តើអ្នកដកប្រាក់ឈ្នះនេះមែនទេ?</span><span class="span-close" onclick="closepopup_member()">X</span></div>
+        <div class="div-popup-close"><span class="alert-popup-title" id="div_popup_title_member"></span><span class="span-close" onclick="closepopup_member()">X</span></div>
         <div id="div_popup_member_detail">
 
         </div>

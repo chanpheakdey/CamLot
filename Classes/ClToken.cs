@@ -10,6 +10,7 @@
         public int? PlaceID { get; set; } = 0;
 
         public string? Nickname { get; set; } = null;
+        public string? UserLevel { get; set; } = null;
 
     }
 }

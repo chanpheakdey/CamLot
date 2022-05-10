@@ -421,6 +421,11 @@ function checktokendetail() {
                 if (qrcode != "" && qrcode != null) {
                     scanQRresult(qrcode);
                 }
+                var userlevel = data.userLevel;
+                if (userlevel == "Master" || userlevel == "Agent") {
+                    $("#div_qrcode").hide();
+                    $("#span_notyetwithdrawal").hide();
+                }
 
                 //getuserlist(username);
             }
