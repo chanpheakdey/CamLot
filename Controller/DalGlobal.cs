@@ -1208,12 +1208,15 @@ namespace GameAPI.App_Code
                         sqlParameter3.Value = clBettingResult.WithdrawalAmount;
 
 
-                        connection.Open();
-                        command.ExecuteNonQuery();
-                        connection.Close();
-  
 
-                        return "success";
+                        connection.Open();
+                        using (SqlDataAdapter da = new SqlDataAdapter(command))
+                        {
+                            da.Fill(ds);
+                        }
+                        connection.Close();
+                        string returnstatus = (string)ds.Tables[0].Rows[0]["Status"];
+                        return returnstatus;
 
                     }
                 }

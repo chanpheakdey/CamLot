@@ -639,19 +639,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\": {}
+    "C:\\Users\\LENOVO\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\SignalR.csproj",
+      "projectUniqueName": "D:\\ACE\\CamLOT\\SignalR.csproj",
       "projectName": "SignalR",
-      "projectPath": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\SignalR.csproj",
-      "packagesPath": "C:\\Users\\chanpheakdey.vong\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\obj\\",
+      "projectPath": "D:\\ACE\\CamLOT\\SignalR.csproj",
+      "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
+      "outputPath": "D:\\ACE\\CamLOT\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\chanpheakdey.vong\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -704,7 +704,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }

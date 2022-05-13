@@ -128,7 +128,7 @@ function loadreportUnderSale(username,startdate, enddate,userlevel) {
         data: '',
         success: function (data) {
             //console.log(data);
-
+            console.log(userlevel);
             if (userlevel == '') {
                 $("#div_report").html(data);
 

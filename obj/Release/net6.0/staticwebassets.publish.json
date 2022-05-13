@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "vVTuLJhYfab9jBekqGh8+S/Inwt+7avaIeW4UvZ1thM=",
+  "Hash": "WBGvz9zAnHott2CkBSZvnna6B2jSMqnd3XXK6t+WeAo=",
   "Source": "SignalR",
   "BasePath": "_content/SignalR",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "SignalR\\wwwroot",
       "Source": "SignalR",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\obj\\Release\\net6.0\\scopedcss\\bundle\\SignalR.styles.css",
+      "Identity": "D:\\ACE\\CamLOT\\obj\\Release\\net6.0\\scopedcss\\bundle\\SignalR.styles.css",
       "SourceId": "SignalR",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\obj\\Release\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\obj\\Release\\net6.0\\scopedcss\\bundle\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "SignalR.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\obj\\Release\\net6.0\\scopedcss\\bundle\\SignalR.styles.css"
+      "OriginalItemSpec": "D:\\ACE\\CamLOT\\obj\\Release\\net6.0\\scopedcss\\bundle\\SignalR.styles.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\SignalR.bundle.scp.css",
+      "Identity": "D:\\ACE\\CamLOT\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\SignalR.bundle.scp.css",
       "SourceId": "SignalR",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "SignalR.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\SignalR.bundle.scp.css"
+      "OriginalItemSpec": "D:\\ACE\\CamLOT\\obj\\Release\\net6.0\\scopedcss\\projectbundle\\SignalR.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\.well-known\\pki-validation\\F3856B0A9DBBDCBC7FB4034D3DED98EC.txt",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\.well-known\\pki-validation\\F3856B0A9DBBDCBC7FB4034D3DED98EC.txt",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": ".well-known/pki-validation/F3856B0A9DBBDCBC7FB4034D3DED98EC.txt",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\.well-known\\pki-validation\\F3856B0A9DBBDCBC7FB4034D3DED98EC.txt"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\audio\\bell-notification.wav",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\audio\\bell-notification.wav",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "audio/bell-notification.wav",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\audio\\bell-notification.wav"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\audio\\clear-announce.wav",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\audio\\clear-announce.wav",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "audio/clear-announce.wav",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\audio\\clear-announce.wav"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\audio\\clear-announce-old.wav",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\audio\\clear-announce-old.wav",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "audio/clear-announce-old.wav",
       "AssetKind": "All",
@@ -119,10 +119,10 @@
       "OriginalItemSpec": "wwwroot\\audio\\clear-announce-old.wav"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\audio\\winning.wav",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\audio\\winning.wav",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "audio/winning.wav",
       "AssetKind": "All",
@@ -136,10 +136,10 @@
       "OriginalItemSpec": "wwwroot\\audio\\winning.wav"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\audio\\winning-old.wav",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\audio\\winning-old.wav",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "audio/winning-old.wav",
       "AssetKind": "All",
@@ -153,10 +153,10 @@
       "OriginalItemSpec": "wwwroot\\audio\\winning-old.wav"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\css\\betnow.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\css\\betnow.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "css/betnow.css",
       "AssetKind": "All",
@@ -170,10 +170,10 @@
       "OriginalItemSpec": "wwwroot\\css\\betnow.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\css\\betting.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\css\\betting.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "css/betting.css",
       "AssetKind": "All",
@@ -187,10 +187,10 @@
       "OriginalItemSpec": "wwwroot\\css\\betting.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\css\\changeful.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\css\\changeful.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "css/changeful.css",
       "AssetKind": "All",
@@ -204,10 +204,10 @@
       "OriginalItemSpec": "wwwroot\\css\\changeful.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\css\\changeless.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\css\\changeless.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "css/changeless.css",
       "AssetKind": "All",
@@ -221,10 +221,10 @@
       "OriginalItemSpec": "wwwroot\\css\\changeless.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\css\\display.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\css\\display.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "css/display.css",
       "AssetKind": "All",
@@ -238,10 +238,10 @@
       "OriginalItemSpec": "wwwroot\\css\\display.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\css\\history.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\css\\history.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "css/history.css",
       "AssetKind": "All",
@@ -255,10 +255,10 @@
       "OriginalItemSpec": "wwwroot\\css\\history.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\css\\images\\ui-icons_ffffff_256x240.png",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\css\\images\\ui-icons_ffffff_256x240.png",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "css/images/ui-icons_ffffff_256x240.png",
       "AssetKind": "All",
@@ -272,10 +272,10 @@
       "OriginalItemSpec": "wwwroot\\css\\images\\ui-icons_ffffff_256x240.png"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\css\\jquery-ui.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\css\\jquery-ui.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "css/jquery-ui.css",
       "AssetKind": "All",
@@ -289,10 +289,10 @@
       "OriginalItemSpec": "wwwroot\\css\\jquery-ui.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\css\\login.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\css\\login.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "css/login.css",
       "AssetKind": "All",
@@ -306,10 +306,10 @@
       "OriginalItemSpec": "wwwroot\\css\\login.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\css\\mycss.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\css\\mycss.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "css/mycss.css",
       "AssetKind": "All",
@@ -323,10 +323,10 @@
       "OriginalItemSpec": "wwwroot\\css\\mycss.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\css\\password.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\css\\password.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "css/password.css",
       "AssetKind": "All",
@@ -340,10 +340,10 @@
       "OriginalItemSpec": "wwwroot\\css\\password.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\css\\print.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\css\\print.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "css/print.css",
       "AssetKind": "All",
@@ -357,10 +357,10 @@
       "OriginalItemSpec": "wwwroot\\css\\print.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\css\\report.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\css\\report.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "css/report.css",
       "AssetKind": "All",
@@ -374,10 +374,10 @@
       "OriginalItemSpec": "wwwroot\\css\\report.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\css\\result.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\css\\result.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "css/result.css",
       "AssetKind": "All",
@@ -391,10 +391,10 @@
       "OriginalItemSpec": "wwwroot\\css\\result.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\css\\scan.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\css\\scan.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "css/scan.css",
       "AssetKind": "All",
@@ -408,10 +408,10 @@
       "OriginalItemSpec": "wwwroot\\css\\scan.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\css\\server.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\css\\server.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "css/server.css",
       "AssetKind": "All",
@@ -425,10 +425,10 @@
       "OriginalItemSpec": "wwwroot\\css\\server.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\css\\site.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\css\\site.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -442,10 +442,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\css\\user.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\css\\user.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "css/user.css",
       "AssetKind": "All",
@@ -459,10 +459,10 @@
       "OriginalItemSpec": "wwwroot\\css\\user.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\favicon.ico",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\favicon.ico",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -476,10 +476,10 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\images\\01.pdf",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\images\\01.pdf",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "images/01.pdf",
       "AssetKind": "All",
@@ -493,10 +493,10 @@
       "OriginalItemSpec": "wwwroot\\images\\01.pdf"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\images\\App01.PNG",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\images\\App01.PNG",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "images/App01.PNG",
       "AssetKind": "All",
@@ -510,10 +510,10 @@
       "OriginalItemSpec": "wwwroot\\images\\App01.PNG"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\images\\bg.jpg",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\images\\bg.jpg",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "images/bg.jpg",
       "AssetKind": "All",
@@ -527,10 +527,10 @@
       "OriginalItemSpec": "wwwroot\\images\\bg.jpg"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\images\\bg01.gif",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\images\\bg01.gif",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "images/bg01.gif",
       "AssetKind": "All",
@@ -544,10 +544,10 @@
       "OriginalItemSpec": "wwwroot\\images\\bg01.gif"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\images\\CamLotto.png",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\images\\CamLotto.png",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "images/CamLotto.png",
       "AssetKind": "All",
@@ -561,10 +561,10 @@
       "OriginalItemSpec": "wwwroot\\images\\CamLotto.png"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\images\\DefaultID.jpg",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\images\\DefaultID.jpg",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "images/DefaultID.jpg",
       "AssetKind": "All",
@@ -578,10 +578,10 @@
       "OriginalItemSpec": "wwwroot\\images\\DefaultID.jpg"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\images\\logo.png",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\images\\logo.png",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "images/logo.png",
       "AssetKind": "All",
@@ -595,10 +595,10 @@
       "OriginalItemSpec": "wwwroot\\images\\logo.png"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\images\\logonew.png",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\images\\logonew.png",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "images/logonew.png",
       "AssetKind": "All",
@@ -612,10 +612,10 @@
       "OriginalItemSpec": "wwwroot\\images\\logonew.png"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\images\\logoround.png",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\images\\logoround.png",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "images/logoround.png",
       "AssetKind": "All",
@@ -629,10 +629,10 @@
       "OriginalItemSpec": "wwwroot\\images\\logoround.png"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\images\\waiting.gif",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\images\\waiting.gif",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "images/waiting.gif",
       "AssetKind": "All",
@@ -646,10 +646,10 @@
       "OriginalItemSpec": "wwwroot\\images\\waiting.gif"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\ACECertificate.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\ACECertificate.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/ACECertificate.js",
       "AssetKind": "All",
@@ -663,10 +663,10 @@
       "OriginalItemSpec": "wwwroot\\js\\ACECertificate.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\betnow.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\betnow.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/betnow.js",
       "AssetKind": "All",
@@ -680,10 +680,10 @@
       "OriginalItemSpec": "wwwroot\\js\\betnow.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\betting.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\betting.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/betting.js",
       "AssetKind": "All",
@@ -697,10 +697,10 @@
       "OriginalItemSpec": "wwwroot\\js\\betting.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\chat.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\chat.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/chat.js",
       "AssetKind": "All",
@@ -714,10 +714,10 @@
       "OriginalItemSpec": "wwwroot\\js\\chat.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\client_timer.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\client_timer.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/client_timer.js",
       "AssetKind": "All",
@@ -731,10 +731,10 @@
       "OriginalItemSpec": "wwwroot\\js\\client_timer.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\display.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\display.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/display.js",
       "AssetKind": "All",
@@ -748,10 +748,10 @@
       "OriginalItemSpec": "wwwroot\\js\\display.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\dom-to-image.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\dom-to-image.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/dom-to-image.js",
       "AssetKind": "All",
@@ -765,10 +765,10 @@
       "OriginalItemSpec": "wwwroot\\js\\dom-to-image.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\history.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\history.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/history.js",
       "AssetKind": "All",
@@ -782,10 +782,10 @@
       "OriginalItemSpec": "wwwroot\\js\\history.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\jquery.min-2.1.3.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\jquery.min-2.1.3.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/jquery.min-2.1.3.js",
       "AssetKind": "All",
@@ -799,10 +799,10 @@
       "OriginalItemSpec": "wwwroot\\js\\jquery.min-2.1.3.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\jquery.min-3.1.1.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\jquery.min-3.1.1.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/jquery.min-3.1.1.js",
       "AssetKind": "All",
@@ -816,10 +816,10 @@
       "OriginalItemSpec": "wwwroot\\js\\jquery.min-3.1.1.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\jquery.qrcode.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\jquery.qrcode.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/jquery.qrcode.js",
       "AssetKind": "All",
@@ -833,10 +833,10 @@
       "OriginalItemSpec": "wwwroot\\js\\jquery.qrcode.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\jquery.qrcode.js.download",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\jquery.qrcode.js.download",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/jquery.qrcode.js.download",
       "AssetKind": "All",
@@ -850,10 +850,10 @@
       "OriginalItemSpec": "wwwroot\\js\\jquery.qrcode.js.download"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\jquery-1.11.0.min.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\jquery-1.11.0.min.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/jquery-1.11.0.min.js",
       "AssetKind": "All",
@@ -867,10 +867,10 @@
       "OriginalItemSpec": "wwwroot\\js\\jquery-1.11.0.min.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\jquery-latest.min.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\jquery-latest.min.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/jquery-latest.min.js",
       "AssetKind": "All",
@@ -884,10 +884,10 @@
       "OriginalItemSpec": "wwwroot\\js\\jquery-latest.min.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\jquery-ui.min.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\jquery-ui.min.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/jquery-ui.min.js",
       "AssetKind": "All",
@@ -901,10 +901,10 @@
       "OriginalItemSpec": "wwwroot\\js\\jquery-ui.min.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\jspdf.min.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\jspdf.min.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/jspdf.min.js",
       "AssetKind": "All",
@@ -918,10 +918,10 @@
       "OriginalItemSpec": "wwwroot\\js\\jspdf.min.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\login.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\login.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/login.js",
       "AssetKind": "All",
@@ -935,10 +935,10 @@
       "OriginalItemSpec": "wwwroot\\js\\login.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\main.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\main.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/main.js",
       "AssetKind": "All",
@@ -952,10 +952,10 @@
       "OriginalItemSpec": "wwwroot\\js\\main.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\password.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\password.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/password.js",
       "AssetKind": "All",
@@ -969,10 +969,10 @@
       "OriginalItemSpec": "wwwroot\\js\\password.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\print.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\print.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/print.js",
       "AssetKind": "All",
@@ -986,10 +986,10 @@
       "OriginalItemSpec": "wwwroot\\js\\print.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\public.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\public.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/public.js",
       "AssetKind": "All",
@@ -1003,10 +1003,10 @@
       "OriginalItemSpec": "wwwroot\\js\\public.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\qrcode.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\qrcode.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/qrcode.js",
       "AssetKind": "All",
@@ -1020,10 +1020,10 @@
       "OriginalItemSpec": "wwwroot\\js\\qrcode.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\qrcode.js.download",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\qrcode.js.download",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/qrcode.js.download",
       "AssetKind": "All",
@@ -1037,10 +1037,10 @@
       "OriginalItemSpec": "wwwroot\\js\\qrcode.js.download"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\report.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\report.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/report.js",
       "AssetKind": "All",
@@ -1054,10 +1054,10 @@
       "OriginalItemSpec": "wwwroot\\js\\report.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\result.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\result.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/result.js",
       "AssetKind": "All",
@@ -1071,10 +1071,10 @@
       "OriginalItemSpec": "wwwroot\\js\\result.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\scanresult.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\scanresult.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/scanresult.js",
       "AssetKind": "All",
@@ -1088,10 +1088,10 @@
       "OriginalItemSpec": "wwwroot\\js\\scanresult.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\scripts.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\scripts.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/scripts.js",
       "AssetKind": "All",
@@ -1105,10 +1105,10 @@
       "OriginalItemSpec": "wwwroot\\js\\scripts.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\signalr\\dist\\browser\\signalr.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\signalr\\dist\\browser\\signalr.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/signalr/dist/browser/signalr.js",
       "AssetKind": "All",
@@ -1122,10 +1122,10 @@
       "OriginalItemSpec": "wwwroot\\js\\signalr\\dist\\browser\\signalr.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\signalr\\dist\\browser\\signalr.min.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\signalr\\dist\\browser\\signalr.min.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/signalr/dist/browser/signalr.min.js",
       "AssetKind": "All",
@@ -1139,10 +1139,10 @@
       "OriginalItemSpec": "wwwroot\\js\\signalr\\dist\\browser\\signalr.min.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\site.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\site.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
@@ -1156,10 +1156,10 @@
       "OriginalItemSpec": "wwwroot\\js\\site.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\timer.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\timer.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/timer.js",
       "AssetKind": "All",
@@ -1173,10 +1173,10 @@
       "OriginalItemSpec": "wwwroot\\js\\timer.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\js\\user.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\js\\user.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "js/user.js",
       "AssetKind": "All",
@@ -1190,10 +1190,10 @@
       "OriginalItemSpec": "wwwroot\\js\\user.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetKind": "All",
@@ -1207,10 +1207,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.css.map",
       "AssetKind": "All",
@@ -1224,10 +1224,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css",
       "AssetKind": "All",
@@ -1241,10 +1241,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.min.css.map",
       "AssetKind": "All",
@@ -1258,10 +1258,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css",
       "AssetKind": "All",
@@ -1275,10 +1275,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.css.map",
       "AssetKind": "All",
@@ -1292,10 +1292,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css",
       "AssetKind": "All",
@@ -1309,10 +1309,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
       "AssetKind": "All",
@@ -1326,10 +1326,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css",
       "AssetKind": "All",
@@ -1343,10 +1343,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.css.map",
       "AssetKind": "All",
@@ -1360,10 +1360,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css",
       "AssetKind": "All",
@@ -1377,10 +1377,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
       "AssetKind": "All",
@@ -1394,10 +1394,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
       "AssetKind": "All",
@@ -1411,10 +1411,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
       "AssetKind": "All",
@@ -1428,10 +1428,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
       "AssetKind": "All",
@@ -1445,10 +1445,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
       "AssetKind": "All",
@@ -1462,10 +1462,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css",
       "AssetKind": "All",
@@ -1479,10 +1479,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.css.map",
       "AssetKind": "All",
@@ -1496,10 +1496,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css",
       "AssetKind": "All",
@@ -1513,10 +1513,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
       "AssetKind": "All",
@@ -1530,10 +1530,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
       "AssetKind": "All",
@@ -1547,10 +1547,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
       "AssetKind": "All",
@@ -1564,10 +1564,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
       "AssetKind": "All",
@@ -1581,10 +1581,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
       "AssetKind": "All",
@@ -1598,10 +1598,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css",
       "AssetKind": "All",
@@ -1615,10 +1615,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.css.map",
       "AssetKind": "All",
@@ -1632,10 +1632,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css",
       "AssetKind": "All",
@@ -1649,10 +1649,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
       "AssetKind": "All",
@@ -1666,10 +1666,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
       "AssetKind": "All",
@@ -1683,10 +1683,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
       "AssetKind": "All",
@@ -1700,10 +1700,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
       "AssetKind": "All",
@@ -1717,10 +1717,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
       "AssetKind": "All",
@@ -1734,10 +1734,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js",
       "AssetKind": "All",
@@ -1751,10 +1751,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.js.map",
       "AssetKind": "All",
@@ -1768,10 +1768,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js",
       "AssetKind": "All",
@@ -1785,10 +1785,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
       "AssetKind": "All",
@@ -1802,10 +1802,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js",
       "AssetKind": "All",
@@ -1819,10 +1819,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.js.map",
       "AssetKind": "All",
@@ -1836,10 +1836,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js",
       "AssetKind": "All",
@@ -1853,10 +1853,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
       "AssetKind": "All",
@@ -1870,10 +1870,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js",
       "AssetKind": "All",
@@ -1887,10 +1887,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.js.map",
       "AssetKind": "All",
@@ -1904,10 +1904,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js",
       "AssetKind": "All",
@@ -1921,10 +1921,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/dist/js/bootstrap.min.js.map",
       "AssetKind": "All",
@@ -1938,10 +1938,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\bootstrap\\LICENSE",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/bootstrap/LICENSE",
       "AssetKind": "All",
@@ -1955,10 +1955,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\LICENSE"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/jquery/dist/jquery.js",
       "AssetKind": "All",
@@ -1972,10 +1972,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/jquery/dist/jquery.min.js",
       "AssetKind": "All",
@@ -1989,10 +1989,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/jquery/dist/jquery.min.map",
       "AssetKind": "All",
@@ -2006,10 +2006,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/jquery/LICENSE.txt",
       "AssetKind": "All",
@@ -2023,10 +2023,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.js",
       "AssetKind": "All",
@@ -2040,10 +2040,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/jquery-validation/dist/additional-methods.min.js",
       "AssetKind": "All",
@@ -2057,10 +2057,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.js",
       "AssetKind": "All",
@@ -2074,10 +2074,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/jquery-validation/dist/jquery.validate.min.js",
       "AssetKind": "All",
@@ -2091,10 +2091,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/jquery-validation/LICENSE.md",
       "AssetKind": "All",
@@ -2108,10 +2108,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
       "AssetKind": "All",
@@ -2125,10 +2125,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
       "AssetKind": "All",
@@ -2142,10 +2142,10 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Identity": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Identity": "D:\\ACE\\CamLOT\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "SourceId": "SignalR",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chanpheakdey.vong\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "ContentRoot": "D:\\ACE\\CamLOT\\wwwroot\\",
       "BasePath": "_content/SignalR",
       "RelativePath": "lib/jquery-validation-unobtrusive/LICENSE.txt",
       "AssetKind": "All",

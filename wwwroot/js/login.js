@@ -104,12 +104,16 @@ function closepopup() {
 } 
 
 function changepassword() {
+    console.log("chage password")
     var currentpassword = $("#txtcurentpassword").val();
+    console.log("currentpassword" + currentpassword)
+
     var newpassword = $("#txtnewpassword").val();
     var retypepassword = $("#txtretypenewpassword").val();
     if (newpassword == retypepassword && newpassword != "" && newpassword.length>=6) {
         var token = getUrlVars()["token"];
         if (token != "" && token != undefined) {
+            console.log(token);
             $.ajax({
                 //cache: false,
                 async: false,
@@ -117,9 +121,9 @@ function changepassword() {
                 //dataType: "Json",
                 contentType: "application/json; charset=utf-8",
                 url: "api/changepassword",
-                data: '{"CurrentPassword":"' + currentpassword + '","NewPassword":"' + newpassword + '","Token":"' + token + '"}',
+                data: '{"Password":"' + currentpassword + '","NewPassword":"' + newpassword + '","Token":"' + token + '"}',
                 success: function (data) {
-
+                    console.log(data);
                     if (data == "Not matched") {
                         $("#div_info").html("Current Password not matched");
                     } else {
@@ -321,4 +325,12 @@ function logout() {
     } else {
         window.location = "login?token="
     }
+}
+
+function viewpassword() {
+    $('#txtcurentpassword').attr('type', 'text');
+}
+
+function hidepassword() {
+    $('#txtcurentpassword').attr('type', 'password');
 }

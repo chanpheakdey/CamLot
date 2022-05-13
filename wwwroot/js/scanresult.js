@@ -27,6 +27,7 @@ function viewformback() {
 function scansearch(qr) {
     scanQRresult(qr);
     closepopupsearch();
+    closepopupsearchnotyetwithdraw();
 }
 function closepopupsearch() {
     $("#div_search").hide();
@@ -424,7 +425,7 @@ function checktokendetail() {
                 var userlevel = data.userLevel;
                 if (userlevel == "Master" || userlevel == "Agent") {
                     $("#div_qrcode").hide();
-                    $("#span_notyetwithdrawal").hide();
+                    //$("#span_notyetwithdrawal").hide();
                 }
 
                 //getuserlist(username);
@@ -571,12 +572,13 @@ function scanQRresult(qrcode) {
                     html += "<div class='div-scan-lost'>ឈ្នះ: R" + totalwin + "</div>";
                     var username = $("#hdUsername").val();
                     console.log("username:" + username);
-                    html += '<div style="text-align:center;"><input type="button" class="button-withdrawal" value="ដកប្រាក់" onclick="confirmwithdraw(' + code + ',' + "'" + username + "'" + ',' + totalwin + ')"></div>';
+                    html += '<div style="text-align:center;" id="div_withdraw_status"><input type="button" class="button-withdrawal" value="ដកប្រាក់" onclick="confirmwithdraw(' + code + ',' + "'" + username + "'" + ',' + totalwin + ')"></div>';
                 }
 
             } else {
                 html += "<div class='div-scan-lost'>មិនត្រូវរង្វាន់</div>";
             }
+            html += "<div style='font-weight:bold;text-align:center;'>លេខសំគាល់: #" + code + "</div>"
             html += create_receipt(dataobj);
             $("#div_result").html(html);
         },
@@ -617,22 +619,24 @@ function confirmwithdraw(bettingid, username,withdrawalAmount) {
             url: "api/withdraw",
             data: '{"bettingID": ' + bettingid + ',"createdBy":"' + username + '","WithdrawalAmount":' + withdrawalAmount + '}',
             success: function (dataobj) {
-                var result_tran = dataobj.d;
+                var result_tran = dataobj;
+                console.log(result_tran);
                 if (result_tran == "error") {
                     //alert("error");
                     window.location = window.location.href;
                 } else {
                     var qrcode = getUrlVars()["qrcode"];
-                    
-                    if (qrcode != "" && qrcode != null) {
-                        scanQRresult(qrcode);
+                    if (result_tran == "Not allow") {
+                        var html = $("#div_withdraw_status").html();
+                        $("#div_withdraw_status").html(html + "<div class='div-scan-lost'>បុងអ្នកផ្សេង!</div>");
                     } else {
-                        scanresult();
+                        $("#div_withdraw_status").html("<div class='div-scan-lost'>ទូទាត់រង្វាន់ដោយជោយជ័យ</div>");
                     }
+                   
                     getusercredit(username);
                    // cancelwithdraw();
                 }
-
+                
             },
             error: function (result) {
                 console.log(result);

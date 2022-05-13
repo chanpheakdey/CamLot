@@ -1,22 +1,18 @@
 ﻿
 $(document).ready(function () {
-
+    checktokendetail();
     $(function () {
         $("#txtstartdate").datepicker(
             {
                 dateFormat: 'dd-mm-yy',
 
             }).datepicker("setDate", 'now');
-        $("#txtenddate").datepicker(
-            {
-                dateFormat: 'dd-mm-yy',
-
-            }).datepicker("setDate", 'now');
+       
     });
 
 
    
-    checktokendetail();
+   
 
 
 
@@ -41,7 +37,7 @@ function checktokendetail() {
             } else {
                 $("#hdUsername").val(data.username);
                 var username = $("#hdUsername").val();
-                get_resultbydate(username);
+                get_resultbydate_init(username);
 
                 //getuserlist(username);
             }
@@ -88,12 +84,58 @@ function show_latest_result(data) {
 }
 
 
+function get_resultbydate_init(username) {
+    console.log("get latest result");
+    var startdate = "";
+    var enddate = "";
+
+    if (startdate == "" || enddate == "") {
+        var d = new Date($.now());
+        var m = (d.getMonth() + 1);
+        var mm = m;
+        if (m < 10) {
+            mm = "0" + m;
+        }
+        var day = d.getDate();
+        var dd = day;
+        if (day < 10) {
+            dd = "0" + day;
+        }
+
+        var datestr = (dd + "-" + mm + "-" + d.getFullYear());
+        startdate = datestr;
+        enddate = datestr;
+    }
+    $.ajax({
+        //cache: false,
+        async: false,
+        type: "Get",
+        //dataType: "Json",
+        contentType: "application/json; charset=utf-8",
+        url: "api/getResult/" + startdate + "/" + enddate + "/" + username,
+        data: '',
+        success: function (data) {
+            console.log(data);
+            show_latest_result(data)
+
+
+        },
+        error: function (result) {
+            console.log(result);
+            //return "";
+            //$('#loading').hide();
+        }
+    });
+}
+
+
 function get_resultbydate(username) {
     console.log("get latest result");
     var startdate = "";
     var enddate = "";
     startdate = $("#txtstartdate").val();
-    enddate = $("#txtenddate").val();
+    console.log(startdate);
+    enddate = $("#txtstartdate").val();
 
     if (startdate == "" || enddate == "") {
         var d = new Date($.now());
