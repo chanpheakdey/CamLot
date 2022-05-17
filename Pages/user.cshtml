@@ -4,7 +4,7 @@
 }
 
 <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="js/user.js?v=4"></script>
+<script type="text/javascript" src="js/user.js?v=6"></script>
 <script type="text/javascript" src="js/public.js"></script>
 <link href="~/css/user.css?v=4" rel="stylesheet" />
 
@@ -21,12 +21,14 @@
 
 <div class="div-popup" id="div_update_credit" style="display:none;z-index:999999">
     <div class="div-update-credit">
+        <div id="div_usercredit"></div>
+            <div style="margin-top:10px;">
                 <span id="span_credit_title" class="span-credit-title"></span>
-                <input type="text" id="txtcredit" value="" />
+                <span class="currencyinput"><input type="text" id="txtcredit" value="" onkeyup="onlyNumberAmount(this)"/></span>
                 <span id="spanaddcredit" onclick="addcredit()" class="button-action-credit">+</span>
                 <span id="spandeductcredit" onclick="deductcredit()" class="button-action-credit button-minus">-</span>
                 <span onclick="cancelcredit()" class="button-action-credit">x</span>
-                
+            </div>    
             </div>
             <div style="color: #f73;text-align: center;padding: 10px;" id="divinfo">
 

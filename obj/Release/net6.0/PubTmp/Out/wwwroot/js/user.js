@@ -409,10 +409,12 @@ function updatepassword(newpassword) {
 
 function addcredit() {
     $("#divinfo").html('');
-    var amount = parseInt($("#txtcredit").val());
-
+    var amount = parseInt($("#txtcredit").val().replace(",",""));
+    
     var username = $("#hdSelectedUser").val();
     var createdby = $("#hdUsername").val();
+
+    console.log(username);
     $.ajax({
         //cache: false,
         async: false,
@@ -428,6 +430,7 @@ function addcredit() {
                 //getusercredit(username);
                 //getuserlist(createdby);
                 filteruser();
+               
             } else {
                 if (data == 'Out of credit') {
                     $("#divinfo").html('ទឹកប្រាក់មិនគ្រប់');
@@ -442,7 +445,7 @@ function addcredit() {
 }
 
 function deductcredit() {
-    var amount = parseInt($("#txtcredit").val());
+    var amount = parseInt($("#txtcredit").val().replace(",", ""));
     var username = $("#hdSelectedUser").val();
     var createdby = $("#hdUsername").val();
     amount = -amount;
@@ -579,10 +582,11 @@ function userdocument() {
 function closepopupcredithistory() {
     $("#div_popup_credithistory").hide();
 }
-function showaddcredit(username) {
+function showaddcredit(username, credit) {
   
    
     $("#div_update_credit").show();
+    $("#div_usercredit").html(username + ": " + credit + 'R');
     $("#span_credit_title").html("ទឹកប្រាក់ត្រូវដាក់បន្ថែម");
     $("#spanaddcredit").show();
     $("#spandeductcredit").hide();
@@ -592,9 +596,25 @@ function showaddcredit(username) {
     $("#divinfo").html('');
 }
 
+String.prototype.reverse = function () {
+    return this.split("").reverse().join("");
+}
 
-function showdeductcredit(username) {
+function onlyNumberAmount(input) {
+    var x = input.value;
+    x = x.replace(/,/g, ""); // Strip out all commas
+    x = x.reverse();
+    x = x.replace(/.../g, function (e) {
+        return e + ",";
+    }); // Insert new commas
+    x = x.reverse();
+    x = x.replace(/^,/, ""); // Remove leading comma
+    input.value = x;
+}
+
+function showdeductcredit(username,credit) {
     $("#div_update_credit").show();
+    $("#div_usercredit").html(username + ": " + credit + 'R');
     $("#span_credit_title").html("ទឹកប្រាក់ត្រូវដកចេញ");
     $("#spanaddcredit").hide();
     $("#spandeductcredit").show();

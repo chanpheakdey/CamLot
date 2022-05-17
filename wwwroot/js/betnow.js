@@ -1199,14 +1199,14 @@ function submit() {
     if (invalids == 0) {
         $("#div_alert_submit").show();
         setTimeout(function () {
-            addbetting();
+            addbetting(gameid);
         }, 500);
        
     }
 
 }
 
-function addbetting() {
+function addbetting(gameid) {
     var slotNumber = "";
     for (var i = 0; i < listslot.length; i++) {
         var number = listslot[i];
@@ -1220,7 +1220,7 @@ function addbetting() {
     }
     betNumbers = betNumbers.substr(0, betNumbers.length - 1);
     var betamount = $("#hd_betamount").val();
-    var gameid = $("#hdGameID").val();
+    //var gameid = $("#hdGameID").val();
     var placeid = $("#hd_placeid").val();
     var username = $("#hdUsername").val();
     console.log(username);
