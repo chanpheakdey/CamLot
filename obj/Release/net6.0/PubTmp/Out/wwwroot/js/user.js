@@ -8,6 +8,10 @@ $(document).ready(function () {
 });
 
 
+function replaceAll(str, find, replace) {
+  return str.replace(new RegExp(find, 'g'), replace);
+}
+
 function checktokendetail() {
     var token = getUrlVars()["token"];
 
@@ -409,7 +413,10 @@ function updatepassword(newpassword) {
 
 function addcredit() {
     $("#divinfo").html('');
-    var amount = parseInt($("#txtcredit").val().replace(",",""));
+	var amount_string = $("#txtcredit").val();
+	amount_string = replaceAll(amount_string,",","");
+	
+    var amount = parseInt(amount_string);
     
     var username = $("#hdSelectedUser").val();
     var createdby = $("#hdUsername").val();
@@ -445,7 +452,11 @@ function addcredit() {
 }
 
 function deductcredit() {
-    var amount = parseInt($("#txtcredit").val().replace(",", ""));
+    var amount_string = $("#txtcredit").val();
+	amount_string = replaceAll(amount_string,",","");
+	
+    var amount = parseInt(amount_string);
+    
     var username = $("#hdSelectedUser").val();
     var createdby = $("#hdUsername").val();
     amount = -amount;

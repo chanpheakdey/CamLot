@@ -182,10 +182,29 @@ app.MapPost("api/UploadImage", (IFormFile file) =>
 
 });
 
-app.MapPost("api/getbettingresult", (ClBettingResult clbetting) =>
+app.MapGet("api/getbettingresult/{bettingid}", async (http) =>
 {
     DalGlobal dalGlobal = new DalGlobal();
-    return dalGlobal.GetBettingResult(clbetting);
+    //return dalGlobal.GetBettingResult(clbetting);
+
+    object? bettingid;
+    if (!http.Request.RouteValues.TryGetValue("bettingid", out bettingid))
+    {
+        http.Response.StatusCode = 400;
+        return;
+    }
+
+
+
+    var todoItem = await dalGlobal.GetBettingResult(bettingid);
+    if (todoItem == null)
+    {
+        http.Response.StatusCode = 404;
+        return;
+    }
+
+    await http.Response.WriteAsJsonAsync(todoItem);
+
 
 });
 

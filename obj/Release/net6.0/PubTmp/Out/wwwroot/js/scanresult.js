@@ -533,11 +533,11 @@ function scanQRresult(qrcode) {
     $.ajax({
         //cache: false,
         async: false,
-        type: "POST",
+        type: "get",
         //dataType: "Json",
         contentType: "application/json; charset=utf-8",
-        url: "api/getbettingresult",
-        data: '{"bettingID": ' + code + '}',
+        url: "api/getbettingresult/" + code,
+        data: '',
         success: function (dataobj) {
             console.log(dataobj);
             var html = "";

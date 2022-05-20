@@ -327,10 +327,26 @@ function logout() {
     }
 }
 
-function viewpassword() {
-    $('#txtcurentpassword').attr('type', 'text');
+function viewpassword(index) {
+    if (index == 0) {
+        $('#txtcurentpassword').attr('type', 'text');
+    } else {
+        if (index == 1) {
+            $('#txtnewpassword').attr('type', 'text');
+        } else {
+            $('#txtretypenewpassword').attr('type', 'text');
+        }
+    }
 }
 
-function hidepassword() {
-    $('#txtcurentpassword').attr('type', 'password');
+function hidepassword(index) {
+    if (index == 0) {
+        $('#txtcurentpassword').attr('type', 'password');
+    } else {
+        if (index == 1) {
+            $('#txtnewpassword').attr('type', 'password');
+        } else {
+            $('#txtretypenewpassword').attr('type', 'password');
+        }
+    }
 }

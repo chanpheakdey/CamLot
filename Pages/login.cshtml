@@ -27,7 +27,7 @@
                 <span>
                     <input type="password" value="" style="float:left;" class="textbox" id="txtcurentpassword" />
                 </span>
-                <span onmousedown="viewpassword()" onmouseup="hidepassword()" style="padding: 0px 10px;line-height: 30px;">
+                <span onclick="viewpassword(0)" onmouseout="hidepassword(0)" style="padding: 0px 10px;line-height: 30px;font-size: 16pt;line-height: 1.5;">
                     <i class="fa fa-eye" aria-hidden="true"></i>
                 </span>
                 </div>
@@ -36,12 +36,20 @@
                 <span>
                     <input type="password" value="" style="float:left;" class="textbox" id="txtnewpassword" placeholder="6 characters up" />
                 </span>
+                <span onclick="viewpassword(1)" onmouseout="hidepassword(1)" style="padding: 0px 10px;line-height: 30px;font-size: 16pt;line-height: 1.5;">
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+                </span>
+
                 </div>
                  <div class="div-option-button">
                 <span class="titile-password">Retype new password</span>
                 <span>
                     <input type="password" value="" style="float:left;" class="textbox" id="txtretypenewpassword" />
                 </span>
+                <span onclick="viewpassword(2)" onmouseout="hidepassword(2)" style="padding: 0px 10px;line-height: 30px;font-size: 16pt;line-height: 1.5;">
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+                </span>
+                
                 </div>
                 <div class="div-option-button div-changepassword">
                                 <span class="button-option" onclick="changepassword()">Update</span>
@@ -107,11 +115,11 @@
 <link href="~/css/betting.css?v=4" rel="stylesheet" />
 
 
-<script src="~/js/login.js?v=6"></script>
+<script src="~/js/login.js?v=7"></script>
 
 
 <link href="~/css/mycss.css?v=4" rel="stylesheet" />
-<link href="~/css/login.css?v=6" rel="stylesheet" />
+<link href="~/css/login.css?v=7" rel="stylesheet" />
 
 
 

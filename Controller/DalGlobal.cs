@@ -1060,14 +1060,14 @@ namespace GameAPI.App_Code
 
 
 
-        public ClBettingResult GetBettingResult(ClBettingResult clBettingResult)
+        public async Task<ClBettingResult> GetBettingResult(object bettingid)
         {
 
             ClBettingResult clBetting_result = new ClBettingResult();
             try
             {
                 DataSet ds = new DataSet();
-                using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
+                await using (SqlConnection connection = new SqlConnection(DalConnection.EDBConnectionString))
                 {
 
 
@@ -1076,7 +1076,7 @@ namespace GameAPI.App_Code
                         command.CommandType = CommandType.StoredProcedure;
 
                         SqlParameter sqlParameter1 = command.Parameters.Add("@BettingID", SqlDbType.Int);
-                        sqlParameter1.Value = clBettingResult.BettingID;                    
+                        sqlParameter1.Value = bettingid.ToString();                    
 
                         connection.Open();
                         using (SqlDataAdapter da = new SqlDataAdapter(command))
@@ -1492,7 +1492,7 @@ namespace GameAPI.App_Code
         public string getQRCode(qrcode clQrcode)
         {
             QRCodeGenerator qrGenerator = new QRCodeGenerator();
-            QRCodeGenerator.QRCode qrCode = qrGenerator.CreateQrCode(clQrcode.qrCode, QRCodeGenerator.ECCLevel.H);
+            QRCodeGenerator.QRCode qrCode = qrGenerator.CreateQrCode(clQrcode.qrCode, QRCodeGenerator.ECCLevel.Q);
             //System.Web.UI.WebControls.Image imgBarCode = new System.Web.UI.WebControls.Image();
             Image imgBarCode;
 
