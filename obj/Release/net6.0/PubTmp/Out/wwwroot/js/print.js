@@ -100,12 +100,12 @@ function qrcode_img_base64(qrcode) {
     console.log("qrcode:" + qrcode);
     $.ajax({
         //cache: false,
-        async: false,
-        type: "POST",
+        async: true,
+        type: "get",
         //dataType: "Json",
         contentType: "application/json; charset=utf-8",
-        url: "api/QRCode",
-        data: '{"QRCode":"' + qrcode + '"}',
+        url: "api/QRCode/" + qrcode,
+        data: '',
         success: function (data) {
 
             $("#imgqr").prop("src", "data:image/png;base64," + data);

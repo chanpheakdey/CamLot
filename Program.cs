@@ -154,12 +154,33 @@ app.MapPost("api/updatenickname", (ClUser clUser) =>
 
 });
 
-app.MapPost("api/QRCode", (qrcode clqrcode) =>
+app.MapGet("api/QRCode/{bettingid}", async (http) =>
 {
     DalGlobal dalGlobal = new DalGlobal();
-    return dalGlobal.getQRCode(clqrcode);
+    //return dalGlobal.GetBettingResult(clbetting);
+
+    object? bettingid;
+    if (!http.Request.RouteValues.TryGetValue("bettingid", out bettingid))
+    {
+        http.Response.StatusCode = 400;
+        return;
+    }
+
+
+
+    var todoItem = await dalGlobal.getQRCode(bettingid);
+    if (todoItem == null)
+    {
+        http.Response.StatusCode = 404;
+        return;
+    }
+
+    await http.Response.WriteAsJsonAsync(todoItem);
+
 
 });
+
+
 app.MapPost("api/LatestResult", () =>
 {
     DalGlobal dalGlobal = new DalGlobal();
@@ -208,12 +229,28 @@ app.MapGet("api/getbettingresult/{bettingid}", async (http) =>
 
 });
 
-app.MapPost("api/getbettingreceipt", (ClBettingResult clbetting) =>
-{
-    DalGlobal dalGlobal = new DalGlobal();
-    return dalGlobal.GetBettingReceipt(clbetting);
 
+app.MapGet("api/getbettingreceipt/{bettingid}", async (http) =>
+{
+    object? bettingid;
+    if (!http.Request.RouteValues.TryGetValue("bettingid", out bettingid))
+    {
+        http.Response.StatusCode = 400;
+        return;
+    }
+    DalGlobal dalGlobal = new DalGlobal();
+
+
+    var todoItem = await dalGlobal.GetBettingReceipt(bettingid);
+    if (todoItem == null)
+    {
+        http.Response.StatusCode = 404;
+        return;
+    }
+
+    await http.Response.WriteAsJsonAsync(todoItem);
 });
+
 
 app.MapPost("api/withdraw", (ClBettingResult clbetting) =>
 {

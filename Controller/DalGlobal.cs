@@ -4,7 +4,6 @@ using System.Data.SqlClient;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Drawing;
-using QRCoder;
 using System.IO;
 using Microsoft.AspNetCore.Mvc;
 
@@ -14,7 +13,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
-
+using IronBarCode;
 
 namespace GameAPI.App_Code
 {
@@ -1129,7 +1128,7 @@ namespace GameAPI.App_Code
             }
         }
 
-        public ClBettingResult GetBettingReceipt(ClBettingResult clBettingResult)
+        public async Task<ClBettingResult> GetBettingReceipt(object? bettingid)
         {
 
             ClBettingResult clBetting_result = new ClBettingResult();
@@ -1140,12 +1139,12 @@ namespace GameAPI.App_Code
                 {
 
 
-                    using (SqlCommand command = new SqlCommand("Sp_GeBettingReceipt", connection))
+                   await using (SqlCommand command = new SqlCommand("Sp_GeBettingReceipt", connection))
                     {
                         command.CommandType = CommandType.StoredProcedure;
 
                         SqlParameter sqlParameter1 = command.Parameters.Add("@BettingID", SqlDbType.Int);
-                        sqlParameter1.Value = clBettingResult.BettingID;
+                        sqlParameter1.Value = bettingid.ToString();
 
                         connection.Open();
                         using (SqlDataAdapter da = new SqlDataAdapter(command))
@@ -1489,19 +1488,25 @@ namespace GameAPI.App_Code
             }
         }
 
-        public string getQRCode(qrcode clQrcode)
+        public async Task<string>  getQRCode(object? qrcode)
         {
-            QRCodeGenerator qrGenerator = new QRCodeGenerator();
-            QRCodeGenerator.QRCode qrCode = qrGenerator.CreateQrCode(clQrcode.qrCode, QRCodeGenerator.ECCLevel.Q);
+            //QRCodeGenerator qrGenerator = new QRCodeGenerator();
+            //QRCodeGenerator.QRCode qrCode = qrGenerator.CreateQrCode(clQrcode.qrCode, QRCodeGenerator.ECCLevel.Q);
             //System.Web.UI.WebControls.Image imgBarCode = new System.Web.UI.WebControls.Image();
+            IronBarCode.License.LicenseKey = "IRONBARCODE.CHANPHEAKDEYVONG.466-69CE93AB0E-J3GUNX3UFKNBG-YFDSJZWG6LCE-UXJABK7I5HXD-JFGBAGYMDYJG-OUUHPCDNLT2U-DMCBRG-TCJQ3CEPZESGEA-DEPLOYMENT.TRIAL-7XCVFT.TRIAL.EXPIRES.19.JUN.2022";
+
+            GeneratedBarcode generatedQRCode = IronBarCode.BarcodeWriter.CreateBarcode(qrcode.ToString(), BarcodeEncoding.QRCode);
+
+
             Image imgBarCode;
 
             //imgBarCode.Height = 150;
 
             //imgBarCode.Width = 150;
-            using (Bitmap bitMap = qrCode.GetGraphic(20))
+            //using (Bitmap bitMap = qrCode.GetGraphic(20))
+             using (Bitmap bitMap = (Bitmap)generatedQRCode.Image)
             {
-                using (MemoryStream ms = new MemoryStream())
+              await using (MemoryStream ms = new MemoryStream())
                 {
                     bitMap.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
                     byte[] byteImage = ms.ToArray();

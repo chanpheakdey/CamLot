@@ -6,6 +6,7 @@ D:\ACE\CamLOT\obj\Release\net6.0\PubTmp\Out\SignalR.dll
 D:\ACE\CamLOT\obj\Release\net6.0\PubTmp\Out\SignalR.deps.json
 D:\ACE\CamLOT\obj\Release\net6.0\PubTmp\Out\SignalR.runtimeconfig.json
 D:\ACE\CamLOT\obj\Release\net6.0\PubTmp\Out\SignalR.pdb
+D:\ACE\CamLOT\obj\Release\net6.0\PubTmp\Out\IronBarCode.dll
 D:\ACE\CamLOT\obj\Release\net6.0\PubTmp\Out\Microsoft.Win32.SystemEvents.dll
 D:\ACE\CamLOT\obj\Release\net6.0\PubTmp\Out\System.Data.SqlClient.dll
 D:\ACE\CamLOT\obj\Release\net6.0\PubTmp\Out\System.Drawing.Common.dll

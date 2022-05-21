@@ -386,14 +386,14 @@ function checktokendetail() {
 function qrcode_img_base64(qrcode, html) {
     $.ajax({
         //cache: false,
-        async: false,
-        type: "POST",
+        async: true,
+        type: "get",
         //dataType: "Json",
         contentType: "application/json; charset=utf-8",
-        url: "api/QRCode",
-        data: '{"QRCode":"' + qrcode + '"}',
+        url: "api/QRCode/" + qrcode,
+        data: '',
         success: function (data) {
-
+            console.log(data);
             //return ("data:image/png;base64," + data);
             PrintElem(html, "data:image/png;base64," + data, qrcode)
             //$("#divqrcode").html("data:image/png;base64," + data);
