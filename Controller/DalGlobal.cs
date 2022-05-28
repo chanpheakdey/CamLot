@@ -1182,7 +1182,7 @@ namespace GameAPI.App_Code
             }
         }
 
-        public string Withdraw(ClBettingResult clBettingResult)
+        public ClBettingResult Withdraw(ClBettingResult clBettingResult)
         {
 
             ClBettingResult clBetting_result = new ClBettingResult();
@@ -1204,7 +1204,7 @@ namespace GameAPI.App_Code
                         sqlParameter2.Value = clBettingResult.CreatedBy;
 
                         SqlParameter sqlParameter3 = command.Parameters.Add("@WithdrawalAmount", SqlDbType.Int);
-                        sqlParameter3.Value = clBettingResult.WithdrawalAmount;
+                        sqlParameter3.Value = 0;
 
 
 
@@ -1215,14 +1215,47 @@ namespace GameAPI.App_Code
                         }
                         connection.Close();
                         string returnstatus = (string)ds.Tables[0].Rows[0]["Status"];
-                        return returnstatus;
+                        clBetting_result.ResultStatus= returnstatus;
+                        clBetting_result.BettingID = (int)ds.Tables[0].Rows[0]["BettingID"];
+                        clBetting_result.BetNumber = (string)ds.Tables[0].Rows[0]["BetNumber"];
+                        clBetting_result.SlotNumber = (string)ds.Tables[0].Rows[0]["SlotNumber"];
+
+                        clBetting_result.BetAmount = (int)ds.Tables[0].Rows[0]["BetAmount"];
+                        clBetting_result.TotalBet = (int)ds.Tables[0].Rows[0]["TotalBet"];
+
+
+                        clBetting_result.CreatedDate = ((DateTime)ds.Tables[0].Rows[0]["CreatedDate"]).ToString("dd/MM/yyyy HH:mm:ss");
+                        clBetting_result.CreatedBy = (string)ds.Tables[0].Rows[0]["CreatedBy"];
+
+                        clBetting_result.GameID = (int)ds.Tables[0].Rows[0]["GameID"];
+                        clBetting_result.PlaceID = (int)ds.Tables[0].Rows[0]["PlaceID"];
+                        clBetting_result.ResultID = (int)ds.Tables[0].Rows[0]["ResultID"];
+
+                        clBetting_result.WinAmountA = (int)ds.Tables[0].Rows[0]["WinAmountA"];
+                        clBetting_result.WinAmountB = (int)ds.Tables[0].Rows[0]["WinAmountB"];
+                        clBetting_result.WinAmountC = (int)ds.Tables[0].Rows[0]["WinAmountC"];
+                        clBetting_result.WinAmountD = (int)ds.Tables[0].Rows[0]["WinAmountD"];
+                        clBetting_result.WinAmountE = (int)ds.Tables[0].Rows[0]["WinAmountE"];
+
+                        clBetting_result.ResultSlotA = (int)ds.Tables[0].Rows[0]["SlotA"];
+                        clBetting_result.ResultSlotB = (int)ds.Tables[0].Rows[0]["SlotB"];
+                        clBetting_result.ResultSlotC = (int)ds.Tables[0].Rows[0]["SlotC"];
+                        clBetting_result.ResultSlotD = (int)ds.Tables[0].Rows[0]["SlotD"];
+                        clBetting_result.ResultSlotE = (int)ds.Tables[0].Rows[0]["SlotE"];
+
+                        clBetting_result.Win = (bool)ds.Tables[0].Rows[0]["Win"];
+                        clBetting_result.Withdrawal = (bool)ds.Tables[0].Rows[0]["Withdrawal"];
+                        clBetting_result.WithdrawalDate = (string)ds.Tables[0].Rows[0]["WithdrawalDate"];
+                        clBetting_result.WithdrawalBy = (string)ds.Tables[0].Rows[0]["WithdrawalBy"];
+
+                        return clBetting_result;
 
                     }
                 }
             }
             catch (SqlException ex)
             {
-                return "error";
+                return null;
             }
         }
 

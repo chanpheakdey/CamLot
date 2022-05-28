@@ -49,6 +49,8 @@
         public int ResultSlotD { get; set; }
         public int ResultSlotE { get; set; }
 
+        public string ResultStatus { get; set; }
+
         public Boolean Win { get; set; }
         public Boolean Withdrawal { get; set; }
         public string? WithdrawalDate { get; set; }

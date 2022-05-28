@@ -125,12 +125,12 @@ function receipt(qrcode) {
 
     $.ajax({
         //cache: false,
-        async: false,
-        type: "POST",
+        async: true,
+        type: "get",
         //dataType: "Json",
         contentType: "application/json; charset=utf-8",
-        url: "api/getbettingreceipt",
-        data: '{"bettingID": ' + code + '}',
+        url: "api/getbettingreceipt/" + code,
+        data: '',
         success: function (dataobj) {
             console.log(dataobj);
             var html = create_receipt(dataobj);
