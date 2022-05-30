@@ -25,7 +25,7 @@ function viewformback() {
 }
 
 function scansearch(qr) {
-    scanQRresult(qr);
+    confirmwithdraw(qr);
     closepopupsearch();
     closepopupsearchnotyetwithdraw();
 }
