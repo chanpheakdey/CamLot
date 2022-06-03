@@ -1229,7 +1229,7 @@ namespace GameAPI.App_Code
 
                         clBetting_result.GameID = (int)ds.Tables[0].Rows[0]["GameID"];
                         clBetting_result.PlaceID = (int)ds.Tables[0].Rows[0]["PlaceID"];
-                        clBetting_result.ResultID = (int)ds.Tables[0].Rows[0]["ResultID"];
+                        //clBetting_result.ResultID = (int)ds.Tables[0].Rows[0]["ResultID"];
 
                         clBetting_result.WinAmountA = (int)ds.Tables[0].Rows[0]["WinAmountA"];
                         clBetting_result.WinAmountB = (int)ds.Tables[0].Rows[0]["WinAmountB"];
