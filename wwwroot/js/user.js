@@ -137,7 +137,7 @@ function showdivuser(userlevel, username) {
     console.log(userlevel);
     if (userlevel == 'Admin') {
         html += "<select id='selectlevel' class='select-level'>"
-        html += "<option value='Master'>Master</option>";
+        html += "<option value='Admin'>Senior</option>";
         //html += "<option value='Agent'>Agent</option>";
         //html += "<option value='Member'>Member</option>";
         html += "</select>";
