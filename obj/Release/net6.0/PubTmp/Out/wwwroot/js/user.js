@@ -437,6 +437,11 @@ function addcredit() {
                 //getusercredit(username);
                 //getuserlist(createdby);
                 filteruser();
+                var userlevel = $("#hdUserLevel").val();
+                var owner = $("#hdOwner").val();
+                console.log("userlevel:" + userlevel + ",owner:" + owner);
+                showuserbylevel(owner,userlevel)
+
                
             } else {
                 if (data == 'Out of credit') {
@@ -474,6 +479,11 @@ function deductcredit() {
                //getusercredit(username);
                //getuserlist(createdby);
                filteruser();
+               var userlevel = $("#hdUserLevel").val();
+               var owner = $("#hdOwner").val();
+               console.log("userlevel:" + userlevel + ",owner:" + owner);
+               showuserbylevel(owner, userlevel)
+
            }
         },
         error: function (result) {
@@ -666,7 +676,8 @@ function getusercredit(username) {
 }
 
 function showuserbylevel(createdby,userlevel) {
-    
+    $("#hdUserLevel").val(userlevel);
+    $("#hdOwner").val(createdby);
     $.ajax({
         //cache: false,
         async: false,
