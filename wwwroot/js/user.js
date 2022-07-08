@@ -5,6 +5,12 @@ $(document).ready(function () {
 
     checktokendetail();
 
+    jQuery('#txt_username').keyup(function () {
+        var raw_text = jQuery(this).val();
+        var return_text = raw_text.replace(/[^a-zA-Z0-9 _]/g, '');
+        jQuery(this).val(return_text);
+    });
+
 });
 
 
