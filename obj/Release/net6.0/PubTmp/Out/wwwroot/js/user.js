@@ -269,6 +269,10 @@ function unlockuser(username,oldstatus) {
                     filteruser();
                     userstatus(oldstatus,username);
                     //closepopup();
+                    var userlevel = $("#hdUserLevel").val();
+                    var owner = $("#hdOwner").val();
+                    console.log("userlevel:" + userlevel + ",owner:" + owner);
+                    showuserbylevel(owner, userlevel)
                 }
             },
             error: function (result) {

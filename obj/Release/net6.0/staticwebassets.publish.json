@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "CwdWYG7XHbe9Bcvtd0lwCVGBCIbifmUYbza6WK1xu9o=",
+  "Hash": "2nWQBPXddBW9JvqF4KYOZYRubbKEAM0W/8gQSP6Yiy4=",
   "Source": "SignalR",
   "BasePath": "_content/SignalR",
   "Mode": "Default",
@@ -593,6 +593,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\logo.png"
+    },
+    {
+      "Identity": "C:\\Users\\chanp\\OneDrive\\Documents\\GitHub\\CamLot\\wwwroot\\images\\logo2.png",
+      "SourceId": "SignalR",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\chanp\\OneDrive\\Documents\\GitHub\\CamLot\\wwwroot\\",
+      "BasePath": "_content/SignalR",
+      "RelativePath": "images/logo2.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\logo2.png"
     },
     {
       "Identity": "C:\\Users\\chanp\\OneDrive\\Documents\\GitHub\\CamLot\\wwwroot\\images\\logonew.png",
