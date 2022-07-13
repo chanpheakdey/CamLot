@@ -144,7 +144,8 @@ function selectnumber(number) {
     var bettype = $("#hdBetType").val();
 
     if (bettype == "number") {
-        checknumber(number);
+        var n = parseInt(number);
+        checknumber(n);
     } else if (bettype == "row") {
         if (betendnumber == false) {
             betstartnumber = number;
@@ -904,8 +905,21 @@ function select_slot_old(slotname) {
     load_numberlist(listnumber);
 
 }
+
 var listnumber = new Array();
 var listslot = new Array();
+
+function uniquelist(list) {
+    var result = [];
+    $.each(list, function (i, e) {
+        var n = parseInt(e);
+        console.log(n);
+        if ($.inArray(n, result) == -1) result.push(n);
+    });
+    
+    return result;
+}
+
 function html_slot() {
     var jsonslot = $("#hdSlot").val();
     console.log(jsonslot);
@@ -1167,6 +1181,7 @@ function show_betamount() {
 function loadtotalbet() {
     var betamount = parseInt($("#hd_betamount").val());
     var numberofslot = listslot.length;
+    listnumber = uniquelist(listnumber);
 
     var total = (betamount * numberofslot * listnumber.length);
     $("#span_totalbetamount").html('R' + total);
